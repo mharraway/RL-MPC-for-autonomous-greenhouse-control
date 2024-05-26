@@ -31,14 +31,15 @@ class neural_net (nn.Module):
     def __init__(self,input_dim, hidden_dim) -> None:
         super(neural_net,self).__init__()
         self.fc1 = nn.Linear(input_dim, hidden_dim) 
-        # self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
+        self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
         self.fc3 = nn.Linear(hidden_dim, 1)  
         # self.relu = nn.ReLU()  # ReLU activation function
         self.act_fn = nn.Tanh()
         
-    def forward(self, x):
+    def forward(self, x,h):
         x = self.act_fn(self.fc1(x))
-        # x = self.act_fn(self.fc2(x))
+        if h == 2:
+            x = self.act_fn(self.fc2(x))
         x = self.fc3(x)
         return x
     
@@ -63,11 +64,13 @@ class MyDataset(Dataset):
         return torch.tensor(input_,dtype=torch.float32),output
                         
 class value_function_TR():
-    def __init__(self, input_dim, hidden_dim, learning_rate, batch_size):
+    def __init__(self, input_dim, hidden_dim, learning_rate, batch_size,hidden_layers = 2, reduced = False):
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim
         self.learning_rate = learning_rate
         self.batch_size = batch_size
+        self.hidden_layers = hidden_layers
+        self.reduced = reduced
         
         self.neural_net = neural_net(input_dim,hidden_dim)
         self.neural_net.weights_reset()
@@ -99,7 +102,7 @@ class value_function_TR():
             self.optimizer.zero_grad()
         
             # Calculate TD error
-            current_state_values = self.neural_net(obs)   
+            current_state_values = self.neural_net(obs,self.hidden_layers)   
             
             #Calculating Loss
             mse_loss = nn.MSELoss()
@@ -118,7 +121,7 @@ class value_function_TR():
         
     def evaluate_value(self, obs):
         obs_tensor = torch.tensor(obs, dtype=torch.float32).unsqueeze(0)
-        value = self.neural_net(obs_tensor).detach().numpy()[0][0]
+        value = self.neural_net(obs_tensor,self.hidden_layers).detach().numpy()[0][0]
         return value 
     
     def validate(self,global_step = 0):
@@ -127,7 +130,7 @@ class value_function_TR():
             obs =  inputs
             total_return =  outputs.unsqueeze(1).float()  
             # Calculate TD error
-            current_state_values = self.neural_net(obs).detach()
+            current_state_values = self.neural_net(obs,self.hidden_layers).detach()
             #Calculating Loss
             mse_loss = nn.MSELoss()
             loss = mse_loss(current_state_values, total_return) 
@@ -246,17 +249,14 @@ class value_function_TR():
                 self.values[tuple(obs)] = cumulative_reward
         return obs_log, self.trajectories
     
-    def sim_with_agent(self,num_traj = 1, spread = 0.1, model_path = "", env_path = ""):
+    def sim_with_agent(self,num_traj = 1, spread = 0.1, model_path = "", env_path = "", stochastic = False):
         self.neural_net.eval()
         
         #Env Setup
-        env = greenhouseEnv(use_growth_dif=False)
-        env.random_starts = False
-        env.stochastic = False
-        env.using_mpc = False   
+        env = greenhouseEnv(use_growth_dif=False, stochastic=stochastic, using_mpc=False, random_starts=False)
         
         #Creating trained normalized environment
-        env_norm = greenhouseEnv()
+        env_norm = greenhouseEnv(stochastic=stochastic)
         env_norm = DummyVecEnv([lambda: env_norm])
         env_norm = VecNormalize(env_norm, norm_obs = True, norm_reward = False, clip_obs = 10.,gamma=1)
         env_norm = env_norm.load(env_path,env_norm)
@@ -306,7 +306,11 @@ class value_function_TR():
                 obs_log.append(obs_now)
                                 
                 # obs2store = normalizeState(np.array([x_now[0],obs_now[7]]),np.array([x_min[0],0]), np.array([x_max[0],max_steps]))
-                obs2store = obs_now_norm
+                # obs2store = obs_now_norm
+                if self.reduced == True:
+                    obs2store = normalizeState(np.array([x_now[0],obs_now[7]]),np.array([x_min[0],0]), np.array([x_max[0],max_steps]))
+                else:
+                    obs2store = obs_now_norm
                 traj.append(((obs_now_norm,reward),(obs2store,obs_now,x_next,x_now,k)))                
                         
                 obs_now = obs_next
@@ -406,19 +410,16 @@ class value_function_TR():
         
         print_metrics(Y_log, U_log, D_log,vf = to_show_values,rewards=to_show_reward, day_range=(0,40))
         
-    def test_with_agent(self, test_episodes = 0, spread = 0.5):
+    def test_with_agent(self, test_episodes = 0, spread = 0.5, startk = False, stochastic = False, model_path = "", env_path = ""):
         self.neural_net.eval()
-        model_path = "models/SAC/deterministic/best_model_agent_11_abs.zip"
-        env_path = "models/SAC/deterministic/vecNormEnv_agent_11_abs.pkl"
+        model_path = model_path
+        env_path = env_path
         
         #Env Setup
-        env = greenhouseEnv()
-        env.random_starts = False
-        env.stochastic = False
-        env.using_mpc = False   
+        env = greenhouseEnv(stochastic=stochastic, random_starts=False, using_mpc=False)
         
         #Creating trained normalized environment
-        env_norm = greenhouseEnv()
+        env_norm = greenhouseEnv(stochastic=stochastic)
         env_norm = DummyVecEnv([lambda: env_norm])
         env_norm = VecNormalize(env_norm, norm_obs = True, norm_reward = False, clip_obs = 10.,gamma=1)
         env_norm = env_norm.load(env_path,env_norm)
@@ -429,7 +430,7 @@ class value_function_TR():
         
         traj = []
         
-        
+        test_episodes = test_episodes+1 if startk else test_episodes
         
         for e in range(test_episodes):
             #Logs for showing
@@ -447,15 +448,19 @@ class value_function_TR():
                 x_now = info["x"]
                 u_opt = obs_now[4:7]
                 kk = 0
+                
             else:
-                kk = np.random.randint(0,max_steps-1)
+                if startk != False:
+                    kk = startk
+                else:                
+                    kk = np.random.randint(0,max_steps-1)
                 
                 for (_, _),(_,_,x_next,x_now,time_k) in self.trajectories[0]:
                     if kk == time_k:
                         env.set_env_state(x_next,x_now,u0,kk)
                         break
-                    
-                obs_now,x_now,u_opt = env.sample_obs(spread)
+                if startk == False:   
+                    obs_now,x_now,u_opt = env.sample_obs(spread)
                 
             for k in tqdm(range(kk,max_steps)):
                 
@@ -470,8 +475,11 @@ class value_function_TR():
                 obs_log.append(obs_next)
                 obs_next_norm= env_norm.normalize_obs(obs_next)
                 
-                # obs2store = normalizeState(np.array([x_now[0],obs_now[7]]),np.array([x_min[0],0]), np.array([x_max[0],max_steps]))
-                obs2store = obs_now_norm
+                
+                if self.reduced == True:
+                    obs2store = normalizeState(np.array([x_now[0],obs_now[7]]),np.array([x_min[0],0]), np.array([x_max[0],max_steps]))
+                else:
+                    obs2store = obs_now_norm
                 value = self.evaluate_value(obs2store)  
                 
                 
@@ -500,7 +508,7 @@ class value_function_TR():
             
             print_metrics(Y_log, U_log, D_log,vf = to_show_values,rewards=to_show_reward, day_range=(0,40))
             
-        return Y_log,U_log
+        return Y_log,U_log,to_show_reward,to_show_values
 
 
 
