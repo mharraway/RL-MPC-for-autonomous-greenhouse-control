@@ -1,0 +1,79 @@
+\documentclass{tudelft-report}
+
+%% Set up the bibliography
+\usepackage{biblatex}
+\addbibresource{report.bib}
+
+%% Additional packages and commands
+\usepackage{parskip}
+\setlist{itemsep=-2pt} % Reducing white space in lists slightly
+\renewcommand{\deg}{\si{\degree}\xspace} % Use \deg easily, everywhere
+
+
+%% ----------------------------------------------------------------------
+%%    Begin of document + Frontmatter (Roman page numbering)
+%% ----------------------------------------------------------------------
+
+\begin{document}
+
+\frontmatter
+
+%% Define the main parameters
+\title{RL-MPC for Autonomous Greenhouse Control}
+\subtitle{Combining RL and MPC to maximize  \\ the economic benefit of a Greenhouse}
+\author{Murray Harraway}
+
+\subject{Systems and Control Masters Thesis} % Cover only
+\affiliation{Delft University of Technology} % Cover only
+\coverimage{figures/cover.jpg} % Aspect ratio of 2:3 (portrait) recommended
+\definecolor{title}{HTML}{e8f0fa} % Color for cover title
+
+\makecover
+
+\input{frontmatter/title-report}
+% \input{frontmatter/title-thesis}
+\input{frontmatter/preface}
+\input{frontmatter/abstract}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\input{frontmatter/nomenclature}
+
+%% ----------------------------------------------------------------------
+%%    Mainmatter (Arabic page numbering)
+%% ----------------------------------------------------------------------
+
+\mainmatter
+
+\input{mainmatter/introduction}
+
+\input{mainmatter/chapter-2}
+\input{mainmatter/chapter-3}
+\input{mainmatter/chapter-4} 
+\input{mainmatter/chapter-5}
+\input{mainmatter/chapter-6}
+\input{mainmatter/chapter-7} 
+
+\input{mainmatter/conclusion}
+
+%% Prevent urls running into margins in bibliography
+\setcounter{biburlnumpenalty}{7000}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{7000}
+
+%% Add bibliography
+\printbibliography[heading=bibintoc,title=References]
+
+%% ----------------------------------------------------------------------
+%%    Appendix (Letters for chapters)
+%% ----------------------------------------------------------------------
+
+\appendix
+
+\input{appendix/appendix-a}
+\input{appendix/appendix-b}
+%\input{appendix/appendix-c} % Create file to add
+
+\end{document}
