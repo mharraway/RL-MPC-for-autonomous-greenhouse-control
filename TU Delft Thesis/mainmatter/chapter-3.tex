@@ -55,7 +55,7 @@ The reward function is modelled after the optimization goal as defined in \textb
 
 \begin{equation}\label{eq:reward_fn}
     \begin{aligned}
-        & R(k)  = \kappa_{let} \cdot (y(k)- y(k-1)) - (\kappa_{c02} \cdot u_1(k) + \kappa_{u_v} \cdot u_2(k) + \kappa_{u_q} \cdot u_3(k))  \\ 
+        & R(k)  = \kappa_{1} \cdot (y(k)- y(k-1)) - (\kappa_{2} \cdot u_1(k) + \kappa_{3} \cdot u_2(k) + \kappa_{4} \cdot u_3(k))  \\ 
         & - (P_{c02} \cdot y_2(k) + P_T \cdot y_3(k) + P_H \cdot y_4(k))
     \end{aligned}
 \end{equation}
@@ -124,14 +124,15 @@ where $\sigma$ represents the degree of uncertainty in the evolving states, expr
 
 
 
-\section{Experimental Setup}
+\section{Experimental Setup} \label{section:experimental-setup}
+
 The duration of the growing period for lettuce was determined based on the findings of \textbf{reference XXX}, which indicate that the growing period typically falls within the range of 30 to 50 days. Therefore, a fixed growing period of fixed 40 day was selected. \textbf{Ref XXX} states that discretizing the van Henten model using a time-step between 15 minutes and 1 hour is recommended. Therefore, a time interval of 30 minutes was selected for the purpose of this study. As a result, over a duration of 40 days (1 episode or 1 complete simulation), there is a total of:
 $$
 k_{total} = \frac{40 \frac{days}{growing \, period} \cdot 24 \frac{hrs}{day} \cdot 60 \frac{min}{hr}}{30 \frac{min}{timestep}} = 1920 \frac{time \, steps}{growing \, period}
 $$
 The initial interval of 30 minutes was originally set at 15 minutes. However, this decision was revised due to the excessive computational burden it imposed on the MPC solver, with minimal benefits. Consequently, extending the time step enables an exponential speedup in the simulation of the 40-day period, while causing only minor deterioration in performance. As a consequence of this, there is a noticeable increase in the rate at which RL training occurs, thereby allowing for a larger quantity of training episodes.
 \\
-To facilitate the learning process, the observations returned from the environment were normalized by a running mean and variance. The VecNormalizeWrapper in Stable-Baselines3 is responsible for updating the mean and variance for every observation received from the environment. The observation is normalized as per \autoref{eq:agent-normalize} and clipped between $[-10,10]$.
+To facilitate the learning process of RL, the observations returned from the environment were normalized by a running mean and variance. The VecNormalizeWrapper in Stable-Baselines3 is responsible for updating the mean and variance for every observation received from the environment. The observation is normalized as per \autoref{eq:agent-normalize} and clipped between $[-10,10]$.
 
 \begin{equation}
     \label{eq:agent-normalize}

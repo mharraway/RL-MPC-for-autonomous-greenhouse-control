@@ -60,36 +60,37 @@
 \contentsline {section}{\numberline {3.7}Conclusion}{21}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Model Predictive Control Setup}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Greenhouse MPC problem formulation}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Deterministic Results}{23}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Stochastic Results}{23}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Conclusion}{23}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Deterministic RL-MPC}{24}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implementation}{24}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}RL-MPC problem formulations}{24}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{24}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Case Study 1 - Initial Guesses from actor}{24}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Case Study 2 - Value Function addition}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Case Study 3 - Terminal Constraint}{24}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Case Study 4 - Value Function and Terminal Constraint}{24}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Final Result and Conclusion}{24}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{25}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{25}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Case Study 1 - Value Function addition}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Case Study 2 - Terminal Constraint}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Case Study 3 - Value Function and Terminal Constraint}{25}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Final Result and Conclusion}{25}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{26}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{26}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{26}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Case Study 3 - Reduced Order vs Full Order Value Function}{26}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Final Result and Conclusion}{26}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{27}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Discussion}{27}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Conclusion}{27}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{27}{section.8.3}%
-\contentsline {chapter}{\numberline {A}RL \& RL Training }{28}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{28}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Agent Training}{28}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Value Function Training}{28}{section.A.3}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{29}{appendix.B}%
+\contentsline {paragraph}{Experimental Setup}{24}{equation.4.1.2}%
+\contentsline {section}{\numberline {4.2}Deterministic Results}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Stochastic Results}{26}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Conclusion}{26}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Deterministic RL-MPC}{27}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implementation}{27}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}RL-MPC problem formulations}{27}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{27}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Case Study 1 - Initial Guesses from actor}{27}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Case Study 2 - Value Function addition}{27}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Case Study 3 - Terminal Constraint}{27}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Case Study 4 - Value Function and Terminal Constraint}{27}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Final Result and Conclusion}{27}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Case Study 1 - Value Function addition}{28}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Case Study 2 - Terminal Constraint}{28}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Case Study 3 - Value Function and Terminal Constraint}{28}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Final Result and Conclusion}{28}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{29}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{29}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{29}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Case Study 3 - Reduced Order vs Full Order Value Function}{29}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Final Result and Conclusion}{29}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{30}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Discussion}{30}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Conclusion}{30}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{30}{section.8.3}%
+\contentsline {chapter}{\numberline {A}RL \& RL Training }{31}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{31}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Agent Training}{31}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Value Function Training}{31}{section.A.3}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{32}{appendix.B}%
 \contentsfinish 
