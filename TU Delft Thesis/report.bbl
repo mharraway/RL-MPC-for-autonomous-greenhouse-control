@@ -1,0 +1,352 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{boersmaRobustSamplebasedModel2022}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BS}{%
+         family={Boersma},
+         familyi={B\bibinitperiod},
+         given={Sjoerd},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Congcong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=fpug}{%
+         family={family=Mourik},
+         familyi={f\bibinitperiod},
+         suffix={given=Simon},
+         suffixi={g\bibinitperiod},
+         given={prefix=van\bibnamedelima useprefix=true},
+         giveni={p\bibinitperiod\bibinitdelim u\bibinitperiod},
+      }}%
+    }
+    \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
+  MPC}
+    \strng{namehash}{BSSCfgpu1}
+    \strng{fullhash}{BSSCfgpu1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Achieving optimal resource use efficiency is a key challenge in modern
+  greenhouse production systems. Optimal performance in terms of crop yield and
+  resource efficiency can in theory be achieved via optimal control. Standard
+  optimal controllers are not designed to deal with uncertainty, whereas
+  considerable model prediction errors occur due to the mismatch between the
+  model and the real system. This paper explores the relation between
+  parametric uncertainty, and performance with respect to crop yield, CO2
+  demand, ventilation demand, and heating energy. This is done using the
+  following steps 1) extension of an existing controller model with parametric
+  uncertainty, 2) design of a sample-based robust model predictive controller
+  and 3) analysis of control performance under increasing parametric
+  uncertainty. The results predict that control performance is significantly
+  sensitive to parametric uncertainty. A relative parameter uncertainty of
+  20\%, reduced crop yield with 11\% compared to the case without uncertainty.
+  Furthermore, a 20\% uncertainty decreased CO2 demand with 80\%, whereas it
+  increased ventilation demand with 96\%, and increased heating energy demand
+  with 90\%.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2022.11.135
+    \endverb
+    \field{issn}{2405-8963}
+    \field{number}{32}
+    \field{pages}{177\bibrangedash 182}
+    \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
+  {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
+    \field{shortjournal}{IFAC-PapersOnLine}
+    \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
+  System with Parametric Uncertainty}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S2405896322027689
+    \endverb
+    \field{volume}{55}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
+    \verb et al. - 2022 - Robust sample-based model predictive control of a .pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/MQIUME67/S24058
+    \verb 96322027689.html
+    \endverb
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
+    }
+    \field{day}{01}
+    \field{month}{01}
+    \field{year}{2022}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{morcegoReinforcementLearningModel2023}{online}{}
+    \name{author}{6}{}{%
+      {{hash=MB}{%
+         family={Morcego},
+         familyi={M\bibinitperiod},
+         given={Bernardo},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=YW}{%
+         family={Yin},
+         familyi={Y\bibinitperiod},
+         given={Wenjie},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Boersma},
+         familyi={B\bibinitperiod},
+         given={Sjoerd},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=fpug}{%
+         family={family=Henten},
+         familyi={f\bibinitperiod},
+         suffix={given=Eldert},
+         suffixi={g\bibinitperiod},
+         given={prefix=van\bibnamedelima useprefix=true},
+         giveni={p\bibinitperiod\bibinitdelim u\bibinitperiod},
+      }}%
+      {{hash=PV}{%
+         family={Puig},
+         familyi={P\bibinitperiod},
+         given={Vicenç},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Congcong},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \keyw{Mathematics - Optimization and Control}
+    \strng{namehash}{MBYWBS+1}
+    \strng{fullhash}{MBYWBSfgpuPVSC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouse is an important protected horticulture system for feeding the
+  world with enough fresh food. However, to maintain an ideal growing climate
+  in a greenhouse requires resources and operational costs. In order to achieve
+  economical and sustainable crop growth, efficient climate control of
+  greenhouse production becomes essential. Model Predictive Control (MPC) is
+  the most commonly used approach in the scientific literature for greenhouse
+  climate control. However, with the developments of sensing and computing
+  techniques, reinforcement learning (RL) is getting increasing attention
+  recently. With each control method having its own way to state the control
+  problem, define control goals, and seek for optimal control actions, MPC and
+  RL are representatives of model-based and learning-based control approaches,
+  respectively. Although researchers have applied certain forms of MPC and RL
+  to control the greenhouse climate, very few effort has been allocated to
+  analyze connections, differences, pros and cons between MPC and RL either
+  from a mathematical or performance perspective. Therefore, this paper will 1)
+  propose MPC and RL approaches for greenhouse climate control in an unified
+  framework; 2) analyze connections and differences between MPC and RL from a
+  mathematical perspective; 3) compare performance of MPC and RL in a
+  simulation study and afterwards present and interpret comparative results
+  into insights for the application of the different control approaches in
+  different scenarios.%
+    }
+    \verb{eprint}
+    \verb 2303.06110
+    \endverb
+    \field{pubstate}{preprint}
+    \field{title}{Reinforcement {{Learning Versus Model Predictive Control}} on
+  {{Greenhouse Climate Control}}}
+    \verb{url}
+    \verb http://arxiv.org/abs/2303.06110
+    \endverb
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/G5ZRK28N/Morcego
+    \verb et al. - 2023 - Reinforcement Learning Versus Model Predictive Con.pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/H4SN9N5R/2303.h
+    \verb tml
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:30.685Z%
+    }
+    \field{eprinttype}{arxiv}
+    \field{eprintclass}{math}
+    \field{day}{10}
+    \field{month}{03}
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{ellisTutorialReviewEconomic2014}{article}{}
+    \name{author}{3}{}{%
+      {{hash=EM}{%
+         family={Ellis},
+         familyi={E\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DH}{%
+         family={Durand},
+         familyi={D\bibinitperiod},
+         given={Helen},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CPD}{%
+         family={Christofides},
+         familyi={C\bibinitperiod},
+         given={Panagiotis\bibnamedelima D.},
+         giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \keyw{Economic model predictive control,Nonlinear systems,Process
+  control,Process economics,Process optimization}
+    \strng{namehash}{EMDHCPD1}
+    \strng{fullhash}{EMDHCPD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    An overview of the recent results on economic model predictive control
+  (EMPC) is presented and discussed addressing both closed-loop stability and
+  performance for nonlinear systems. A chemical process example is used to
+  provide a demonstration of a few of the various approaches. The paper
+  concludes with a brief discussion of the current status of EMPC and future
+  research directions to promote and stimulate further research potential in
+  this area.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jprocont.2014.03.010
+    \endverb
+    \field{issn}{0959-1524}
+    \field{number}{8}
+    \field{pages}{1156\bibrangedash 1178}
+    \field{series}{Economic Nonlinear Model Predictive Control}
+    \field{shortjournal}{Journal of Process Control}
+    \field{title}{A Tutorial Review of Economic Model Predictive Control
+  Methods}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S0959152414000900
+    \endverb
+    \field{volume}{24}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/CPRF96GE/Ellis et
+    \verb  al. - 2014 - A tutorial review of economic model predictive con.pdf;
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/4DP45VVV/S0959152
+    \verb 414000900.html
+    \endverb
+    \field{journaltitle}{Journal of Process Control}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:03.464Z%
+    }
+    \field{day}{01}
+    \field{month}{08}
+    \field{year}{2014}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{amritEconomicOptimizationUsing2011}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AR}{%
+         family={Amrit},
+         familyi={A\bibinitperiod},
+         given={Rishi},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RJB}{%
+         family={Rawlings},
+         familyi={R\bibinitperiod},
+         given={James\bibnamedelima B.},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Angeli},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{Closed-loop stability,Dissipative systems,Model predictive
+  control,Process economics,Terminal penalty}
+    \strng{namehash}{ARRJBAD1}
+    \strng{fullhash}{ARRJBAD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In the standard model predictive control implementation, first a
+  steady-state optimization yields the equilibrium point with minimal economic
+  cost. Then, the deviation from the computed best steady state is chosen as
+  the stage cost for the dynamic regulation problem. The computed best
+  equilibrium point may not be the global minimum of the economic cost, and
+  hence, choosing the economic cost as the stage cost for the dynamic
+  regulation problem, rather than the deviation from the best steady state,
+  offers potential for improving the economic performance of the system. It has
+  been previously shown that the existing framework for MPC stability analysis,
+  which addresses to the standard class of problems with a regulation
+  objective, does not extend to economic MPC. Previous work on economic MPC
+  developed new tools for stability analysis and identified sufficient
+  conditions for asymptotic stability. These tools were developed for the
+  terminal constraint MPC formulation, in which the system is stabilized by
+  forcing the state to the best equilibrium point at the end of the horizon. In
+  this work, we relax this constraint by imposing a region constraint on the
+  terminal state instead of a point constraint, and adding a penalty on the
+  terminal state to the regulator cost. We extend the stability analysis tools,
+  developed for terminal constraint economic MPC, to the proposed formulation
+  and establish that strict dissipativity is sufficient for guaranteeing
+  asymptotic stability of the closed-loop system. We also show that the average
+  closed-loop performance outperforms the best steady-state performance. For
+  implementing the proposed formulation, a rigorous analysis for computing the
+  appropriate terminal penalty and the terminal region is presented. A further
+  extension, in which the terminal constraint is completely removed by
+  modifying the regulator cost function, is also presented along with its
+  stability analysis. Finally, an illustrative example is presented to
+  demonstrate the differences between the terminal constraint and the proposed
+  terminal penalty formulation.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.arcontrol.2011.10.011
+    \endverb
+    \field{issn}{1367-5788}
+    \field{number}{35}
+    \field{pages}{178\bibrangedash 186}
+    \field{title}{Economic Optimization Using Model Predictive Control with a
+  Terminal Cost}
+    \verb{url}
+    \verb https://www.infona.pl//resource/bwmeta1.element.elsevier-ca4442f3-2a1
+    \verb 4-3d17-8c70-b5e1bdc1dafb
+    \endverb
+    \field{volume}{2}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZMAEQR45/Amrit et
+    \verb  al. - 2011 - Economic optimization using model predictive contr.pdf;
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/G2DCGS7X/S1367578
+    \verb 81100040X.html;/home/murray/snap/zotero-snap/common/Zotero/storage/JP
+    \verb QZIMFS/bwmeta1.element.html
+    \endverb
+    \field{journaltitle}{Annual Reviews in Control}
+    \field{year}{2011}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+\enddatalist
+\endinput

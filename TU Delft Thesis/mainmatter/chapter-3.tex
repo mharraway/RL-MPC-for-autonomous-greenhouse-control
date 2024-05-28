@@ -134,8 +134,7 @@ The initial interval of 30 minutes was originally set at 15 minutes. However, th
 \\
 To facilitate the learning process of RL, the observations returned from the environment were normalized by a running mean and variance. The VecNormalizeWrapper in Stable-Baselines3 is responsible for updating the mean and variance for every observation received from the environment. The observation is normalized as per \autoref{eq:agent-normalize} and clipped between $[-10,10]$.
 
-\begin{equation}
-    \label{eq:agent-normalize}
+\begin{equation}\label{eq:state-normalization}
     obs_{norm} = \frac{(obs - \mu_{obs}) }{\sqrt{\sigma^2_{obs} + 1\cdot 10^{-8}}}
 \end{equation}
 

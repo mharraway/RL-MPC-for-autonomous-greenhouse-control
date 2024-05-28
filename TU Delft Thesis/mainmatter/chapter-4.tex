@@ -8,23 +8,22 @@ This chapter presents the setup and creation of the MPC controller, and investig
 \section{Greenhouse MPC problem formulation}
 In order to directly compare to RL and to the RL-MPC controller, it is important that the optimization goal is equivalent. As discussed in \autoref{ssection:optimization-goal}, it is desired to optimize the economic benefit of the greenhouse environment. Similarly to \autoref{section:env-description}, the optimization goal of the MPC is done to ensure that the sum of stage costs are equal to the actual economic benefit of the system. As such the following optimization goal is solved at every time step:
 
-\begin{equation}\label{eq:mpc_ocp}
-	\begin{aligned}
-		\min_{u(k),x(k)} & \sum_{k = k_0}^{k_0 + N_p} V(u(k), y(k)) \\
-		\text{s.t.} \quad & x(k+1) = f(x(k), u(k), d(k), p), \\
-		& y(k) = g(x(k+1), p), \\
-		& y_{min} \leq y(k) \leq y_{max}(k) \\
-		& -\delta u \leq u(k) - u(k-1) \leq \delta u, \\
-		& u_{\min} \leq u(k) \leq u_{\max}, \\
-		& x(k_0) = x_{k_0}.
-	\end{aligned}
-\end{equation}
+\begin{subequations} \label{eq:mpc_ocp}
+	\begin{align}
+		\min_{u(k),x(k)} & \sum_{k = k_0}^{k_0 + N_p-1} {l(u(k), y(k))} \\
+		\text{s.t.} \quad & x(k+1) = f(x(k), u(k), d(k), p),  \label{eq:constraint-1} \\
+		& y(k) = g(x(k+1), p), \label{eq:constraint-dynamics} \\
+		& -\delta u \leq u(k) - u(k-1) \leq \delta u, \label{eq:constraint-delta-u} \\
+		& u_{\min} \leq u(k) \leq u_{\max}, \label{eq:constraint-u-limits}\\
+		& x(k_0) = x_{k_0}. \label{eq:constraint-initial}
+	\end{align}
+\end{subequations}
 
 To ensure that the optimization goal is exactly the same as the Rl reward function (\autoref{section:env-description}), the cost function $V(u(k),y(k))$ becomes:
 
 \begin{equation} \label{eq:mpc_cost_function}
 	\begin{aligned}
-		V(u(k),y(k)) & = - \kappa_1 (y(k) - y(k-1)) + \sum_{j=2}^4 {\kappa_j u_{j-1}} + \sum_{i = 1}^4 s_i(k) \\
+		l(u(k),y(k)) & = - \kappa_1 (y(k) - y(k-1)) + \sum_{j=2}^4 {\kappa_j u_{j-1}} + \sum_{i = 1}^4 s_i(k) \\
 		\text{where} & \quad s_i(k) \geq 0, \\
 		& s_1(k) \geq c_{p_{C02}} \cdot (y_2^{min} - y_2(k)), \\ 
 		& s_2(k) \geq c_{p_{C02}} \cdot (y_2(k) + y_2^{max}), \\ 
@@ -37,9 +36,9 @@ To ensure that the optimization goal is exactly the same as the Rl reward functi
 
 where the slack variables are introduced in order to accommodate the output constraint in equation \autoref{eq:mpc_ocp}, resulting in an optimization problem equivalent to that of RL. The penalty constants $c_{p_{C02}},c_{p_{T_{lb}}},c_{p_{T_{ub}}},c_{p_{H}}$ are the same as what is used in the Rl problem formulation and given in \autoref{tab:pen-constants}.
 
-\paragraph{Experimental Setup} Furthermore, the experimental setup is identical to what is used in \autoref{section:experimental-setup} with the exception of normalizing observations. The performance metrics are the sum of the stage costs during the simulation period, which is equivalent to the EPI minus the sum of the state violations. For the stochastic environment, the performance metric is calculated by taking the average of the sum of stage costs over 30 simulation periods, as well as considering the variance of the resulting stage costs. In the case of stochasticity, the MPC algorithm still solves the optimization problem defined by equation \autoref{eq:mpc_ocp} using the nominal system parameters. However, it is only during the system evolution that the uncertainty in parameters is taken into account.
+\paragraph{Experimental Setup} Furthermore, the experimental setup is identical to what is used in \autoref{section:experimental-setup} with the exception of normalizing observations. The performance metrics are the sum of the stage costs during the simulation period, which is equivalent to the EPI minus the sum of the state violations. For the stochastic environment, the performance metric is calculated by taking the average of the sum of stage costs over 30 simulation periods, as well as considering the variance of the resulting stage costs. In the case of stochasticity, the MPC algorithm still solves the optimization problem defined by equation \autoref{eq:mpc_ocp} using the nominal system parameters. However, it is only during the system evolution that the uncertainty in parameters is taken into account. 
 
-Finally, to increase the computational time and feasibility of the MPC solver, the solver is warm-started with the previous solution to reduce the number of iterations required to reach the optimal solution. The computational time of computing the optimal control actions will also be examined for each prediction horizon. These performance metrics are given for all prediction horizons. Finally, THE MPC framework is built using the open source software Casadi \textbf{ref XXX} and the non-linear solver IPOPT \textbf{ref xxx} in python. 
+Finally, to increase the computational time and feasibility of the MPC solver, the solver is warm-started with the previous solution to reduce the number of iterations required to reach the optimal solution  \footnote{The solution to the OCP is heavily reliant on initial guesses due to the non-linearity nature of the problem, lagrangian multipliers from the previous solutions were also reused to mitigate instability in the solver. These instabilities are especially prevalent in longer prediction horizons}. The computational time of computing the optimal control actions will also be examined for each prediction horizon. These performance metrics are given for all prediction horizons. Finally, The MPC framework is built using the open source software Casadi \textbf{ref XXX} and the non-linear solver IPOPT \textbf{ref xxx} in python. 
 
 \section{Deterministic Results}
 Simulations are conducted for every prediction horizon $N_p$.The prediction horizons to be tested will include time intervals of 1 hour, 2 hours, 3 hours, 4 hours, 5 hours, and 6 hours. Results include the final cumulative reward and the average time required to solve \autoref{eq:mpc_ocp} for each prediction horizon.
@@ -80,11 +79,11 @@ This is also clear in\autoref{fig:mpc_nominal_perf} that increasing the MPC's ti
 	\label{fig:mpc-timeseries-inputs}
 \end{figure}
 
-\autoref{fig:mpc-timeseries-outputs} and \autoref{fig:mpc-timeseries-inputs} displays the trajectories of the states and inputs of the best performing MPC controller (5hr prediction horizon) and the worst performing (1 hr). These bear similarities to those of the RL agents \autoref{fig:selected-policies-outputs} and \autoref{fig:selected-policies-inputs} respectively. It is noted that in both cases (RL and MPC), the better performing policies rapidly raises the indoor C02 levels at the beginning of the growing period by reducing ventilation and increasing C02 injection. However, the trajectories of other states and inputs, particularly the indoor temperature, humidity and heating, appear to be unchanged. Either the temperature does not play a vital role in plant growth or the prediction horizon is not long enough to see the effect of temperature at initial growth stages. However, it is clear that the MPC controller uses heating at night and the irradiance during the day to ensure that temperature constraints are met. 
+\autoref{fig:mpc-timeseries-outputs} and \autoref{fig:mpc-timeseries-inputs} displays the trajectories of the states and inputs of the best performing MPC controller (5hr prediction horizon) and the worst performing (1 hr). These bear similarities to those of the RL agents \autoref{fig:selected-policies-outputs} and \autoref{fig:selected-policies-inputs} respectively. It is noted that in both cases (RL and MPC), the better performing policies rapidly raises the indoor C02 levels at the beginning of the growing period by reducing ventilation and increasing C02 injection. However, the trajectories of other states and inputs, particularly the indoor temperature, humidity and heating, appear to be unchanged. Either the temperature does not play a vital role in plant growth or the prediction horizon is not long enough to see the effect of temperature at initial growth stages. However, it is clear that the MPC controller uses heating at night and the irradiance during the day to ensure that temperature constraints are met. These results are very similar to \cite{morcegoReinforcementLearningModel2023} and \cite{boersmaRobustSamplebasedModel2022} although difficult to compare quantitatively due to the difference in the optimization goal and MPC problem formulation.
 
 
 \section{Stochastic Results}
-\emph{The results and discussion of the stochastic case with different prediction horizons, similar to that of the deterministic case}
+For each stochastic level, $\delta = 5\%, \delta = 10\%, \delta = 20\%$, was analyzed with prediction horizons of 1, 3, and 5 hours. Additional prediction horizons were not considered due to limitations in simulation time. 
 
 
 \section{Conclusion}
