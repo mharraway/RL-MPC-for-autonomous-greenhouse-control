@@ -43,7 +43,7 @@ Finally, to increase the computational time and feasibility of the MPC solver, t
 \section{Deterministic Results}
 Simulations are conducted for every prediction horizon $N_p$.The prediction horizons to be tested will include time intervals of 1 hour, 2 hours, 3 hours, 4 hours, 5 hours, and 6 hours. Results include the final cumulative reward and the average time required to solve \autoref{eq:mpc_ocp} for each prediction horizon.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
@@ -65,14 +65,14 @@ Simulations are conducted for every prediction horizon $N_p$.The prediction hori
 \autoref{fig:mpc_nominal_perf} and \autoref{fig:mpc_nominal_comp_time} exhibit the performance and the computational time of the MPC for each prediction horizon respectively. It it can be seen that performance increases with an increase in prediction horizon up until 6 hrs. This increase in performance however is not guaranteed for an economic model predictive controller as stated in \cite{ellisTutorialReviewEconomic2014}  and \cite{amritEconomicOptimizationUsing2011}, without a sufficiently long time horizon or an appropriate terminal cost function or constraints. Although not entirely clear in \autoref{fig:mpc_nominal_perf}, a prediction horizon of 6hr, actually produces a slightly lower performing policy than with a prediction horizon of 5 hours. \\
 This is also clear in\autoref{fig:mpc_nominal_perf} that increasing the MPC's time horizon past 6hrs to 12 and 24 hrs produces a less optimal policy. As expected though, the computational time in computing the control action seems to increase with an increase in complexity. It is noted that while RL can compute the optimal control action in $ \sim 0.2 ms$, whereas even the fastest MPC controller (1hr prediction horizon) takes $\sim 35 ms$. It is nearly 175x slower.  While this outcome is not surprising, it effectively demonstrates the computational demand of MPC, specifically for a highly non-linear model.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/mpc_outputs_time_series.eps}
 	\caption{MPC 1hr and 5hr Time series of greenhouse outputs}
 	\label{fig:mpc-timeseries-outputs}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/mpc_inputs_times_series.eps}
 	\caption{MPC 1hr and 5hr time series of controller inputs}

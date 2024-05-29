@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  28 MAY 2024 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  29 MAY 2024 16:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2171,10 +2171,7 @@ f)
 Package pdftex.def Info: figures/mpc_nominal_compt_time-eps-converted-to.pdf  u
 sed on input line 57.
 (pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [24]
 Package epstopdf Info: Source file: <figures/mpc_outputs_time_series.eps>
 (epstopdf)                    date: 2024-05-27 17:49:57
 (epstopdf)                    size: 161249 bytes
@@ -2186,7 +2183,7 @@ ted-to.pdf>
 eries-eps-converted-to.pdf figures/mpc_outputs_time_series.eps>
 (epstopdf)             \includegraphics on input line 70.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_outputs_time_series-eps-converted-to.pdf, id=1477, 1084.05pt x 361
+<figures/mpc_outputs_time_series-eps-converted-to.pdf, id=1484, 1084.05pt x 361
 .35pt>
 File: figures/mpc_outputs_time_series-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2194,9 +2191,6 @@ df)
 Package pdftex.def Info: figures/mpc_outputs_time_series-eps-converted-to.pdf  
 used on input line 70.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 Package epstopdf Info: Source file: <figures/mpc_inputs_times_series.eps>
 (epstopdf)                    date: 2024-05-27 17:49:57
 (epstopdf)                    size: 111636 bytes
@@ -2208,7 +2202,7 @@ ted-to.pdf>
 eries-eps-converted-to.pdf figures/mpc_inputs_times_series.eps>
 (epstopdf)             \includegraphics on input line 77.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_inputs_times_series-eps-converted-to.pdf, id=1478, 722.7pt x 361.3
+<figures/mpc_inputs_times_series-eps-converted-to.pdf, id=1485, 722.7pt x 361.3
 5pt>
 File: figures/mpc_inputs_times_series-eps-converted-to.pdf Graphic file (type p
 df)
@@ -2216,13 +2210,10 @@ df)
 Package pdftex.def Info: figures/mpc_inputs_times_series-eps-converted-to.pdf  
 used on input line 77.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24]) (./mainmatter/chapter-5.tex [25 <./figures/mpc_nominal_perf-eps-converted
--to.pdf> <./figures/mpc_nominal_compt_time-eps-converted-to.pdf> <./figures/mpc
-_outputs_time_series-eps-converted-to.pdf>] [26 <./figures/mpc_inputs_times_ser
-ies-eps-converted-to.pdf>]
+ [25 <./figures/mpc_nominal_perf-eps-converted-to.pdf> <./figures/mpc_nominal_c
+ompt_time-eps-converted-to.pdf> <./figures/mpc_outputs_time_series-eps-converte
+d-to.pdf>]) (./mainmatter/chapter-5.tex [26 <./figures/mpc_inputs_times_series-
+eps-converted-to.pdf>]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
@@ -2237,17 +2228,55 @@ LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
 (Font)              scaled to size 5.5pt on input line 24.
 [27
 
-] [28]) (./mainmatter/chapter-6.tex [29]
+] [28]
+Package epstopdf Info: Source file: <figures/mpc_vs_rl_perf.eps>
+(epstopdf)                    date: 2024-05-29 14:44:54
+(epstopdf)                    size: 26949 bytes
+(epstopdf)             Output file: <figures/mpc_vs_rl_perf-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2024-05-29 14:45:15
+(epstopdf)                    size: 19120 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/mpc_vs_rl_perf-eps
+-converted-to.pdf figures/mpc_vs_rl_perf.eps>
+(epstopdf)             \includegraphics on input line 114.
+Package epstopdf Info: Output file is already uptodate.
+<figures/mpc_vs_rl_perf-eps-converted-to.pdf, id=1718, 462.72874pt x 347.2975pt
+>
+File: figures/mpc_vs_rl_perf-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/mpc_vs_rl_perf-eps-converted-to.pdf>
+Package pdftex.def Info: figures/mpc_vs_rl_perf-eps-converted-to.pdf  used on i
+nput line 114.
+(pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
+Package epstopdf Info: Source file: <figures/mpc_vs_rl_time.eps>
+(epstopdf)                    date: 2024-05-29 14:44:54
+(epstopdf)                    size: 28899 bytes
+(epstopdf)             Output file: <figures/mpc_vs_rl_time-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2024-05-29 14:45:15
+(epstopdf)                    size: 17847 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/mpc_vs_rl_time-eps
+-converted-to.pdf figures/mpc_vs_rl_time.eps>
+(epstopdf)             \includegraphics on input line 121.
+Package epstopdf Info: Output file is already uptodate.
+<figures/mpc_vs_rl_time-eps-converted-to.pdf, id=1719, 462.72874pt x 347.2975pt
+>
+File: figures/mpc_vs_rl_time-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/mpc_vs_rl_time-eps-converted-to.pdf>
+Package pdftex.def Info: figures/mpc_vs_rl_time-eps-converted-to.pdf  used on i
+nput line 121.
+(pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
+ [29]) (./mainmatter/chapter-6.tex [30 <./figures/mpc_vs_rl_perf-eps-converted-
+to.pdf> <./figures/mpc_vs_rl_time-eps-converted-to.pdf>]
 Chapter 6.
-) (./mainmatter/chapter-7.tex [30
+) (./mainmatter/chapter-7.tex [31
 
 ]
 Chapter 7.
-) (./mainmatter/conclusion.tex [31
+) (./mainmatter/conclusion.tex [32
 
 ]
 Chapter 8.
-) [32
+) [33
 
 ]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
@@ -2267,15 +2296,15 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-(./appendix/appendix-a.tex [33
+(./appendix/appendix-a.tex [34
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
 Appendix A.
-) (./appendix/appendix-b.tex [34
+) (./appendix/appendix-b.tex [35
 
 ]
 Appendix B.
-) [35
+) [36
 
 ] (./report.aux)
  ***********
@@ -2289,8 +2318,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: EA4FEE71CF4AC6403652199D3EF6324C;13356.
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: C0523B9CAFABF80D3DCC04948A98A840;13081
+(rerunfilecheck)             After:  9BDD9836192A6B89D88EA074189E8B1A;12870.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2301,13 +2336,13 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45807 strings out of 475735
- 894145 string characters out of 5784786
- 1877759 words of memory out of 5000000
- 65397 multiletter control sequences out of 15000+600000
- 673578 words of font info for 258 fonts, out of 8000000 for 9000
+ 45890 strings out of 475735
+ 896590 string characters out of 5784786
+ 1881759 words of memory out of 5000000
+ 65458 multiletter control sequences out of 15000+600000
+ 673802 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,101p,2163b,1777s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,101p,2163b,1733s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/google/roboto/RobotoSlab-Bold.pfb></usr/share/texliv
@@ -2323,10 +2358,10 @@ xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplri.pfb>
-Output written on report.pdf (42 pages, 35273637 bytes).
+Output written on report.pdf (43 pages, 35308266 bytes).
 PDF statistics:
- 1870 PDF objects out of 2073 (max. 8388607)
- 956 compressed objects within 10 object streams
- 181 named destinations out of 1000 (max. 500000)
- 51445 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1997 PDF objects out of 2073 (max. 8388607)
+ 1002 compressed objects within 11 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 51455 words of extra memory for PDF output out of 51595 (max. 10000000)
 

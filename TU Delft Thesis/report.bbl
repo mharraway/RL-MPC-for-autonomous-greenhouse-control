@@ -31,19 +31,17 @@
          given={Congcong},
          giveni={C\bibinitperiod},
       }}%
-      {{hash=fpug}{%
-         family={family=Mourik},
-         familyi={f\bibinitperiod},
-         suffix={given=Simon},
-         suffixi={g\bibinitperiod},
-         given={prefix=van\bibnamedelima useprefix=true},
-         giveni={p\bibinitperiod\bibinitdelim u\bibinitperiod},
+      {{hash=vS}{%
+         family={{van Mourik}},
+         familyi={v\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
       }}%
     }
     \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
   MPC}
-    \strng{namehash}{BSSCfgpu1}
-    \strng{fullhash}{BSSCfgpu1}
+    \strng{namehash}{BSSCvS1}
+    \strng{fullhash}{BSSCvS1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{abstract}{%
@@ -73,12 +71,8 @@
     \field{pages}{177\bibrangedash 182}
     \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
   {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
-    \field{shortjournal}{IFAC-PapersOnLine}
     \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
   System with Parametric Uncertainty}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S2405896322027689
-    \endverb
     \field{volume}{55}
     \verb{file}
     \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
@@ -90,7 +84,6 @@
     \field{annotation}{%
     Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
     }
-    \field{day}{01}
     \field{month}{01}
     \field{year}{2022}
     \field{urlday}{05}
@@ -98,7 +91,7 @@
     \field{urlyear}{2023}
   \endentry
 
-  \entry{morcegoReinforcementLearningModel2023}{online}{}
+  \entry{morcegoReinforcementLearningModel2023}{misc}{}
     \name{author}{6}{}{%
       {{hash=MB}{%
          family={Morcego},
@@ -118,18 +111,16 @@
          given={Sjoerd},
          giveni={S\bibinitperiod},
       }}%
-      {{hash=fpug}{%
-         family={family=Henten},
-         familyi={f\bibinitperiod},
-         suffix={given=Eldert},
-         suffixi={g\bibinitperiod},
-         given={prefix=van\bibnamedelima useprefix=true},
-         giveni={p\bibinitperiod\bibinitdelim u\bibinitperiod},
+      {{hash=vE}{%
+         family={{van Henten}},
+         familyi={v\bibinitperiod},
+         given={Eldert},
+         giveni={E\bibinitperiod},
       }}%
       {{hash=PV}{%
          family={Puig},
          familyi={P\bibinitperiod},
-         given={Vicenç},
+         given={Vicen{\c c}},
          giveni={V\bibinitperiod},
       }}%
       {{hash=SC}{%
@@ -139,9 +130,12 @@
          giveni={C\bibinitperiod},
       }}%
     }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
     \keyw{Mathematics - Optimization and Control}
     \strng{namehash}{MBYWBS+1}
-    \strng{fullhash}{MBYWBSfgpuPVSC1}
+    \strng{fullhash}{MBYWBSvEPVSC1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{abstract}{%
@@ -170,12 +164,9 @@
     \verb{eprint}
     \verb 2303.06110
     \endverb
-    \field{pubstate}{preprint}
+    \field{number}{arXiv:2303.06110}
     \field{title}{Reinforcement {{Learning Versus Model Predictive Control}} on
   {{Greenhouse Climate Control}}}
-    \verb{url}
-    \verb http://arxiv.org/abs/2303.06110
-    \endverb
     \verb{file}
     \verb /home/murray/snap/zotero-snap/common/Zotero/storage/G5ZRK28N/Morcego
     \verb et al. - 2023 - Reinforcement Learning Versus Model Predictive Con.pd
@@ -187,7 +178,6 @@
     }
     \field{eprinttype}{arxiv}
     \field{eprintclass}{math}
-    \field{day}{10}
     \field{month}{03}
     \field{year}{2023}
     \field{urlday}{01}
@@ -238,12 +228,8 @@
     \field{number}{8}
     \field{pages}{1156\bibrangedash 1178}
     \field{series}{Economic Nonlinear Model Predictive Control}
-    \field{shortjournal}{Journal of Process Control}
     \field{title}{A Tutorial Review of Economic Model Predictive Control
   Methods}
-    \verb{url}
-    \verb https://www.sciencedirect.com/science/article/pii/S0959152414000900
-    \endverb
     \field{volume}{24}
     \verb{file}
     \verb /home/murray/snap/zotero-snap/common/Zotero/storage/CPRF96GE/Ellis et
@@ -255,7 +241,6 @@
     \field{annotation}{%
     Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:03.464Z%
     }
-    \field{day}{01}
     \field{month}{08}
     \field{year}{2014}
     \field{urlday}{05}
@@ -329,10 +314,6 @@
     \field{pages}{178\bibrangedash 186}
     \field{title}{Economic Optimization Using Model Predictive Control with a
   Terminal Cost}
-    \verb{url}
-    \verb https://www.infona.pl//resource/bwmeta1.element.elsevier-ca4442f3-2a1
-    \verb 4-3d17-8c70-b5e1bdc1dafb
-    \endverb
     \field{volume}{2}
     \field{langid}{english}
     \verb{file}
@@ -347,6 +328,86 @@
     \field{urlday}{05}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
+  \endentry
+
+  \entry{risbeckEconomicModelPredictive2020}{article}{}
+    \name{author}{2}{}{%
+      {{hash=RMJ}{%
+         family={Risbeck},
+         familyi={R\bibinitperiod},
+         given={Michael\bibnamedelima J},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=RJB}{%
+         family={Rawlings},
+         familyi={R\bibinitperiod},
+         given={James\bibnamedelima B},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RMJRJB1}
+    \strng{fullhash}{RMJRJB1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    With the increasing prevalence of variablesupply electricity production,
+  dynamic market structures, including time-varying prices and/or peak demand
+  charges are becoming more common for electricity consumers. This framework
+  requires consumers to consider both the time-varying amount of electricity
+  (i.e., energy) consumed throughout the day as well as the maximum rate of
+  electricity purchase (i.e., power) over a given period, typically a month.
+  Because of this complexity, online optimization techniques such as economic
+  model predictive control (MPC) are a natural tool for consumers to use to
+  minimize cost. However, while closed-loop optimization of these pricing
+  structures is already being proposed for various applications, little has
+  been established about stability or performance properties of the closed-loop
+  system. Due in particular to the peak penalty (which violates the principle
+  of optimality if naively included in the objective function), this
+  theoretical gap leaves the potential for pathological closed-loop behavior
+  despite high-quality open-loop solutions. In this paper, we derive asymptotic
+  performance and stability results for general time-varying economic MPC. We
+  then present a novel extended-state formulation to convert peak demand
+  charges into a time-varying stage cost that can be optimized using economic
+  MPC. In addition, we give a terminal cost and constraint for the augmented
+  system that avoids reducing the feasible set in the original space. Finally,
+  we demonstrate these structures and the closed-loop properties that they
+  satisfy via two illustrative examples.%
+    }
+    \field{number}{7}
+    \field{title}{Economic {{Model Predictive Control}} for {{Time-Varying
+  Cost}} and {{Peak Demand Charge Optimization}}}
+    \field{volume}{65}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/JSDCVA7G/Risbeck
+    \verb and Rawlings - 2020 - Economic Model Predictive Control for Time-Vary
+    \verb ing.pdf
+    \endverb
+    \field{journaltitle}{IEEE TRANSACTIONS ON AUTOMATIC CONTROL}
+    \field{year}{2020}
+  \endentry
+
+  \entry{bertsekasLessonsAlphaZeroOptimal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BDP}{%
+         family={Bertsekas},
+         familyi={B\bibinitperiod},
+         given={Dimitri\bibnamedelima P},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{BDP1}
+    \strng{fullhash}{BDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Lessons from {{AlphaZero}} for {{Optimal}}, {{Model
+  Predictive}}, and {{Adaptive Control}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZER2BVBI/Bertseka
+    \verb s - Lessons from AlphaZero for Optimal, Model Predicti.pdf
+    \endverb
   \endentry
 \enddatalist
 \endinput

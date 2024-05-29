@@ -8,7 +8,7 @@ The smoothness of the value function curve is crucial because, when optimized, i
 
 
 \section{Implementation}
-While there are numerous implementations of RL-MPC, there is limited research focused on maximizing economic benefit specifically for continuous state and action spaces. As stated in \cite{ellisTutorialReviewEconomic2014} and \cite{amritEconomicOptimizationUsing2011}, an EMPC without a terminal constraint and/or terminal cost function does not provide performance and stability guarantees. Specifically \cite{ellisTutorialReviewEconomic2014} states that a terminal constraint is required to ensure closed-loop performance, while \cite{amritEconomicOptimizationUsing2011} extends this concept by proving that applying a terminal region constraint with an appropriate terminal cost function is required to guarantee closed-loop performance. \cite{amritEconomicOptimizationUsing2011} further claims that the terminal cost function with a terminal region is superior to the terminal constraint because it increases the size of the feasible set of initial conditions and may possibly improve the closed-loop performance. However finding such suitable terminal constraints and cost functions prove to be very difficult. It is the objective of this thesis is to ascertain whether the RL agent is capable of providing this.\\
+While there are numerous implementations of RL-MPC, there is limited research focused on maximizing economic benefit specifically for continuous state and action spaces while training RL separately from MPC. As stated in \cite{ellisTutorialReviewEconomic2014} and \cite{amritEconomicOptimizationUsing2011}, an EMPC without a terminal constraint and/or terminal cost function does not provide performance and stability guarantees. Specifically \cite{ellisTutorialReviewEconomic2014} states that a terminal constraint is required to ensure closed-loop performance, while \cite{amritEconomicOptimizationUsing2011} extends this concept by proving that applying a terminal region constraint with an appropriate terminal cost function is required to guarantee closed-loop performance. \cite{amritEconomicOptimizationUsing2011} further claims that the terminal cost function with a terminal region is superior to the terminal constraint because it increases the size of the feasible set of initial conditions and may possibly improve the closed-loop performance. However finding such suitable terminal constraints and cost functions prove to be very difficult. It is the objective of this thesis is to ascertain whether the RL agent is capable of providing this.\\
 
 The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions trained by the nominal agent will then be used at the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function.
 
@@ -44,7 +44,7 @@ then the two sets of initial guesses at the next time, $k_1$ step can be denoted
 The first initial guess (\autoref{eq:initial-guess-1}) takes the previous time steps solution, shifts it and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. Essentially the actor is unrolled once from the last time step of the previous solution to \autoref{eq:mpc_ocp}. The second initial guess,\autoref{eq:initial-guess-2}, involves unrolling the actor $Np$ steps from the current state, and using the resulting actions and states as initial guesses. 
 
 \paragraph{Implementation 2}
-The second implementation consists of implementing a terminal constraint. To ensure that the resulting RL-MPC policy is guaranteed to work as good as the RL policy, initial guesses as in \autoref{eq:initial-guess-1} is used with a terminal constraint equal to the last initial guess such that
+The second implementation consists of implementing a terminal constraint. The asymptotic average performance of the EMPC can be guaranteed to be no worse than the performance of the optimal admissible steady steady under certain assumptions. \cite{risbeckEconomicModelPredictive2020}, \cite{amritEconomicOptimizationUsing2011} proves that to ensure this for a time-varying system a reference trajectory ($\tilde{\mathbf{x}},\tilde{\mathbf{u}}$) that serves as a bases for a meaningful economic performance for the system must be provided. Additionally, a terminal constraint should be imposed to keep the system close to this reference trajectory. Moreover, \cite{risbeckEconomicModelPredictive2020} states that the resulting performance of the EMPC will achieve an average cost that is as good as than the reference policy. Therefore implememnation 2 can ensure that the resulting RL-MPC policy is guaranteed to work as good as the RL policy, if the reference trajectory is provided by the rl agent (initial guesses as in \autoref{eq:initial-guess-1}) and to keep the RL-MPC policy close to the reference trajectory, the terminal constraint is equal to the last initial guess such that:
 
 \begin{equation}\label{eq:terminal-constraint-ocp}
 	\begin{aligned}
@@ -53,7 +53,7 @@ The second implementation consists of implementing a terminal constraint. To ens
 	\end{aligned}
 \end{equation}
 
-where $\mathbf{e}_{Np+1}$ and $\mathbf{e}_{Np}$ represents the $i$th standard basis vector in $\mathbb{R}^{Np+1}$ and $\mathbb{R}^{Np}$ respectively. i.e., $e_i$ provides a selection vector to extract the last state and input from the initial guess, to be used as a terminal constraint. Both the last control input and the state must be constrained since the current control action depends on the previous control action (\autoref{eq:constraint-delta-u}). Therefore the previous control action forms part of the current state. As per \textbf{ref XXX}. Doing this ensures that the resulting controller will perform as least as good as the rl policy. 
+where $\mathbf{e}_{Np+1}$ and $\mathbf{e}_{Np}$ represents the $i$th standard basis vector in $\mathbb{R}^{Np+1}$ and $\mathbb{R}^{Np}$ respectively. i.e., $e_i$ provides a selection vector to extract the last state and input from the initial guess, to be used as a terminal constraint. Both the last control input and the state must be constrained since the current control action depends on the previous control action (\autoref{eq:constraint-delta-u}).
 
 \paragraph{Implementation 3}
 Implementation 3 builds upon implementation 2, in that instead of providing a terminal constraint, a terminal region as provided by the actor will be used. The terminal region is defined as:
@@ -65,33 +65,79 @@ Implementation 3 builds upon implementation 2, in that instead of providing a te
 	\end{aligned}
 \end{equation}
 
+\cite{amritEconomicOptimizationUsing2011} suggests that this has the same performance guarantees as Implementation 2 under the same assumptions. However introducing a terminal region for the terminal state makes it difficult to meet assumption 6, $\tilde{V}(s(k)) \equiv 0$. \todo{Ask Koty about this for a terminal constraint}
+
 \paragraph{Implementation 4}
-Implementation 4 consists of including the value function as learned in \autoref{section:trained-vf}. This implementation examines the effect of the value function on the performance of the resulting controller. The value function can be incorporated into \autoref{eq:mpc_ocp} by defining a cost function:
+Implementation 4 consists of only including the value function as learned in \autoref{section:trained-vf}, and initial guesses as in \autoref{eq:initial-guess-1}. This implementation examines the effect of the value function on the performance of the resulting controller. The value function can be incorporated into \autoref{eq:mpc_ocp} by defining a cost function:
 
 \begin{equation}\label{eq:cost-function}
 		\min_{u(k),x(k)}  \sum_{k = k_0}^{k_0 + N_p - 1}{l(u(k), y(k))} - \tilde{V}(s'(k_0 + N_p))
 \end{equation}
 
-where $\tilde{V}$ represents the learned value function and $s'(k_0+N_p)$ is the normalization of $s(k_0+N_p)$. For $\tilde{V}^1$,$\tilde{V}^2$,$\tilde{V}^3$, the unnormalized input is \autoref{eq:obs-tuple-1}, where as in $\tilde{V}^4$, this is $(y_{k_0+N_p},k_0+N_p)$ as discussed in \autoref{section:trained-vf}. Normalization of the state observation is performed with \autoref{eq:state-normalization}. This implementation aims to evaluate the impact of different neural network architectures, including a deep neural network ($\tilde{V}^1$), a smaller deep neural network ($\tilde{V}^2$), a shallow neural network ($\tilde{V}^3$), and a deep neural network trained to learn the value function on only two system states. This can be considered a naive implementation of RL-MPC, and would essentially equate to the rolling out the value function.
+where $\tilde{V}$ represents the learned value function and $s'(k_0+N_p)$ is the normalization of $s(k_0+N_p)$. For $\tilde{V}^1$,$\tilde{V}^2$,$\tilde{V}^3$, the unnormalized input is \autoref{eq:obs-tuple-1}, where as in $\tilde{V}^4$, this is $(y_{k_0+N_p},k_0+N_p)$ as discussed in \autoref{section:trained-vf}. Normalization of the state observation is performed with \autoref{eq:state-normalization}. This implementation aims to evaluate the impact of different neural network architectures, including a deep neural network ($\tilde{V}^1$), a smaller deep neural network ($\tilde{V}^2$), a shallow neural network ($\tilde{V}^3$), and a deep neural network trained to learn the value function on only two system states. This can be considered a naive implementation of RL-MPC, and would essentially equate to the rolling out the value function. According to approximate dynamic programming as stated in \cite{bertsekasLessonsAlphaZeroOptimal}, this policy should be as good as the policy that generated the given policy, under certain assumptions. 
+\todo{should i list assumptions required}
+
+ Note that the value function is maximized by minimizing the negative of it, since the value function learned represents total return and not cost.
 
 \paragraph{Implementation 5}
-Implementation 5 essentially combines Implementation 3 and Implementation 4.
+Implementation 5 essentially combines Implementation 3 and Implementation 4. \cite{amritEconomicOptimizationUsing2011} states that finding an appropriate terminal cost function and corresponding terminal region proves to be non-trivial in order to satisfy assumptions. This implementation is also claimed to be superior to the terminal constraint of implementation 2 (\cite{amritEconomicOptimizationUsing2011}) under necessary conditions. Therefore the resulting RL-MPC OCP is defined as:
+
+\begin{subequations} \label{eq:rl-mpc-ocp}
+	\begin{align}
+		\min_{u(k),x(k)} & \sum_{k = k_0}^{k_0 + N_p-1} {l(u(k), y(k))} - \tilde{V}(s(k_0+N_p)) \\
+		\text{s.t.} \quad & x(k+1) = f(x(k), u(k), d(k), p),  \label{eq:rl-mpc-dynamics-constraint} \\
+		& y(k) = g(x(k+1), p), \label{eq:rl-mpc-output-constraint} \\
+		& -\delta u \leq u(k) - u(k-1) \leq \delta u, \label{eq:rl-mpc-delta-u} \\
+		& u_{\min} \leq u(k) \leq u_{\max}, \label{eq:rl-mpc-u-limits}\\
+		& x(k_0) = x_{k_0}. \label{eq:rl-pmc-initial} \\
+		&\tilde{\mathbf{x}}^{k_0} = [x_{k_{-1} + 1},...,x_{k_{-1} + N_p}, f(x_{k_{-1} + N_p}, \pi(x_{k_{-1} + N_p}), d_{k_{-1} + Np},p)]^T \\ 
+		&\tilde{\mathbf{u}}^{k_{0}} = [u_{k_{-1} + 1},...,u_{k_{-1} + N_p - 1}, \pi(x_{k_{-1} + N_p})]^T \\ 
+		& (1-\delta_T)\mathbf{e}_{Np}^T \tilde{\mathbf{x}}^{k_0} \leq x^{k_0}_{Np} \leq (1+\delta_T)\mathbf{e}_{Np}^T \tilde{\mathbf{x}}^{k_0}\\
+		&(1-\delta_T)\mathbf{e}_{Np-1}^T\tilde{\mathbf{u}}^{k_0} \leq u^{k_0}_{Np-1} \leq (1+\delta_T) \mathbf{e}_{Np-1}^T\tilde{\mathbf{u}}^{k_0}\\
+	\end{align}
+\end{subequations}
+
+
 
 \paragraph{Implementation 6}
-Implementation 6 is a another way of combining 
-\subsection{Initial RL and MPC performance}
-\emph{The performance of the selected RL and MPC Policy and explain the chosen ones}
+Implementation 6 serves an alternative method of incorporating the value function. This implementation involves solving implementation 3 however with \autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} separately. Once solved, the terminal state of the two solution trajectories are compared by evaluating them with the value function. The solution trajectory with the terminal state that yields the most favourable outcome (as given from the value function) is selected as the final solution and the first control input of this solution is taken. 
 
-\section{Case Study 1 - Initial Guesses from actor}
+
+
+\subsection{Initial RL and MPC performance}
+A review of the RL and MPC policies will be evaluated for the nominal conditions.
+
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/mpc_vs_rl_perf.eps}
+		\caption{MPC vs RL Performance}
+		\label{fig:mps-vs-rl-perf}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{figures/mpc_vs_rl_time.eps}
+		\caption{MPC vs RL compute time}
+		\label{fig:mpc-vs-rl-time}
+	\end{subfigure}
+	\caption{MPC vs RL}
+	\label{fig:mpc-vs-rl}
+\end{figure}
+
+\autoref{fig:mpc-vs-rl} demonstrated the performance of the MPC and RL agent in the nominal setting. Although MPC does perform better for all prediction horizons (except 1 hour) as shown in \autoref{fig:mps-vs-rl-perf}, it does not imply that this is the best RL policy obtainable. A more extensive hyper parameter tuning may have to be forgone in order to achieve a policy that outperforms MPC. However the RL agent is clearly competitive and as seen in \autoref{fig:mpc-vs-rl-time}, can compute actions significantly faster. It is evident that the RL agent can be utilized to generate a reference trajectory for MPC with minimal increase in computational time. The performance of the resulting RL-MPC and its potential superiority will be analyzed in following sections and compared to the baseline performances, as depicted in \autoref{fig:mpc-vs-rl}.
+
+\section{Results - Implementations 1 and 2}
 \emph{Show the effect of initial guesses from the actor, and how performance is affected by initial guesses.}
 
-\section{Case Study 2 - Value Function addition}
+\section{Results - Implementation 3}
 \emph{Results of including the vf from the trained agent, a self-trained vf and initial guesses from actor, and then finally a reduced order self-trained vf}
 
-\section{Case Study 3 - Terminal Constraint}
+\section{Results - Implementation 4}
 \emph{Results and discussion of using a terminal constraint from the actor as well as allowing a slight deviation from the terminal constraint}
 
-\section{Case Study 4 - Value Function and Terminal Constraint}
+\section{Results - Implementation 5 and 6}
 \emph{The Results and discussion of combining the two}
 
 \section{Final Result and Conclusion}
