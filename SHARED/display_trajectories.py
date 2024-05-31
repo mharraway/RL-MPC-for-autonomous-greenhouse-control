@@ -62,7 +62,9 @@ def average_metrics(path, sims = 30):
         min_rewards[i] = np.min(stacked_rewards[:,i])
         max_rewards[i] = np.max(stacked_rewards[:,i])
 
-        
+    
+    # plt.fill_between(x, max_rewards, min_rewards, color="crimson", alpha=0.4)
+    # plt.fill_between(x, Y2max, Y2min, color="#9a0bad", alpha=0.4)  
     plt.plot(min_rewards,linestyle = '--',alpha = 0.5)
     plt.plot(max_rewards,linestyle = '--',alpha = 0.5)
     

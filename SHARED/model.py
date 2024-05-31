@@ -1,7 +1,29 @@
 from SHARED.params import *
 
+# def model_test(x,y,d,p,dt = 1800):
+#     system_params = p
+    
+#     x1 = x[0]
+#     x2 = x[1]
+#     x3 = x[2]
+#     x4 = x
+    
+#     phi_phot_c      = (1-np.exp(-system_params[2]*x1)) * (system_params[3] * d1 * (-system_params[4] * (x3**2) + system_params[5]*x3 - system_params[6])*(x2 - system_params[7]))/(system_params[3] * d1 + (-system_params[4] * (x3**2) + system_params[5]*x3 - system_params[6])*(x2 - system_params[7]))
+#     phi_vent_c      = (u2*(1e-3) + system_params[10]) * (x2-d2)
+#     Q_vent_q        = (system_params[16]*u2*(1e-3) + system_params[17]) * (x3-d3)
+#     Q_rad_q         =  system_params[18]*d1
+#     phi_transp_h    = system_params[20] * (1-np.exp(-system_params[2]*x1)) * ((system_params[21]/(system_params[22]*(x3 + system_params[23]))) * np.exp((system_params[24]*x3)/(x3+system_params[25])) - x4)
+#     phi_vent_h      = (u2*(1e-3) + system_params[10])*(x4-d4)
 
-def model_functions(dt = 1800):
+#     # Model Dynamics
+#     dx1dt =    system_params[0] *  phi_phot_c  -  system_params[1] * x1 * 2**(0.1*x3 - 2.5)                                # change in Drymass
+#     dx2dt = (1/system_params[8])*(-phi_phot_c  +  system_params[9] * x1 * 2**(0.1*x3 - 2.5) + u1*(1e-6) - phi_vent_c)      # change in C02 Density
+#     dx3dt = (1/system_params[15])*(u3           - Q_vent_q                        + Q_rad_q)                                # Change in Temperature
+#     dx4dt = (1/system_params[19])*(phi_transp_h - phi_vent_h)    
+
+
+
+def model_functions(dt = dT):
     
     #params
     system_params = casadi.MX.sym("params", 28)
@@ -46,18 +68,18 @@ def model_functions(dt = 1800):
     y2 = co2dens2ppm(x3,x2, system_params)
     y3 = x3
     y4 = casadi.mmin(casadi.horzcat(100,vaporDens2rh(x3,x4,system_params)))
-    
+    # y4 = vaporDens2rh(x3,x4,system_params)
 
-    #for numerical stability of the model
-    x1 = casadi.mmin(casadi.horzcat(x_max[0],x1))
-    x2 = casadi.mmin(casadi.horzcat(x_max[1],x2))
-    x3 = casadi.mmin(casadi.horzcat(x_max[2],x3))
-    x4 = casadi.mmin(casadi.horzcat(x_max[3],x4))
+    # for numerical stability of the model
+    # x1 = casadi.mmin(casadi.horzcat(x_max[0],x1))
+    # x2 = casadi.mmin(casadi.horzcat(x_max[1],x2))
+    # x3 = casadi.mmin(casadi.horzcat(x_max[2],x3))
+    # x4 = casadi.mmin(casadi.horzcat(x_max[3],x4))
     
-    x1 = casadi.mmax(casadi.horzcat(x_min[0],x1))
-    x2 = casadi.mmax(casadi.horzcat(x_min[1],x2))
-    x3 = casadi.mmax(casadi.horzcat(x_min[2],x3))
-    x4 = casadi.mmax(casadi.horzcat(x_min[3],x4))
+    # x1 = casadi.mmax(casadi.horzcat(x_min[0],x1))
+    # x2 = casadi.mmax(casadi.horzcat(x_min[1],x2))
+    # x3 = casadi.mmax(casadi.horzcat(x_min[2],x3))
+    # x4 = casadi.mmax(casadi.horzcat(x_min[3],x4))
 
 
     #Functions

@@ -85,6 +85,25 @@ This is also clear in\autoref{fig:mpc_nominal_perf} that increasing the MPC's ti
 \section{Stochastic Results}
 For each stochastic level, $\delta = 5\%, \delta = 10\%, \delta = 20\%$, was analyzed with prediction horizons of 1, 3, and 5 hours. Additional prediction horizons were not considered due to limitations in simulation time. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/stochastic_mpc_rewards_time.pdf}
+	\caption{Time evolution of cumulative Rewards. Displays the evolution of the cumulative reward over the growing period, for each level of stochastic and prediction horizon. Solid lines represent the mean cumulative reward trajectory with a range indicating the minimum and maximum trajectory recorded in the 30 runs.}
+	\label{fig:stochastic-mpc-rewards-time}
+\end{figure}
+
+\autoref{fig:stochastic-mpc-rewards-time} shows the impact of introducing uncertainty and its effect on the cumulative reward obtained by the MPC controller at each time step. While a $\delta = 0.05$ does not impact performance noticeable, there is significant performance degradation for $\delta = 0.2$. Also to note, is that a longer prediction still results in a higher mean cumulative reward, however for high uncertainties, specifically $\delta = 0.2$, it seems that a longer prediction horizon results in worse performance.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/stochastic_mpc_perf.eps}
+	\caption{MPC performance in stochastic conditions }
+	\label{fig:stochastic-mpc-perf}
+\end{figure}
+
+\autoref{fig:stochastic-mpc-perf} depicts the final mean and variance values of the cumulative reward for each prediction horizon and uncertainty level, including nominal conditions. \autoref{fig:stochastic-mpc-perf} may provide a better representation of how stochasticity affects performance. Longer prediction horizons appear to have a greater negative impact on the system beyond a certain level of uncertainty. Moreover, there is a clear adverse affect on variance as prediction horizon is increased for all uncertainty levels. This can be attributed to the fact that longer prediction horizons become progressively less accurate due to the increasing uncertainty of the model parameters. It is widely acknowledged that MPC is not adept at handling uncertainty, and these results are confirmation of this. Although it is possible to formulate a robust MPC, such as in \cite{boersmaRobustSamplebasedModel2022}, it introduces a heavy computational burden on the controller. As previously mentioned, RL's decrease in performance due to uncertainty is not as drastic as MPC's. Thus, it is worth exploring whether the RL agent can assist the MPC in mitigating the adverse impacts of parametric uncertainty.
+
 
 \section{Conclusion}
-\emph{A brief conclusion of the work done and what will be carried over to the RL-MPC framework}
+MPC is a highly beneficial and efficient control strategy that has shown remarkable achievements in diverse fields. The formulation of the EMPC OCP was formulated and aimed to maximize the economic advantage of the greenhouse by aligning its optimization goal with that of the RL agent. This was done to facilitate direct comparisons between the two control schemes. Minimal adjustments were necessary to attain the level of performance showcased in this chapter. While the performance of the MPC is satisfactory,as anticipated for an EMPC, increasing the prediction horizon may not yield an increase in performance without an adequate terminal constraint or region. Moreover, the computational time required to calculate a control input is costly.The scalability of the computational time is considerably inferior to that of the RL agent. Therefore in more complex systems, the model is typically linearized or simplified, leading to a suboptimal policy. Furthermore, the performance of the MPC is significantly affected by the presence of parametric uncertainty, and increasing the prediction to address only exacerbates this. \\
+EMPC has clearly shown to have advantages over its RL counterpart however clear downfalls exist. Lastly, to guarantee performance for an EMPC, appropriate additions to its formulation must be made. 
