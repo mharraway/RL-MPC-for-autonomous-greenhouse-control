@@ -58,7 +58,7 @@ where $\mathbf{e}_{Np+1}$ and $\mathbf{e}_{Np}$ represents the $i$th standard ba
 \paragraph{Implementation 3}
 Implementation 3 builds upon implementation 2, in that instead of providing a terminal constraint, a terminal region as provided by the actor will be used. The terminal region is defined as:
 
-\begin{equation}\label{eq:terminal-constraint-ocp}
+\begin{equation}\label{eq:terminal-region}
 	\begin{aligned}
 		& (1-\delta_T)\mathbf{e}_{Np}^T \tilde{\mathbf{x}}^{k_0} \leq x^{k_0}_{Np} \leq (1+\delta_T)\mathbf{e}_{Np}^T \tilde{\mathbf{x}}^{k_0}\\
 		&(1-\delta_T)\mathbf{e}_{Np-1}^T\tilde{\mathbf{u}}^{k_0} \leq u^{k_0}_{Np-1} \leq (1+\delta_T) \mathbf{e}_{Np-1}^T\tilde{\mathbf{u}}^{k_0}\\
@@ -129,13 +129,45 @@ A review of the RL and MPC policies will be evaluated for the nominal conditions
 \autoref{fig:mpc-vs-rl} demonstrated the performance of the MPC and RL agent in the nominal setting. Although MPC does perform better for all prediction horizons (except 1 hour) as shown in \autoref{fig:mps-vs-rl-perf}, it does not imply that this is the best RL policy obtainable. A more extensive hyper parameter tuning may have to be forgone in order to achieve a policy that outperforms MPC. However the RL agent is clearly competitive and as seen in \autoref{fig:mpc-vs-rl-time}, can compute actions significantly faster. It is evident that the RL agent can be utilized to generate a reference trajectory for MPC with minimal increase in computational time. The performance of the resulting RL-MPC and its potential superiority will be analyzed in following sections and compared to the baseline performances, as depicted in \autoref{fig:mpc-vs-rl}.
 
 \section{Results - Implementations 1 and 2}
-\emph{Show the effect of initial guesses from the actor, and how performance is affected by initial guesses.}
+This implementation consists of passing in initial guesses for the MPC solver by unrolling the agent. Initial guess 1 refers to \autoref{eq:initial-guess-1} and Initial guess 2 refers to \autoref{eq:initial-guess-2}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_1.eps}
+	\caption{MPC vs MPC with initial guesses}
+	\label{fig:rlmpc-impl1}
+\end{figure}
+\autoref{fig:rlmpc-impl1} presents the results of passing in initial guesses from the actor. Unrolling the actor from the current state and using the resulting state and control inputs as initial guesses (\autoref{eq:initial-guess-2}) seems to have very little impact on the final cumulative reward, however it noticeable increases the computational time of the control input. This could be because the initial guesses are derived from a less than optimal policy. Moreover, initial guesses from \autoref{eq:initial-guess-1} minimal impact on the final cumulative reward for shorter prediction horizons, and seems to be slightly beneficial for a 3 and 4 hour prediction horizon. However performance degrades significantly for a prediction horizon of 5 and 6 hours as compared to the nominal MPC. Additionally, computational also time increases. It would be expected that computational time decreases for both initial guesses, however it seems that simply copying the previous solution results in a better performing controller. The reason for this may be because in all three cases, the Lagrangian multipliers from the previous solution are utilized as an initial guess for the current Lagrangian multipliers. The actor's initial guesses may differ significantly from the previous solution, rendering the Lagrangian multipliers' guesses nonsensical. While the actor may offer initial guesses, they are insufficient for improving or assisting the MPC, and simply using the previous solution as an initial guess may be more beneficial. However, if a superior policy to the Nominal MPC policy provided initial guesses instead of a suboptimal policy, it could yield different outcomes.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_2.eps}
+	\caption{MPC with terminal constraints from agent}
+	\label{fig:rlmpc-impl2}
+\end{figure}
+
+In order to guarantee that the RL-MPC policy achieves a performance level that is equal to or better than the RL policy, the approach described in Implementation 2 can be used.  The performance of the resulting policy is illustrated in \autoref{fig:rlmpc-impl2}. It is evident that for all prediction horizons, the RL-MPC's performance increases.  Nevertheless, the RL policy exhibits notably inferior performance compared to the MPC policy when the prediction horizon exceeds 3 hours. Beyond the 3-hour mark, the MPC policy consistently outperforms the RL policy.  While the implementation of RL-MPC may enhance the RL policy, it does not guarantee that the resulting policy will surpass the policy of MPC. If the RL policy is more competitive and surpasses the performance of the MPC, then implementing this RL-MPC implementation would be advantageous, as is the case for a prediction horizon of 1 and 2 hours.\\
+Interestingly, the computational time for the control input substantially increases for a prediction horizon of 5 and 6 hours. Again, the terminal constraint could be too restraining for the MPC since of the sub-optimal terminal constraint, especially for longer prediction horizons.
 
 \section{Results - Implementation 3}
-\emph{Results of including the vf from the trained agent, a self-trained vf and initial guesses from actor, and then finally a reduced order self-trained vf}
+This implementation aims to move away from the terminal constraint and allow the MPC more freedom by providing it with a terminal region constraint as outlined in \autoref{eq:terminal-region}, with a chosen $\delta = 5\%$, allowing for a $10\$$ deviation in the terminal state. As claimed in \cite{amritEconomicOptimizationUsing2011}, this could prove to be more beneficial than the terminal constraint, provided that an appropriate cost function is supplied. For this implementation, the cost function supplied is effectively $V(s) \equiv 0$. 
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_3.eps}
+	\caption{MPC with terminal region from agent}
+	\label{fig:rlmpc-impl3}
+\end{figure}
+
+The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior cumulative reward in comparison to the MPC even at longer prediction horizons. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike the MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
+
+Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability.
 
 \section{Results - Implementation 4}
-\emph{Results and discussion of using a terminal constraint from the actor as well as allowing a slight deviation from the terminal constraint}
+This implementation investigates the effect of a supplying the MPC with a cost function, specifically an approximate value function represented by a neural network.
+
+
 
 \section{Results - Implementation 5 and 6}
 \emph{The Results and discussion of combining the two}

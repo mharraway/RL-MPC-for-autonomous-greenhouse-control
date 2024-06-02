@@ -71,15 +71,15 @@ def model_functions(dt = dT):
     # y4 = vaporDens2rh(x3,x4,system_params)
 
     # for numerical stability of the model
-    # x1 = casadi.mmin(casadi.horzcat(x_max[0],x1))
-    # x2 = casadi.mmin(casadi.horzcat(x_max[1],x2))
-    # x3 = casadi.mmin(casadi.horzcat(x_max[2],x3))
-    # x4 = casadi.mmin(casadi.horzcat(x_max[3],x4))
+    x1 = casadi.mmin(casadi.horzcat(x_max[0],x1))
+    x2 = casadi.mmin(casadi.horzcat(x_max[1],x2))
+    x3 = casadi.mmin(casadi.horzcat(x_max[2],x3))
+    x4 = casadi.mmin(casadi.horzcat(x_max[3],x4))
     
-    # x1 = casadi.mmax(casadi.horzcat(x_min[0],x1))
-    # x2 = casadi.mmax(casadi.horzcat(x_min[1],x2))
-    # x3 = casadi.mmax(casadi.horzcat(x_min[2],x3))
-    # x4 = casadi.mmax(casadi.horzcat(x_min[3],x4))
+    x1 = casadi.mmax(casadi.horzcat(x_min[0],x1))
+    x2 = casadi.mmax(casadi.horzcat(x_min[1],x2))
+    x3 = casadi.mmax(casadi.horzcat(x_min[2],x3))
+    x4 = casadi.mmax(casadi.horzcat(x_min[3],x4))
 
 
     #Functions
