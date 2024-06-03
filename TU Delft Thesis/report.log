@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  3 JUN 2024 12:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  3 JUN 2024 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1423,20 +1423,14 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 18.
 \@quotelevel=\count520
 \@quotereset=\count521
- (./report.aux
-
-LaTeX Warning: Label `fig:rlmpc-impl5-6' multiply defined.
-
-
-LaTeX Warning: Label `fig:rlmpc-impl5-6@cref' multiply defined.
-
-)
+ (./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 18.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
  18.
- (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 18.
@@ -2336,8 +2330,8 @@ Package pdftex.def Info: figures/rl_mpc_impl_5_6-eps-converted-to.pdf  used on
 input line 190.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_final.eps>
-(epstopdf)                    date: 2024-06-03 12:19:52
-(epstopdf)                    size: 50396 bytes
+(epstopdf)                    date: 2024-06-03 12:25:20
+(epstopdf)                    size: 49973 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_final-eps-converted-to
 .pdf>
 (epstopdf)                    date: 2024-06-03 12:20:31
@@ -2345,7 +2339,13 @@ Package epstopdf Info: Source file: <figures/rl_mpc_impl_final.eps>
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_final-
 eps-converted-to.pdf figures/rl_mpc_impl_final.eps>
 (epstopdf)             \includegraphics on input line 200.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=figures/rl_mpc_impl_final-eps-converted-to.pdf fi
+gures/rl_mpc_impl_final.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figures/rl_mpc_impl_final-eps-converted-to
+.pdf>
+(epstopdf)                    date: 2024-06-03 12:25:34
+(epstopdf)                    size: 29856 bytes.
 <figures/rl_mpc_impl_final-eps-converted-to.pdf, id=2235, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final-eps-converted-to.pdf>
@@ -2403,9 +2403,6 @@ L3 programming layer <2023-06-05>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: B3DD398C8A9156102B1702B885362BD7;12816.
 
@@ -2440,7 +2437,7 @@ xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplri.pfb>
-Output written on report.pdf (49 pages, 36002120 bytes).
+Output written on report.pdf (49 pages, 36002139 bytes).
 PDF statistics:
  2595 PDF objects out of 2984 (max. 8388607)
  1140 compressed objects within 12 object streams
