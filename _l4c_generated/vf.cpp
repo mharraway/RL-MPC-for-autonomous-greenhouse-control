@@ -32,22 +32,22 @@ extern "C" {
 #endif
 
 
-static const casadi_int casadi_s_in0[3] = { 12, 1, 1};
+static const casadi_int casadi_s_in0[3] = { 2, 1, 1};
 static const casadi_int casadi_s_out0[3] = { 1, 1, 1};
 
 
 CASADI_SYMBOL_EXPORT int vf(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
-  l4casadi.forward(arg[0], 12, 1, res[0]);
+  l4casadi.forward(arg[0], 2, 1, res[0]);
   return 0;
 }
 
 CASADI_SYMBOL_EXPORT int jac_vf(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
-  l4casadi.jac(arg[0], 12, 1, res[0]);
+  l4casadi.jac(arg[0], 2, 1, res[0]);
   return 0;
 }
 
 CASADI_SYMBOL_EXPORT int jac_jac_vf(const casadi_real** arg, casadi_real** res, casadi_int* iw, casadi_real* w, int mem){
-  l4casadi.hess(arg[0], 12, 1, res[0]);
+  l4casadi.hess(arg[0], 2, 1, res[0]);
   return 0;
 }
 
