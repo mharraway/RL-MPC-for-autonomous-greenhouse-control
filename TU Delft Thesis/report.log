@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  3 JUN 2024 12:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  4 JUN 2024 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1411,69 +1411,99 @@ Package: blx-case-expl3 2023/03/05 v3.19 expl3 case changing code for biblatex
 (/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 )
-Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 18.
-LaTeX Font Info:    Trying to load font information for T1+zplTLF on input line
- 18.
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks56
+\thm@bodyfont=\toks57
+\thm@headfont=\toks58
+\thm@notefont=\toks59
+\thm@headpunct=\toks60
+\thm@preskip=\skip101
+\thm@postskip=\skip102
+\thm@headsep=\skip103
+\dth@everypar=\toks61
 
-(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zpltlf.fd
+
+! LaTeX Error: Command \openbox already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.426   \vrule\hfil}}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Info: Redefining \textsquare on input line 427.
+)
+\c@theorem=\count520
+\c@definition=\count521
+\c@remark=\count522
+Package translations Info: No language package found. I am going to use `englis
+h' as default language. on input line 22.
+LaTeX Font Info:    Trying to load font information for T1+zplTLF on input line
+ 22.
+ (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zpltlf.fd
 File: t1zpltlf.fd 2021/05/25 v1.0 font definition file for T1/zpl/TLF
 )
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 18.
-\@quotelevel=\count520
-\@quotereset=\count521
+(Font)              scaled to size 10.0pt on input line 22.
+\@quotelevel=\count523
+\@quotereset=\count524
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 18.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 22.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
- 18.
+ 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 22.
 LaTeX Font Info:    Trying to load font information for U+npxexa on input line 
-18.
+22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 22.
 LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line
- 18.
+ 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
 File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 22.
 LaTeX Font Info:    Trying to load font information for LMX+npxexx on input lin
-e 18.
+e 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
 File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
 )
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Info: Command `\dddot' is already robust on input line 18.
-LaTeX Info: Command `\ddddot' is already robust on input line 18.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Info: Command `\dddot' is already robust on input line 22.
+LaTeX Info: Command `\ddddot' is already robust on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
 nary-english.trsl
@@ -1481,21 +1511,21 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 18.
+or `english'. on input line 22.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count522
+\scratchcounter=\count525
 \scratchdimen=\dimen332
 \scratchbox=\box91
-\nofMPsegments=\count523
-\nofMParguments=\count524
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count525
+\nofMPsegments=\count526
+\nofMParguments=\count527
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count528
 \MPscratchDim=\dimen333
-\MPnumerator=\count526
-\makeMPintoPDFobject=\count527
-\everyMPtoPDFconversion=\toks57
+\MPnumerator=\count529
+\makeMPintoPDFobject=\count530
+\everyMPtoPDFconversion=\toks63
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1522,25 +1552,25 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 22.
  (./report.out)
 (./report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 18.
-Package microtype Info: Applying patch `item' on input line 18.
-Package microtype Info: Applying patch `toc' on input line 18.
-Package microtype Info: Applying patch `eqnum' on input line 18.
-Package microtype Info: Applying patch `footnote' on input line 18.
-Package microtype Info: Applying patch `verbatim' on input line 18.
+LaTeX Info: Redefining \microtypecontext on input line 22.
+Package microtype Info: Applying patch `item' on input line 22.
+Package microtype Info: Applying patch `toc' on input line 22.
+Package microtype Info: Applying patch `eqnum' on input line 22.
+Package microtype Info: Applying patch `footnote' on input line 22.
+Package microtype Info: Applying patch `verbatim' on input line 22.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 18.
+LaTeX Info: Redefining \showhyphens on input line 22.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1586,9 +1616,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fc-english.def
 File: fc-english.def 2016/01/12
 )
-\c@mv@tabular=\count528
-\c@mv@boldtabular=\count529
-\c@lstlisting=\count530
+\c@mv@tabular=\count531
+\c@mv@boldtabular=\count532
+\c@lstlisting=\count533
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
@@ -1607,15 +1637,15 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
 
 (./report.bbl)
-Package biblatex Info: Reference section=0 on input line 18.
-Package biblatex Info: Reference segment=0 on input line 18.
+Package biblatex Info: Reference section=0 on input line 22.
+Package biblatex Info: Reference segment=0 on input line 22.
 <figures/cover.jpg, id=320, 685.56125pt x 1027.84pt>
 File: figures/cover.jpg Graphic file (type jpg)
 <use figures/cover.jpg>
-Package pdftex.def Info: figures/cover.jpg  used on input line 32.
+Package pdftex.def Info: figures/cover.jpg  used on input line 36.
 (pdftex.def)             Requested size: 597.50787pt x 895.89174pt.
 LaTeX Font Info:    Trying to load font information for T1+RobotoSlab-TLF on in
-put line 32.
+put line 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/roboto/T1RobotoSlab-TLF.fd
 File: T1RobotoSlab-TLF.fd 2019/12/11 (autoinst) Font definitions for T1/RobotoS
@@ -1628,25 +1658,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 <figures/logo-white.pdf, id=321, 114.08723pt x 45.99081pt>
 File: figures/logo-white.pdf Graphic file (type pdf)
 <use figures/logo-white.pdf>
-Package pdftex.def Info: figures/logo-white.pdf  used on input line 32.
+Package pdftex.def Info: figures/logo-white.pdf  used on input line 36.
 (pdftex.def)             Requested size: 156.84854pt x 63.23299pt.
 LaTeX Font Info:    Trying to load font information for OT1+zplTLF on input lin
-e 32.
+e 36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
 File: ot1zpltlf.fd 2021/05/25 v1.0 font definition file for OT1/zpl/TLF
 )
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 32.
+(Font)              scaled to size 10.0pt on input line 36.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplTLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 32.
+(Font)              scaled to size 7.3pt on input line 36.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 32.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+(Font)              scaled to size 5.5pt on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1655,7 +1685,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1665,19 +1695,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
-32.
+36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
-32.
+36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2015/03/21 Fontinst v1.933 font definitions for U/npxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
-32.
+36.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
@@ -1767,11 +1797,11 @@ LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 111.
  [6]
 Package epstopdf Info: Source file: <figures/weather_data.eps>
-(epstopdf)                    date: 2024-06-03 10:44:00
+(epstopdf)                    date: 2024-06-04 10:18:35
 (epstopdf)                    size: 165465 bytes
 (epstopdf)             Output file: <figures/weather_data-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2024-06-03 12:17:39
+(epstopdf)                    date: 2024-06-04 11:36:36
 (epstopdf)                    size: 54951 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/weather_data-eps-c
 onverted-to.pdf figures/weather_data.eps>
@@ -1785,11 +1815,11 @@ ut line 150.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
  [7 <./figures/weather_data-eps-converted-to.pdf>] [8]
 Package epstopdf Info: Source file: <figures/gamma_reward_training.eps>
-(epstopdf)                    date: 2024-06-03 10:44:00
+(epstopdf)                    date: 2024-06-04 10:18:35
 (epstopdf)                    size: 29146 bytes
 (epstopdf)             Output file: <figures/gamma_reward_training-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:39
+(epstopdf)                    date: 2024-06-04 11:36:36
 (epstopdf)                    size: 15673 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/gamma_reward_train
 ing-eps-converted-to.pdf figures/gamma_reward_training.eps>
@@ -1808,11 +1838,11 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
 (Font)              scaled to size 7.0pt on input line 206.
 Package epstopdf Info: Source file: <figures/gamma_reward_final.eps>
-(epstopdf)                    date: 2024-06-03 10:44:00
+(epstopdf)                    date: 2024-06-04 10:18:35
 (epstopdf)                    size: 21248 bytes
 (epstopdf)             Output file: <figures/gamma_reward_final-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:40
+(epstopdf)                    date: 2024-06-04 11:36:36
 (epstopdf)                    size: 13973 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/gamma_reward_final
 -eps-converted-to.pdf figures/gamma_reward_final.eps>
@@ -1849,11 +1879,11 @@ ne 297.
  [12 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
 uts.pdf>]
 Package epstopdf Info: Source file: <figures/stochastic_rl_policies.eps>
-(epstopdf)                    date: 2024-06-03 10:44:04
+(epstopdf)                    date: 2024-06-04 10:18:38
 (epstopdf)                    size: 48908 bytes
 (epstopdf)             Output file: <figures/stochastic_rl_policies-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:40
+(epstopdf)                    date: 2024-06-04 11:36:36
 (epstopdf)                    size: 24025 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/stochastic_rl_poli
 cies-eps-converted-to.pdf figures/stochastic_rl_policies.eps>
@@ -1926,11 +1956,11 @@ n input line 494.
  [17 <./figures/sampled_states_TR-eps-converted-to.pdf> <./figures/sampled_inpu
 ts_TR-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/tr_training_graphs.eps>
-(epstopdf)                    date: 2024-06-03 10:44:04
+(epstopdf)                    date: 2024-06-04 10:18:39
 (epstopdf)                    size: 197997 bytes
 (epstopdf)             Output file: <figures/tr_training_graphs-eps-converted-t
 o.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:40
+(epstopdf)                    date: 2024-06-04 11:36:37
 (epstopdf)                    size: 60034 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/tr_training_graphs
 -eps-converted-to.pdf figures/tr_training_graphs.eps>
@@ -2070,7 +2100,7 @@ d-to.pdf>
 (epstopdf)                    size: 6502558 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/vf_heatmap_stochas
 tic-eps-converted-to.pdf figures/vf_heatmap_stochastic.eps>
-(epstopdf)             \includegraphics on input line 573.
+(epstopdf)             \includegraphics on input line 579.
 Package epstopdf Info: Output file is already uptodate.
 <figures/vf_heatmap_stochastic-eps-converted-to.pdf, id=1378, 578.16pt x 578.16
 pt>
@@ -2078,7 +2108,7 @@ File: figures/vf_heatmap_stochastic-eps-converted-to.pdf Graphic file (type pdf
 )
 <use figures/vf_heatmap_stochastic-eps-converted-to.pdf>
 Package pdftex.def Info: figures/vf_heatmap_stochastic-eps-converted-to.pdf  us
-ed on input line 573.
+ed on input line 579.
 (pdftex.def)             Requested size: 448.1309pt x 448.13112pt.
 ) (./mainmatter/chapter-4.tex
 [21 <./figures/vf_heatmap_stochastic-eps-converted-to.pdf>] [22]
@@ -2097,7 +2127,7 @@ pdf>
 ps-converted-to.pdf figures/mpc_nominal_perf.eps>
 (epstopdf)             \includegraphics on input line 50.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_nominal_perf-eps-converted-to.pdf, id=1471, 462.72874pt x 347.2975
+<figures/mpc_nominal_perf-eps-converted-to.pdf, id=1472, 462.72874pt x 347.2975
 pt>
 File: figures/mpc_nominal_perf-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/mpc_nominal_perf-eps-converted-to.pdf>
@@ -2105,17 +2135,17 @@ Package pdftex.def Info: figures/mpc_nominal_perf-eps-converted-to.pdf  used on
  input line 50.
 (pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
 Package epstopdf Info: Source file: <figures/mpc_nominal_compt_time.eps>
-(epstopdf)                    date: 2024-06-03 10:44:04
+(epstopdf)                    date: 2024-06-04 10:18:39
 (epstopdf)                    size: 23443 bytes
 (epstopdf)             Output file: <figures/mpc_nominal_compt_time-eps-convert
 ed-to.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:40
+(epstopdf)                    date: 2024-06-04 11:36:37
 (epstopdf)                    size: 15002 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mpc_nominal_compt_
 time-eps-converted-to.pdf figures/mpc_nominal_compt_time.eps>
 (epstopdf)             \includegraphics on input line 57.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_nominal_compt_time-eps-converted-to.pdf, id=1472, 462.72874pt x 34
+<figures/mpc_nominal_compt_time-eps-converted-to.pdf, id=1473, 462.72874pt x 34
 7.2975pt>
 File: figures/mpc_nominal_compt_time-eps-converted-to.pdf Graphic file (type pd
 f)
@@ -2124,13 +2154,13 @@ Package pdftex.def Info: figures/mpc_nominal_compt_time-eps-converted-to.pdf  u
 sed on input line 57.
 (pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
  [24]
-<figures/mpc_outputs_time_series.pdf, id=1486, 1084.05pt x 361.35pt>
+<figures/mpc_outputs_time_series.pdf, id=1487, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 70.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1487, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1488, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
@@ -2138,7 +2168,7 @@ e 77.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [25 <./figures/mpc_nominal_perf-eps-converted-to.pdf> <./figures/mpc_nominal_c
 ompt_time-eps-converted-to.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1626, 722.7pt x 578.16pt>
+<figures/stochastic_mpc_rewards_time.pdf, id=1627, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
@@ -2146,17 +2176,17 @@ Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
  [26 <./figures/mpc_inputs_times_series.pdf>]
 Package epstopdf Info: Source file: <figures/stochastic_mpc_perf.eps>
-(epstopdf)                    date: 2024-06-03 10:44:07
+(epstopdf)                    date: 2024-06-04 10:18:42
 (epstopdf)                    size: 44484 bytes
 (epstopdf)             Output file: <figures/stochastic_mpc_perf-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2024-06-03 12:17:41
+(epstopdf)                    date: 2024-06-04 11:36:38
 (epstopdf)                    size: 24081 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/stochastic_mpc_per
 f-eps-converted-to.pdf figures/stochastic_mpc_perf.eps>
 (epstopdf)             \includegraphics on input line 99.
 Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_mpc_perf-eps-converted-to.pdf, id=1683, 722.7pt x 289.08pt>
+<figures/stochastic_mpc_perf-eps-converted-to.pdf, id=1684, 722.7pt x 289.08pt>
 
 File: figures/stochastic_mpc_perf-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf-eps-converted-to.pdf>
@@ -2173,192 +2203,215 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
  []
 
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 24.
+(Font)              scaled to size 10.0pt on input line 23.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 7.3pt on input line 24.
+(Font)              scaled to size 7.3pt on input line 23.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 5.5pt on input line 24.
+(Font)              scaled to size 5.5pt on input line 23.
 [29
 
-] [30]
+] [30] [31]
 Package epstopdf Info: Source file: <figures/mpc_vs_rl_perf.eps>
-(epstopdf)                    date: 2024-06-03 10:44:08
+(epstopdf)                    date: 2024-06-04 10:18:43
 (epstopdf)                    size: 26949 bytes
 (epstopdf)             Output file: <figures/mpc_vs_rl_perf-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2024-06-03 12:17:41
+(epstopdf)                    date: 2024-06-04 11:36:38
 (epstopdf)                    size: 19123 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mpc_vs_rl_perf-eps
 -converted-to.pdf figures/mpc_vs_rl_perf.eps>
-(epstopdf)             \includegraphics on input line 114.
+(epstopdf)             \includegraphics on input line 124.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_vs_rl_perf-eps-converted-to.pdf, id=1842, 462.72874pt x 347.2975pt
+<figures/mpc_vs_rl_perf-eps-converted-to.pdf, id=1865, 462.72874pt x 347.2975pt
 >
 File: figures/mpc_vs_rl_perf-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_perf-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_perf-eps-converted-to.pdf  used on i
-nput line 114.
+nput line 124.
 (pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
 Package epstopdf Info: Source file: <figures/mpc_vs_rl_time.eps>
-(epstopdf)                    date: 2024-06-03 10:44:08
+(epstopdf)                    date: 2024-06-04 10:18:43
 (epstopdf)                    size: 31316 bytes
 (epstopdf)             Output file: <figures/mpc_vs_rl_time-eps-converted-to.pd
 f>
-(epstopdf)                    date: 2024-06-03 12:17:41
+(epstopdf)                    date: 2024-06-04 11:36:38
 (epstopdf)                    size: 17543 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/mpc_vs_rl_time-eps
 -converted-to.pdf figures/mpc_vs_rl_time.eps>
-(epstopdf)             \includegraphics on input line 121.
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_vs_rl_time-eps-converted-to.pdf, id=1843, 462.72874pt x 347.2975pt
+<figures/mpc_vs_rl_time-eps-converted-to.pdf, id=1866, 462.72874pt x 347.2975pt
 >
 File: figures/mpc_vs_rl_time-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_time-eps-converted-to.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_time-eps-converted-to.pdf  used on i
-nput line 121.
+nput line 131.
 (pdftex.def)             Requested size: 219.5866pt x 164.80904pt.
- [31]
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_1.eps>
-(epstopdf)                    date: 2024-06-03 10:44:08
+(epstopdf)                    date: 2024-06-04 10:18:43
 (epstopdf)                    size: 46363 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_1-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2024-06-03 12:17:41
+(epstopdf)                    date: 2024-06-04 11:36:38
 (epstopdf)                    size: 25687 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_1-eps-
 converted-to.pdf figures/rl_mpc_impl_1.eps>
-(epstopdf)             \includegraphics on input line 135.
+(epstopdf)             \includegraphics on input line 145.
 Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_1-eps-converted-to.pdf, id=1869, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_1-eps-converted-to.pdf, id=1873, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1-eps-converted-to.pdf  used on in
-put line 135.
+put line 145.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [32 <./figures/mpc_vs_rl_perf-eps-converted-to.pdf> <./figures/mpc_vs_rl_time-
-eps-converted-to.pdf> <./figures/rl_mpc_impl_1-eps-converted-to.pdf>]
+eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_2.eps>
-(epstopdf)                    date: 2024-06-03 12:17:20
+(epstopdf)                    date: 2024-06-04 10:18:44
 (epstopdf)                    size: 45321 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_2-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2024-06-03 12:17:41
+(epstopdf)                    date: 2024-06-04 11:36:39
 (epstopdf)                    size: 27939 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_2-eps-
 converted-to.pdf figures/rl_mpc_impl_2.eps>
-(epstopdf)             \includegraphics on input line 144.
+(epstopdf)             \includegraphics on input line 156.
 Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_2-eps-converted-to.pdf, id=2026, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_2-eps-converted-to.pdf, id=1973, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2-eps-converted-to.pdf  used on in
-put line 144.
+put line 156.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_3.eps>
-(epstopdf)                    date: 2024-06-03 11:20:02
-(epstopdf)                    size: 47722 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_3-eps-converted-to.pdf
->
-(epstopdf)                    date: 2024-06-03 12:17:42
-(epstopdf)                    size: 28255 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_3-eps-
-converted-to.pdf figures/rl_mpc_impl_3.eps>
-(epstopdf)             \includegraphics on input line 158.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_3-eps-converted-to.pdf, id=2030, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_3-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_3-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_3-eps-converted-to.pdf  used on in
-put line 158.
-(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [33 <./figures/rl_mpc_impl_2-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 163--164
+
+Underfull \hbox (badness 10000) in paragraph at lines 161--164
 
  []
 
+[33 <./figures/rl_mpc_impl_1-eps-converted-to.pdf> <./figures/rl_mpc_impl_2-eps
+-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/rl_mpc_impl_3.eps>
+(epstopdf)                    date: 2024-06-04 10:18:44
+(epstopdf)                    size: 47722 bytes
+(epstopdf)             Output file: <figures/rl_mpc_impl_3-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2024-06-04 11:36:39
+(epstopdf)                    size: 28255 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_3-eps-
+converted-to.pdf figures/rl_mpc_impl_3.eps>
+(epstopdf)             \includegraphics on input line 173.
+Package epstopdf Info: Output file is already uptodate.
+<figures/rl_mpc_impl_3-eps-converted-to.pdf, id=2103, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_3-eps-converted-to.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_3-eps-converted-to.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_3-eps-converted-to.pdf  used on in
+put line 173.
+(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+[34 <./figures/rl_mpc_impl_3-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_4.eps>
-(epstopdf)                    date: 2024-06-03 10:44:10
+(epstopdf)                    date: 2024-06-04 10:18:45
 (epstopdf)                    size: 52172 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_4-eps-converted-to.pdf
 >
-(epstopdf)                    date: 2024-06-03 12:17:42
+(epstopdf)                    date: 2024-06-04 11:36:39
 (epstopdf)                    size: 31949 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_4-eps-
 converted-to.pdf figures/rl_mpc_impl_4.eps>
-(epstopdf)             \includegraphics on input line 173.
+(epstopdf)             \includegraphics on input line 188.
 Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_4-eps-converted-to.pdf, id=2099, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4-eps-converted-to.pdf, id=2173, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4-eps-converted-to.pdf  used on in
-put line 173.
+put line 188.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
+
+
+Package hyperref Warning: No autoref name for `remark' on input line 192.
+
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_4_1.eps>
-(epstopdf)                    date: 2024-06-03 10:44:10
+(epstopdf)                    date: 2024-06-04 10:18:45
 (epstopdf)                    size: 51231 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_4_1-eps-converted-to.p
 df>
-(epstopdf)                    date: 2024-06-03 12:17:42
+(epstopdf)                    date: 2024-06-04 11:36:39
 (epstopdf)                    size: 31352 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_4_1-ep
 s-converted-to.pdf figures/rl_mpc_impl_4_1.eps>
-(epstopdf)             \includegraphics on input line 180.
+(epstopdf)             \includegraphics on input line 196.
 Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_4_1-eps-converted-to.pdf, id=2100, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4_1-eps-converted-to.pdf, id=2177, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4_1-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4_1-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4_1-eps-converted-to.pdf  used on 
-input line 180.
+input line 196.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[34 <./figures/rl_mpc_impl_3-eps-converted-to.pdf> <./figures/rl_mpc_impl_4-eps
--converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_5_6.eps>
-(epstopdf)                    date: 2024-06-03 10:45:40
+(epstopdf)                    date: 2024-06-04 10:18:45
 (epstopdf)                    size: 46721 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_5_6-eps-converted-to.p
 df>
-(epstopdf)                    date: 2024-06-03 12:18:59
+(epstopdf)                    date: 2024-06-04 11:36:40
 (epstopdf)                    size: 28014 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_5_6-ep
 s-converted-to.pdf figures/rl_mpc_impl_5_6.eps>
-(epstopdf)             \includegraphics on input line 190.
+(epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_5_6-eps-converted-to.pdf, id=2234, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_5_6-eps-converted-to.pdf, id=2178, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6-eps-converted-to.pdf  used on 
-input line 190.
+input line 206.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
+[35 <./figures/rl_mpc_impl_4-eps-converted-to.pdf> <./figures/rl_mpc_impl_4_1-e
+ps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/rl_mpc_impl_final.eps>
-(epstopdf)                    date: 2024-06-03 12:25:20
+(epstopdf)                    date: 2024-06-04 10:18:46
 (epstopdf)                    size: 49973 bytes
 (epstopdf)             Output file: <figures/rl_mpc_impl_final-eps-converted-to
 .pdf>
-(epstopdf)                    date: 2024-06-03 12:20:31
-(epstopdf)                    size: 29840 bytes
+(epstopdf)                    date: 2024-06-04 11:36:40
+(epstopdf)                    size: 29856 bytes
 (epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_final-
 eps-converted-to.pdf figures/rl_mpc_impl_final.eps>
-(epstopdf)             \includegraphics on input line 200.
-runsystem(repstopdf --outfile=figures/rl_mpc_impl_final-eps-converted-to.pdf fi
-gures/rl_mpc_impl_final.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figures/rl_mpc_impl_final-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-06-03 12:25:34
-(epstopdf)                    size: 29856 bytes.
-<figures/rl_mpc_impl_final-eps-converted-to.pdf, id=2235, 722.7pt x 289.08pt>
+(epstopdf)             \includegraphics on input line 216.
+Package epstopdf Info: Output file is already uptodate.
+<figures/rl_mpc_impl_final-eps-converted-to.pdf, id=2312, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final-eps-converted-to.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final-eps-converted-to.pdf  used o
-n input line 200.
+n input line 216.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [35 <./figures/rl_mpc_impl_4_1-eps-converted-to.pdf> <./figures/rl_mpc_impl_5_
-6-eps-converted-to.pdf>]) (./mainmatter/chapter-6.tex
-[36 <./figures/rl_mpc_impl_final-eps-converted-to.pdf>]
+) (./mainmatter/chapter-6.tex [36 <./figures/rl_mpc_impl_5_6-eps-converted-to.p
+df> <./figures/rl_mpc_impl_final-eps-converted-to.pdf>]
 Chapter 6.
+Package epstopdf Info: Source file: <figures/stochastic_rl_vs_mpc.eps>
+(epstopdf)                    date: 2024-06-04 11:52:01
+(epstopdf)                    size: 34801 bytes
+(epstopdf)             Output file: <figures/stochastic_rl_vs_mpc-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2024-06-04 12:09:26
+(epstopdf)                    size: 17446 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_rl_vs_m
+pc-eps-converted-to.pdf figures/stochastic_rl_vs_mpc.eps>
+(epstopdf)             \includegraphics on input line 10.
+Package epstopdf Info: Output file is already uptodate.
+<figures/stochastic_rl_vs_mpc-eps-converted-to.pdf, id=2446, 722.7pt x 289.08pt
+>
+File: figures/stochastic_rl_vs_mpc-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/stochastic_rl_vs_mpc-eps-converted-to.pdf>
+Package pdftex.def Info: figures/stochastic_rl_vs_mpc-eps-converted-to.pdf  use
+d on input line 10.
+(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 ) (./mainmatter/chapter-7.tex [37
 
-]
+ <./figures/stochastic_rl_vs_mpc-eps-converted-to.pdf>]
 Chapter 7.
 ) (./mainmatter/conclusion.tex [38
 
@@ -2368,17 +2421,17 @@ Chapter 8.
 
 ]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 68.
+(Font)              scaled to size 10.0pt on input line 72.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/zplTLF/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-68.
+72.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 68.
+(Font)              scaled to size 10.0pt on input line 72.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `npxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2404,7 +2457,7 @@ L3 programming layer <2023-06-05>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: B3DD398C8A9156102B1702B885362BD7;12816.
+(rerunfilecheck)             Checksum: 628013149660F21420E04970B358A831;12785.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2415,13 +2468,13 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45996 strings out of 475735
- 900024 string characters out of 5784786
- 1881759 words of memory out of 5000000
- 65541 multiletter control sequences out of 15000+600000
- 674205 words of font info for 264 fonts, out of 8000000 for 9000
+ 46085 strings out of 475735
+ 901510 string characters out of 5784786
+ 1877759 words of memory out of 5000000
+ 65623 multiletter control sequences out of 15000+600000
+ 674281 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,101p,2163b,1733s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,101p,2163b,1734s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/google/roboto/RobotoSlab-Bold.pfb></usr/share/texliv
@@ -2437,10 +2490,10 @@ xlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplri.pfb>
-Output written on report.pdf (49 pages, 36002139 bytes).
+Output written on report.pdf (49 pages, 36019731 bytes).
 PDF statistics:
- 2595 PDF objects out of 2984 (max. 8388607)
- 1140 compressed objects within 12 object streams
- 214 named destinations out of 1000 (max. 500000)
- 51500 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 2642 PDF objects out of 2984 (max. 8388607)
+ 1154 compressed objects within 12 object streams
+ 215 named destinations out of 1000 (max. 500000)
+ 51505 words of extra memory for PDF output out of 51595 (max. 10000000)
 

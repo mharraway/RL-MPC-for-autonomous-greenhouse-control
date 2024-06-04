@@ -12,7 +12,6 @@ While there are numerous implementations of RL-MPC, there is limited research fo
 
 The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions trained by the nominal agent will then be used at the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function.
 
-\emph{Explain the implementation of the deterministic case}
 \subsection{RL-MPC problem formulations}
 
 \paragraph{Implementation 1}
@@ -44,7 +43,19 @@ then the two sets of initial guesses at the next time, $k_1$ step can be denoted
 The first initial guess (\autoref{eq:initial-guess-1}) takes the previous time steps solution, shifts it and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. Essentially the actor is unrolled once from the last time step of the previous solution to \autoref{eq:mpc_ocp}. The second initial guess,\autoref{eq:initial-guess-2}, involves unrolling the actor $Np$ steps from the current state, and using the resulting actions and states as initial guesses. 
 
 \paragraph{Implementation 2}
-The second implementation consists of implementing a terminal constraint. The asymptotic average performance of the EMPC can be guaranteed to be no worse than the performance of the optimal admissible steady steady under certain assumptions. \cite{risbeckEconomicModelPredictive2020}, \cite{amritEconomicOptimizationUsing2011} proves that to ensure this for a time-varying system a reference trajectory ($\tilde{\mathbf{x}},\tilde{\mathbf{u}}$) that serves as a bases for a meaningful economic performance for the system must be provided. Additionally, a terminal constraint should be imposed to keep the system close to this reference trajectory. Moreover, \cite{risbeckEconomicModelPredictive2020} states that the resulting performance of the EMPC will achieve an average cost that is as good as than the reference policy. Therefore implememnation 2 can ensure that the resulting RL-MPC policy is guaranteed to work as good as the RL policy, if the reference trajectory is provided by the rl agent (initial guesses as in \autoref{eq:initial-guess-1}) and to keep the RL-MPC policy close to the reference trajectory, the terminal constraint is equal to the last initial guess such that:
+The second implementation incorporates a terminal constraint. The asymptotic average performance of the EMPC can be guaranteed to be no worse than the performance of a optimal reference trajectory under certain assumptions. From \cite{amritEconomicOptimizationUsing2011}, these assumptions are:
+
+\hspace{1cm} \textbf{Assumption 1} (Properties of constraint sets) The set $\mathbb{Z}$ is compact, where $\mathbb{Z} \subseteq \mathbb{X} \times \mathbb{U}$
+
+\hspace{1cm} \textbf{Assumption 2}  (Continuity of cost and system) The functions $l(\cdot), f(\cdot)$ are continuous on $\mathbb{Z}$. The terminal cost function $V_f(\cdot)$ is continuous on $\mathbb{X}_f$ 
+
+\hspace{1cm} \textbf{Assumption 3} (Stability assumption) There exist a compact terminal region $\mathbb{X}_f \subseteq \mathbb{X}$, containing the point $x_s$ in its interior, and control law $\kappa_f : \mathbb{X}_f \rightarrow \mathbb{U}$, such that the following holds 
+\begin{equation}\label{eq:assumption_3}
+	V_f(f(x,\kappa_f(x))) \leq V_f(x) - l(x,\kappa_f(x)) + l(x_s,u_s) \quad \forall x \in \mathbb{X}_f
+\end{equation}
+
+Assumptions 1 and 2 holds since all states and inputs are bounded and the stage cost, as defined in \autoref{eq:mpc_stage_cost} is continuous. For this implementation, $V_f(\cdot) \equiv 0$, therefore, assumption 3 clearly holds since $x,\kappa_f(x)$ is constrained to $x_s,u_s$.
+ \cite{risbeckEconomicModelPredictive2020}, \cite{amritEconomicOptimizationUsing2011} proves that to ensure this for a time-varying system a reference trajectory ($\tilde{\mathbf{x}},\tilde{\mathbf{u}}$) that serves as a bases for a meaningful economic performance for the system must be provided. The terminal constraint should be imposed to keep the system close to this reference trajectory. Since the RL policy can be used as the optimal reference policy, it can be guaranteed that the resulting policy will be at least as good as the RL policy. In order to keep the EMPC close to RL's reference trajectory, initial guesses as given in \autoref{eq:initial-guess-1} with a terminal constraint equal to the last initial guess such that:
 
 \begin{equation}\label{eq:terminal-constraint-ocp}
 	\begin{aligned}
@@ -65,22 +76,20 @@ Implementation 3 builds upon implementation 2, in that instead of providing a te
 	\end{aligned}
 \end{equation}
 
-\cite{amritEconomicOptimizationUsing2011} suggests that this has the same performance guarantees as Implementation 2 under the same assumptions. However introducing a terminal region for the terminal state makes it difficult to meet assumption 6, $\tilde{V}(s(k)) \equiv 0$. \todo{Ask Koty about this for a terminal constraint}
+\cite{amritEconomicOptimizationUsing2011} suggests that this has the same performance guarantees as Implementation 2 under the same assumptions. However introducing a terminal region for the terminal state makes it difficult to meet assumption 3 as shown in \autoref{eq:assumption_3}. However, \cite{amritEconomicOptimizationUsing2011} suggest that providing a terminal region may be more beneficial than a terminal constraint. Finally, a terminal constraint and initial guesses will also be provided by \autoref{eq:initial-guess-2} to investigate performance. However, since the action of unrolling from the current state does not result in following a fixed trajectory, no performance guarantee can be made.
 
 \paragraph{Implementation 4}
-Implementation 4 consists of only including the value function as learned in \autoref{section:trained-vf}, and initial guesses as in \autoref{eq:initial-guess-1}. This implementation examines the effect of the value function on the performance of the resulting controller. The value function can be incorporated into \autoref{eq:mpc_ocp} by defining a cost function:
+Implementation 4 consists of only including the value function as learned in \autoref{section:trained-vf}, and initial guesses as given in \autoref{eq:initial-guess-1}. This implementation examines the effect of the value function on the performance of the resulting controller. The value function can be incorporated into \autoref{eq:mpc_ocp} by defining a cost function:
 
 \begin{equation}\label{eq:cost-function}
 		\min_{u(k),x(k)}  \sum_{k = k_0}^{k_0 + N_p - 1}{l(u(k), y(k))} - \tilde{V}(s'(k_0 + N_p))
 \end{equation}
 
-where $\tilde{V}$ represents the learned value function and $s'(k_0+N_p)$ is the normalization of $s(k_0+N_p)$. For $\tilde{V}^1$,$\tilde{V}^2$,$\tilde{V}^3$, the unnormalized input is \autoref{eq:obs-tuple-1}, where as in $\tilde{V}^4$, this is $(y_{k_0+N_p},k_0+N_p)$ as discussed in \autoref{section:trained-vf}. Normalization of the state observation is performed with \autoref{eq:state-normalization}. This implementation aims to evaluate the impact of different neural network architectures, including a deep neural network ($\tilde{V}^1$), a smaller deep neural network ($\tilde{V}^2$), a shallow neural network ($\tilde{V}^3$), and a deep neural network trained to learn the value function on only two system states. This can be considered a naive implementation of RL-MPC, and would essentially equate to the rolling out the value function. According to approximate dynamic programming as stated in \cite{bertsekasLessonsAlphaZeroOptimal}, this policy should be as good as the policy that generated the given policy, under certain assumptions. 
-\todo{should i list assumptions required}
-
- Note that the value function is maximized by minimizing the negative of it, since the value function learned represents total return and not cost.
+where $\tilde{V}$ represents the learned value function and $s'(k_0+N_p)$ is the normalization of $s(k_0+N_p)$. For $\tilde{V}^1$,$\tilde{V}^2$,$\tilde{V}^3$, the unnormalized input is \autoref{eq:obs-tuple-1}, where as in $\tilde{V}^4$, this is $(y_{k_0+N_p},k_0+N_p)$ as discussed in \autoref{section:trained-vf}. Normalization of the state observation is performed with \autoref{eq:state-normalization}. This implementation aims to evaluate the impact of different neural network architectures, including a deep neural network ($\tilde{V}^1$), a smaller deep neural network ($\tilde{V}^2$), a shallow neural network ($\tilde{V}^3$), and a deep neural network trained to learn the value function on only two system states. This can be considered a naive implementation of RL-MPC, and would essentially equate to the rolling out the value function. According to approximate dynamic programming as stated in \cite{bertsekasLessonsAlphaZeroOptimal}, this policy could be better than the policy that generated the value function. The performance is heavily dependent on the quality of the value function. If the approximate value function is inaccurate and the errors are significant and systematic then unrolling this value function could lead to a worse policy. This implementation may be conceptually viewed as either unrolling the value function, or providing the MPC knowledge of the future, essentially extending its prediction horizon. 
+Note that the value function is maximized by minimizing the negative of it, since the learned value function represents total return and not cost.
 
 \paragraph{Implementation 5}
-Implementation 5 essentially combines Implementation 3 and Implementation 4. \cite{amritEconomicOptimizationUsing2011} states that finding an appropriate terminal cost function and corresponding terminal region proves to be non-trivial in order to satisfy assumptions. This implementation is also claimed to be superior to the terminal constraint of implementation 2 (\cite{amritEconomicOptimizationUsing2011}) under necessary conditions. Therefore the resulting RL-MPC OCP is defined as:
+Implementation 5 essentially combines Implementation 3 and Implementation 4. \cite{amritEconomicOptimizationUsing2011} states that finding an appropriate terminal cost function and corresponding terminal region proves to be non-trivial in order to satisfy assumption 3. This implementation is also claimed to be superior to the terminal constraint of implementation 2 (\cite{amritEconomicOptimizationUsing2011}) under necessary conditions. Therefore the resulting RL-MPC OCP is defined as:
 
 \begin{subequations} \label{eq:rl-mpc-ocp}
 	\begin{align}
@@ -97,10 +106,11 @@ Implementation 5 essentially combines Implementation 3 and Implementation 4. \ci
 	\end{align}
 \end{subequations}
 
+This implementation was investigated to determine whether RL might provide both an adequate terminal region and cost function to improve the MPC's performance.
 
 
 \paragraph{Implementation 6}
-Implementation 6 serves an alternative method of incorporating the value function. This implementation involves solving implementation 3 however with \autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} separately. Once solved, the terminal state of the two solution trajectories are compared by evaluating them with the value function. The solution trajectory with the terminal state that yields the most favourable outcome (as given from the value function) is selected as the final solution and the first control input of this solution is taken. 
+Implementation 6 serves an alternative method of incorporating the value function. This implementation involves solving implementation 3 however with \autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} separately. Once solved, the terminal state of the two solution trajectories are compared by evaluating them with the value function. The solution trajectory with the terminal state that yields the most favourable outcome (as given from the value function) is selected as the final solution and the first control input of this solution is taken. It essentially selects the best policy. Although only 2 policies are compared, this method may warrant further research whereby multiple generated policies could be compared. The policies generated could originate from multiple RL agents, each providing their initial estimations along with corresponding terminal constraints. Although each problem could be solved in parallel to speed up computational speed, it was implemented sequentially in this thesis.
 
 
 
@@ -128,7 +138,7 @@ A review of the RL and MPC policies will be evaluated for the nominal conditions
 
 \autoref{fig:mpc-vs-rl} demonstrated the performance of the MPC and RL agent in the nominal setting. Although MPC does perform better for all prediction horizons (except 1 hour) as shown in \autoref{fig:mps-vs-rl-perf}, it does not imply that this is the best RL policy obtainable. A more extensive hyper parameter tuning may have to be forgone in order to achieve a policy that outperforms MPC. However the RL agent is clearly competitive and as seen in \autoref{fig:mpc-vs-rl-time}, can compute actions significantly faster. It is evident that the RL agent can be utilized to generate a reference trajectory for MPC with minimal increase in computational time. The performance of the resulting RL-MPC and its potential superiority will be analyzed in following sections and compared to the baseline performances, as depicted in \autoref{fig:mpc-vs-rl}.
 
-\section{Results - Implementations 1 and 2}
+\section{Results - Implementations 1}
 This implementation consists of passing in initial guesses for the MPC solver by unrolling the agent. Initial guess 1 refers to \autoref{eq:initial-guess-1} and Initial guess 2 refers to \autoref{eq:initial-guess-2}.
 \begin{figure}[H]
 	\centering
@@ -136,8 +146,10 @@ This implementation consists of passing in initial guesses for the MPC solver by
 	\caption{MPC vs MPC with initial guesses}
 	\label{fig:rlmpc-impl1}
 \end{figure}
-\autoref{fig:rlmpc-impl1} presents the results of passing in initial guesses from the actor. Unrolling the actor from the current state and using the resulting state and control inputs as initial guesses (\autoref{eq:initial-guess-2}) seems to have very little impact on the final cumulative reward, however it noticeable increases the computational time of the control input. This could be because the initial guesses are derived from a less than optimal policy. Moreover, initial guesses from \autoref{eq:initial-guess-1} minimal impact on the final cumulative reward for shorter prediction horizons, and seems to be slightly beneficial for a 3 and 4 hour prediction horizon. However performance degrades significantly for a prediction horizon of 5 and 6 hours as compared to the nominal MPC. Additionally, computational also time increases. It would be expected that computational time decreases for both initial guesses, however it seems that simply copying the previous solution results in a better performing controller. The reason for this may be because in all three cases, the Lagrangian multipliers from the previous solution are utilized as an initial guess for the current Lagrangian multipliers. The actor's initial guesses may differ significantly from the previous solution, rendering the Lagrangian multipliers' guesses nonsensical. While the actor may offer initial guesses, they are insufficient for improving or assisting the MPC, and simply using the previous solution as an initial guess may be more beneficial. However, if a superior policy to the Nominal MPC policy provided initial guesses instead of a suboptimal policy, it could yield different outcomes.
 
+\autoref{fig:rlmpc-impl1} presents the results of passing in initial guesses from the actor. Unrolling the actor from the current state and using the resulting state and control inputs as initial guesses (\autoref{eq:initial-guess-2}) seems to have very little impact on the final cumulative reward, however it noticeable increases the computational time of the control input. This could be because the initial guesses are derived from a less than optimal policy. Moreover, initial guesses by extending the prediction horizon from \autoref{eq:initial-guess-1} also has minimal impact on the final cumulative reward for shorter prediction horizons, and seems to be slightly beneficial for a 3 and 4 hour prediction horizon. However performance degrades significantly for a prediction horizon of 5 and 6 hours as compared to the nominal MPC. Additionally, computational also time increases. It would be expected that computational time decreases for both initial guesses. A reason for the sub-optimal performance may be due the initial guesses of the Lagrangian multipliers (the found Lagrangian multipliers from the previous solution). The actor's initial guesses may differ significantly from the previous solution, rendering the Lagrangian multipliers' guesses nonsensical. While the actor may offer initial guesses, they are insufficient for improving or assisting the MPC, and simply using the previous solution as an initial guess may be more beneficial. However, the importance of having optimal initial guesses becomes more significant as the prediction horizon is extended, as the problem complexity increases. Therefore, if a superior policy to the Nominal MPC were to provide initial guesses instead of a suboptimal policy at a longer prediction horizon, it could result in a more favourable outcome.
+
+\section{Results - Implementations 2}
 
 \begin{figure}[H]
 	\centering
@@ -146,8 +158,11 @@ This implementation consists of passing in initial guesses for the MPC solver by
 	\label{fig:rlmpc-impl2}
 \end{figure}
 
-In order to guarantee that the RL-MPC policy achieves a performance level that is equal to or better than the RL policy, the approach described in Implementation 2 can be used.  The performance of the resulting policy is illustrated in \autoref{fig:rlmpc-impl2}. It is evident that for all prediction horizons, the RL-MPC's performance increases.  Nevertheless, the RL policy exhibits notably inferior performance compared to the MPC policy when the prediction horizon exceeds 3 hours. Beyond the 3-hour mark, the MPC policy consistently outperforms the RL policy.  While the implementation of RL-MPC may enhance the RL policy, it does not guarantee that the resulting policy will surpass the policy of MPC. If the RL policy is more competitive and surpasses the performance of the MPC, then implementing this RL-MPC implementation would be advantageous, as is the case for a prediction horizon of 1 and 2 hours.\\
-Interestingly, the computational time for the control input substantially increases for a prediction horizon of 5 and 6 hours. Again, the terminal constraint could be too restraining for the MPC since of the sub-optimal terminal constraint, especially for longer prediction horizons.
+In order to guarantee that the RL-MPC policy achieves a performance level that is equal to or better than the RL policy, the approach described in Implementation 2 was used.  The performance of the resulting policies is illustrated in \autoref{fig:rlmpc-impl2}. It is evident that for a terminal constraint and initial guesses as given by \autoref{eq:initial-guess-1}, that the resulting policy is at least as good as the RL's, even at lower prediction horizons where RL performs better than MPC. Nevertheless, the RL-MPC policy exhibits notably inferior performance compared to the MPC policy when the prediction horizon exceeds 3 hours. Beyond the 3-hour mark, the MPC policy consistently outperforms the RL policy and RL-MPC policy.  While the implementation of RL-MPC may enhance the RL policy, it does not guarantee that the resulting policy will surpass the policy generated purely by MPC. If the RL policy is more competitive and surpasses the performance of the MPC, then implementing this RL-MPC implementation would be advantageous, as is the case for a prediction horizon of 1 and 2 hours. This marks a very important design choice. One can choose to either impose a terminal constraint to guarantee a certain level of performance or instead opt to extend the prediction horizon of the MPC. Again, by extending the horizon for the MPC controller is not guaranteed to perform better under economic optimization, therefore a safer choice may be to implement the terminal constraint as provided by the RL agent.
+\\
+The lack of performance guarantees for the terminal constraint and initial guesses, as indicated by equation \autoref{eq:initial-guess-2}, is evident in the decrease in performance, which is even worse than that of reinforcement learning, when longer prediction horizons are considered.\\
+
+The computational time for the control input significantly increases when the prediction horizon is set to 5 or 6 hours. The terminal constraint may excessively limit the MPC due to the presence of a sub-optimal terminal constraint, particularly when dealing with longer prediction horizons.
 
 \section{Results - Implementation 3}
 This implementation aims to move away from the terminal constraint and allow the MPC more freedom by providing it with a terminal region constraint as outlined in \autoref{eq:terminal-region}, with a chosen $\delta = 5\%$, allowing for a $10\$$ deviation in the terminal state. As claimed in \cite{amritEconomicOptimizationUsing2011}, this could prove to be more beneficial than the terminal constraint, provided that an appropriate cost function is supplied. For this implementation, the cost function supplied is effectively $V(s) \equiv 0$. 
@@ -160,9 +175,9 @@ This implementation aims to move away from the terminal constraint and allow the
 	\label{fig:rlmpc-impl3}
 \end{figure}
 
-The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior cumulative reward in comparison to the MPC even at longer prediction horizons. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike the MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
+The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior final cumulative reward in comparison to the MPC even at longer prediction horizons. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike for MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
 
-Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability.
+Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability. 
 
 \section{Results - Implementation 4}
 This implementation investigates the effect of a supplying the MPC with a cost function, specifically an approximate value function represented by a neural network.
@@ -172,8 +187,9 @@ This implementation investigates the effect of a supplying the MPC with a cost f
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4.eps}
 	\caption{MPC with terminal cost function}
-	\label{fig:rlmpc-impl4}
+	\label{fig:rlmpc-impl4-all-states}
 \end{figure}
+\autoref{fig:rlmpc-impl4-all-states} is a naive implementation of merging RL and MPC, and the results are undesirable, both in terms of final cumulative reward and computational time of the control input. One must be very careful in using a neural network in an optimizer due to the highly non-linear nature of them. As depicted in \autoref{fig:rlmpc-impl4-all-states}, the more complex the neural network, the worse the performance. This is due to the extreme non convex behaviour of the neural networks and the MPC optimizer easily gets trapped in local mins. See \autoref{rme:smoothness-of-value-functions}.
 
 \begin{figure}[H]
 	\centering
@@ -201,5 +217,5 @@ This implementation investigates the effect of a supplying the MPC with a cost f
 	\caption{MPC final }
 	\label{fig:rlmpc-final}
 \end{figure}
-\emph{The final selected algorithm and conlusion on the work done}
+\emph{The final selected algorithm and conclusion on the work done}
 

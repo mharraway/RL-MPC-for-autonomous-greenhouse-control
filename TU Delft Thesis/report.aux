@@ -225,10 +225,12 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces Value predictions - 2 Days\relax }}{20}{figure.caption.24}\protected@file@percent }
 \newlabel{fig:tr_predictions_short}{{3.12}{20}{Value predictions - 2 Days\relax }{figure.caption.24}{}}
 \newlabel{fig:tr_predictions_short@cref}{{[figure][12][3]3.12}{[1][20][]20}}
+\newlabel{rme:smoothness-of-value-functions}{{1}{21}{}{remark.1}{}}
+\newlabel{rme:smoothness-of-value-functions@cref}{{[remark][1][]1}{[1][21][]21}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Drymass vs Time vs Value - Stochastic\relax }}{21}{figure.caption.25}\protected@file@percent }
 \newlabel{fig:vf_heatmap_stochastic}{{3.13}{21}{Drymass vs Time vs Value - Stochastic\relax }{figure.caption.25}{}}
 \newlabel{fig:vf_heatmap_stochastic@cref}{{[figure][13][3]3.13}{[1][21][]21}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.7}Conclusion}{21}{section.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Conclusion}{22}{section.3.7}\protected@file@percent }
 \citation{boersmaRobustSamplebasedModel2022}
 \abx@aux@cite{0}{boersmaRobustSamplebasedModel2022}
 \abx@aux@segm{0}{0}{boersmaRobustSamplebasedModel2022}
@@ -259,8 +261,8 @@
 \newlabel{eq:constraint-u-limits@cref}{{[subequation][5][4,1]4.1e}{[1][23][]23}}
 \newlabel{eq:constraint-initial}{{4.1f}{23}{Greenhouse MPC problem formulation}{equation.4.1.1f}{}}
 \newlabel{eq:constraint-initial@cref}{{[subequation][6][4,1]4.1f}{[1][23][]23}}
-\newlabel{eq:mpc_cost_function}{{4.2}{24}{Greenhouse MPC problem formulation}{equation.4.1.2}{}}
-\newlabel{eq:mpc_cost_function@cref}{{[equation][2][4]4.2}{[1][23][]24}}
+\newlabel{eq:mpc_stage_cost}{{4.2}{24}{Greenhouse MPC problem formulation}{equation.4.1.2}{}}
+\newlabel{eq:mpc_stage_cost@cref}{{[equation][2][4]4.2}{[1][23][]24}}
 \@writefile{toc}{\contentsline {paragraph}{Experimental Setup}{24}{equation.4.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}Deterministic Results}{24}{section.4.2}\protected@file@percent }
 \citation{ellisTutorialReviewEconomic2014}
@@ -328,9 +330,6 @@
 \@writefile{toc}{\contentsline {paragraph}{Implementation 1}{29}{subsection.5.1.1}\protected@file@percent }
 \newlabel{eq:sol-mpc-ocp}{{5.1}{29}{Implementation 1}{equation.5.1.1}{}}
 \newlabel{eq:sol-mpc-ocp@cref}{{[equation][1][5]5.1}{[1][29][]29}}
-\citation{risbeckEconomicModelPredictive2020}
-\abx@aux@cite{0}{risbeckEconomicModelPredictive2020}
-\abx@aux@segm{0}{0}{risbeckEconomicModelPredictive2020}
 \citation{amritEconomicOptimizationUsing2011}
 \abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
 \abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
@@ -340,101 +339,104 @@
 \citation{amritEconomicOptimizationUsing2011}
 \abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
 \abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
-\citation{bertsekasLessonsAlphaZeroOptimal}
-\abx@aux@cite{0}{bertsekasLessonsAlphaZeroOptimal}
-\abx@aux@segm{0}{0}{bertsekasLessonsAlphaZeroOptimal}
+\citation{amritEconomicOptimizationUsing2011}
+\abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
+\abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
+\citation{amritEconomicOptimizationUsing2011}
+\abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
+\abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
 \newlabel{eq:initial-guess-1}{{5.2}{30}{Implementation 1}{equation.5.1.2}{}}
 \newlabel{eq:initial-guess-1@cref}{{[equation][2][5]5.2}{[1][29][]30}}
 \newlabel{eq:initial-guess-2}{{5.3}{30}{Implementation 1}{equation.5.1.3}{}}
 \newlabel{eq:initial-guess-2@cref}{{[equation][3][5]5.3}{[1][30][]30}}
 \@writefile{toc}{\contentsline {paragraph}{Implementation 2}{30}{equation.5.1.3}\protected@file@percent }
-\newlabel{eq:terminal-constraint-ocp}{{5.4}{30}{Implementation 2}{equation.5.1.4}{}}
-\newlabel{eq:terminal-constraint-ocp@cref}{{[equation][4][5]5.4}{[1][30][]30}}
-\@writefile{toc}{\contentsline {paragraph}{Implementation 3}{30}{equation.5.1.4}\protected@file@percent }
-\newlabel{eq:terminal-region}{{5.5}{30}{Implementation 3}{equation.5.1.5}{}}
-\newlabel{eq:terminal-region@cref}{{[equation][5][5]5.5}{[1][30][]30}}
-\@writefile{tdo}{\contentsline {todo}{Ask Koty about this for a terminal constraint}{30}{section*.31}\protected@file@percent }
-\pgfsyspdfmark {pgfid8}{12707673}{13158903}
-\pgfsyspdfmark {pgfid11}{36966851}{13156282}
-\pgfsyspdfmark {pgfid12}{39211459}{12928381}
-\@writefile{toc}{\contentsline {paragraph}{Implementation 4}{30}{section*.31}\protected@file@percent }
+\newlabel{eq:assumption_3}{{5.4}{30}{Implementation 2}{equation.5.1.4}{}}
+\newlabel{eq:assumption_3@cref}{{[equation][4][5]5.4}{[1][30][]30}}
+\newlabel{eq:terminal-constraint-ocp}{{5.5}{30}{Implementation 2}{equation.5.1.5}{}}
+\newlabel{eq:terminal-constraint-ocp@cref}{{[equation][5][5]5.5}{[1][30][]30}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation 3}{30}{equation.5.1.5}\protected@file@percent }
+\newlabel{eq:terminal-region}{{5.6}{30}{Implementation 3}{equation.5.1.6}{}}
+\newlabel{eq:terminal-region@cref}{{[equation][6][5]5.6}{[1][30][]30}}
+\citation{bertsekasLessonsAlphaZeroOptimal}
+\abx@aux@cite{0}{bertsekasLessonsAlphaZeroOptimal}
+\abx@aux@segm{0}{0}{bertsekasLessonsAlphaZeroOptimal}
 \citation{amritEconomicOptimizationUsing2011}
 \abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
 \abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
 \citation{amritEconomicOptimizationUsing2011}
 \abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
 \abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
-\newlabel{eq:cost-function}{{5.6}{31}{Implementation 4}{equation.5.1.6}{}}
-\newlabel{eq:cost-function@cref}{{[equation][6][5]5.6}{[1][30][]31}}
-\@writefile{tdo}{\contentsline {todo}{should i list assumptions required}{31}{section*.32}\protected@file@percent }
-\pgfsyspdfmark {pgfid13}{24176111}{40285523}
-\pgfsyspdfmark {pgfid16}{36966851}{40282902}
-\pgfsyspdfmark {pgfid17}{39211459}{40055001}
-\@writefile{toc}{\contentsline {paragraph}{Implementation 5}{31}{section*.32}\protected@file@percent }
-\newlabel{eq:rl-mpc-ocp}{{5.7}{31}{Implementation 5}{equation.5.1.7}{}}
-\newlabel{eq:rl-mpc-ocp@cref}{{[subequation][7][5]5.7}{[1][31][]31}}
-\newlabel{eq:rl-mpc-dynamics-constraint}{{5.7b}{31}{Implementation 5}{equation.5.1.7b}{}}
-\newlabel{eq:rl-mpc-dynamics-constraint@cref}{{[subequation][2][5,7]5.7b}{[1][31][]31}}
-\newlabel{eq:rl-mpc-output-constraint}{{5.7c}{31}{Implementation 5}{equation.5.1.7c}{}}
-\newlabel{eq:rl-mpc-output-constraint@cref}{{[subequation][3][5,7]5.7c}{[1][31][]31}}
-\newlabel{eq:rl-mpc-delta-u}{{5.7d}{31}{Implementation 5}{equation.5.1.7d}{}}
-\newlabel{eq:rl-mpc-delta-u@cref}{{[subequation][4][5,7]5.7d}{[1][31][]31}}
-\newlabel{eq:rl-mpc-u-limits}{{5.7e}{31}{Implementation 5}{equation.5.1.7e}{}}
-\newlabel{eq:rl-mpc-u-limits@cref}{{[subequation][5][5,7]5.7e}{[1][31][]31}}
-\newlabel{eq:rl-pmc-initial}{{5.7f}{31}{Implementation 5}{equation.5.1.7f}{}}
-\newlabel{eq:rl-pmc-initial@cref}{{[subequation][6][5,7]5.7f}{[1][31][]31}}
-\@writefile{toc}{\contentsline {paragraph}{Implementation 6}{31}{equation.5.1.7k}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{31}{subsection.5.1.2}\protected@file@percent }
-\newlabel{fig:mps-vs-rl-perf}{{5.1a}{32}{MPC vs RL Performance\relax }{figure.caption.33}{}}
-\newlabel{fig:mps-vs-rl-perf@cref}{{[subfigure][1][5,1]5.1a}{[1][31][]32}}
-\newlabel{sub@fig:mps-vs-rl-perf}{{a}{32}{MPC vs RL Performance\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:mps-vs-rl-perf@cref}{{[subfigure][1][5,1]5.1a}{[1][31][]32}}
-\newlabel{fig:mpc-vs-rl-time}{{5.1b}{32}{MPC vs RL compute time\relax }{figure.caption.33}{}}
-\newlabel{fig:mpc-vs-rl-time@cref}{{[subfigure][2][5,1]5.1b}{[1][31][]32}}
-\newlabel{sub@fig:mpc-vs-rl-time}{{b}{32}{MPC vs RL compute time\relax }{figure.caption.33}{}}
-\newlabel{sub@fig:mpc-vs-rl-time@cref}{{[subfigure][2][5,1]5.1b}{[1][31][]32}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces MPC vs RL\relax }}{32}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:mpc-vs-rl}{{5.1}{32}{MPC vs RL\relax }{figure.caption.33}{}}
-\newlabel{fig:mpc-vs-rl@cref}{{[figure][1][5]5.1}{[1][31][]32}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Results - Implementations 1 and 2}{32}{section.5.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces MPC vs MPC with initial guesses\relax }}{32}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:rlmpc-impl1}{{5.2}{32}{MPC vs MPC with initial guesses\relax }{figure.caption.34}{}}
-\newlabel{fig:rlmpc-impl1@cref}{{[figure][2][5]5.2}{[1][32][]32}}
-\citation{amritEconomicOptimizationUsing2011}
-\abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
-\abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces MPC with terminal constraints from agent\relax }}{33}{figure.caption.35}\protected@file@percent }
-\newlabel{fig:rlmpc-impl2}{{5.3}{33}{MPC with terminal constraints from agent\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation 4}{31}{equation.5.1.6}\protected@file@percent }
+\newlabel{eq:cost-function}{{5.7}{31}{Implementation 4}{equation.5.1.7}{}}
+\newlabel{eq:cost-function@cref}{{[equation][7][5]5.7}{[1][31][]31}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation 5}{31}{equation.5.1.7}\protected@file@percent }
+\newlabel{eq:rl-mpc-ocp}{{5.8}{31}{Implementation 5}{equation.5.1.8}{}}
+\newlabel{eq:rl-mpc-ocp@cref}{{[subequation][8][5]5.8}{[1][31][]31}}
+\newlabel{eq:rl-mpc-dynamics-constraint}{{5.8b}{31}{Implementation 5}{equation.5.1.8b}{}}
+\newlabel{eq:rl-mpc-dynamics-constraint@cref}{{[subequation][2][5,8]5.8b}{[1][31][]31}}
+\newlabel{eq:rl-mpc-output-constraint}{{5.8c}{31}{Implementation 5}{equation.5.1.8c}{}}
+\newlabel{eq:rl-mpc-output-constraint@cref}{{[subequation][3][5,8]5.8c}{[1][31][]31}}
+\newlabel{eq:rl-mpc-delta-u}{{5.8d}{31}{Implementation 5}{equation.5.1.8d}{}}
+\newlabel{eq:rl-mpc-delta-u@cref}{{[subequation][4][5,8]5.8d}{[1][31][]31}}
+\newlabel{eq:rl-mpc-u-limits}{{5.8e}{31}{Implementation 5}{equation.5.1.8e}{}}
+\newlabel{eq:rl-mpc-u-limits@cref}{{[subequation][5][5,8]5.8e}{[1][31][]31}}
+\newlabel{eq:rl-pmc-initial}{{5.8f}{31}{Implementation 5}{equation.5.1.8f}{}}
+\newlabel{eq:rl-pmc-initial@cref}{{[subequation][6][5,8]5.8f}{[1][31][]31}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation 6}{32}{equation.5.1.8k}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{32}{subsection.5.1.2}\protected@file@percent }
+\newlabel{fig:mps-vs-rl-perf}{{5.1a}{32}{MPC vs RL Performance\relax }{figure.caption.31}{}}
+\newlabel{fig:mps-vs-rl-perf@cref}{{[subfigure][1][5,1]5.1a}{[1][32][]32}}
+\newlabel{sub@fig:mps-vs-rl-perf}{{a}{32}{MPC vs RL Performance\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:mps-vs-rl-perf@cref}{{[subfigure][1][5,1]5.1a}{[1][32][]32}}
+\newlabel{fig:mpc-vs-rl-time}{{5.1b}{32}{MPC vs RL compute time\relax }{figure.caption.31}{}}
+\newlabel{fig:mpc-vs-rl-time@cref}{{[subfigure][2][5,1]5.1b}{[1][32][]32}}
+\newlabel{sub@fig:mpc-vs-rl-time}{{b}{32}{MPC vs RL compute time\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:mpc-vs-rl-time@cref}{{[subfigure][2][5,1]5.1b}{[1][32][]32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces MPC vs RL\relax }}{32}{figure.caption.31}\protected@file@percent }
+\newlabel{fig:mpc-vs-rl}{{5.1}{32}{MPC vs RL\relax }{figure.caption.31}{}}
+\newlabel{fig:mpc-vs-rl@cref}{{[figure][1][5]5.1}{[1][32][]32}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Results - Implementations 1}{32}{section.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces MPC vs MPC with initial guesses\relax }}{33}{figure.caption.32}\protected@file@percent }
+\newlabel{fig:rlmpc-impl1}{{5.2}{33}{MPC vs MPC with initial guesses\relax }{figure.caption.32}{}}
+\newlabel{fig:rlmpc-impl1@cref}{{[figure][2][5]5.2}{[1][32][]33}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Results - Implementations 2}{33}{section.5.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces MPC with terminal constraints from agent\relax }}{33}{figure.caption.33}\protected@file@percent }
+\newlabel{fig:rlmpc-impl2}{{5.3}{33}{MPC with terminal constraints from agent\relax }{figure.caption.33}{}}
 \newlabel{fig:rlmpc-impl2@cref}{{[figure][3][5]5.3}{[1][33][]33}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Results - Implementation 3}{33}{section.5.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces MPC with terminal region from agent\relax }}{34}{figure.caption.36}\protected@file@percent }
-\newlabel{fig:rlmpc-impl3}{{5.4}{34}{MPC with terminal region from agent\relax }{figure.caption.36}{}}
-\newlabel{fig:rlmpc-impl3@cref}{{[figure][4][5]5.4}{[1][33][]34}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Results - Implementation 4}{34}{section.5.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces MPC with terminal cost function\relax }}{34}{figure.caption.37}\protected@file@percent }
-\newlabel{fig:rlmpc-impl4}{{5.5}{34}{MPC with terminal cost function\relax }{figure.caption.37}{}}
-\newlabel{fig:rlmpc-impl4@cref}{{[figure][5][5]5.5}{[1][34][]34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces MPC with terminal cost function\relax }}{35}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:rlmpc-impl4-1}{{5.6}{35}{MPC with terminal cost function\relax }{figure.caption.38}{}}
-\newlabel{fig:rlmpc-impl4-1@cref}{{[figure][6][5]5.6}{[1][34][]35}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.5}Results - Implementation 5 and 6}{35}{section.5.5}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces MPC with terminal cost function and terminal region\relax }}{35}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:rlmpc-impl5-6}{{5.7}{35}{MPC with terminal cost function and terminal region\relax }{figure.caption.39}{}}
-\newlabel{fig:rlmpc-impl5-6@cref}{{[figure][7][5]5.7}{[1][35][]35}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.6}Final Result and Conclusion}{36}{section.5.6}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces MPC final \relax }}{36}{figure.caption.40}\protected@file@percent }
-\newlabel{fig:rlmpc-final}{{5.8}{36}{MPC final \relax }{figure.caption.40}{}}
-\newlabel{fig:rlmpc-final@cref}{{[figure][8][5]5.8}{[1][35][]36}}
+\citation{amritEconomicOptimizationUsing2011}
+\abx@aux@cite{0}{amritEconomicOptimizationUsing2011}
+\abx@aux@segm{0}{0}{amritEconomicOptimizationUsing2011}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}Results - Implementation 3}{34}{section.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces MPC with terminal region from agent\relax }}{34}{figure.caption.34}\protected@file@percent }
+\newlabel{fig:rlmpc-impl3}{{5.4}{34}{MPC with terminal region from agent\relax }{figure.caption.34}{}}
+\newlabel{fig:rlmpc-impl3@cref}{{[figure][4][5]5.4}{[1][34][]34}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Results - Implementation 4}{35}{section.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces MPC with terminal cost function\relax }}{35}{figure.caption.35}\protected@file@percent }
+\newlabel{fig:rlmpc-impl4-all-states}{{5.5}{35}{MPC with terminal cost function\relax }{figure.caption.35}{}}
+\newlabel{fig:rlmpc-impl4-all-states@cref}{{[figure][5][5]5.5}{[1][35][]35}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces MPC with terminal cost function\relax }}{35}{figure.caption.36}\protected@file@percent }
+\newlabel{fig:rlmpc-impl4-1}{{5.6}{35}{MPC with terminal cost function\relax }{figure.caption.36}{}}
+\newlabel{fig:rlmpc-impl4-1@cref}{{[figure][6][5]5.6}{[1][35][]35}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.6}Results - Implementation 5 and 6}{36}{section.5.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.7}{\ignorespaces MPC with terminal cost function and terminal region\relax }}{36}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:rlmpc-impl5-6}{{5.7}{36}{MPC with terminal cost function and terminal region\relax }{figure.caption.37}{}}
+\newlabel{fig:rlmpc-impl5-6@cref}{{[figure][7][5]5.7}{[1][35][]36}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.7}Final Result and Conclusion}{36}{section.5.7}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5.8}{\ignorespaces MPC final \relax }}{36}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:rlmpc-final}{{5.8}{36}{MPC final \relax }{figure.caption.38}{}}
+\newlabel{fig:rlmpc-final@cref}{{[figure][8][5]5.8}{[1][36][]36}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{37}{chapter.6}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chapter:stochastic_RL_MPC}{{6}{37}{Stochastic RL-MPC}{chapter.6}{}}
 \newlabel{chapter:stochastic_RL_MPC@cref}{{[chapter][6][]6}{[1][37][]37}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{37}{section.6.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces RL vs MPC in stochastic conditions\relax }}{37}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:stochastic-rl-vs-mpc}{{6.1}{37}{RL vs MPC in stochastic conditions\relax }{figure.caption.39}{}}
+\newlabel{fig:stochastic-rl-vs-mpc@cref}{{[figure][1][6]6.1}{[1][37][]37}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.2}Results - Implementation 3}{37}{section.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Results - Implementation 4}{37}{section.6.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Results - Implementation 5}{37}{section.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.5}Final Result and Conclusion}{37}{section.6.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Results - Implementation 5}{37}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Final Result and Conclusion}{37}{section.6.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{38}{chapter.7}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -450,7 +452,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {8.1}Discussion}{39}{section.8.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8.2}Conclusion}{39}{section.8.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{39}{section.8.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{References}{40}{chapter*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{References}{40}{chapter*.40}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {A}RL \& RL Training }{41}{appendix.A}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}

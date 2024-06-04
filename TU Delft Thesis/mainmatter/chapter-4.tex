@@ -21,7 +21,7 @@ In order to directly compare to RL and to the RL-MPC controller, it is important
 
 To ensure that the optimization goal is exactly the same as the Rl reward function (\autoref{section:env-description}), the cost function $V(u(k),y(k))$ becomes:
 
-\begin{equation} \label{eq:mpc_cost_function}
+\begin{equation} \label{eq:mpc_stage_cost}
 	\begin{aligned}
 		l(u(k),y(k)) & = - \kappa_1 (y(k) - y(k-1)) + \sum_{j=2}^4 {\kappa_j u_{j-1}} + \sum_{i = 1}^4 s_i(k) \\
 		\text{where} & \quad s_i(k) \geq 0, \\
