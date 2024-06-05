@@ -571,9 +571,12 @@ During each time step, the computation of the initial state's value will be dete
 
 \autoref{fig:tr_predictions_short} shows a time series of the cumulative reward and predicted values over a two day span. 
 
-\begin{remark}\label{rme:smoothness-of-value-functions}
+\begin{remark}\label{rem:vf-smoothness}
 	It is evident that while $V_1, V_2, V_3$ can produce more precise estimations (as demonstrated by the proximity of their prediction line $V_{s_0}$ to the actual value), $V_4$ remains significantly smoother. Moreover, $V_3$ is not as smooth as it may have seemed in \autoref{fig:vf_heatmaps} and displays the highest level of noise across the four models trained. Although this is one realization of a trajectory,this behavior was observed in all simulated trajectories.
 \end{remark}
+
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = \textwidth]{figures/vf_heatmap_stochastic.eps}

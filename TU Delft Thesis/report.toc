@@ -57,7 +57,7 @@
 \contentsline {paragraph}{Training}{16}{equation.3.6.13}%
 \contentsline {paragraph}{Experimental Setup}{16}{equation.3.6.14}%
 \contentsline {subsection}{\numberline {3.6.3}Results}{18}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Conclusion}{22}{section.3.7}%
+\contentsline {section}{\numberline {3.7}Conclusion}{21}{section.3.7}%
 \contentsline {chapter}{\numberline {4}Model Predictive Control Setup}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Greenhouse MPC problem formulation}{23}{section.4.1}%
 \contentsline {paragraph}{Experimental Setup}{24}{equation.4.1.2}%
@@ -79,25 +79,25 @@
 \contentsline {section}{\numberline {5.4}Results - Implementation 3}{34}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Results - Implementation 4}{35}{section.5.5}%
 \contentsline {section}{\numberline {5.6}Results - Implementation 5 and 6}{36}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Final Result and Conclusion}{36}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{37}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{37}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Results - Implementation 3}{37}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results - Implementation 5}{37}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Final Result and Conclusion}{37}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{38}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{38}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{38}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Case Study 3 - Reduced Order vs Full Order Value Function}{38}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Final Result and Conclusion}{38}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{39}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Discussion}{39}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Conclusion}{39}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{39}{section.8.3}%
-\contentsline {chapter}{References}{40}{chapter*.40}%
-\contentsline {chapter}{\numberline {A}RL \& RL Training }{41}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{41}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Agent Training}{41}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Value Function Training}{41}{section.A.3}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{42}{appendix.B}%
+\contentsline {section}{\numberline {5.7}Final Result and Conclusion}{37}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{38}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{38}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Results - Implementation 3}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Results - Implementation 5}{39}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Final Result and Conclusion}{39}{section.6.4}%
+\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{40}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{40}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{40}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Case Study 3 - Reduced Order vs Full Order Value Function}{40}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Final Result and Conclusion}{40}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{41}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Discussion}{41}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Conclusion}{41}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{41}{section.8.3}%
+\contentsline {chapter}{References}{42}{chapter*.42}%
+\contentsline {chapter}{\numberline {A}RL \& RL Training }{43}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{43}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Agent Training}{43}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Value Function Training}{43}{section.A.3}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{44}{appendix.B}%
 \contentsfinish 

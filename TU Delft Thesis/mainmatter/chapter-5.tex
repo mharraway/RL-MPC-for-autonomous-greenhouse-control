@@ -171,7 +171,7 @@ This implementation aims to move away from the terminal constraint and allow the
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_3.eps}
-	\caption{MPC with terminal region from agent}
+	\caption{MPC with terminal region}
 	\label{fig:rlmpc-impl3}
 \end{figure}
 
@@ -189,33 +189,56 @@ This implementation investigates the effect of a supplying the MPC with a cost f
 	\caption{MPC with terminal cost function}
 	\label{fig:rlmpc-impl4-all-states}
 \end{figure}
-\autoref{fig:rlmpc-impl4-all-states} is a naive implementation of merging RL and MPC, and the results are undesirable, both in terms of final cumulative reward and computational time of the control input. One must be very careful in using a neural network in an optimizer due to the highly non-linear nature of them. As depicted in \autoref{fig:rlmpc-impl4-all-states}, the more complex the neural network, the worse the performance. This is due to the extreme non convex behaviour of the neural networks and the MPC optimizer easily gets trapped in local mins. See \autoref{rme:smoothness-of-value-functions}.
+\autoref{fig:rlmpc-impl4-all-states} is a naive implementation of merging RL and MPC. However, the outcomes are unsatisfactory in terms of both the overall cumulative reward and the computational time required for generating control inputs. Caution must be exercised when employing a neural network in an optimizer, as they possess a profoundly non-linear nature. As illustrated in \autoref{fig:rlmpc-impl4-all-states}, the performance deteriorates as the neural network becomes more intricate. The neural networks exhibit highly non-convex behaviour that may cause the MPC optimizer to become easily trapped in local optima. The only value function that seems to not destabilize the optimizer is $\tilde{V}_4$ which is also the only value function that exhibits a smooth behaviour, see \cref{rem:vf-smoothness}. The MPC's optimisation task is solely focused on maximising the drymass in this particular value function, with time being a constant parameter. However, for the other value functions, the MPC needs to optimise across all possible model states and inputs.Although this leads to more accurate inference for the value of the specific environmental state, it also introduces additional dimensions and consequently a greater number of possibilities for becoming stuck in local optima that may not be meaningful.\\
+It is natural to observe an increase in computational time in \autoref{fig:rlmpc-impl4-all-states}. Once again, the extremely non-convex nature of the behaviour can disrupt the MPC optimizer and lead to unpredictable computational times. However, it is worth noting that $\tilde{V}_4$ consistently exhibits a predictable computational time, highlighting the significance of obtaining a high-quality value function.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4_1.eps}
 	\caption{MPC with terminal cost function}
-	\label{fig:rlmpc-impl4-1}
+	\label{fig:rlmpc-impl4-only-drymass}
 \end{figure}
+To minimise the non-linearity of the value functions, the decision variables, except for the drymass, were kept fixed at their initial guesses. This was done because it is evident that the value of a state can be estimated based solely on the current time and the state of the drymass.Thus, the optimisation process was exclusively focused on optimising the dry mass, as was  done with $\tilde{V}_4$. The performance of the resulting RL-MPC policy is demonstrated in \autoref{fig:rlmpc-impl4-only-drymass}. The addition of the value functions improves the final cumulative reward over MPC at shorter prediction horizons but degrades performance for longer prediction horizons (5 and 6hr). Although the value functions have been simplified, increasing the prediction horizon allows the MPC's optimization process to get trapped in local optima, this could be the reason for the observed performance degradation in \autoref{fig:rlmpc-impl4-only-drymass}. Moreover, the simplification of the value function also resulted in more consistent times, with very little increase as compared to the nominal MPC.\\
+
+$\tilde{V}_4$ was used for further testing, since it exhibits the greatest performance increase (final cumulative reward) over the nominal MPC (1-4hrs) as compared to the other simplified value functions. The performance of $\tilde{V}_4$ is expected to be superior to the others because it was trained exclusively on the drymass state and time, enabling it to make more accurate predictions of the value of a specific state using only these two inputs. These results suggests that a value function can increase performance over nominal MPC, but necessarily over the Rl policy that it was derived from. In addition, in order for the value function to be effective, it should have a minimal number of local optima while maintaining accuracy. Furthermore, it should be smooth and capable of generalising effectively across the state space to ensure reliable performance. Lastly, it is important to balance the performance gains with the increased computational time, and as shown in \autoref{tab:rl-mpc-v4}, the increase in computational time, far outweighs the marginal performance increase for shorter prediction horizons.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|cccccc|}
+		\hline
+		&1hr&2hr&3hr&4hr&5hr&6hr\\
+		\hline
+		Final Cumulative Reward Increase(\%) &2.484 &0.525&0.814&0.512&-1.041& -1.069\\
+		\hline
+		Computational Time Increase     (\%) &50.888 &40.358&30.859&29.062&14.243& 23.013\\
+		\hline
+	\end{tabular}
+	\caption{RL-MPC $\tilde{V}_4$ performance comparison compared to MPC}
+	\label{tab:rl-mpc-v4}
+\end{table}
+
+
 
 \section{Results - Implementation 5 and 6}
-\emph{The Results and discussion of combining the two}
-
+Implementation 5 aims to incorporate both a terminal region constraint as well as a terminal cost function. $\tilde{V}_4$ is used as a cost function with a terminal region generated by initial guesses as in \autoref{eq:initial-guess-1}, with a $\delta_T =5\%$. Implementation 6 solves two problems, each with its own initial guesses and terminal region (\autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} respectively).It determines the optimal policy by evaluating the terminal state in each solution using the value function.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_5_6.eps}
-	\caption{MPC with terminal cost function and terminal region}
+	\caption{MPC vs RL-MPC with terminal region and cost function vs RL-MPC solving two separate problems and evaluating best policy with value function}
 	\label{fig:rlmpc-impl5-6}
 \end{figure}
+As demonstrated in \autoref{fig:rlmpc-impl5-6}, both implementations outperform the standalone MPC and RL policies across all MPC prediction horizons. The computational time of implementation 6 is notably higher because it solves two optimisation problems instead of just one. Nevertheless, it is possible to solve the 2 problems in parallel, effectively reducing the computational time by half. Although the performance gains are substantial as compared to the standalone MPC, it is noted that majority of this performance increase is due to the terminal region constraint. In addition, this constraint on the terminal region also seems to make the performance increase monotonically, even with the addition of the value function. Furthermore, despite the inclusion of a neural network in the optimisation problem (Implementation 5), the computational time is reduced to a similar level as the standalone MPC when a terminal region constraint is present. 
 
 
+However , whether a value function is necessary when the terminal region
 \section{Final Result and Conclusion}
-
+The three best implementations are compared, namely Implementation 3 (with guesses and terminal region provided by \autoref{eq:initial-guess-1}), Implementation 5 and 6.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_final.eps}
 	\caption{MPC final }
 	\label{fig:rlmpc-final}
 \end{figure}
-\emph{The final selected algorithm and conclusion on the work done}
+
+\autoref{fig:rlmpc-final} displays the final results of the mentioned implementations. Although providing a terminal region contributes the most to the performance gains, the addition of the value function can further enhance performance, albiet at the cost of increased computational time.
 
