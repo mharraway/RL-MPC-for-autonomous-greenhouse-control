@@ -177,7 +177,9 @@ This implementation aims to move away from the terminal constraint and allow the
 
 The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior final cumulative reward in comparison to the MPC even at longer prediction horizons. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike for MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
 
-Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability. 
+Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. This is likely because the terminal region is less limiting than the terminal constraint,  while also providing guidance to the MPC, resulting in reduced computational times.
+
+It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability. 
 
 \section{Results - Implementation 4}
 This implementation investigates the effect of a supplying the MPC with a cost function, specifically an approximate value function represented by a neural network.
@@ -240,5 +242,26 @@ The three best implementations are compared, namely Implementation 3 (with guess
 	\label{fig:rlmpc-final}
 \end{figure}
 
-\autoref{fig:rlmpc-final} displays the final results of the mentioned implementations. Although providing a terminal region contributes the most to the performance gains, the addition of the value function can further enhance performance, albiet at the cost of increased computational time.
+The final results of the mentioned implementations are shown in \autoref{fig:rlmpc-final}. While the inclusion of a terminal region is the primary factor in improving performance, the incorporation of the value function can additionally enhance performance, albeit with the drawback of increased computational time. suggests that the value function and terminal region provided by Rl satisfy the necessary assumptions to ensure performance of an EMPC. However, a formal proof would be needed to confirm this conclusively. Moreover, the increase in computational time is not that drastic when a neural network is implemented, especially with the addition of a terminal region to aid the MPC in finding solutions faster. While the computational time increase may appear insignificant, this system is relatively uncomplicated compared to others. If this approach is used in highly complex systems, this increase in computational time could result in destabilizing the system. Therefore any methods in reducing the computational time is highly beneficial. Though it seems that there is very little benefit to adding a cost function when the advantages of adding a terminal constraint is already so beneficial.
+
+
+\begin{table}[H]
+	\centering
+	\caption{RL-MPC 3 and 5 vs MPC and RL}
+	\label{tab:rlmpc-3-5-vs-MPC-and-RL}
+	\resizebox{\columnwidth}{!}{%
+		\begin{tabular}{|c|cc|cc|cc|cc|cc|cc|cl|}
+			\hline
+			& \multicolumn{2}{c|}{1hr} & \multicolumn{2}{c|}{2hr} & \multicolumn{2}{c|}{3 hr} & \multicolumn{2}{c|}{4 hr} & \multicolumn{2}{c|}{5 hr} & \multicolumn{2}{c|}{6 hr} & \multicolumn{2}{c|}{RL  @ 1 hr} \\
+			& Perf & Time & Perf & Time & Perf & Time & Perf & Time & Perf & Time & Perf & Time & \multicolumn{2}{c|}{Perf} \\ \cline{2-15} 
+			RL-MPC 3 (\%) & 19.91 & 10.91 & 5.191 & 2.38 & 0.79 & -5.38 & 0.21 & -8.47 & 0.328 & -16.2 & 0.67 & -18.95 & \multicolumn{2}{c|}{4.67} \\
+			RL-MPC 5 (\%) & 20.32 & 24.26 & 5.84 & 18.26 & 1.44 & 44.37 & 0.57 & 3.68 & 0.435 & 2.71 & 0.746 & -7.86 & \multicolumn{2}{c|}{5.02} \\ \hline
+		\end{tabular}%
+	}
+\end{table}
+
+\autoref{tab:rlmpc-3-5-vs-MPC-and-RL} displays the performance increase of RL-MPC 3 and RL-MPC 5 against the nominal MPC and a comparison with RL at a 1hr prediction horizon. Incorporating both a terminal region and value function  appears to offer minimal advantages compared to only using a terminal region, as the marginal improvement in performance results in a significantly larger increase in computational time. This reiterates the importance of reducing the computational cost of the neural network in the optimization problem. RL-MPC 6 offers promising results as an alternative method to using the value function, and could yield even more benefits when more than two initial trajectories and terminal regions are provided by various agents and methods. The computational time of RL-MPC 6 can be theoretically halved by solving the problems in parallel, resulting in a compute cost similar to RL-MPC 3 and a similar performance to RL-MPC 5. Further research should be conducted on this implementation in the future.\\
+While the combination of RL and MPC shows promising results, it is important to note that the simulations remain deterministic. These results primarily indicate which implementations are worth testing further in a stochastic environment, to create a more accurate depiction of reality.
+
+
 
