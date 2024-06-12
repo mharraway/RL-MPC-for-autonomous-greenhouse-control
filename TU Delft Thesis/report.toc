@@ -94,7 +94,7 @@
 \contentsline {section}{\numberline {8.1}Discussion}{42}{section.8.1}%
 \contentsline {section}{\numberline {8.2}Conclusion}{42}{section.8.2}%
 \contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{42}{section.8.3}%
-\contentsline {chapter}{References}{43}{chapter*.43}%
+\contentsline {chapter}{References}{43}{chapter*.44}%
 \contentsline {chapter}{\numberline {A}RL \& RL Training }{44}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{44}{section.A.1}%
 \contentsline {section}{\numberline {A.2}Agent Training}{44}{section.A.2}%
