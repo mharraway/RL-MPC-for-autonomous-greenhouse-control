@@ -31,7 +31,7 @@ class neural_net (nn.Module):
     def __init__(self,input_dim, hidden_dim) -> None:
         super(neural_net,self).__init__()
         self.fc1 = nn.Linear(input_dim, hidden_dim) 
-        self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
+        # self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
         self.fc3 = nn.Linear(hidden_dim, 1)  
         # self.relu = nn.ReLU()  # ReLU activation function
         self.act_fn = nn.Tanh()
@@ -39,7 +39,7 @@ class neural_net (nn.Module):
     def forward(self, x):
         x = self.act_fn(self.fc1(x))
         # if h == 2:
-        x = self.act_fn(self.fc2(x))
+        # x = self.act_fn(self.fc2(x))
         x = self.fc3(x)
         return x
     
@@ -102,7 +102,7 @@ class value_function_TR():
             self.optimizer.zero_grad()
         
             # Calculate TD error
-            current_state_values = self.neural_net(obs,self.hidden_layers)   
+            current_state_values = self.neural_net(obs)   
             
             #Calculating Loss
             mse_loss = nn.MSELoss()
@@ -121,7 +121,7 @@ class value_function_TR():
         
     def evaluate_value(self, obs):
         obs_tensor = torch.tensor(obs, dtype=torch.float32).unsqueeze(0)
-        value = self.neural_net(obs_tensor,self.hidden_layers).detach().numpy()[0][0]
+        value = self.neural_net(obs_tensor).detach().numpy()[0][0]
         return value 
     
     def validate(self,global_step = 0):
@@ -130,7 +130,7 @@ class value_function_TR():
             obs =  inputs
             total_return =  outputs.unsqueeze(1).float()  
             # Calculate TD error
-            current_state_values = self.neural_net(obs,self.hidden_layers).detach()
+            current_state_values = self.neural_net(obs).detach()
             #Calculating Loss
             mse_loss = nn.MSELoss()
             loss = mse_loss(current_state_values, total_return) 
