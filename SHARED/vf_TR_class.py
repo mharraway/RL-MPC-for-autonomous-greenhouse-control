@@ -31,7 +31,7 @@ class neural_net (nn.Module):
     def __init__(self,input_dim, hidden_dim) -> None:
         super(neural_net,self).__init__()
         self.fc1 = nn.Linear(input_dim, hidden_dim) 
-        # self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
+        self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
         self.fc3 = nn.Linear(hidden_dim, 1)  
         # self.relu = nn.ReLU()  # ReLU activation function
         self.act_fn = nn.Tanh()
@@ -39,7 +39,7 @@ class neural_net (nn.Module):
     def forward(self, x):
         x = self.act_fn(self.fc1(x))
         # if h == 2:
-        # x = self.act_fn(self.fc2(x))
+        x = self.act_fn(self.fc2(x))
         x = self.fc3(x)
         return x
     
