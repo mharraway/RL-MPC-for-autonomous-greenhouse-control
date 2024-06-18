@@ -324,7 +324,7 @@ The time series plot of the system outputs and inputs across the 40-day period f
 
  Other performance metrics are reported for completeness in \autoref{tab:perf-metrics-selected-policies}. The computational time needed to compute the optimal control action is noted to take $\approx 0.2ms$. This is expected since a simple inference of the actor network is required to calculate the optimal action.
  
-\section{Stochastic Results}
+\section{Stochastic Results} \label{section:rl-stochastic-results}
 In training the stochastic RL agent, the best hyper-parameter configuration was used, namely the same as Agent 1 (\autoref{tab:selected_agents}). Although this produces a critic that is problematic for the integration with MPC, this is solved in \autoref{section:trained-vf}. Three stochastic agents were trained, each trained on a different level of uncertainty as specified in \autoref{section:env-description} with the uncertainty model according to \autoref{eq:uncertainty_model}. All stochastic agents used the same hyper-parameters as Agent 1. Performance metrics are reported and a comparison is made with the nominal model (Agent 1 from \autoref{tab:selected_agents}). Performance metrics are evaluated by repeating the 40-day simulation period 30 times and taking the average and variance of the cumulative rewards over the complete time horizon.
 Each agent is assigned a name based on the degree of uncertainty on which they received training. For example, an agent that has undergone training in a stochastic environment with a $\sigma = 20\%$ is referred to as 'Agent 0.2'. The agent named 'Agent 1' will be referred to as the 'Nominal Agent'. Each Agent is compared to the other stochastic Agents in an environment with each level of uncertainty.
 

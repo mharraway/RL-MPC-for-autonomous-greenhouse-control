@@ -82,21 +82,20 @@
 \contentsline {section}{\numberline {5.7}Final Result and Conclusion}{37}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{39}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{39}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Results - Implementation 3}{40}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Results - Implementation 5}{40}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Final Result and Conclusion}{40}{section.6.4}%
-\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{41}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{41}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{42}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Final Result and Conclusion}{43}{section.7.3}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{44}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Discussion}{44}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Conclusion}{44}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{44}{section.8.3}%
-\contentsline {chapter}{References}{45}{chapter*.48}%
-\contentsline {chapter}{\numberline {A}RL \& RL Training }{46}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{46}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Agent Training}{46}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Value Function Training}{46}{section.A.3}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{47}{appendix.B}%
+\contentsline {section}{\numberline {6.2}Results - VF and Terminal Region}{41}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{42}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{44}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Case Study 1 - Reducing Neurons}{44}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Case Study 2 - Taylor Approximation}{45}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Final Result and Conclusion}{46}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{47}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Discussion}{47}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Conclusion}{47}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{47}{section.8.3}%
+\contentsline {chapter}{References}{48}{chapter*.48}%
+\contentsline {chapter}{\numberline {A}RL \& RL Training }{49}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{49}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Agent Training}{49}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Value Function Training}{49}{section.A.3}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{50}{appendix.B}%
 \contentsfinish 
