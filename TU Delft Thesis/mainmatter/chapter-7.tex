@@ -1,11 +1,11 @@
 \chapter{Computational Speed Up of RL-MPC}
-%\label{chapter:title}
+\label{chapter:speed-up}
 
-\emph{description of chapter}
+The purpose of this chapter is to provide an overview of the application of making the  best performing RL-MPC (RL-MPC 5) algorithm more computationally efficient. While the controller has demonstrated on marginal increase in computational time as compared to nominal MPC, incorporating a neural network as a cost function in larger and more intricate systems may introduce excessive delays and hinder performance. 2 Experiments were conducted in order to achieve speedup and the resulting performance and computational time was investigated. Given that the longer computation time is caused by the inclusion of the value function in the formulation of the MPC algorithm, it is logical to focus on optimising this aspect to improve speed. Three approaches were devised to accelerate the algorithm, with the initial one involving the training of a less intricate surrogate value function instead of employing the complete complex neural network for the terminal cost function. The aforementioned procedure has previously been performed, and the resulting outcomes were documented in \autoref{chapter:deterministic_RL_MPC}. It was determined that $\tilde{V}_4$ can be regarded as a surrogate value function for $\tilde{V}_1$. The surrogate value function exhibited greater stability and computational efficiency compared to the full order model. Consequently, it was employed in all subsequent experiments due to its stability. The following experiments are designed to accelerate the algorithm by implementing further simplifications to the neural network. It is important to note that the following experiments were performed on the nominal environment with zero parametric uncertainty.
 
-\section{Case Study 1 - Reducing Neurons}
-\emph{the results and discussion of the effect of reducing the neurons in the value funciton and the effect on computational time and performance}
-
+\section{Reducing Neurons and Hidden Layers}
+A simple, and yet an effective approach was to reduce the size of the neural network representing the value function. The policy on which the value function was trained on remained fixed. All trained neural networks were trained with the same hyper parameters as outlined in \autoref{section:trained-vf}. An investigation was conducted on multiple network architects. The initial architecture, on which previous results have been established on and will be considered the baseline performance, comprised of a deep neural network with 2 hidden layers, each containing 128 neurons.
+To create the smaller neural networks, it was decided to create 3 deep and 3 shallow neural networks. For both the deep and shallow networks, there 128, 64 and 32 neurons in each hidden layer respectively. By doing this, it effectively generates neural networks that become simpler as the number of neurons and hidden layers decreases. Thus is makes it possible to examine the impact of the complexity of the neural network on the RL-MPC's performance and computational time. It is important to note that for the deep neural networks, both hidden layers use the same number of neurons. 
 
 \begin{figure}[H]
 	\centering
@@ -14,15 +14,23 @@
 	\label{fig:neurons-speedup}
 \end{figure}
 
+The performance gains, in terms of final cumulative reward, and the computational time of the RL-MPC controller with different neural network architectures vs prediction horizon are shown in Figure \autoref{fig:neurons-speedup}. It is evident that the simpler models reduce computational time, but also at the expense of a decrease in performance. To be more precise, it appears that all simpler neural networks have comparable computational times. However, shallow neural networks have a much more pronounced negative effect on performance compared to deep neural networks, which have a minimal impact on performance.
+
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/speed_up_neurons_bar_graph.png}
-	\caption{Fast RL-MPC with Reduced Neurons}
+	\caption{RL-MPC with reduced neural network complexity for its terminal cost function. where D-128 would stand for ''Deep neural network of 128 Neurons per hidden layer''.}
 	\label{fig:neurons-speedup-bar-graph}
 \end{figure}
+\autoref{fig:neurons-speedup-bar-graph} displays a more in depth analysis into the performance gains and computational times of each of the tested neural networks vs prediction horizon. From \autoref{fig:neurons-speedup-bar-graph}, There is no observable correlation between the complexity of the neural network and the improvements in performance and computational time. Contrary to expectations, decreasing complexity does not necessarily result in a decrease in performance time. Although it does suggest the a simpler network can most definitely result in lower computational times albeit at the cost of performance. Furthermore, \autoref{fig:neurons-speedup-bar-graph} does suggest that the shallow networks offer less benefit, due to their substantial decrease in performance as compared to the simpler deep neural networks. The most effective neural network architecture appears to be a deep neural network with 64 neurons per hidden layer. This architecture achieves performance that is very similar to the original deep neural network with 128 neurons per layer, but with a noticeable reduction in computational time for all prediction horizons. This can both be seen in \autoref{fig:neurons-speedup} and \autoref{fig:neurons-speedup-bar-graph}. Thus, these findings indicate that while reducing network complexity can speed up the algorithm with minimal to no performance degradation, thorough testing of the neural network architecture is necessary to achieve this.
 
-\section{Case Study 2 - Taylor Approximation}
-\emph{results and disucssion of using order 1 and 2 of a taylor approximation of the value function}
+
+
+\section{Taylor Approximation}
+Perhaps a more intuitive approach would be to use a taylor expansion around a point to locally approximate the neural network in order to achieve speedup. The taylor expansion provides a  first order (linear approximation) or a second order (quadratic approximation) of the neural network's outputs with respect to its inputs. While the calculation of the Jacobian of a neural network, which is required for the first-order Taylor approximation, is generally considered to be straightforward. However, determining the Hessian, used in the second order taylor approximation, of a neural network is considerable more difficult and computationally intensive. Nevertheless, employing a second order Taylor approximation would result in more precise approximations around the chosen point, potentially leading to better value function approximations and therefore increase in performance. Fortunately, since the structure of the neural network does not change over the course of the control period, both the Jacobian and Hessian only needs to be calculated once. \\
+
+The taylor expansion of the neural network was accomplished using Casadi and L4Casadi. The first and second order Taylor expansions were both conducted around the terminal point, which is determined by the initial guess (\autoref{eq:initial-guess-1}) for every time step. The performance and computational time of these approximations were then compared to that of the original neural network when used in the RL-MPC 5 implementation.
 
 
 \begin{figure}[H]
@@ -32,8 +40,12 @@
 	\label{fig:taylor-speedup}
 \end{figure}
 
+The impact of a linear and quadratic approximation of the neural network around the terminal guess was illustrated in \autoref{fig:taylor-speedup}. Locally approximating the neural network has evident advantages, as both first and second order approximations result in a substantial reduction in computational time without any noticeable decline in performance. It appears that a second order approximation is unnecessary and a first order approximation may be preferable due to its lower computational time without sacrificing performance.
 
-\section{Final Result and Conclusion}
+
+\section{Combined}
+The following study investigated the combined effects of the two speedup techniques on the RL-MPC algorithm. The experiment includes combining the best results from the previous two experiments.
+
 
 \begin{figure}[H]
 	\centering
@@ -42,4 +54,11 @@
 	\label{fig:final-speedup}
 \end{figure}
 
-\emph{A conclusion of the chapter outlining the work done}
+
+The results of utilising a deep neural network with 64 neurons per hidden layer, along with a first order Taylor approximation around the terminal guess, are presented in \autoref{fig:final-speedup}. These findings are compared to the individual speedup techniques used, the original RL-MPC and the nominal MPC. Similar to previous results, \autoref{fig:neurons-speedup} and \autoref{fig:taylor-speedup}, the combination of the two have zero or little impact on the performance. Although utilising a first-order Taylor expansion reduces computational time more compared to using a smaller deep neural network, the combination of both methods further decreases computational time. The final  reduction is significant enough that the computational cost becomes equivalent to or less than that of MPC, even at shorter prediction horizons of 1, 2, and 3 hours. These results are significant because they demonstrate the successful implementation of methods that achieve speedup without compromising performance. These findings could have even greater implications for more complex (greenhouse) systems, where achieving real-time control or minimizing delay is crucial for system performance.
+
+
+
+\section{Discussion and Conclusion}
+
+something here
