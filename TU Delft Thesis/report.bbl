@@ -17,78 +17,422 @@
 \endgroup
 
 \datalist[entry]{none/global//global/global}
-  \entry{boersmaRobustSamplebasedModel2022}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BS}{%
-         family={Boersma},
+  \entry{blazhevskaGrowingSlowerPace2019}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=BV}{%
+         family={Blazhevska},
          familyi={B\bibinitperiod},
-         given={Sjoerd},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=SC}{%
-         family={Sun},
-         familyi={S\bibinitperiod},
-         given={Congcong},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=vS}{%
-         family={{van Mourik}},
-         familyi={v\bibinitperiod},
-         given={Simon},
-         giveni={S\bibinitperiod},
+         given={Vesna},
+         giveni={V\bibinitperiod},
       }}%
     }
-    \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
-  MPC}
-    \strng{namehash}{BSSCvS1}
-    \strng{fullhash}{BSSCvS1}
+    \strng{namehash}{BV1}
+    \strng{fullhash}{BV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    United Nations Sustainable Development Goals - Time for Global Action for
+  People and Planet%
+    }
+    \field{shorttitle}{Growing at a Slower Pace, World Population Is Expected
+  to Reach 9.7 Billion in 2050 and Could Peak at Nearly 11 Billion around 2100}
+    \field{title}{Growing at a Slower Pace, World Population Is Expected to
+  Reach 9.7 Billion in 2050 and Could Peak at Nearly 11 Billion around 2100:
+  {{UN Report}}}
+    \field{langid}{american}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/BPE4DSEB/growing-
+    \verb at-a-slower-pace-world-population-is-expected-to-reach-9-7-billion-in
+    \verb -2050-and-could-pe.html
+    \endverb
+    \field{journaltitle}{United Nations Sustainable Development}
+    \field{month}{06}
+    \field{year}{2019}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{faoFutureFoodAgriculture2017}{book}{}
+    \name{author}{1}{}{%
+      {{hash=F}{%
+         family={FAO},
+         familyi={F\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Food and Agriculture Organization of the United Nations}}%
+    }
+    \strng{namehash}{F1}
+    \strng{fullhash}{F1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{isbn}{978-92-5-109551-5}
+    \field{shorttitle}{The Future of Food and Agriculture}
+    \field{title}{The Future of Food and Agriculture: Trends and Challenges}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Rome}%
+    }
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/YRUR5WSY/FAO - 20
+    \verb 17 - The future of food and agriculture trends and cha.pdf
+    \endverb
+    \field{year}{2017}
+  \endentry
+
+  \entry{vandijkMetaanalysisProjectedGlobal2021}{article}{}
+    \name{author}{4}{}{%
+      {{hash=vM}{%
+         family={{van Dijk}},
+         familyi={v\bibinitperiod},
+         given={Michiel},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MT}{%
+         family={Morley},
+         familyi={M\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=RML}{%
+         family={Rau},
+         familyi={R\bibinitperiod},
+         given={Marie\bibnamedelima Luise},
+         giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Saghai},
+         familyi={S\bibinitperiod},
+         given={Yashar},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group}%
+    }
+    \keyw{Environmental studies,Socioeconomic scenarios}
+    \strng{namehash}{vMMTRML+1}
+    \strng{fullhash}{vMMTRMLSY1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
     \field{abstract}{%
-    Achieving optimal resource use efficiency is a key challenge in modern
-  greenhouse production systems. Optimal performance in terms of crop yield and
-  resource efficiency can in theory be achieved via optimal control. Standard
-  optimal controllers are not designed to deal with uncertainty, whereas
-  considerable model prediction errors occur due to the mismatch between the
-  model and the real system. This paper explores the relation between
-  parametric uncertainty, and performance with respect to crop yield, CO2
-  demand, ventilation demand, and heating energy. This is done using the
-  following steps 1) extension of an existing controller model with parametric
-  uncertainty, 2) design of a sample-based robust model predictive controller
-  and 3) analysis of control performance under increasing parametric
-  uncertainty. The results predict that control performance is significantly
-  sensitive to parametric uncertainty. A relative parameter uncertainty of
-  20\%, reduced crop yield with 11\% compared to the case without uncertainty.
-  Furthermore, a 20\% uncertainty decreased CO2 demand with 80\%, whereas it
-  increased ventilation demand with 96\%, and increased heating energy demand
-  with 90\%.%
+    Quantified global scenarios and projections are used to assess long-term
+  future global food security under a range of socio-economic and climate
+  change scenarios. Here, we conducted a systematic literature review and
+  meta-analysis to assess the range of future global food security projections
+  to 2050. We reviewed 57 global food security projection and quantitative
+  scenario studies that have been published in the past two decades and
+  discussed the methods, underlying drivers, indicators and projections. Across
+  five representative scenarios that span divergent but plausible
+  socio-economic futures, the total global food demand is expected to increase
+  by 35\% to 56\% between 2010 and 2050, while population at risk of hunger is
+  expected to change by -91\% to +8\% over the same period. If climate change
+  is taken into account, the ranges change slightly (+30\% to +62\% for total
+  food demand and -91\% to +30\% for population at risk of hunger) but with no
+  statistical differences overall. The results of our review can be used to
+  benchmark new global food security projections and quantitative scenario
+  studies and inform policy analysis and the public debate on the future of
+  food.%
     }
     \verb{doi}
-    \verb 10.1016/j.ifacol.2022.11.135
+    \verb 10.1038/s43016-021-00322-9
     \endverb
-    \field{issn}{2405-8963}
-    \field{number}{32}
-    \field{pages}{177\bibrangedash 182}
-    \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
-  {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
-    \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
-  System with Parametric Uncertainty}
-    \field{volume}{55}
+    \field{issn}{2662-1355}
+    \field{number}{7}
+    \field{pages}{494\bibrangedash 501}
+    \field{title}{A Meta-Analysis of Projected Global Food Demand and
+  Population at Risk of Hunger for the Period 2010--2050}
+    \field{volume}{2}
+    \field{langid}{english}
     \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
-    \verb et al. - 2022 - Robust sample-based model predictive control of a .pd
-    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/MQIUME67/S24058
-    \verb 96322027689.html
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/UGPTBK2T/van Dijk
+    \verb  et al. - 2021 - A meta-analysis of projected global food demand an.p
+    \verb df
     \endverb
-    \field{journaltitle}{IFAC-PapersOnLine}
-    \field{annotation}{%
-    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
-    }
-    \field{month}{01}
-    \field{year}{2022}
-    \field{urlday}{05}
+    \field{journaltitle}{Nature Food}
+    \field{month}{07}
+    \field{year}{2021}
+    \field{urlday}{01}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
+  \endentry
+
+  \entry{nishatGreenDealGreenhouse2020}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=N}{%
+         family={{Nishat}},
+         familyi={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{N1}
+    \strng{fullhash}{N1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Brite Hellas S.A, discusses the ``Green Deal'' Greenhouse, A Promise for
+  Sustainable Food Supply starting with problems and needs%
+    }
+    \field{shorttitle}{The ``{{Green Deal}}'' {{Greenhouse}}}
+    \field{title}{The ``{{Green Deal}}'' {{Greenhouse}}: {{A}} Promise for
+  Sustainable Food Supply}
+    \field{langid}{british}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/QJFUKWV6/93949.ht
+    \verb ml
+    \endverb
+    \field{journaltitle}{Open Access Government}
+    \field{month}{09}
+    \field{year}{2020}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{winklerGlobalLandUse2021}{article}{}
+    \name{author}{4}{}{%
+      {{hash=WK}{%
+         family={Winkler},
+         familyi={W\bibinitperiod},
+         given={Karina},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=FR}{%
+         family={Fuchs},
+         familyi={F\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Rounsevell},
+         familyi={R\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HM}{%
+         family={Herold},
+         familyi={H\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nature Publishing Group}%
+    }
+    \keyw{Agriculture,Climate-change mitigation,Environmental impact,Geography}
+    \strng{namehash}{WKFRRM+1}
+    \strng{fullhash}{WKFRRMHM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Quantifying the dynamics of land use change is critical in tackling global
+  societal challenges such as food security, climate change, and biodiversity
+  loss. Here we analyse the dynamics of global land use change at an
+  unprecedented spatial resolution by combining multiple open data streams
+  (remote sensing, reconstructions and statistics) to create the HIstoric Land
+  Dynamics Assessment\,+\,(HILDA\,+). We estimate that land use change has
+  affected almost a third (32\%) of the global land area in just six decades
+  (1960-2019) and, thus, is around four times greater in extent than previously
+  estimated from long-term land change assessments. We also identify
+  geographically diverging land use change processes, with afforestation and
+  cropland abandonment in the Global North and deforestation and agricultural
+  expansion in the South. Here, we show that observed phases of accelerating
+  ({\textasciitilde}1960--2005) and decelerating (2006--2019) land use change
+  can be explained by the effects of global trade on agricultural production.%
+    }
+    \verb{doi}
+    \verb 10.1038/s41467-021-22702-2
+    \endverb
+    \field{issn}{2041-1723}
+    \field{number}{1}
+    \field{pages}{2501}
+    \field{title}{Global Land Use Changes Are Four Times Greater than
+  Previously Estimated}
+    \field{volume}{12}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/JH4PSNQM/Winkler
+    \verb et al. - 2021 - Global land use changes are four times greater tha.pd
+    \verb f
+    \endverb
+    \field{journaltitle}{Nature Communications}
+    \field{month}{05}
+    \field{year}{2021}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{munozComparingEnvironmentalImpacts2008}{article}{}
+    \name{author}{8}{}{%
+      {{hash=MP}{%
+         family={Mu{\~n}oz},
+         familyi={M\bibinitperiod},
+         given={Pere},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=AA}{%
+         family={Ant{\'o}n},
+         familyi={A\bibinitperiod},
+         given={Assumpci{\'o}},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Nu{\~n}ez},
+         familyi={N\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Paranjpe},
+         familyi={P\bibinitperiod},
+         given={Ashwin},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Ari{\~n}o},
+         familyi={A\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Castells},
+         familyi={C\bibinitperiod},
+         given={X.},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=MJ}{%
+         family={Montera},
+         familyi={M\bibinitperiod},
+         given={J.I.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rieradevall},
+         familyi={R\bibinitperiod},
+         given={Joan},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MPAANM+1}
+    \strng{fullhash}{MPAANMPAAJCXMJRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouse production is often perceived as an artificial process,
+  characterized by low nutritional quality of the final product and the heavy
+  use of chemical inputs. Moreover, large areas covered with greenhouses create
+  a big visual impact, a factor which is especially important in the highly
+  touristic Mediterranean Coastal. In contrast, open-field cultivation is
+  generally perceived as an 'eco-friendly' activity, and one that has a much
+  smaller visual impact. Setting aside these 'apparent' perceptions of the two
+  cultivation systems, it is necessary to make an objective assessment and to
+  quantify their respective impacts on the environment. Life cycle assessment
+  (LCA) tool was used to compare the environmental burdens associated with
+  greenhouse as opposed to open-field production processes for a spring season
+  tomato crop grown in the Maresme region near Barcelona. Greenhouse structure,
+  irrigation equipment, fertilizers, pesticides, cultural tasks and irrigation
+  were all analyzed as subsystems. All inputs for each subsystem were traced
+  back to primary resources. For each subsystem, emissions were quantified and
+  aggregated into impact categories defined by CML 2001, using tomato yield
+  (kg) as the functional unit. Preliminary results revealed that environmental
+  burden per kg of tomato grown in open-field production was greater than that
+  for tomatoes produced in greenhouses with respect to factors such as the use
+  of water, fertilizers and pesticides. Notwithstanding the differences in
+  environmental burden associated with the two production systems, if one
+  considers the higher economic returns obtained from greenhouse production,
+  their existence could constitute a reasonable trade-off.%
+    }
+    \verb{doi}
+    \verb 10.17660/ActaHortic.2008.801.197
+    \endverb
+    \field{pages}{1591\bibrangedash 1596}
+    \field{title}{Comparing the Environmental Impacts of Greenhouse versus
+  Open-Field Tomato Production in the {{Mediterranean}} Region}
+    \field{volume}{801}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WPC4DUMN/Muñoz e
+    \verb t al. - 2008 - Comparing the environmental impacts of greenhouse .pdf
+    \endverb
+    \field{journaltitle}{Acta Horticulturae}
+    \field{month}{11}
+    \field{year}{2008}
+  \endentry
+
+  \entry{alvarezWhatSoaringEnergy2021}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=ACF}{%
+         family={Alvarez},
+         familyi={A\bibinitperiod},
+         given={Carlos\bibnamedelima Fernandez},
+         giveni={C\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Molnar},
+         familyi={M\bibinitperiod},
+         given={Gergely},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ACFMG1}
+    \strng{fullhash}{ACFMG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    What is behind soaring energy prices and what happens next? - A commentary
+  by Carlos Fern{\'a}ndez Alvarez, Gergely Molnar%
+    }
+  \field{howpublished}{https://www.iea.org/commentaries/what-is-behind-soaring-energy-prices-and-what-happens-next}
+    \field{shorttitle}{What Is behind Soaring Energy Prices and What Happens
+  Next?}
+    \field{title}{What Is behind Soaring Energy Prices and What Happens next?
+  -- {{Analysis}}}
+    \field{langid}{british}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/9WCZX7PQ/what-is-
+    \verb behind-soaring-energy-prices-and-what-happens-next.html
+    \endverb
+    \field{journaltitle}{IEA}
+    \field{month}{10}
+    \field{year}{2021}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{breukersPowerDutchGreenhouse}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BA}{%
+         family={Breukers},
+         familyi={B\bibinitperiod},
+         given={A},
+         giveni={A},
+      }}%
+      {{hash=HO}{%
+         family={Hietbrink},
+         familyi={H\bibinitperiod},
+         given={O},
+         giveni={O},
+      }}%
+      {{hash=RMNA}{%
+         family={Ruijs},
+         familyi={R\bibinitperiod},
+         given={M\bibnamedelima N\bibnamedelima A},
+         giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim
+  A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BAHORMNA1}
+    \strng{fullhash}{BAHORMNA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The Power of {{Dutch}} Greenhouse Vegetable Horticulture : An
+  Analysis of the Private Sector and Its Institutional Framework}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/KYI3PMEQ/Breukers
+    \verb  et al. - The power of Dutch greenhouse vegetable horticultu.pdf
+    \endverb
   \endentry
 
   \entry{morcegoReinforcementLearningModel2023}{misc}{}
@@ -176,11 +520,330 @@
     \field{annotation}{%
     Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:30.685Z%
     }
-    \field{eprinttype}{arxiv}
+    \field{eprinttype}{arXiv}
     \field{eprintclass}{math}
     \field{month}{03}
     \field{year}{2023}
     \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{devopsGreenhouseClimateControl2021}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=D}{%
+         family={DevOps},
+         familyi={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{D1}
+    \strng{fullhash}{D1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouse climate control is one of the most important aspects of modern
+  horticulture, letting growers grow high-quality produce year-round.%
+    }
+    \field{title}{Greenhouse {{Climate Control}} -- {{How}} to {{Improve Plant
+  Growth}} - {{DryGair}}}
+    \field{langid}{american}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/FRJBAXMD/greenhou
+    \verb se-climate-control.html
+    \endverb
+    \field{journaltitle}{Drygair Greenhouse Dehumidifiers}
+    \field{month}{08}
+    \field{year}{2021}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{sahooSmartGreenhouseBoon2022}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={Sahoo},
+         familyi={S\bibinitperiod},
+         given={Chiranjib},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Smart Greenhouse is not only solving the problem of sudden climate changes
+  but also helping enhance crop yield in agriculture. Read through{\dots}%
+    }
+  \field{howpublished}{https://write.agrevolution.in/smart-greenhouse-a-boon-or-bane-for-agriculture-dbd75fb606d3}
+    \field{shorttitle}{Smart {{Greenhouse}}}
+    \field{title}{Smart {{Greenhouse}}: {{A Boon}} or {{Bane}} for
+  {{Agriculture}}?}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HC48L2YK/smart-gr
+    \verb eenhouse-a-boon-or-bane-for-agriculture-dbd75fb606d3.html
+    \endverb
+    \field{journaltitle}{Medium}
+    \field{month}{10}
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{rusnakWhatCurrentState2018}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=RP}{%
+         family={Rusnak},
+         familyi={R\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RP1}
+    \strng{fullhash}{RP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Growers are at a crossroads when it comes to finding a reliable labor
+  supply at a price they can afford. For many operations, their future hangs in
+  the balance.%
+    }
+    \field{title}{What {{Is}} the {{Current State}} of {{Labor}} in the
+  {{Greenhouse Industry}}?}
+    \field{langid}{american}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/YAXUEMW8/what-is-
+    \verb the-current-state-of-labor-in-the-greenhouse-industry.html
+    \endverb
+    \field{journaltitle}{Greenhouse Grower}
+    \field{month}{11}
+    \field{year}{2018}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{zhangMethodologiesControlStrategies2020}{article}{}
+    \name{author}{6}{}{%
+      {{hash=ZS}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Shanhong},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=GY}{%
+         family={Guo},
+         familyi={G\bibinitperiod},
+         given={Yu},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZH}{%
+         family={Zhao},
+         familyi={Z\bibinitperiod},
+         given={Huajian},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CD}{%
+         family={Chow},
+         familyi={C\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=FY}{%
+         family={Fang},
+         familyi={F\bibinitperiod},
+         given={Yuan},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZSGYZH+1}
+    \strng{fullhash}{ZSGYZHWYCDFY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The greenhouse sector accounts for the largest portion of total final
+  energy consumption in agriculture in most countries. One efficient way to
+  minimize the total energy consumption in greenhouses is through the
+  acceptable and efficient control strategy. The control strategy plays a very
+  important role in maintaining comfortable inside climate and reducing energy
+  consumption for the greenhouse, which could effectively adjust the equipment
+  such as the heating/cooling, ventilation, shading system, and coordinate them
+  with low energy operation. The objective of this article is to systematically
+  review the methodologies of control strategies for improving energy
+  efficiency in agricultural greenhouses, particularly for the low energy
+  greenhouses. The methods section, including review methodology and brief
+  methodology description for control strategies in greenhouses, have been
+  first presented. Subsequently, results section introduces the significance of
+  control strategy and types of control strategies in greenhouses; detailed
+  methodologies of greenhouse control strategies including mathematical
+  modelling study; physical experimental study; numerical simulations and
+  parametric sensitivity analysis have been then systematically reviewed.
+  Furthermore, more than 30 parameters affecting greenhouse performance have
+  been analyzed and evaluated. This review could provide a guidance to probe
+  into the advanced control strategies to reduce the energy consumption for the
+  greenhouse and maintain suitable growing environment simultaneously. This
+  work has also demonstrated several control perspectives on the future low
+  energy greenhouse trends.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.jclepro.2020.122695
+    \endverb
+    \field{issn}{09596526}
+    \field{pages}{122695}
+    \field{title}{Methodologies of Control Strategies for Improving Energy
+  Efficiency in Agricultural Greenhouses}
+    \field{volume}{274}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/7AASVN7A/Zhang et
+    \verb  al. - 2020 - Methodologies of control strategies for improving .pdf
+    \endverb
+    \field{journaltitle}{Journal of Cleaner Production}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:29:01.281Z%
+    }
+    \field{month}{11}
+    \field{year}{2020}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{vanstratenOptimalGreenhouseCultivation2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VSG}{%
+         family={Van\bibnamedelima Straten},
+         familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HEJV}{%
+         family={Henten},
+         familyi={H\bibinitperiod},
+         given={E.\bibnamedelima J.\bibnamedelima Van},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VSGHEJV1}
+    \strng{fullhash}{VSGHEJV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    A survey is presented of the literature on greenhouse climate control,
+  positioning the various solutions and paradigms in the framework of optimal
+  control. A separation of timescales allows the separation of the economic
+  optimal control problem of greenhouse cultivation into an off-line problem at
+  the tactical level, and an on-line problem at the operational level. This
+  paradigm is used to classify the literature into three categories: focus on
+  operational control, focus on the tactical level, and truly integrated
+  control. Integrated optimal control warrants the best economical result, and
+  provides a systematic way to design control systems for the innovative
+  greenhouses of the future. Research issues and perspectives are listed as
+  well.%
+    }
+    \verb{doi}
+    \verb 10.3182/20101206-3-JP-3009.00004
+    \endverb
+    \field{issn}{14746670}
+    \field{number}{26}
+    \field{pages}{18\bibrangedash 33}
+    \field{shorttitle}{Optimal {{Greenhouse Cultivation Control}}}
+    \field{title}{Optimal {{Greenhouse Cultivation Control}}: {{Survey}} and
+  {{Perspectives}}}
+    \field{volume}{43}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LGQ2TGEQ/Van Stra
+    \verb ten and Henten - 2010 - Optimal Greenhouse Cultivation Control Survey
+    \verb  and.pdf
+    \endverb
+    \field{journaltitle}{IFAC Proceedings Volumes}
+    \field{year}{2010}
+    \field{urlday}{14}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{boersmaRobustSamplebasedModel2022}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BS}{%
+         family={Boersma},
+         familyi={B\bibinitperiod},
+         given={Sjoerd},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Congcong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=vS}{%
+         family={{van Mourik}},
+         familyi={v\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
+  MPC}
+    \strng{namehash}{BSSCvS1}
+    \strng{fullhash}{BSSCvS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Achieving optimal resource use efficiency is a key challenge in modern
+  greenhouse production systems. Optimal performance in terms of crop yield and
+  resource efficiency can in theory be achieved via optimal control. Standard
+  optimal controllers are not designed to deal with uncertainty, whereas
+  considerable model prediction errors occur due to the mismatch between the
+  model and the real system. This paper explores the relation between
+  parametric uncertainty, and performance with respect to crop yield, CO2
+  demand, ventilation demand, and heating energy. This is done using the
+  following steps 1) extension of an existing controller model with parametric
+  uncertainty, 2) design of a sample-based robust model predictive controller
+  and 3) analysis of control performance under increasing parametric
+  uncertainty. The results predict that control performance is significantly
+  sensitive to parametric uncertainty. A relative parameter uncertainty of
+  20\%, reduced crop yield with 11\% compared to the case without uncertainty.
+  Furthermore, a 20\% uncertainty decreased CO2 demand with 80\%, whereas it
+  increased ventilation demand with 96\%, and increased heating energy demand
+  with 90\%.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2022.11.135
+    \endverb
+    \field{issn}{2405-8963}
+    \field{number}{32}
+    \field{pages}{177\bibrangedash 182}
+    \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
+  {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
+    \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
+  System with Parametric Uncertainty}
+    \field{volume}{55}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
+    \verb et al. - 2022 - Robust sample-based model predictive control of a .pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/MQIUME67/S24058
+    \verb 96322027689.html
+    \endverb
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
+    }
+    \field{month}{01}
+    \field{year}{2022}
+    \field{urlday}{05}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
   \endentry
