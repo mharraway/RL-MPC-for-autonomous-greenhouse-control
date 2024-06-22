@@ -774,6 +774,2666 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{arroyoReinforcedModelPredictive2022}{article}{}
+    \name{author}{4}{}{%
+      {{hash=AJ}{%
+         family={Arroyo},
+         familyi={A\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Manna},
+         familyi={M\bibinitperiod},
+         given={Carlo},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Spiessens},
+         familyi={S\bibinitperiod},
+         given={Fred},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=HL}{%
+         family={Helsen},
+         familyi={H\bibinitperiod},
+         given={Lieve},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{BOPTEST,Building automation,Model predictive control,Reinforced model
+  predictive control,Reinforcement learning}
+    \strng{namehash}{AJMCSF+1}
+    \strng{fullhash}{AJMCSFHL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Buildings need advanced control for the efficient and climate-neutral use
+  of their energy systems. Model predictive control (MPC) and reinforcement
+  learning (RL) arise as two powerful control techniques that have been
+  extensively investigated in the literature for their application to building
+  energy management. These methods show complementary qualities in terms of
+  constraint satisfaction, computational demand, adaptability, and
+  intelligibility, but usually a choice is made between both approaches. This
+  paper compares both control approaches and proposes a novel algorithm called
+  reinforced predictive control (RL-MPC) that merges their relative merits.
+  First, the complementarity between RL and MPC is emphasized on a conceptual
+  level by commenting on the main aspects of each method. Second, the RL-MPC
+  algorithm is described that effectively combines features from each approach,
+  namely state estimation, dynamic optimization, and learning. Finally, MPC,
+  RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized
+  simulation framework for the assessment of advanced control algorithms in
+  buildings. The results indicate that pure RL cannot provide constraint
+  satisfaction when using a control formulation equivalent to MPC and the same
+  controller model for learning. The new RL-MPC algorithm can meet constraints
+  and provide similar performance to MPC while enabling continuous learning and
+  the possibility to deal with uncertain environments.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.apenergy.2021.118346
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{118346}
+    \field{title}{Reinforced Model Predictive Control ({{RL-MPC}}) for Building
+  Energy Management}
+    \field{volume}{309}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/KIPS5MIY/Arroyo e
+    \verb t al. - 2022 - Reinforced model predictive control (RL-MPC) for b.pdf
+    \verb ;/home/murray/snap/zotero-snap/common/Zotero/storage/8CKYYN5K/S030626
+    \verb 1921015932.html
+    \endverb
+    \field{journaltitle}{Applied Energy}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:28.314Z%
+    }
+    \field{month}{03}
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{beckenbachAddressingInfinitehorizonOptimization2018}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BL}{%
+         family={Beckenbach},
+         familyi={B\bibinitperiod},
+         given={Lukas},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=OP}{%
+         family={Osinenko},
+         familyi={O\bibinitperiod},
+         given={Pavel},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=SS}{%
+         family={Streif},
+         familyi={S\bibinitperiod},
+         given={Stefan},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{infinite-horizon optimization,Nonlinear MPC,reinforcement learning}
+    \strng{namehash}{BLOPSS1}
+    \strng{fullhash}{BLOPSS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Model predictive control (MPC) is the standard approach to infinite-horizon
+  optimal control which usually optimizes a finite initial fragment of the cost
+  function so as to make the problem computationally tractable. Globally
+  optimal controllers are usually found by Dynamic Programming (DP). The
+  computations involved in DP are notoriously hard to perform, especially in
+  online control. Therefore, different approximation schemes of DP, the
+  so-called ``critics'', were suggested for infinite-horizon cost functions.
+  This work proposes to incorporate such a critic into dual-mode MPC as a
+  particular means of addressing infinite-horizon optimal control. The proposed
+  critic is based on Q-learning and is used for online approximation of the
+  infinite-horizon cost. Stability of the new approach is analyzed and certain
+  sufficient stabilizing constraints on the critic are derived. A case study
+  demonstrates the applicability.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2018.10.175
+    \endverb
+    \field{issn}{2405-8963}
+    \field{number}{20}
+    \field{pages}{60\bibrangedash 65}
+    \field{series}{6th {{IFAC Conference}} on {{Nonlinear Model Predictive
+  Control NMPC}} 2018}
+    \field{title}{Addressing Infinite-Horizon Optimization in {{MPC}} via
+  {{Q-learning}}}
+    \field{volume}{51}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZXEUZ9SM/Beckenba
+    \verb ch et al. - 2018 - Addressing infinite-horizon optimization in MPC vi
+    \verb .pdf;/home/murray/snap/zotero-snap/common/Zotero/storage/HT5VRX53/S24
+    \verb 05896318326478.html
+    \endverb
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{month}{01}
+    \field{year}{2018}
+    \field{urlday}{13}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{lubarsCombiningReinforcementLearning2021}{misc}{}
+    \name{author}{7}{}{%
+      {{hash=LJ}{%
+         family={Lubars},
+         familyi={L\bibinitperiod},
+         given={Joseph},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=GH}{%
+         family={Gupta},
+         familyi={G\bibinitperiod},
+         given={Harsh},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=CS}{%
+         family={Chinchali},
+         familyi={C\bibinitperiod},
+         given={Sandeep},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LL}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Liyun},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Raja},
+         familyi={R\bibinitperiod},
+         given={Adnan},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Srikant},
+         familyi={S\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=WX}{%
+         family={Wu},
+         familyi={W\bibinitperiod},
+         given={Xinzhou},
+         giveni={X\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine
+  Learning,Computer Science - Robotics}
+    \strng{namehash}{LJGHCS+1}
+    \strng{fullhash}{LJGHCSLLRASRWX1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We consider the problem of designing an algorithm to allow a car to
+  autonomously merge on to a highway from an on-ramp. Two broad classes of
+  techniques have been proposed to solve motion planning problems in autonomous
+  driving: Model Predictive Control (MPC) and Reinforcement Learning (RL). In
+  this paper, we first establish the strengths and weaknesses of
+  state-of-the-art MPC and RL-based techniques through simulations. We show
+  that the performance of the RL agent is worse than that of the MPC solution
+  from the perspective of safety and robustness to out-of-distribution traffic
+  patterns, i.e., traffic patterns which were not seen by the RL agent during
+  training. On the other hand, the performance of the RL agent is better than
+  that of the MPC solution when it comes to efficiency and passenger comfort.
+  We subsequently present an algorithm which blends the model-free RL agent
+  with the MPC solution and show that it provides better trade-offs between all
+  metrics -- passenger comfort, efficiency, crash rate and robustness.%
+    }
+    \verb{eprint}
+    \verb 2011.08484
+    \endverb
+    \field{number}{arXiv:2011.08484}
+    \field{title}{Combining {{Reinforcement Learning}} with {{Model Predictive
+  Control}} for {{On-Ramp Merging}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/V7GPQTAP/Lubars e
+    \verb t al_2021_Combining Reinforcement Learning with Model Predictive Cont
+    \verb rol for On-Ramp.pdf;/home/murray/snap/zotero-snap/common/Zotero/stora
+    \verb ge/KG95RNEU/2011.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{09}
+    \field{year}{2021}
+    \field{urlday}{24}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{lubbersAutonomousGreenhouseClimate2023}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lubbers},
+         familyi={L\bibinitperiod},
+         given={Seymour},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouses allow production of crops that would otherwise be impossible.
+  Permitting more local, fresher and nutrient richer crop production. Eorts are
+  taken to minimize societal harm due to energy and resource consumption by
+  greenhouse production systems. One way to control such systems is by using
+  model predictive control. Optimal crop yield and resource eciency can, in
+  theory, be achieved by model predictive control. Unfortunately, one major
+  drawback of model predictive control is that it is not well equipped to deal
+  with parametric uncertainty. Significant prediction errors can occur when a
+  mismatch between the model and the real system exists, resulting in
+  deteriorated performance of the system. Strategies exist, such as robust MPC,
+  that are designed to handle uncertainty, but those often result in
+  conservative control policies. This thesis proposes to use model predictive
+  control as a function approximator for RL in order to learn values for model
+  and MPC parameters that can deliver optimal performance in the case of model
+  mismatch.\&lt;br/\&gt;In this thesis, data-driven economic nonlinear model
+  predictive control using Q-learning is proposed as a method to alter the
+  model parameters. The performance of the system af- ter learning is compared
+  to approaches using robust and nominal model predictive control. Three
+  dierent goals are determined: maximizing economic profit, minimizing the
+  constraint violations and maximizing the economic performance while
+  minimizing constraint violations.\&lt;br/\&gt;In this work, an ENMPC scheme
+  is used as a function approximator in a Q-learning envi- ronment. The
+  optimization solution from the ENMPC scheme is used as the input to the
+  system, while the Q-learning agent optimizes the parameter values of the
+  ENMPC scheme and model for the environment. The performance of the system
+  after learning is compared to approaches using robust and nominal model
+  predictive control. The simulation results show that the data-driven ENMPC
+  using reinforcement learning is able to decrease constraint vi- olations by
+  up to 94\%, but unable to increase economic performance compared to nominal
+  MPC, compared to robust MPC the EPI is increased by almost 10\% while keeping
+  constraint violations at a similar level.%
+    }
+    \field{title}{Autonomous Greenhouse Climate Control with {{Q-learning}}
+  Using {{ENMPC}} as a Function Approximator}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LMBMYW4V/Lubbers
+    \verb - 2023 - Autonomous greenhouse climate control with Q-learn.pdf
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:22.020Z%
+    }
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{sikchiLearningOffPolicyOnline2021}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=SH}{%
+         family={Sikchi},
+         familyi={S\bibinitperiod},
+         given={Harshit},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=ZW}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Wenxuan},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Held},
+         familyi={H\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine
+  Learning,Computer Science - Robotics}
+    \strng{namehash}{SHZWHD1}
+    \strng{fullhash}{SHZWHD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Reinforcement learning (RL) in low-data and risk-sensitive domains requires
+  performant and flexible deployment policies that can readily incorporate
+  constraints during deployment. One such class of policies are the
+  semi-parametric H-step lookahead policies, which select actions using
+  trajectory optimization over a dynamics model for a fixed horizon with a
+  terminal value function. In this work, we investigate a novel instantiation
+  of H-step lookahead with a learned model and a terminal value function
+  learned by a model-free off-policy algorithm, named Learning Off-Policy with
+  Online Planning (LOOP). We provide a theoretical analysis of this method,
+  suggesting a tradeoff between model errors and value function errors and
+  empirically demonstrate this tradeoff to be beneficial in deep reinforcement
+  learning. Furthermore, we identify the "Actor Divergence" issue in this
+  framework and propose Actor Regularized Control (ARC), a modified trajectory
+  optimization procedure. We evaluate our method on a set of robotic tasks for
+  Offline and Online RL and demonstrate improved performance. We also show the
+  flexibility of LOOP to incorporate safety constraints during deployment with
+  a set of navigation environments. We demonstrate that LOOP is a desirable
+  framework for robotics applications based on its strong performance in
+  various important RL settings. Project video and details can be found at
+  https://hari-sikchi.github.io/loop .%
+    }
+    \verb{eprint}
+    \verb 2008.10066
+    \endverb
+    \field{number}{arXiv:2008.10066}
+    \field{title}{Learning {{Off-Policy}} with {{Online Planning}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/8VQBER3U/Sikchi e
+    \verb t al_2021_Learning Off-Policy with Online Planning.pdf;/home/murray/s
+    \verb nap/zotero-snap/common/Zotero/storage/S6VB5MII/2008.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{10}
+    \field{year}{2021}
+    \field{urlday}{10}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{bertsekasLessonsAlphaZeroOptimal}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BDP}{%
+         family={Bertsekas},
+         familyi={B\bibinitperiod},
+         given={Dimitri\bibnamedelima P},
+         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{BDP1}
+    \strng{fullhash}{BDP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Lessons from {{AlphaZero}} for {{Optimal}}, {{Model
+  Predictive}}, and {{Adaptive Control}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZER2BVBI/Bertseka
+    \verb s - Lessons from AlphaZero for Optimal, Model Predicti.pdf
+    \endverb
+  \endentry
+
+  \entry{bertsekasNewtonMethodReinforcement2022}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BD}{%
+         family={Bertsekas},
+         familyi={B\bibinitperiod},
+         given={Dimitri},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{AlphaZero,Dynamic programming over an infinite horizon,Model
+  predictive control,Off-line training,On-line play,Reinforcement learning}
+    \strng{namehash}{BD1}
+    \strng{fullhash}{BD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The purpose of this paper is to propose and develop a new conceptual
+  framework for approximate Dynamic Programming (DP) and Reinforcement Learning
+  (RL). This framework centers around two algorithms, which are designed
+  largely independently of each other and operate in synergy through the
+  powerful mechanism of Newton's method. We call these the off-line training
+  and the on-line play algorithms; the names are borrowed from some of the
+  major successes of RL involving games. Primary examples are the recent (2017)
+  AlphaZero program (which plays chess), and the similarly structured and
+  earlier (1990s) TD-Gammon program (which plays backgammon). In these game
+  contexts, the off-line training algorithm is the method used to teach the
+  program how to evaluate positions and to generate good moves at any given
+  position, while the on-line play algorithm is the method used to play in real
+  time against human or computer opponents. Both AlphaZero and TD-Gammon were
+  trained off-line extensively using neural networks and an approximate version
+  of the fundamental DP algorithm of policy iteration. Yet the AlphaZero player
+  that was obtained off-line is not used directly during on-line play (it is
+  too inaccurate due to approximation errors that are inherent in off-line
+  neural network training). Instead a separate on-line player is used to select
+  moves, based on multistep lookahead minimization and a terminal position
+  evaluator that was trained using experience with the off-line player. The
+  on-line player performs a form of policy improvement, which is not degraded
+  by neural network approximations. As a result, it greatly improves the
+  performance of the off-line player. Similarly, TD-Gammon performs on-line a
+  policy improvement step using one-step or two-step lookahead minimization,
+  which is not degraded by neural network approximations. To this end it uses
+  an off-line neural network-trained terminal position evaluator, and
+  importantly it also extends its on-line lookahead by rollout (simulation with
+  the one-step lookahead player that is based on the position evaluator). An
+  important lesson from AlphaZero and TD-Gammon is that the performance of an
+  off-line trained policy can be greatly improved by on-line approximation in
+  value space, with long lookahead (involving minimization or rollout with the
+  off-line policy, or both), and terminal cost approximation that is obtained
+  off-line. This performance enhancement is often dramatic and is due to a
+  simple fact, which is couched on algorithmic mathematics and is the focal
+  point of this work: (a) Approximation in value space with one-step lookahead
+  minimization amounts to a step of Newton's method for solving Bellman's
+  equation. (b) The starting point for the Newton step is based on the results
+  of off-line training, and may be enhanced by longer lookahead minimization
+  and on-line rollout. Indeed the major determinant of the quality of the
+  on-line policy is the Newton step that is performed on-line, while off-line
+  training plays a secondary role by comparison. Significantly, the synergy
+  between off-line training and on-line play also underlies Model Predictive
+  Control (MPC), a major control system design methodology that has been
+  extensively developed since the 1980s. This synergy can be understood in
+  terms of abstract models of infinite horizon DP and simple geometrical
+  constructions, and helps to explain the all-important stability issues within
+  the MPC context. In this work we aim to provide insights (often based on
+  visualization), which explain the beneficial effects of on-line decision
+  making on top of off-line training. In the process, we will bring out the
+  strong connections between the artificial intelligence view of RL, and the
+  control theory views of MPC and adaptive control. While we will deemphasize
+  mathematical proofs, there is considerable related analysis, which supports
+  our conclusions and can be found in the author's recent RL books (Bertsekas,
+  2019; Bertsekas, 2020), and the abstract DP monograph (Bertsekas, 2022). One
+  of our principal aims is to show, through the algorithmic ideas of Newton's
+  method and the unifying principles of abstract DP, that the
+  AlphaZero/TD-Gammon methodology of approximation in value space and rollout
+  applies very broadly to deterministic and stochastic optimal control
+  problems, involving both discrete and continuous search spaces, as well as
+  finite and infinite horizon.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.rico.2022.100121
+    \endverb
+    \field{issn}{2666-7207}
+    \field{pages}{100121}
+    \field{title}{Newton's Method for Reinforcement Learning and Model
+  Predictive Control}
+    \field{volume}{7}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/TVN52CBX/Bertseka
+    \verb s - 2022 - Newton’s method for reinforcement learning and mod.pdf;/
+    \verb home/murray/snap/zotero-snap/common/Zotero/storage/SXJ525DZ/S26667207
+    \verb 22000157.html
+    \endverb
+    \field{journaltitle}{Results in Control and Optimization}
+    \field{month}{06}
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{linReinforcementLearningBasedModel2023}{article}{}
+    \name{author}{4}{}{%
+      {{hash=LM}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Min},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Zhongqi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=XY}{%
+         family={Xia},
+         familyi={X\bibinitperiod},
+         given={Yuanqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZJ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Jinhui},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LMSZXY+1}
+    \strng{fullhash}{LMSZXYZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This article proposes a novel reinforcement learning-based model predictive
+  control (RLMPC) scheme for discrete-time systems. The scheme integrates model
+  predictive control (MPC) and reinforcement learning (RL) through policy
+  iteration (PI), where MPC is a policy generator and the RL technique is
+  employed to evaluate the policy. Then the obtained value function is taken as
+  the terminal cost of MPC, thus improving the generated policy. The advantage
+  of doing so is that it rules out the need for the offline design paradigm of
+  the terminal cost, the auxiliary controller, and the terminal constraint in
+  traditional MPC. Moreover, RLMPC proposed in this article enables a more
+  flexible choice of prediction horizon due to the elimination of the terminal
+  constraint, which has great potential in reducing the computational burden.
+  We provide a rigorous analysis of the convergence, feasibility, and stability
+  properties of RLMPC. Simulation results show that RLMPC achieves nearly the
+  same performance as traditional MPC in the control of linear systems and
+  exhibits superiority over traditional MPC for nonlinear ones.%
+    }
+    \verb{doi}
+    \verb 10.1109/TNNLS.2023.3273590
+    \endverb
+    \field{issn}{2162-2388}
+    \field{pages}{1\bibrangedash 13}
+    \field{title}{Reinforcement {{Learning-Based Model Predictive Control}} for
+  {{Discrete-Time Systems}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/6XQI22BM/Lin et a
+    \verb l. - 2023 - Reinforcement Learning-Based Model Predictive Cont.pdf;/h
+    \verb ome/murray/snap/zotero-snap/common/Zotero/storage/QP6JXDQS/10129251.h
+    \verb tml
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Neural Networks and Learning
+  Systems}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:22:07.338Z%
+    }
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{delatorre-geaComputationalFluidDynamics2011}{article}{}
+    \name{author}{5}{}{%
+      {{hash=DG}{%
+         family={{De la Torre-Gea}},
+         familyi={D\bibinitperiod},
+         given={Guillermo},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={{Soto-Zaraz{\'u}a}},
+         familyi={S\bibinitperiod},
+         given={Dr},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LI}{%
+         family={{Lopez-Cruz}},
+         familyi={L\bibinitperiod},
+         given={Irineo},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=PI}{%
+         family={Pacheco},
+         familyi={P\bibinitperiod},
+         given={Irineo},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=RE}{%
+         family={{Rico-Garc{\'i}a}},
+         familyi={R\bibinitperiod},
+         given={Enrique},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DGSDLI+1}
+    \strng{fullhash}{DGSDLIPIRE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Computational fluid dynamics is a tool that has been used in recent years
+  to develop numerical models that improve our understanding of the interaction
+  of variables that make up the climate inside greenhouses. In the past five
+  years, more realistic studies have appeared due mainly to the development of
+  more powerful software and hardware. However, it is necessary to perform an
+  analysis to show us the trends, strengths and weaknesses in the use of this
+  tool. In this study, we reviewed the state of the art of CFD in studies of
+  airflow and climate inside greenhouses, analyzing the most important issues
+  that help us understand how it has evolved, as well as trends and limitations
+  on their use.%
+    }
+    \verb{doi}
+    \verb 10.5897/AJB10.2488
+    \endverb
+    \field{pages}{17651\bibrangedash 17662}
+    \field{shorttitle}{Computational Fluid Dynamics in Greenhouses}
+    \field{title}{Computational Fluid Dynamics in Greenhouses: {{A}} Review}
+    \field{volume}{10}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LYBZFG5E/De la To
+    \verb rre-Gea et al_2011_Computational fluid dynamics in greenhouses.pdf
+    \endverb
+    \field{journaltitle}{AFRICAN JOURNAL OF BIOTECHNOLOGY}
+    \field{month}{12}
+    \field{year}{2011}
+  \endentry
+
+  \entry{jansenOptimalControlLettuce2023}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=JY}{%
+         family={Jansen},
+         familyi={J\bibinitperiod},
+         given={Yde},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JY1}
+    \strng{fullhash}{JY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A greenhouse is an important growing system that can provide a controlled
+  climate environment and allow for crop growth in a changing outdoor climate.
+  Due to the high energy cost, labor and resource scarcity, optimal and
+  automated control of greenhouse horticulture is becoming more and more
+  important with the aim of optimizing resource usage while maximizing crop
+  production. Outdoor weather is a critical disturbance when controlling
+  greenhouse climate and it complicates the modelling and optimization
+  processes. With the development of Artificial Intelligence (AI) and improved
+  sensing techniques, Reinforcement Learning (RL) is getting more and more
+  attention due to its learning-based control strategies, independent from
+  having a good model. Up to now, most of the RL applications in greenhouse
+  climate control do not consider outdoor weather forecast while making control
+  decisions, which means plenty of useful information is missed and this might
+  lead to control actions which are not optimal. Therefore in this project, we
+  investigated how weather forecast horizons will affect optimal control of
+  greenhouse horticulture using reinforcement learning. After going through
+  different deep RL approaches, Soft Actor-Critic (SAC) and Twin-Delayed Deep
+  Deterministic Policy Gradient (TD3) stand out because of their capacity to
+  consider continuous state-action space. As the weather prediction will mainly
+  work well in the short-term due to forecast uncertainty, moreover, long-term
+  weather forecast will bring various unnecessary noise and a large state
+  space. As a result, our work mainly focused on short-term weather forecast
+  horizons of 0, 3, 7, 11, 15, 19, 23 time steps of fifteen minutes. To
+  investigate how horizons can affect the control performance, these seven
+  different horizons were used in experiments using the state-of-the-art
+  continuous control algorithms, SAC and TD3. After demonstrating the proposed
+  approaches in a lettuce greenhouse, we found that SAC consistently performed
+  better than TD3 with higher rewards in terms of crop production and net
+  profit, while resource use was comparable. Furthermore, inclusion of weather
+  forecasts proved essential for both algorithm learning stability, as well as
+  its training and generalization performance, resulting in increased yields
+  and net profits, while reducing resource use and the amount of indoor climate
+  constraint violations. Moreover, we can also conclude that four hours of
+  weather forecast is the best option. Longer predictions did not increase
+  performance, whereas using shorter forecasts quickly degraded performance.%
+    }
+    \field{title}{Optimal {{Control}} of {{Lettuce Greenhouse Horticulture}}
+  Using {{Model-Free Reinforcement Learning}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/JCCK8MDU/Jansen -
+    \verb  2023 - Optimal Control of Lettuce Greenhouse Horticulture.pdf
+    \endverb
+    \field{type}{mathesis}
+    \field{annotation}{%
+    Accepted: 2023-08-30T23:01:00Z\\ Read\_Status: To Read\\
+  Read\_Status\_Date: 2023-12-05T19:18:59.297Z%
+    }
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{lopez-cruzDevelopmentAnalysisDynamical2018}{article}{}
+    \name{author}{5}{}{%
+      {{hash=LI}{%
+         family={{Lopez-Cruz}},
+         familyi={L\bibinitperiod},
+         given={Irineo},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=FE}{%
+         family={{Fitz-Rodr{\'i}guez}},
+         familyi={F\bibinitperiod},
+         given={Efr{\'e}n},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=RS}{%
+         family={Raquel},
+         familyi={R\bibinitperiod},
+         given={Salazar},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={{Rojano-Aguilar}},
+         familyi={R\bibinitperiod},
+         given={Abraham},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kacira},
+         familyi={K\bibinitperiod},
+         given={Murat},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{LIFERS+1}
+    \strng{fullhash}{LIFERSRAKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    This paper summarizes the main developments achieved up to now on dynamical
+  models of the greenhouse climate, regarding their structure, analysis,
+  parameter estimation and model performance. The systems state-space approach
+  is followed in order to describe main models' structure features. The
+  physical processes included in the dynamic equations of greenhouse climate
+  are emphasized. The type of equations used, either differential equations,
+  difference equations or transfer functions are described. The dynamic models
+  of greenhouse climate are classified in mechanistic and black-box models.
+  Mechanistic models are mainly focused on the knowledge of the greenhouse
+  system whereas black-box models are more used for applications, including:
+  control, optimization and design of the greenhouse system. Main results of
+  this study are that models of greenhouse climate used mostly ordinary
+  differential equations either to know more the system or to control and
+  optimize it. Only few models used difference equations or ARX. Also more
+  complex greenhouse climate models have been developed to get insight of the
+  greenhouse system while models with few states are more useful for control
+  and optimization purposes. The dynamic models of greenhouse climate have
+  mostly founded on the first law of thermodynamics, namely (energy/enthalpy)
+  analysis and conservation of mass. Furthermore, although almost all the
+  models have been calibrated and evaluated using measured data from the
+  system, there is a lack of uncertainty and sensitivity analysis in the
+  development of greenhouse climate models. In fact, none of the revised models
+  were subjected to an uncertainty analysis. Some models of greenhouse
+  environment have been reported with only a preliminary sensitivity analysis;
+  a few of them with a formal local sensitivity analysis and none with a global
+  sensitivity analysis. https://doi.org/10.17660/eJHS.2018/83.5.1%
+    }
+    \verb{doi}
+    \verb 10.17660/eJHS.2018/83.5.1
+    \endverb
+    \field{pages}{269\bibrangedash 279}
+    \field{shorttitle}{Development and Analysis of Dynamical Mathematical
+  Models of Greenhouse Climate}
+    \field{title}{Development and Analysis of Dynamical Mathematical Models of
+  Greenhouse Climate: {{A}} Review}
+    \field{volume}{83}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/UD28IZH2/Lopez-Cr
+    \verb uz et al_2018_Development and analysis of dynamical mathematical mode
+    \verb ls of greenhouse climate.pdf
+    \endverb
+    \field{journaltitle}{European Journal of Horticultural Science}
+    \field{month}{11}
+    \field{year}{2018}
+  \endentry
+
+  \entry{gongDeepLearningBased2021}{article}{}
+    \name{author}{5}{}{%
+      {{hash=GL}{%
+         family={Gong},
+         familyi={G\bibinitperiod},
+         given={Liyun},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=YM}{%
+         family={Yu},
+         familyi={Y\bibinitperiod},
+         given={Miao},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=JS}{%
+         family={Jiang},
+         familyi={J\bibinitperiod},
+         given={Shouyong},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=CV}{%
+         family={Cutsuridis},
+         familyi={C\bibinitperiod},
+         given={Vassilis},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=PS}{%
+         family={Pearson},
+         familyi={P\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Multidisciplinary Digital Publishing Institute}%
+    }
+    \keyw{crop yield prediction,deep learning,greenhouse,recurrent neural
+  network (RNN),temporal convolutional network (TCN)}
+    \strng{namehash}{GLYMJS+1}
+    \strng{fullhash}{GLYMJSCVPS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Currently, greenhouses are widely applied for plant growth, and
+  environmental parameters can also be controlled in the modern greenhouse to
+  guarantee the maximum crop yield. In order to optimally control greenhouses'
+  environmental parameters, one indispensable requirement is to accurately
+  predict crop yields based on given environmental parameter settings. In
+  addition, crop yield forecasting in greenhouses plays an important role in
+  greenhouse farming planning and management, which allows cultivators and
+  farmers to utilize the yield prediction results to make knowledgeable
+  management and financial decisions. It is thus important to accurately
+  predict the crop yield in a greenhouse considering the benefits that can be
+  brought by accurate greenhouse crop yield prediction. In this work, we have
+  developed a new greenhouse crop yield prediction technique, by combining two
+  state-of-the-arts networks for temporal sequence processing---temporal
+  convolutional network (TCN) and recurrent neural network (RNN). Comprehensive
+  evaluations of the proposed algorithm have been made on multiple datasets
+  obtained from multiple real greenhouse sites for tomato growing. Based on a
+  statistical analysis of the root mean square errors (RMSEs) between the
+  predicted and actual crop yields, it is shown that the proposed approach
+  achieves more accurate yield prediction performance than both traditional
+  machine learning methods and other classical deep neural networks. Moreover,
+  the experimental study also shows that the historical yield information is
+  the most important factor for accurately predicting future crop yields.%
+    }
+    \verb{doi}
+    \verb 10.3390/s21134537
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{13}
+    \field{pages}{4537}
+    \field{title}{Deep {{Learning Based Prediction}} on {{Greenhouse Crop Yield
+  Combined TCN}} and {{RNN}}}
+    \field{volume}{21}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/EFVBNQCQ/Gong et
+    \verb al_2021_Deep Learning Based Prediction on Greenhouse Crop Yield Combi
+    \verb ned TCN and RNN.pdf
+    \endverb
+    \field{journaltitle}{Sensors}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-05T19:32:30.868Z%
+    }
+    \field{month}{01}
+    \field{year}{2021}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{maestriniMixingProcessbasedDatadriven2022}{article}{}
+    \name{author}{7}{}{%
+      {{hash=MB}{%
+         family={Maestrini},
+         familyi={M\bibinitperiod},
+         given={Bernardo},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=MG}{%
+         family={Mimi{\'c}},
+         familyi={M\bibinitperiod},
+         given={Gordan},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=VOPA}{%
+         family={Van\bibnamedelima Oort},
+         familyi={V\bibinitperiod\bibinitdelim O\bibinitperiod},
+         given={Pepijn\bibnamedelima A.J.},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=JK}{%
+         family={Jindo},
+         familyi={J\bibinitperiod},
+         given={Keiji},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Brdar},
+         familyi={B\bibinitperiod},
+         given={Sanja},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AIN}{%
+         family={Athanasiadis},
+         familyi={A\bibinitperiod},
+         given={Ioannis\bibnamedelima N.},
+         giveni={I\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+      {{hash=VEFK}{%
+         family={Van\bibnamedelima Evert},
+         familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Frits\bibnamedelima K.},
+         giveni={F\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{MBMGVOPA+1}
+    \strng{fullhash}{MBMGVOPAJKBSAINVEFK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Yield prediction models can be divided between data-driven and
+  process-based models (crop growth models). The first category contains many
+  different types of models with parameters learned from the data themselves
+  and where domain knowledge is only used to select the predictors and engineer
+  features. In the second category, models are based upon biophysical
+  principles, whose structure and parameters are derived primarily from domain
+  knowledge. Here we investigate if the integration of the two approaches can
+  be beneficial as it allows to overcome the limitations of the two approaches
+  taken individually - lack of sufficiently large, reliable and orthogonal
+  datasets for data-driven approaches and the need of many inputs for
+  process-based models. The applications of the two categories of models have
+  been reviewed, paying special attention to the cases where the two approaches
+  have been mixed. By analysing the literature we identified three major cases
+  of integration between the two approaches: (1) using crop growth models to
+  engineer features and expand the predictors space, (2) use data-driven
+  approaches to estimate missing inputs for process-based models (3) using
+  data-driven ap\- proaches to produce meta-models to reduce computation
+  burden. Finally we propose a methodology based on metamodels and transfer
+  learning to integrate data-driven and process-based approaches.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.eja.2022.126569
+    \endverb
+    \field{issn}{11610301}
+    \field{pages}{126569}
+    \field{title}{Mixing Process-Based and Data-Driven Approaches in Yield
+  Prediction}
+    \field{volume}{139}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/636K2I5E/Maestrin
+    \verb i et al. - 2022 - Mixing process-based and data-driven approaches in.
+    \verb pdf
+    \endverb
+    \field{journaltitle}{European Journal of Agronomy}
+    \field{month}{09}
+    \field{year}{2022}
+    \field{urlday}{15}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{royPAPrecisionAgriculture2002}{article}{}
+    \name{author}{4}{}{%
+      {{hash=RJC}{%
+         family={Roy},
+         familyi={R\bibinitperiod},
+         given={J.\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=BT}{%
+         family={Boulard},
+         familyi={B\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KC}{%
+         family={Kittas},
+         familyi={K\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WS}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{RJCBTKC+1}
+    \strng{fullhash}{RJCBTKCWS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    In this paper, the characterization and modelling of the most relevant
+  convective transfers contributing to the elaboration of the greenhouse
+  climate are reviewed. Convective transfers include heat and mass transfers
+  between air and solid surfaces (walls, roof, leaves) along with air, heat,
+  water vapour and tracer gas transfers to or from the inside air. Adopting the
+  assumption that the greenhouse is a perfectly stirred tank, the specific
+  characterization methods associated with this approach are reviewed. The
+  perfectly stirred tank approach requires the assumption of uniform
+  temperature, humidity and CO2 content inside the greenhouse and uses a `big
+  leaf' model to treat the plant canopy and describe the exchanges of latent
+  and sensible heat with inside air. The simulation of the ventilation
+  processes associated with this simplified approach is based on the Bernoulli
+  equation and on the experimental determination of semi-empirical parameters
+  by means of air exchange rate measurements. The techniques used to measure
+  temperature and air exchange rates measurements pertaining to the whole
+  greenhouse volume are presented. A complete panorama of the studies in
+  relation to the transfer coefficients between the different surfaces together
+  with the ventilation performances of various greenhouse types are also
+  presented. This paper is the first part of a review of the convective
+  transfers in greenhouses and in the second paper, a similar study based on
+  the approach of the distributed climate is presented.%
+    }
+    \verb{doi}
+    \verb 10.1006/bioe.2002.0107
+    \endverb
+    \field{issn}{1537-5110}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 20}
+    \field{shorttitle}{{{PA}}---{{Precision Agriculture}}}
+    \field{title}{{{PA}}---{{Precision Agriculture}}: {{Convective}} and
+  {{Ventilation Transfers}} in {{Greenhouses}}, {{Part}} 1: The {{Greenhouse}}
+  Considered as a {{Perfectly Stirred Tank}}}
+    \field{volume}{83}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/5JSL3N9F/Roy et a
+    \verb l_2002_PA—Precision Agriculture.pdf;/home/murray/snap/zotero-snap/c
+    \verb ommon/Zotero/storage/PP5XF4WM/S1537511002901078.html
+    \endverb
+    \field{journaltitle}{Biosystems Engineering}
+    \field{month}{09}
+    \field{year}{2002}
+    \field{urlday}{16}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{kuijpersModelSelectionCommon2019}{article}{}
+    \name{author}{6}{}{%
+      {{hash=KWJP}{%
+         family={Kuijpers},
+         familyi={K\bibinitperiod},
+         given={Wouter J.\bibnamedelima P.},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  P\bibinitperiod},
+      }}%
+      {{hash=vMJG}{%
+         family={{van de Molengraft}},
+         familyi={v\bibinitperiod},
+         given={Marinus J.\bibnamedelima G.},
+         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  G\bibinitperiod},
+      }}%
+      {{hash=vS}{%
+         family={{van Mourik}},
+         familyi={v\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=vA}{%
+         family={{van 't Ooster}},
+         familyi={v\bibinitperiod},
+         given={Albertus},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HS}{%
+         family={Hemming},
+         familyi={H\bibinitperiod},
+         given={Silke},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=vEJ}{%
+         family={{van Henten}},
+         familyi={v\bibinitperiod},
+         given={Eldert\bibnamedelima J.},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread,Common structure,Model selection,Tomato crop growth models}
+    \strng{namehash}{KWJPvMJGvS+1}
+    \strng{fullhash}{KWJPvMJGvSvAHSvEJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Crop modelling is an essential part of biosystems engineering; selecting or
+  developing a crop model for a specific application, having its requirements
+  and desires, is difficult if not impossible without the required domain
+  knowledge. This paper presents a fundamentally different model selection
+  approach based on biological functionalities. This is enabled by a common
+  structure, which allows for a combining of components, yielding new models.
+  This increased design space allows the development of models which are better
+  suited to the application than the original models. The use of a common
+  structure, and its potential, are demonstrated by a use-case involving the
+  selection of a tomato crop model for a model-based control application, but
+  the rationales and methodologies can apply to other crops and applications as
+  well. In this paper, 27 valid model combinations have been created from 4
+  models. In the use-case presented, the models are compared to data
+  originating from a real system. The predictive performance of a model is
+  quantified by the Root-Mean-Squared-Error (RSME) between the predictions and
+  data. One trade-off is model accuracy versus computational speed. With the
+  model set used, a 13\% decrease in RSME was obtained by allowing a 7.5\%
+  increase in model computation time compared to one of the original models.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.biosystemseng.2019.09.010
+    \endverb
+    \field{issn}{1537-5110}
+    \field{pages}{247\bibrangedash 257}
+    \field{shorttitle}{Model Selection with a Common Structure}
+    \field{title}{Model Selection with a Common Structure: {{Tomato}} Crop
+  Growth Models}
+    \field{volume}{187}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/QAN5NZ69/Kuijpers
+    \verb  et al_2019_Model selection with a common structure.pdf;/home/murray/
+    \verb snap/zotero-snap/common/Zotero/storage/NQPMKUWG/S1537511019308323.htm
+    \verb l
+    \endverb
+    \field{journaltitle}{Biosystems Engineering}
+    \field{month}{11}
+    \field{year}{2019}
+    \field{urlday}{16}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{lawrynczukMPCAlgorithms2014}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=LM}{%
+         family={{\L}awry{\'n}czuk},
+         familyi={{\L}\bibinitperiod},
+         given={Maciej},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=LM}{%
+         family={{\L}awry{\'n}czuk},
+         familyi={{\L}\bibinitperiod},
+         given={Maciej},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Springer International Publishing}%
+    }
+    \keyw{Hide Node,Internal Model Control,Manipulate Variable,Prediction
+  Horizon,Sampling Instant}
+    \strng{namehash}{LM1}
+    \strng{fullhash}{LM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This chapter introduces the reader into the field of MPC. The basic MPC
+  optimisation problem is defined, the fundamental role of the model is
+  emphasised. The general classification of MPC algorithms is given, i.e.
+  linear and nonlinear approaches are characterised. Next, some methods which
+  make it possible to reduce computational burden of nonlinear MPC algorithms
+  are shortly described, including the on-line linearisation approach. A
+  history of MPC algorithms is given. Finally, a short review of nonlinear
+  model structures is included, their advantages and disadvantages as well as
+  possibilities of using them in MPC are pointed out.%
+    }
+    \field{booktitle}{Computationally {{Efficient Model Predictive Control
+  Algorithms}}: {{A Neural Network Approach}}}
+    \verb{doi}
+    \verb 10.1007/978-3-319-04229-9_1
+    \endverb
+    \field{isbn}{978-3-319-04229-9}
+    \field{pages}{1\bibrangedash 30}
+    \field{series}{Studies in {{Systems}}, {{Decision}} and {{Control}}}
+    \field{title}{{{MPC Algorithms}}}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Cham}%
+    }
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/YD5TLKZQ/Ławryń
+    \verb czuk_2014_MPC Algorithms.pdf
+    \endverb
+    \field{year}{2014}
+    \field{urlday}{19}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{dulac-arnoldChallengesRealWorldReinforcement2019}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=DG}{%
+         family={{Dulac-Arnold}},
+         familyi={D\bibinitperiod},
+         given={Gabriel},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Mankowitz},
+         familyi={M\bibinitperiod},
+         given={Daniel},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hester},
+         familyi={H\bibinitperiod},
+         given={Todd},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{/unread,Computer Science - Artificial Intelligence,Computer Science -
+  Machine Learning,Computer Science - Robotics,Statistics - Machine Learning}
+    \strng{namehash}{DGMDHT1}
+    \strng{fullhash}{DGMDHT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Reinforcement learning (RL) has proven its worth in a series of artificial
+  domains, and is beginning to show some successes in real-world scenarios.
+  However, much of the research advances in RL are often hard to leverage in
+  real-world systems due to a series of assumptions that are rarely satisfied
+  in practice. We present a set of nine unique challenges that must be
+  addressed to productionize RL to real world problems. For each of these
+  challenges, we specify the exact meaning of the challenge, present some
+  approaches from the literature, and specify some metrics for evaluating that
+  challenge. An approach that addresses all nine challenges would be applicable
+  to a large number of real world problems. We also present an example domain
+  that has been modified to present these challenges as a testbed for practical
+  RL research.%
+    }
+    \verb{eprint}
+    \verb 1904.12901
+    \endverb
+    \field{number}{arXiv:1904.12901}
+    \field{title}{Challenges of {{Real-World Reinforcement Learning}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/X28RGE8S/Dulac-Ar
+    \verb nold et al_2019_Challenges of Real-World Reinforcement Learning.pdf;/
+    \verb home/murray/snap/zotero-snap/common/Zotero/storage/XMPVG2VS/1904.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, stat}
+    \field{month}{04}
+    \field{year}{2019}
+    \field{urlday}{16}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{knibbeDigitalTwinsGreen2022}{article}{}
+    \name{author}{11}{}{%
+      {{hash=KWJ}{%
+         family={Knibbe},
+         familyi={K\bibinitperiod},
+         given={Willem\bibnamedelima Jan},
+         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=AL}{%
+         family={Afman},
+         familyi={A\bibinitperiod},
+         given={Lydia},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=BS}{%
+         family={Boersma},
+         familyi={B\bibinitperiod},
+         given={Sjoerd},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=BMJ}{%
+         family={Bogaardt},
+         familyi={B\bibinitperiod},
+         given={Marc-Jeroen},
+         giveni={M\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=EJ}{%
+         family={Evers},
+         familyi={E\bibinitperiod},
+         given={Jochem},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=VEF}{%
+         family={Van\bibnamedelima Evert},
+         familyi={V\bibinitperiod\bibinitdelim E\bibinitperiod},
+         given={Frits},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=VDHJ}{%
+         family={Van Der\bibnamedelima Heide},
+         familyi={V\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim
+  H\bibinitperiod},
+         given={Jene},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HI}{%
+         family={Hoving},
+         familyi={H\bibinitperiod},
+         given={Idse},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=VMS}{%
+         family={Van\bibnamedelima Mourik},
+         familyi={V\bibinitperiod\bibinitdelim M\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=DRD}{%
+         family={De\bibnamedelima Ridder},
+         familyi={D\bibinitperiod\bibinitdelim R\bibinitperiod},
+         given={Dick},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=DWA}{%
+         family={De\bibnamedelima Wit},
+         familyi={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+         given={Allard},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{KWJALBS+1}
+    \strng{fullhash}{KWJALBSBMJEJVEFVDHJHIVMSDRDDWA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Digital twins provide a new paradigm for the integrated use of sensor data,
+  process-based and data-driven modelling, and user interaction, to explore the
+  behaviour of individual objects and processes. Digital twins originate from
+  an engineering context and were developed for machines and mainly physical
+  and chemical processes. In this paper, we further develop an understanding of
+  digital twins for the green life sciences, which also include biological and
+  social processes. We report on three use cases, in precision farming,
+  greenhouse control and personalized dietary advice, focusing on practical
+  benefits and challenges of digital twins compared with other research
+  methods. This research extends earlier more conceptual research on digital
+  twins in this domain. We find benefits in increased accuracy and impact
+  because of the realtime data connection of digital twins to their real-life
+  counterparts. Specification, availability and accuracy of relevant data
+  sources are still major challenges. Specifically, when using digital twins
+  for personalized advice, further research is needed on nontechnical aspects
+  so that users will comply with the advice from the digital twins. We have
+  outlined four directions of future research and expect that further research
+  will include data-driven mod\- elling to simulate the complex character of
+  living objects and processes and at the same time develop approaches to limit
+  the amount of required input data.%
+    }
+    \verb{doi}
+    \verb 10.1080/27685241.2022.2150571
+    \endverb
+    \field{issn}{2768-5241}
+    \field{number}{1}
+    \field{pages}{249\bibrangedash 279}
+    \field{title}{Digital Twins in the Green Life Sciences}
+    \field{volume}{94}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/85XF7FWB/Knibbe e
+    \verb t al. - 2022 - Digital twins in the green life sciences.pdf
+    \endverb
+    \field{journaltitle}{NJAS: Impact in Agricultural and Life Sciences}
+    \field{month}{12}
+    \field{year}{2022}
+    \field{urlday}{16}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{hentenGreenhouseClimateManagement1994}{book}{}
+    \name{author}{1}{}{%
+      {{hash=vHEJ}{%
+         prefix={van},
+         prefixi={v\bibinitperiod},
+         family={Henten},
+         familyi={H\bibinitperiod},
+         given={Eldert\bibnamedelima Jan},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HEJv1}
+    \strng{fullhash}{HEJv1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{isbn}{978-90-5485-321-3}
+    \field{shorttitle}{{Greenhouse climate management}}
+    \field{title}{{Greenhouse climate management: an optical control approach}}
+    \field{langid}{dutch}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ARDTWLB8/Henten -
+    \verb  1994 - Greenhouse climate management an optical control .pdf
+    \endverb
+    \field{year}{1994}
+  \endentry
+
+  \entry{vanhentenValidationDynamicLettuce1994}{article}{}
+    \name{author}{1}{}{%
+      {{hash=VHEJ}{%
+         family={Van\bibnamedelima Henten},
+         familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+         given={E.\bibnamedelima J.},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VHEJ1}
+    \strng{fullhash}{VHEJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Validation results are presented of a dynamic crop growth model of lettuce
+  (Lactuca sativa L.) previously used in a greenhouse climate optimization
+  study. The model describes the dynamic behaviour of two state variables, the
+  non-structural dry weight and the structural dry weight, as affected by the
+  incident photosynthetically active radiation, the carbon dioxide
+  concentration and the air temperature in the greenhouse. Model equations and
+  parameters have been collected from the literature. Because in the control
+  study the economic return of a lettuce cultivation was considered to be
+  determined by total crop dry weight, the model's ability to describe the
+  dynamic behaviour of the dry matter content of a lettuce crop has been
+  evaluated. Comparison of simulations with data obtained in two growth
+  experiments showed that the growth model was able to describe with
+  satisfactory accuracy the dry matter production of lettuces cultivated
+  according to standard horticultural practice.%
+    }
+    \verb{doi}
+    \verb 10.1016/S0308-521X(94)90280-1
+    \endverb
+    \field{issn}{0308-521X}
+    \field{number}{1}
+    \field{pages}{55\bibrangedash 72}
+    \field{title}{Validation of a Dynamic Lettuce Growth Model for Greenhouse
+  Climate Control}
+    \field{volume}{45}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ISQFIB8A/Van Hent
+    \verb en_1994_Validation of a dynamic lettuce growth model for greenhouse c
+    \verb limate control.pdf;/home/murray/snap/zotero-snap/common/Zotero/storag
+    \verb e/QQ4DNEPL/S0308521X94902801.html
+    \endverb
+    \field{journaltitle}{Agricultural Systems}
+    \field{month}{01}
+    \field{year}{1994}
+    \field{urlday}{16}
+    \field{urlmonth}{01}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{ghoumariNonlinearConstrainedMPC2005}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GM}{%
+         family={Ghoumari},
+         familyi={G\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=THJ}{%
+         family={Tantau},
+         familyi={T\bibinitperiod},
+         given={Hans-J{\"u}rgen},
+         giveni={H\bibinithyphendelim J\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Serrano},
+         familyi={S\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GMTHJSJ1}
+    \strng{fullhash}{GMTHJSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    This work describes the application of model predictive control (MPC) for
+  temperature regulation in agricultural processes. The main objective is to
+  achieve temperature control of a greenhouse built in the Institute for
+  Horticultural and Agricultural Engineering (ITG) at the University of
+  Hannover (Germany). The MPC algorithm used here takes in account the
+  constraints in both manipulated and controlled variables using an on-line
+  linearisation with a very low computational burden. Several important
+  advantages of the MPC algorithm, primarily performance and energy savings,
+  are shown by means of a real-time experiment using a soft optimal control
+  effort. This MPC scheme is compared with an adaptive PID controller.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.compag.2005.08.005
+    \endverb
+    \field{pages}{345\bibrangedash 356}
+    \field{shorttitle}{Non-Linear Constrained {{MPC}}}
+    \field{title}{Non-Linear Constrained {{MPC}}: {{Real-time}} Implementation
+  of Greenhouse Air Temperature Control}
+    \field{volume}{49}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/4NVX4BVU/El Ghoum
+    \verb ari et al. - 2005 - Non-linear constrained MPC Real-time implementati
+    \verb .pdf
+    \endverb
+    \field{journaltitle}{Computers and Electronics in Agriculture - COMPUT
+  ELECTRON AGRIC}
+    \field{month}{12}
+    \field{year}{2005}
+  \endentry
+
+  \entry{hemmingCherryTomatoProduction2020}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HS}{%
+         family={Hemming},
+         familyi={H\bibinitperiod},
+         given={Silke},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=dZF}{%
+         prefix={de},
+         prefixi={d\bibinitperiod},
+         family={Zwart},
+         familyi={Z\bibinitperiod},
+         given={Feije},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Elings},
+         familyi={E\bibinitperiod},
+         given={Anne},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Petropoulou},
+         familyi={P\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Righini},
+         familyi={R\bibinitperiod},
+         given={Isabella},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Multidisciplinary Digital Publishing Institute}%
+    }
+    \keyw{artificial intelligence,autonomous greenhouses,climate control,data
+  driven growing,indoor farming,irrigation control,remote control,resource use
+  efficiency,sensors,tomato yield}
+    \strng{namehash}{HSZFdEA+1}
+    \strng{fullhash}{HSZFdEAPARI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouses and indoor farming systems play an important role in providing
+  fresh and nutritious food for the growing global population. Farms are
+  becoming larger and greenhouse growers need to make complex decisions to
+  maximize production and minimize resource use while meeting market
+  requirements. However, highly skilled labor is increasingly lacking in the
+  greenhouse sector. Moreover, extreme events such as the COVID-19 pandemic,
+  can make farms temporarily less accessible. This highlights the need for more
+  autonomous and remote-control strategies for greenhouse production. This
+  paper describes and analyzes the results of the second ``Autonomous
+  Greenhouse Challenge''. In this challenge, an experiment was conducted in six
+  high-tech greenhouse compartments during a period of six months of cherry
+  tomato growing. The primary goal of the greenhouse operation was to maximize
+  net profit, by controlling the greenhouse climate and crop with AI
+  techniques. Five international teams with backgrounds in AI and horticulture
+  were challenged in a competition to operate their own compartment remotely.
+  They developed intelligent algorithms and use sensor data to determine
+  climate setpoints and crop management strategy. All AI supported teams
+  outperformed a human-operated greenhouse that served as reference. From the
+  results obtained by the teams and from the analysis of the different
+  climate-crop strategies, it was possible to detect challenges and
+  opportunities for the future implementation of remote-control systems in
+  greenhouse production.%
+    }
+    \verb{doi}
+    \verb 10.3390/s20226430
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{22}
+    \field{pages}{6430}
+    \field{title}{Cherry {{Tomato Production}} in {{Intelligent
+  Greenhouses}}---{{Sensors}} and {{AI}} for {{Control}} of {{Climate}},
+  {{Irrigation}}, {{Crop Yield}}, and {{Quality}}}
+    \field{volume}{20}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/IZLHDVJB/Hemming
+    \verb et al. - 2020 - Cherry Tomato Production in Intelligent Greenhouse.pd
+    \verb f
+    \endverb
+    \field{journaltitle}{Sensors}
+    \field{annotation}{%
+    Read\_Status: In Progress\\ Read\_Status\_Date: 2023-12-06T09:19:52.514Z%
+    }
+    \field{month}{01}
+    \field{year}{2020}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{bonsaiWhyReinforcementLearning2017}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=B}{%
+         family={Bonsai},
+         familyi={B\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{B1}
+    \strng{fullhash}{B1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    One of the first things to know about machine learning is that you will be
+  working with one of three types of algorithms: supervised learning,
+  unsupervised learning and reinforcement learning. Here's{\dots}%
+    }
+    \field{title}{Why {{Reinforcement Learning Might Be}} the {{Best AI
+  Technique}} for {{Complex Industrial Systems}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/Z4LTWQFA/why-rein
+    \verb forcement-learning-might-be-the-best-ai-technique-for-complex-industr
+    \verb ial-systems-fde8b0.html
+    \endverb
+    \field{journaltitle}{Medium}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-06T09:43:40.590Z%
+    }
+    \field{month}{11}
+    \field{year}{2017}
+    \field{urlday}{06}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{daaboulUncertaintyPredictionModelbased2020}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=DK}{%
+         family={Daaboul},
+         familyi={D\bibinitperiod},
+         given={Karam},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{DK1}
+    \strng{fullhash}{DK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Reinforcement learning (RL) is a framework work to deal with delayed reward
+  signals. In Deep Reinforcement Learning (DRL), a neural{\dots}%
+    }
+    \field{title}{Uncertainty and {{Prediction}} in {{Model-based Reinforcement
+  Learning}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/IV4T83KL/uncertai
+    \verb nty-and-prediction-in-model-based-reinforcement-learning-20546643028c
+    \verb .html
+    \endverb
+    \field{journaltitle}{Medium}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-06T10:15:00.586Z%
+    }
+    \field{month}{10}
+    \field{year}{2020}
+    \field{urlday}{06}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{ajagekarDeepReinforcementLearning2022}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AA}{%
+         family={Ajagekar},
+         familyi={A\bibinitperiod},
+         given={Akshay},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=YF}{%
+         family={You},
+         familyi={Y\bibinitperiod},
+         given={Fengqi},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AAYF1}
+    \strng{fullhash}{AAYF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2022.07.477
+    \endverb
+    \field{issn}{24058963}
+    \field{number}{7}
+    \field{pages}{406\bibrangedash 411}
+    \field{title}{Deep {{Reinforcement Learning Based Automatic Control}} in
+  {{Semi-Closed Greenhouse Systems}}}
+    \field{volume}{55}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/S4A9C5JS/Ajagekar
+    \verb  and You - 2022 - Deep Reinforcement Learning Based Automatic Contro.
+    \verb pdf
+    \endverb
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{annotation}{%
+    Read\_Status: In Progress\\ Read\_Status\_Date: 2023-12-06T09:20:22.243Z%
+    }
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{wangDeepReinforcementLearning2020}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=WL}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Lu},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=HX}{%
+         family={He},
+         familyi={H\bibinitperiod},
+         given={Xiaofeng},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Dijun},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IEEE}%
+    }
+    \strng{namehash}{WLHXLD1}
+    \strng{fullhash}{WLHXLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Worldwide, the area of greenhouse production is increasing with the rapid
+  growth of global population and demands for fresh food. However, the
+  greenhouse industry encounters challenges to find automatic control policy.
+  Reinforcement Learning (RL) is a powerful tool in solving the autonomous
+  decision making problems. In this paper, we propose a novel Deep
+  Reinforcement Learning framework for cucumber climate control. Although some
+  machine learning methods have been proposed to address the dynamic climate
+  control problem, these methods have two major issues. First, they only
+  consider the current reward (e.g., the fruit weight of the cucumber). Second,
+  previous study only considers one control variable. However, the growth of
+  crops are impacted by multiple factors synchronously (e.g., CO2 and
+  Temperature).To solve these challenges, we propose a Deep Reinforcement
+  learning based climate control method, which can model future reward
+  explicitly. We further consider the fruit weight and the cost of the planting
+  in order to improve the cumulative fruit weight and reduce the costs.%
+    }
+    \field{booktitle}{2020 {{IEEE International Conference}} on {{Knowledge
+  Graph}} ({{ICKG}})}
+    \verb{doi}
+    \verb 10.1109/ICBK50248.2020.00073
+    \endverb
+    \field{isbn}{978-1-72818-156-1}
+    \field{pages}{474\bibrangedash 480}
+    \field{title}{Deep {{Reinforcement Learning}} for {{Greenhouse Climate
+  Control}}}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Nanjing, China}%
+    }
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/XRAEPNLS/Wang et
+    \verb al. - 2020 - Deep Reinforcement Learning for Greenhouse Climate.pdf
+    \endverb
+    \field{annotation}{%
+    Read\_Status: In Progress\\ Read\_Status\_Date: 2023-12-06T09:21:17.066Z%
+    }
+    \field{month}{08}
+    \field{year}{2020}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{ajagekarEnergyefficientAIbasedControl2023}{article}{}
+    \name{author}{3}{}{%
+      {{hash=AA}{%
+         family={Ajagekar},
+         familyi={A\bibinitperiod},
+         given={Akshay},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=MNS}{%
+         family={Mattson},
+         familyi={M\bibinitperiod},
+         given={Neil\bibnamedelima S.},
+         giveni={N\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=YF}{%
+         family={You},
+         familyi={Y\bibinitperiod},
+         given={Fengqi},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \keyw{Artificial intelligence,climate control,deep reinforcement
+  learning,energy efficiency,greenhouse,robust optimization}
+    \strng{namehash}{AAMNSYF1}
+    \strng{fullhash}{AAMNSYF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    As greenhouses are being widely adopted worldwide, it is important to
+  improve the energy efficiency of the control systems while accurately
+  regulating their indoor climate to realize sustainable agricultural practices
+  for food production. In this work, we propose an artificial intelligence
+  (AI)-based control framework that combines deep reinforcement learning
+  techniques to generate insights into greenhouse operation combined with
+  robust optimization to produce energy-efficient controls by hedging against
+  associated uncertainties. The proposed control strategy is capable of
+  learning from historical greenhouse climate trajectories while adapting to
+  current climatic conditions and disturbances like time-varying crop growth
+  and outdoor weather. We evaluate the performance of the proposed AI-based
+  control strategy against state-of-the-art model-based and model-free
+  approaches like certainty-equivalent model predictive control, robust model
+  predictive control (RMPC), and deep deterministic policy gradient. Based on
+  the computational results obtained for the tomato crop's greenhouse climate
+  control case study, the proposed control technique demonstrates a significant
+  reduction in energy consumption of 57\% over traditional control techniques.
+  The AI-based control framework also produces robust controls that are not
+  overly conservative, with an improvement in deviation from setpoints of over
+  26.8\% as compared to the baseline control approach RMPC.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.adapen.2022.100119
+    \endverb
+    \field{issn}{2666-7924}
+    \field{pages}{100119}
+    \field{title}{Energy-Efficient {{AI-based Control}} of {{Semi-closed
+  Greenhouses Leveraging Robust Optimization}} in {{Deep Reinforcement
+  Learning}}}
+    \field{volume}{9}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HQPDGN7A/Ajagekar
+    \verb  et al_2023_Energy-efficient AI-based Control of Semi-closed Greenhou
+    \verb ses Leveraging Robust.pdf;/home/murray/snap/zotero-snap/common/Zotero
+    \verb /storage/ELNMX8RG/S2666792422000373.html
+    \endverb
+    \field{journaltitle}{Advances in Applied Energy}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:26:41.561Z%
+    }
+    \field{month}{02}
+    \field{year}{2023}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{decardi-nelsonbenjaminImprovingResourceUse2023}{article}{}
+    \name{author}{2}{}{%
+      {{hash=D}{%
+         family={{Decardi-Nelson Benjamin}},
+         familyi={D\bibinitperiod},
+      }}%
+      {{hash=Y}{%
+         family={{You Fengqi}},
+         familyi={Y\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{DY1}
+    \strng{fullhash}{DY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.3303/CET23103014
+    \endverb
+    \field{pages}{79\bibrangedash 84}
+    \field{title}{Improving {{Resource Use Efficiency}} in {{Plant Factories
+  Using Deep Reinforcement Learning}} for {{Sustainable Food Production}}}
+    \field{volume}{103}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/KSYWGRV2/Decardi-
+    \verb Nelson Benjamin and You Fengqi - 2023 - Improving Resource Use Effici
+    \verb ency in Plant Factori.pdf
+    \endverb
+    \field{journaltitle}{Chemical Engineering Transactions}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-05T19:33:36.029Z%
+    }
+    \field{month}{10}
+    \field{year}{2023}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{zhangRobustModelbasedReinforcement2021}{misc}{}
+    \name{author}{6}{}{%
+      {{hash=ZW}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Wanpeng},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=CX}{%
+         family={Cao},
+         familyi={C\bibinitperiod},
+         given={Xiaoyan},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yao},
+         familyi={Y\bibinitperiod},
+         given={Yao},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=AZ}{%
+         family={An},
+         familyi={A\bibinitperiod},
+         given={Zhicheng},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=XX}{%
+         family={Xiao},
+         familyi={X\bibinitperiod},
+         given={Xi},
+         giveni={X\bibinitperiod},
+      }}%
+      {{hash=LD}{%
+         family={Luo},
+         familyi={L\bibinitperiod},
+         given={Dijun},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Artificial Intelligence}
+    \strng{namehash}{ZWCXYY+1}
+    \strng{fullhash}{ZWCXYYAZXXLD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Due to the high efficiency and less weather dependency, autonomous
+  greenhouses provide an ideal solution to meet the increasing demand for fresh
+  food. However, managers are faced with some challenges in finding appropriate
+  control strategies for crop growth, since the decision space of the
+  greenhouse control problem is an astronomical number. Therefore, an
+  intelligent closed-loop control framework is highly desired to generate an
+  automatic control policy. As a powerful tool for optimal control,
+  reinforcement learning (RL) algorithms can surpass human beings'
+  decision-making and can also be seamlessly integrated into the closed-loop
+  control framework. However, in complex real-world scenarios such as
+  agricultural automation control, where the interaction with the environment
+  is time-consuming and expensive, the application of RL algorithms encounters
+  two main challenges, i.e., sample efficiency and safety. Although model-based
+  RL methods can greatly mitigate the efficiency problem of greenhouse control,
+  the safety problem has not got too much attention. In this paper, we present
+  a model-based robust RL framework for autonomous greenhouse control to meet
+  the sample efficiency and safety challenges. Specifically, our framework
+  introduces an ensemble of environment models to work as a simulator and
+  assist in policy optimization, thereby addressing the low sample efficiency
+  problem. As for the safety concern, we propose a sample dropout module to
+  focus more on worst-case samples, which can help improve the adaptability of
+  the greenhouse planting policy in extreme cases. Experimental results
+  demonstrate that our approach can learn a more effective greenhouse planting
+  policy with better robustness than existing methods.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.2108.11645
+    \endverb
+    \verb{eprint}
+    \verb 2108.11645
+    \endverb
+    \field{number}{arXiv:2108.11645}
+    \field{title}{Robust {{Model-based Reinforcement Learning}} for
+  {{Autonomous Greenhouse Control}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/5SQP6WGN/Zhang et
+    \verb  al. - 2021 - Robust Model-based Reinforcement Learning for Auto.pdf;
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/5IGCU44T/2108.htm
+    \verb l
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:18.047Z%
+    }
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{10}
+    \field{year}{2021}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{vanmourikPlantPerformancePrecision2023}{misc}{}
+    \name{author}{3}{}{%
+      {{hash=vS}{%
+         family={{van Mourik}},
+         familyi={v\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=vOB}{%
+         prefix={van't},
+         prefixi={v\bibinitperiod},
+         family={Ooster},
+         familyi={O\bibinitperiod},
+         given={Bert},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=VM}{%
+         family={Vellekoop},
+         familyi={V\bibinitperiod},
+         given={Michel},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Electrical Engineering and Systems Science - Systems and
+  Control,Mathematics - Optimization and Control}
+    \strng{namehash}{vSOBvVM1}
+    \strng{fullhash}{vSOBvVM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    This paper presents a risk mitigating, time-varying feedback control
+  algorithm for crop production when state dynamics are subject to uncertainty.
+  The model based case study concerns a 40 day production round of lettuce in a
+  greenhouse where control input consists of daily and nightly temperature set
+  points. The control problem was formulated in terms of a stochastic Markov
+  decision process with the objective to maximize the expected net revenue at
+  harvest time. The importance of time-varying feedback and of risk mitigation
+  was investigated by making a comparison with a controller that takes
+  uncertainty into account but is static and a controller which is dynamic but
+  ignores the uncertainty in the state dynamics. For the case of heat limited
+  crop growth, and strict requirements on harvest weight precision, the dynamic
+  stochastic controller outperformed the static controller in terms of both
+  maximal expected net revenue (by 19 \%) and state precision at harvest time
+  (with 50 \% less standard deviation). It also outperformed the deterministic
+  controller for both criteria (15 \% in maximal expected net revenue and 8 \%
+  less standard deviation). A detailed sensitivity analysis showed that such
+  improvements in performance levels are robust, since they hold over large
+  ranges of uncertainty in state dynamics, required harvest precision levels,
+  starting days, and initial weights. The results provide insights in potential
+  of dynamic feedback and risk mitigation strategies for high precision
+  requirements under uncertainty. Although the results should be interpreted
+  with caution, they illustrate the considerable potential benefit for
+  stochastic greenhouse climate control under uncertainty when high precision
+  is required.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.2303.14678
+    \endverb
+    \verb{eprint}
+    \verb 2303.14678
+    \endverb
+    \field{number}{arXiv:2303.14678}
+    \field{shorttitle}{Plant {{Performance}} in {{Precision Horticulture}}}
+    \field{title}{Plant {{Performance}} in {{Precision Horticulture}}:
+  {{Optimal}} Climate Control under Stochastic Uncertainty}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/GE9FBWUE/van Mour
+    \verb ik et al. - 2023 - Plant Performance in Precision Horticulture Optim.
+    \verb pdf;/home/murray/snap/zotero-snap/common/Zotero/storage/6XZM2HLQ/2303
+    \verb .html
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:02.117Z%
+    }
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, eess, math}
+    \field{month}{07}
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{vandenbemdRobustDeepReinforcement}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=vW}{%
+         family={{van den Bemd}},
+         familyi={v\bibinitperiod},
+         given={W.J.G.M.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{vW1}
+    \strng{fullhash}{vW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In this study we compare adaptations of two state of the art reinforcement
+  learning algorithms, PPO and SAC, to optimize grower profits in our own
+  simulated hydroponics lettuce greenhouse. We have shown that the application
+  of physics randomization significantly boosts the worst case performance of
+  both SAC and PPO. In our analysis, we trained the algorithms in a single
+  greenhouse and evaluated it in many different greenhouses. While the bare
+  version of PPO and SAC perform better than our baselines when evaluated in
+  the greenhouse it was trained on we observed severe performance degradation
+  when the evaluation greenhouse was altered. To solve this, we compared three
+  different methods. We tested RARL: Robust Adversarial Reinforcement Learning,
+  physics randomization and Gaussian observation noise as three adaptations for
+  PPO and SAC. We have shown empirically that reinforcement learning agents
+  using physics randomization perform better than the baselines in the
+  greenhouse it was trained on. The adapted algorithms show improved
+  performance in the worst case, maintaining performance in the average case,
+  and improved performance in the best case.%
+    }
+    \field{title}{Robust {{Deep Reinforcement Learning}} for {{Greenhouse
+  Control}} and {{Crop Yield Optimization}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HZT8EJG6/Bemd_W.p
+    \verb df
+    \endverb
+    \field{type}{phdthesis}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-06T11:26:02.711Z%
+    }
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{suttonReinforcementLearningIntroduction2014}{book}{}
+    \name{author}{2}{}{%
+      {{hash=SRS}{%
+         family={Sutton},
+         familyi={S\bibinitperiod},
+         given={Richard\bibnamedelima S.},
+         giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=BA}{%
+         family={Barto},
+         familyi={B\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The MIT Press}%
+    }
+    \strng{namehash}{SRSBA1}
+    \strng{fullhash}{SRSBA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{edition}{Nachdruck}
+    \field{isbn}{978-0-262-19398-6}
+    \field{series}{Adaptive Computation and Machine Learning}
+    \field{shorttitle}{Reinforcement Learning}
+    \field{title}{Reinforcement Learning: An Introduction}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Cambridge, Massachusetts}%
+    }
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/B3BSWSLK/Sutton a
+    \verb nd Barto - 2014 - Reinforcement learning an introduction.pdf
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:08.442Z%
+    }
+    \field{year}{2014}
+  \endentry
+
+  \entry{bellmanDynamicProgramming1966}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BR}{%
+         family={Bellman},
+         familyi={B\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{BR1}
+    \strng{fullhash}{BR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Little has been done in the study of these intriguing questions, and I do
+  not wish to give the impression that any extensive set of ideas exists that
+  could be called a "theory." What is quite surprising, as far as the histories
+  of science and philosophy are concerned, is that the major impetus for the
+  fantastic growth of interest in brain processes, both psychological and
+  physiological, has come from a device, a machine, the digital computer. In
+  dealing with a human being and a human society, we enjoy the luxury of being
+  irrational, illogical, inconsistent, and incomplete, and yet of coping. In
+  operating a computer, we must meet the rigorous requirements for detailed
+  instructions and absolute precision. If we understood the ability of the
+  human mind to make effective decisions when confronted by complexity,
+  uncertainty, and irrationality then we could use computers a million times
+  more effectively than we do. Recognition of this fact has been a motivation
+  for the spurt of research in the field of neurophysiology. The more we study
+  the information processing aspects of the mind, the more perplexed and
+  impressed we become. It will be a very long time before we understand these
+  processes sufficiently to reproduce them. In any case, the mathematician sees
+  hundreds and thousands of formidable new problems in dozens of blossoming
+  areas, puzzles galore, and challenges to his heart's content. He may never
+  resolve some of these, but he will never be bored. What more can he ask?%
+    }
+    \verb{doi}
+    \verb 10.1126/science.153.3731.34
+    \endverb
+    \field{issn}{0036-8075}
+    \field{number}{3731}
+    \field{pages}{34\bibrangedash 37}
+    \field{title}{Dynamic Programming}
+    \field{volume}{153}
+    \field{langid}{english}
+    \field{journaltitle}{Science (New York, N.Y.)}
+    \field{month}{07}
+    \field{year}{1966}
+  \endentry
+
+  \entry{raoOPTIMALPOLICYOPTIMAL}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RA}{%
+         family={Rao},
+         familyi={R\bibinitperiod},
+         given={Ashwin},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RA1}
+    \strng{fullhash}{RA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{{{OPTIMAL POLICY FROM OPTIMAL VALUE FUNCTION}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/72UXP5YU/Rao - OP
+    \verb TIMAL POLICY FROM OPTIMAL VALUE FUNCTION.pdf
+    \endverb
+  \endentry
+
+  \entry{daveUnderstandingBellmanOptimality2021}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=DH}{%
+         family={Dave},
+         familyi={D\bibinitperiod},
+         given={Hardik},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{DH1}
+    \strng{fullhash}{DH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The aim of this article is to give an intuition about Reinforcement
+  Learning as well as what the Bellman Optimality Equation is.%
+    }
+    \field{title}{Understanding the {{Bellman Optimality Equation}} in
+  {{Reinforcement Learning}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/MPGUEAAH/understa
+    \verb nding-the-bellman-optimality-equation-in-reinforcement-learning.html
+    \endverb
+    \field{journaltitle}{Analytics Vidhya}
+    \field{month}{02}
+    \field{year}{2021}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{mnihPlayingAtariDeep2013}{misc}{}
+    \name{author}{7}{}{%
+      {{hash=MV}{%
+         family={Mnih},
+         familyi={M\bibinitperiod},
+         given={Volodymyr},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kavukcuoglu},
+         familyi={K\bibinitperiod},
+         given={Koray},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Silver},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AI}{%
+         family={Antonoglou},
+         familyi={A\bibinitperiod},
+         given={Ioannis},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=WD}{%
+         family={Wierstra},
+         familyi={W\bibinitperiod},
+         given={Daan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Riedmiller},
+         familyi={R\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Machine Learning}
+    \strng{namehash}{MVKKSD+1}
+    \strng{fullhash}{MVKKSDGAAIWDRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We present the first deep learning model to successfully learn control
+  policies directly from high-dimensional sensory input using reinforcement
+  learning. The model is a convolutional neural network, trained with a variant
+  of Q-learning, whose input is raw pixels and whose output is a value function
+  estimating future rewards. We apply our method to seven Atari 2600 games from
+  the Arcade Learning Environment, with no adjustment of the architecture or
+  learning algorithm. We find that it outperforms all previous approaches on
+  six of the games and surpasses a human expert on three of them.%
+    }
+    \verb{eprint}
+    \verb 1312.5602
+    \endverb
+    \field{number}{arXiv:1312.5602}
+    \field{title}{Playing {{Atari}} with {{Deep Reinforcement Learning}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/3A9B2AQU/Mnih et
+    \verb al_2013_Playing Atari with Deep Reinforcement Learning.pdf;/home/murr
+    \verb ay/snap/zotero-snap/common/Zotero/storage/39MC87S6/1312.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{12}
+    \field{year}{2013}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{daiDiscreteTimeModelPredictive2012}{incollection}{}
+    \name{author}{8}{}{%
+      {{hash=DL}{%
+         family={Dai},
+         familyi={D\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=XY}{%
+         family={Xia},
+         familyi={X\bibinitperiod},
+         given={Yuanqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fu},
+         familyi={F\bibinitperiod},
+         given={Mengyin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MMS}{%
+         family={Mahmoud},
+         familyi={M\bibinitperiod},
+         given={Magdi\bibnamedelima S.},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=DL}{%
+         family={Dai},
+         familyi={D\bibinitperiod},
+         given={Li},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=XY}{%
+         family={Xia},
+         familyi={X\bibinitperiod},
+         given={Yuanqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=FM}{%
+         family={Fu},
+         familyi={F\bibinitperiod},
+         given={Mengyin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MMS}{%
+         family={Mahmoud},
+         familyi={M\bibinitperiod},
+         given={Magdi\bibnamedelima S.},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {IntechOpen}%
+    }
+    \strng{namehash}{DLXYFM+1}
+    \strng{fullhash}{DLXYFMMMSDLXYFMMMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Open access peer-reviewed chapter%
+    }
+    \field{booktitle}{Advances in {{Discrete Time Systems}}}
+    \verb{doi}
+    \verb 10.5772/51122
+    \endverb
+    \field{isbn}{978-953-51-0875-7}
+    \field{title}{Discrete-{{Time Model Predictive Control}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LFZ3LD6P/Dai et a
+    \verb l. - 2012 - Discrete-Time Model Predictive Control.pdf
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:22.698Z%
+    }
+    \field{month}{12}
+    \field{year}{2012}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{gruberNonlinearMPCBased2011}{article}{}
+    \name{author}{6}{}{%
+      {{hash=GJK}{%
+         family={Gruber},
+         familyi={G\bibinitperiod},
+         given={J.\bibnamedelima K.},
+         giveni={J\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+      {{hash=GJL}{%
+         family={Guzm{\'a}n},
+         familyi={G\bibinitperiod},
+         given={J.\bibnamedelima L.},
+         giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=RF}{%
+         family={Rodr{\'i}guez},
+         familyi={R\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=BC}{%
+         family={Bordons},
+         familyi={B\bibinitperiod},
+         given={C.},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Berenguel},
+         familyi={B\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SJA}{%
+         family={S{\'a}nchez},
+         familyi={S\bibinitperiod},
+         given={J.\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJKGJLRF+1}
+    \strng{fullhash}{GJKGJLRFBCBMSJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Suitable environmental conditions are a fundamental issue in greenhouse
+  crop growth and can be achieved by advanced climate control strategies. In
+  different climatic zones, natural ventilation is used to regulate both the
+  greenhouse temperature and humidity. In mild climates, the greatest problem
+  faced by far in greenhouse climate control is cooling, which, for dynamical
+  reasons, leads to natural ventilation as a standard tool. This work addresses
+  the design of a nonlinear model predictive control (NMPC) strategy for
+  greenhouse temperature control using natural ventilation. The NMPC strategy
+  is based on a second-order Volterra series model identified from experimental
+  input/output data of a greenhouse. These models, representing the simple and
+  logical extension of convolution models, can be used to approximate the
+  nonlinear dynamic effect of the ventilation and other environmental
+  conditions on the greenhouse temperature. The developed NMPC is applied to a
+  greenhouse and the control performance of the proposed strategy will be
+  illustrated by means of experimental results.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.conengprac.2010.12.004
+    \endverb
+    \field{issn}{0967-0661}
+    \field{number}{19}
+    \field{pages}{354\bibrangedash 366}
+    \field{title}{Nonlinear {{MPC}} Based on a {{Volterra}} Series Model for
+  Greenhouse Temperature Control Using Natural Ventilation}
+    \field{volume}{4}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/SDPPEV2J/bwmeta1.
+    \verb element.html
+    \endverb
+    \field{journaltitle}{Control Engineering Practice}
+    \field{year}{2011}
+    \field{urlday}{13}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{montoyaHybridcontrolledApproachMaintaining2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=MA}{%
+         family={Montoya},
+         familyi={M\bibinitperiod},
+         given={Ana},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Guzm{\'a}n},
+         familyi={G\bibinitperiod},
+         given={Jos{\'e}},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=RF}{%
+         family={Rodriguez},
+         familyi={R\bibinitperiod},
+         given={Francisco},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={{S{\'a}nchez-Molina}},
+         familyi={S\bibinitperiod},
+         given={Jorge},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{MAGJRF+1}
+    \strng{fullhash}{MAGJRFSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \verb{doi}
+    \verb 10.1016/j.compag.2016.02.014
+    \endverb
+    \field{pages}{116\bibrangedash 124}
+    \field{shorttitle}{A Hybrid-Controlled Approach for Maintaining Nocturnal
+  Greenhouse Temperature}
+    \field{title}{A Hybrid-Controlled Approach for Maintaining Nocturnal
+  Greenhouse Temperature: {{Simulation}} Study}
+    \field{volume}{123}
+    \field{journaltitle}{Computers and Electronics in Agriculture}
+    \field{month}{04}
+    \field{year}{2016}
+  \endentry
+
+  \entry{bersaniModelPredictiveControl2020}{article}{}
+    \name{author}{4}{}{%
+      {{hash=BC}{%
+         family={Bersani},
+         familyi={B\bibinitperiod},
+         given={Chiara},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Ouammi},
+         familyi={O\bibinitperiod},
+         given={Ahmed},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SR}{%
+         family={Sacile},
+         familyi={S\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=ZE}{%
+         family={Zero},
+         familyi={Z\bibinitperiod},
+         given={Enrico},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Multidisciplinary Digital Publishing Institute}%
+    }
+    \keyw{control strategies,energy saving,greenhouse,model predictive
+  control,precision agriculture,sustainability}
+    \strng{namehash}{BCOASR+1}
+    \strng{fullhash}{BCOASRZE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Modern agriculture represents an economic sector that can mainly benefit
+  from technology innovation according to the principles suggested by Industry
+  4.0 for smart farming systems. Greenhouse industry is significantly becoming
+  more and more technological and automatized to improve the quality and
+  efficiency of crop production. Smart greenhouses are equipped with forefront
+  IoT- and ICT-based monitoring and control systems. New remote sensors,
+  devices, networking communication, and control strategies can make available
+  real-time information about crop health, soil, temperature, humidity, and
+  other indoor parameters. Energy efficiency plays a key role in this context,
+  as a fundamental path towards sustainability of the production. This paper is
+  a review of the precision and sustainable agriculture approaches focusing on
+  the current advance technological solution to monitor, track, and control
+  greenhouse systems to enhance production in a more sustainable way. Thus, we
+  compared and analyzed traditional versus model predictive control methods
+  with the aim to enhance indoor microclimate condition management under an
+  energy-saving approach. We also reviewed applications of sustainable
+  approaches to reach nearly zero energy consumption, while achieving nearly
+  zero water and pesticide use.%
+    }
+    \verb{doi}
+    \verb 10.3390/en13143647
+    \endverb
+    \field{issn}{1996-1073}
+    \field{number}{14}
+    \field{pages}{3647}
+    \field{title}{Model {{Predictive Control}} of {{Smart Greenhouses}} as the
+  {{Path}} towards {{Near Zero Energy Consumption}}}
+    \field{volume}{13}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/GIKGFRGF/Bersani
+    \verb et al. - 2020 - Model Predictive Control of Smart Greenhouses as t.pd
+    \verb f
+    \endverb
+    \field{journaltitle}{Energies}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:28:50.921Z%
+    }
+    \field{month}{01}
+    \field{year}{2020}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
   \entry{boersmaRobustSamplebasedModel2022}{article}{}
     \name{author}{3}{}{%
       {{hash=BS}{%
@@ -848,6 +3508,50 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{rawlingsModelPredictiveControl2017}{book}{}
+    \name{author}{3}{}{%
+      {{hash=RJB}{%
+         family={Rawlings},
+         familyi={R\bibinitperiod},
+         given={James\bibnamedelima Blake},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=MDQ}{%
+         family={Mayne},
+         familyi={M\bibinitperiod},
+         given={David\bibnamedelima Q.},
+         giveni={D\bibinitperiod\bibinitdelim Q\bibinitperiod},
+      }}%
+      {{hash=DM}{%
+         family={Diehl},
+         familyi={D\bibinitperiod},
+         given={Moritz},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Nob Hill Publishing}%
+    }
+    \strng{namehash}{RJBMDQDM1}
+    \strng{fullhash}{RJBMDQDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{edition}{2nd edition}
+    \field{isbn}{978-0-9759377-3-0}
+    \field{shorttitle}{Model Predictive Control}
+    \field{title}{Model Predictive Control: Theory, Computation, and Design}
+    \field{langid}{english}
+    \list{location}{1}{%
+      {Madison, Wisconsin}%
+    }
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/4SUWRAMD/Rawlings
+    \verb  et al. - 2017 - Model predictive control theory, computation, and.pd
+    \verb f
+    \endverb
+    \field{year}{2017}
+  \endentry
+
   \entry{ellisTutorialReviewEconomic2014}{article}{}
     \name{author}{3}{}{%
       {{hash=EM}{%
@@ -907,6 +3611,76 @@
     \field{month}{08}
     \field{year}{2014}
     \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{rawlingsFundamentalsEconomicModel2012}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=RJB}{%
+         family={Rawlings},
+         familyi={R\bibinitperiod},
+         given={James\bibnamedelima B.},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=AD}{%
+         family={Angeli},
+         familyi={A\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=BCN}{%
+         family={Bates},
+         familyi={B\bibinitperiod},
+         given={Cuyler\bibnamedelima N.},
+         giveni={C\bibinitperiod\bibinitdelim N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RJBADBCN1}
+    \strng{fullhash}{RJBADBCN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The goal of most current advanced control systems is to guide a process to
+  a target setpoint rapidly and reliably. Model predictive control has become a
+  popular technology in many applications because it can handle large,
+  multivariable systems subject to hard constraints on states and inputs. The
+  optimal steady-state setpoint is usually provided by some other information
+  management system that determines, among all steady states, which is the most
+  profitable. For an increasing number of applications, however, this
+  hierarchical separation of information and purpose is no longer optimal or
+  desirable. A recently proposed alternative to the hierarchical decomposition
+  is to take the economic objective directly as the objective function of the
+  control system. In this approach, known as economic MPC, the controller
+  optimizes directly in real time the economic performance of the process,
+  rather than tracking to a setpoint. The purpose of this tutorial is to
+  explain how to design these kinds of control systems and what kinds of
+  closed-loop properties one can achieve with them. We cover the following
+  issues: asymptotic average performance; closed-loop stability and
+  convergence, strong duality and dissipativity; designing terminal costs,
+  terminal regions, and terminal periodic constraints. Several examples are
+  included to illustrate these results.%
+    }
+    \field{booktitle}{2012 {{IEEE}} 51st {{IEEE Conference}} on {{Decision}}
+  and {{Control}} ({{CDC}})}
+    \verb{doi}
+    \verb 10.1109/CDC.2012.6425822
+    \endverb
+    \field{issn}{0743-1546}
+    \field{pages}{3851\bibrangedash 3861}
+    \field{title}{Fundamentals of Economic Model Predictive Control}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/9SG4IQSN/Rawlings
+    \verb  et al. - 2012 - Fundamentals of economic model predictive control.pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/R9HKAS9M/642582
+    \verb 2.html
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:37.954Z%
+    }
+    \field{month}{12}
+    \field{year}{2012}
+    \field{urlday}{01}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
   \endentry
@@ -1048,29 +3822,6 @@
     \endverb
     \field{journaltitle}{IEEE TRANSACTIONS ON AUTOMATIC CONTROL}
     \field{year}{2020}
-  \endentry
-
-  \entry{bertsekasLessonsAlphaZeroOptimal}{article}{}
-    \name{author}{1}{}{%
-      {{hash=BDP}{%
-         family={Bertsekas},
-         familyi={B\bibinitperiod},
-         given={Dimitri\bibnamedelima P},
-         giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
-      }}%
-    }
-    \keyw{/unread}
-    \strng{namehash}{BDP1}
-    \strng{fullhash}{BDP1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{title}{Lessons from {{AlphaZero}} for {{Optimal}}, {{Model
-  Predictive}}, and {{Adaptive Control}}}
-    \field{langid}{english}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZER2BVBI/Bertseka
-    \verb s - Lessons from AlphaZero for Optimal, Model Predicti.pdf
-    \endverb
   \endentry
 \enddatalist
 \endinput
