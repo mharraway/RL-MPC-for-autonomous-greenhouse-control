@@ -1,19 +1,19 @@
 \chapter{Background}
 \label{chapter:Background}
 
-\emph{Description of chapter, Use the present tense when introducing a chapter or section}
+This chapter provides an overview of the relevant background information used in completing this thesis. This chapter centres around the chosen greenhouse model and the rationale behind its selection. It delves into the principles of RL and MPC, and finally provides information on the necessity of combining these algorithms. 
 
 \section{Greenhouse Model}
 \label{section:greenhouse-model}
 
 The accuracy and complexity of the model at hand directly impacts the quality of the control.  The dynamics of a greenhouse can be characterized through various modeling approaches depending on its application. Methods such as Computational FLuid Dynamics (CFD) are used to develop numerical models of the indoor climate of a greenhouse using partial differentiable equations. In recent years, CFD simulations have become increasingly more accurate in simulating indoor greenhouse climate \cite{delatorre-geaComputationalFluidDynamics2011}, however extensive knowledge and computational power of the system is required.
-Their complexity makes them intractable for mathematical solvers such as Model Predictive Control (MPC), and they present substantial challenges for learning in model-free methods, resulting in a demanding and laborious process \cite{jansenOptimalControlLettuce2023}.Simplified models of greenhouse dynamics are developed by assuming homogeneity in the greenhouse climate and neglecting the impact of wall effects. Additional assumptions about $CO_2$ and humidity are incorporated to yield a model conducive to  control applications, as discussed in \cite{jansenOptimalControlLettuce2023, lopez-cruzDevelopmentAnalysisDynamical2018}. While these simplified models sacrifice some accuracy in representing the system, they significantly reduce computational demands, thereby making them tractable for mathematical solvers. These mechanistic process models are often derived from first principles and use ordinary differential of difference equations to represent the system dynamics.
+Their complexity makes them intractable for mathematical solvers such as MPC and they present substantial challenges for learning in model-free methods, resulting in a demanding and laborious training process \cite{jansenOptimalControlLettuce2023}.Simplified models of greenhouse dynamics are developed by assuming homogeneity in the greenhouse climate and neglecting the impact of wall effects. Additional assumptions about $CO_2$ and humidity are incorporated to yield a model conducive to  control applications, as discussed in \cite{jansenOptimalControlLettuce2023, lopez-cruzDevelopmentAnalysisDynamical2018}. While these simplified models sacrifice some accuracy in representing the system, they significantly reduce computational demands, thereby making them tractable for mathematical solvers. These mechanistic process models are often derived from first principles and use ordinary differential of difference equations to represent the system dynamics.
 In contrast, Data-drive models such as in \cite{gongDeepLearningBased2021} and \cite{maestriniMixingProcessbasedDatadriven2022} have also been used to create a black box model of the greenhouse dynamics. Although such models may yield accurate results, they do so only in the environment wherein the data originates from, whereas mechanistic process models often generalize better to different environments and situations. Although such black box models may be used for RL, they could pose challenges for mathematical solvers due to their potential complexity and/or unknown mathematical makeup.
 Similar models and scenarios exist for crops. In some cases, it is possible to model crops with a single variable (namely the crop dry weight) given the climate conditions for simple crops, such as lettuce \cite{royPAPrecisionAgriculture2002}. However, for more complicated crops such as tomatoes and cucumber additional  information is required to describe their growth behaviour and life cycle stages \cite{kuijpersModelSelectionCommon2019}. 
 \\
-Although accurate models may seem appealing, they are often exhibit complexity and entail a high-dimensional state-space. Both factors have adverse effects on model-free RL algorithms and MPC, making such models impractical for the development of optimal control policies. This arises from the fact that, in the case of Model Predictive Control (MPC), finding a tractable solution within the given time constraints may prove challenging. Consequently, it might fail to meet timing requirements and constraints, or even find no solution at all. Similarly, in the context of model-free Reinforcement Learning (RL) algorithms, the use of high-fidelity models could destabilize the learning procedure, making it a more difficult and time-consuming task to learn a policy \cite{lawrynczukMPCAlgorithms2014,dulac-arnoldChallengesRealWorldReinforcement2019}. Therefore, for optimal control, is it desirable to use a low-dimensional simplified model whereby the most important dynamics of the system is still captured. Moreover, they control law obtained from the simplified model may be adjusted and applied to the more accurate models in order to validate them. If however, the control law is not satisfactory, the simplified model must be adapted and a new control policy obtained. Often this leads to an iterative cycle of updating the model and validating the obtained control policy until a satisfactory performance on the high-accurate model is obtained \cite{knibbeDigitalTwinsGreen2022}. Since the thesis focuses on the impact and implementation of merging RL and MPC for optimal control, it is outside of the scope to design and develop a model.
+Although accurate models may seem appealing, they are often exhibit complexity and entail a high-dimensional state-space. Both factors have adverse effects on model-free RL algorithms and MPC, making such models impractical for the development of optimal control policies. This arises from the fact that, in the case of MPC, finding a tractable solution within the given time constraints may prove challenging. Consequently, it might fail to meet timing requirements and constraints, or even find no solution at all. Similarly, in the context of model-free RL algorithms, the use of highly accurate models could destabilize the learning procedure, making it a more difficult and time-consuming task to learn a policy \cite{lawrynczukMPCAlgorithms2014,dulac-arnoldChallengesRealWorldReinforcement2019}. Therefore, for optimal control, is it desirable to use a low-dimensional simplified model whereby the most important dynamics of the system is still captured. Moreover, the control law obtained from the simplified model may be adjusted and applied to the more accurate models in order to validate them. If however, the control law is not satisfactory, the simplified model must be adapted and a new control policy obtained. Often this leads to an iterative cycle of updating the model and validating the obtained control policy until a satisfactory performance on the high-accurate model is obtained \cite{knibbeDigitalTwinsGreen2022}. Since the thesis focuses on the impact and implementation of merging RL and MPC for optimal control, it is outside of the scope to design and develop a model.
 Therefore a validated simplified mechanistic model of a greenhouse with lettuce crops will be selected. Although data driven models may mimic a simplified mechanistic process, a mechanistic process is required for a model predictive controller. 
-Due to the relative simplicity of lettuce crop models, they find utility alongside a greenhouse model that assumes an indoor homogeneous climate. A model, which encapsulates the fundamental dynamics of the greenhouse and crops, is detailed in \cite{hentenGreenhouseClimateManagement1994} and has been explicitly developed for optimal control applications. More importantly, the model proposed in \cite{hentenGreenhouseClimateManagement1994} has been validated in \cite{vanhentenValidationDynamicLettuce1994}, and has been successfully widely used in obtaining optimal control policies such as in \cite{jansenOptimalControlLettuce2023,vanstratenOptimalGreenhouseCultivation2010,ghoumariNonlinearConstrainedMPC2005,lubbersAutonomousGreenhouseClimate2023, morcegoReinforcementLearningModel2023}. Hence the decision to use the model proposed in \cite{hentenGreenhouseClimateManagement1994} in this thesis.
+Due to the relative simplicity of lettuce crop models, they find utility alongside a greenhouse model that assumes an indoor homogeneous climate. A model, which encapsulates the fundamental dynamics of the greenhouse and crops, is detailed in \cite{hentenGreenhouseClimateManagement1994} and has been explicitly developed for optimal control applications. More importantly, the model proposed in \cite{hentenGreenhouseClimateManagement1994} has been validated in \cite{vanhentenValidationDynamicLettuce1994}, and has been extensively utilised in obtaining optimal control policies such as in \cite{jansenOptimalControlLettuce2023,vanstratenOptimalGreenhouseCultivation2010,ghoumariNonlinearConstrainedMPC2005,lubbersAutonomousGreenhouseClimate2023, morcegoReinforcementLearningModel2023}. Therefore, the choice was made to utilise the model suggested in \cite{hentenGreenhouseClimateManagement1994} for this thesis.
 
 
 
@@ -25,7 +25,7 @@ Due to the relative simplicity of lettuce crop models, they find utility alongsi
 	\label{fig:van_henten_model}
 \end{figure}
 
-\autoref{fig:van_henten_model} displays a graphical representation of the used greenhouse model from the works of \cite{hentenGreenhouseClimateManagement1994}. The control inputs are highlighted in red, the stated of the indoor climate in blue, the state of the crops in green and the external disturbances given in black. The states of the system, control inputs, disturbances and outputs are described in \autoref{eq: model vectors}.
+\autoref{fig:van_henten_model} displays a graphical representation of the used greenhouse model from the works of \cite{hentenGreenhouseClimateManagement1994}. The control inputs are highlighted in red, the states of the indoor climate in blue, the state of the crops in green and the external disturbances given in black. The states of the system, control inputs, disturbances and outputs are described in \autoref{eq: model vectors}.
 
 \begin{equation}
 	\begin{aligned}
@@ -49,11 +49,12 @@ Due to the relative simplicity of lettuce crop models, they find utility alongsi
 \end{equation}
 The state of the system includes Crop dry mass, $C0_2$ density within the greenhouse, the temperature inside the greenhouse and the absolute humidity within the greenhouse. Crop dry mass is used since it is a more reliable and accurate measure of the biomass of the plant. Unlike fresh weight, which varies with the plant's water content which is in turn influenced by weather conditions, crop dry mass provides a more stable and consistent metric. The control vector encapsulates the $C0_2$ injection rate, ventilation rate and the heating supply. Furthermore, the disturbances from the weather include the incoming solar radiation, ambient $C0_2$ density, ambient temperature and the ambient humidity content. The measured output is largely the same as the state of the system however the units of the indoor $C0_2$ density and relative humidity differ in that they report in units as used in standard measurement sensors.
 
-\subsection{Uncertainty}
+
 
 \subsection {Model State Equations}
 
-The model described in \cite{hentenGreenhouseClimateManagement1994} is fully described by the crop dry weight, temperature, humidity and $C0_2$ levels of the indoor climate. All variables with their description and units are given in \autoref{tab:model variables and descriptions} and model constants in \autoref{tab:model constants and descriptions}. These states are modeled through a set of ordinary differentiable equations where the change of crop state is represented as
+\paragraph{State Equations}
+The model described in \cite{hentenGreenhouseClimateManagement1994} is fully described by the crop dry weight, temperature, humidity and $C0_2$ levels of the indoor climate. All variables and their units are given in \autoref{tab:model variables and descriptions} and model constants in \autoref{tab:model constants and descriptions}. These states are modeled through a set of ordinary differentiable equations where the change of crop state is represented as
 
 \begin{equation}
 	\frac{dX_d}{dt} = c_{\alpha \beta} \phi_{phot,c}(t) - \phi_{resp,d}(t)
@@ -81,6 +82,7 @@ Finally, the humidity of the greenhouse is described by
 \end{equation}
 whereby $c_{cap,h}$ is the volumetric humidity capacity of the greenhouse, $\phi_{transp,h}$ models the transpiration rate of the canopy and $\phi_{vent,h}$ is the leakage of water vapour through the vents of the greenhouse.
 
+\paragraph{Process Equations}
 The gross canopy photosynthesis rate $\phi_{phot,c}$ is defined as below:
 \begin{equation}
 	\phi_{phot,c}(t) = (1 - e^{-C_{LAI,d} x_d(t)}) \frac{c_{Io}^{phot} d_{Io}(t) \cdot \phi(t)}{c_{Io}^{phot} d_{Io}(t) +\phi(t)}
@@ -139,8 +141,8 @@ Here, $c_{og}^{rad}$ serves as an indicator of the proportion of heating supplie
 	\phi_{vent,h}(t) = (u_v(t) \cdot 10^{-3} + c_{leak})(x_h(t) - d_h(t))
 \end{equation}
 
-
-The output measurements for the indoor humidity and $C0_2$ levels are reported in different units via the function $g_{C0_2}(\cdot)$ and $g_h{\cdot}$ respectively.  the output measurements for crop dry mass and indoor temperature correspond to the state variables, as illustrated below:
+\paragraph{Output Measurement Equations}
+The output measurements for the indoor humidity and $C0_2$ levels are reported in different units via the function $g_{C0_2}(\cdot)$ and $g_h{\cdot}$ respectively.  The output measurements for crop dry mass and indoor temperature correspond to the state variables, as illustrated below:
 
 \begin{equation}
 	\begin{aligned}
@@ -292,13 +294,56 @@ where $R,c_T,P,M_{C0_2},c_{H_20,4},c_{H_20,5},c_{H_20,6}$ are constants and thei
 	\label{tab:model constants and descriptions}
 \end{table}
 
+\subsection{Uncertainty in this Thesis}
+In reality, uncertainty is present in all aspects of the model. In the case of the greenhouse environment, uncertainty may arise in the weather predictions, there may be measurement noise on the outputs and the control inputs may not be exact. Additionally, the simplified model leads to a model mismatch, which may result in significant prediction errors.  As was done in \cite{boersmaRobustSamplebasedModel2022, lubbersAutonomousGreenhouseClimate2023}, the source of uncertainty in the stochastic environment is modeled as parametric uncertainty which aims to largely capture all of this uncertainty. Moreover, in the objective function (discussed further in \autoref{ssection:optimization-goal}), the pricing of energy and the lettuce may also be stochastic, however it is assumed to be fixed, along with the weather predictions.
+It is not the focus of this thesis to accurately model the uncertainty in a greenhouse crop environment. However, it is important to observe the impact of uncertainty on the generated policy for each algorithm. This will help determine the performance of these controllers in a more realistic scenario. Thus, the parameters of the environment are represented as uncertain parameters with well-defined probabilistic properties. It is assumed that the uncertain parameters $\hat{p}$ follow the uniform probabilistic distribution:
+\begin{equation}
+	\label{eq:uncertainty_model}
+	\begin{aligned}
+		\hat{p} \sim U(\mu_p, \delta_p)  
+	\end{aligned}
+\end{equation}
+where $\mu_p$ is the mean value of the parameters $p$ (shown in \autoref{tab:model constants and descriptions}), and $\delta_p$ is expressed as a percentage where the upper and lower bounds of the distribution is expressed as $p(1-\delta_p)$ and $p(1+\delta_p)$. It must be noted that since all parameters are perturbed, including parameters of the output measurement equations, output noise is also introduced. The uniform distribution was chosen for its higher level of aggressiveness compared to the normal distribution. While it may not accurately represent the uncertainty at hand, it is a useful tool for evaluating the potential variability and risks associated with the various policies generated especially at higher degrees of uncertainty.
+
+
 \subsection{Optimization Goal}
 \label{ssection:optimization-goal}
-\emph{The optimization goal of the algorithms. What it is trying to optimize, i.e. the economic benefit}
+Maximising the economic profit of the greenhouse is highly desirable. This concept essentially involves maximising the lettuce's size while minimising the resources used throughout its entire growth period. The optimisation goal can be modeled and is referred to by the economic profit indicator (EPI), as demonstrated below:
+
+\begin{equation}
+	EPI = \sum_{ts}^{tf} (c_{p1} \cdot u_1(t) + c_{p2} \cdot u_2(t)) - c_{p3} \cdot y_1(tf)
+\end{equation}
+
+where $t_s$ denotes the starting time, $t_f$ the end time, $c_{p1},c_{p2}$ the pricing coefficients of injecting $C0_2$ and heating respectively and $c_{p3}$ as the price of lettuce. These pricing factors are shown in \autoref{tab:pricing factors}. It is important to highlight that ventilation, such as opening windows, does not incur any costs and therefore does not have a pricing factor.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c c|}
+		\hline
+		$c_{p1}$& $3.4308\cdot 10^{-4}$ \\
+		$c_{p2}$& $6.405\cdot 10^{-5}$\\
+		$c_{p3}$& $22.285$\\ 
+		\hline
+	\end{tabular}
+	\caption{Pricing factors}
+	\label{tab:pricing factors}
+\end{table}
+
+The pricing factors includes the discrete time interval $h$, as well as the required conversions from $mg$ to $kg$ and joules to $kWh$ for the $C02$ injection and heating, respectively. Furthermore, $c_{p_3}$ incorporates the factor of harvestable fresh weight, which quantifies the amount of fresh weight relative to dry weight. Finally, the pricing of the $C0_2$ in \euro $/kg$, the price of heating in \euro$/kWh$ and the pricing of lettuce in \euro$/kg$ is also incorporated as shown in \autoref{eq:pricing factors}
+
+\begin{equation}\label{eq:pricing factors}
+	\begin{aligned}
+		& c_{p1} = h \cdot C0_{2_{price}}  = 1800 \cdot \frac{0.1906}{10^{6}}\\
+		& c_{p2} = h \cdot  Heating_{price} = 1800 \cdot \frac{0.1281}{3.6\cdot 10^{6}}\\
+		& c_{p3} = (1-c_{\tau})  \cdot c_{fw} \cdot Let_{price}= (1-0.07) \cdot 22.5 \cdot 1.065 \\
+	\end{aligned}
+\end{equation}
+
+The prices for $C0_{2_{price}}$, $Heating_{price}$, and $Let_{price}$ were sourced from \cite{vandenbemdRobustDeepReinforcement}, while the factors for harvestable fresh weight, $c_{\tau}$ and $c_{fw}$, were obtained from \cite{hentenGreenhouseClimateManagement1994}. While these factors may not accurately reflect the present economic conditions, it is important to keep these factors constant when comparing the algorithms MPC, RL, and RL-MPC. This ensures a meaningful comparison between them and is the aim of this thesis.
 
 
 \section{Reinforcement Learning}
-\subsection{Why RL for Greenhouse Control?}
+
 With the surge in AI development, the demand for optimal greenhouse control has propelled reinforcement learning into the spotlight. Although AI algorithms are widely used in the farming and Horticulture industry, most of the application is centered around the detection and protection of plant and crop quality such as plant stress, pest, disease and weed detection \cite{hemmingCherryTomatoProduction2020}. Moreover, the prediction of crop yield and growth has also been an area of area of focus for AI owing to its unparalleled non-linear approximation capabilities \cite{gongDeepLearningBased2021}. Additionally, recent advancements in RL has displayed its ability to far outperform humans in decision making when presented with large complex problem spaces \cite{bonsaiWhyReinforcementLearning2017} due to its ability in finding the optimal control. Because of RL's ability to evaluate optimal control actions for large state spaces, it has shown great success such as in Google DeepMind's chess engine, AlphaZero, creating ones of the most powerful chess engines in the world. Furthermore, reinforcement learning has demonstrated exceptional proficiency in handling uncertainty and disturbances \cite{daaboulUncertaintyPredictionModelbased2020}. This makes it an ideal control strategy for greenhouse management, particularly considering the uncertainties inherent in weather conditions and crop growth. Recently, research has focused on the optimization of crop growth and yield in greenhouse control, with studies such as \cite{ajagekarDeepReinforcementLearning2022,wangDeepReinforcementLearning2020,ajagekarEnergyefficientAIbasedControl2023,decardi-nelsonbenjaminImprovingResourceUse2023,zhangRobustModelbasedReinforcement2021,jansenOptimalControlLettuce2023,vanmourikPlantPerformancePrecision2023} employing reinforcement learning to address this challenge. This momentum has been fueled by initiatives like the Autonomous Greenhouse Challenge hosted by Wageningen University and Research first held in 2018 in which the challenge was designed to further push the limits of AI in fresh food production. In this competition, teams vie against each other to employ AI for optimizing cucumber crop growth in a climate-controlled greenhouse. Specifically, deep reinforcement learning policies have been applied and measured against each other, current control strategies and expert growers, showing promising results and in some cases, outperforming expert growers \cite{vandenbemdRobustDeepReinforcement,wangDeepReinforcementLearning2020}. As the years have progressed, an increasing number of teams have succeeded in outperforming expert growers \cite{vandenbemdRobustDeepReinforcement,hemmingCherryTomatoProduction2020}. Such achievements using reinforcement learning in a real-world application has displayed its potential in achieving complete autonomous greenhouse control.
 
 \subsection{The RL problem}

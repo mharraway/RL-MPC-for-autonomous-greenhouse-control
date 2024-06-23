@@ -559,40 +559,6 @@
     \field{urlyear}{2023}
   \endentry
 
-  \entry{sahooSmartGreenhouseBoon2022}{misc}{}
-    \name{author}{1}{}{%
-      {{hash=SC}{%
-         family={Sahoo},
-         familyi={S\bibinitperiod},
-         given={Chiranjib},
-         giveni={C\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{SC1}
-    \strng{fullhash}{SC1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
-    \field{abstract}{%
-    Smart Greenhouse is not only solving the problem of sudden climate changes
-  but also helping enhance crop yield in agriculture. Read through{\dots}%
-    }
-  \field{howpublished}{https://write.agrevolution.in/smart-greenhouse-a-boon-or-bane-for-agriculture-dbd75fb606d3}
-    \field{shorttitle}{Smart {{Greenhouse}}}
-    \field{title}{Smart {{Greenhouse}}: {{A Boon}} or {{Bane}} for
-  {{Agriculture}}?}
-    \field{langid}{english}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HC48L2YK/smart-gr
-    \verb eenhouse-a-boon-or-bane-for-agriculture-dbd75fb606d3.html
-    \endverb
-    \field{journaltitle}{Medium}
-    \field{month}{10}
-    \field{year}{2022}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
   \entry{rusnakWhatCurrentState2018}{misc}{}
     \name{author}{1}{}{%
       {{hash=RP}{%
@@ -714,62 +680,6 @@
     \field{month}{11}
     \field{year}{2020}
     \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
-  \entry{vanstratenOptimalGreenhouseCultivation2010}{article}{}
-    \name{author}{2}{}{%
-      {{hash=VSG}{%
-         family={Van\bibnamedelima Straten},
-         familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
-         given={G.},
-         giveni={G\bibinitperiod},
-      }}%
-      {{hash=HEJV}{%
-         family={Henten},
-         familyi={H\bibinitperiod},
-         given={E.\bibnamedelima J.\bibnamedelima Van},
-         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
-  V\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{VSGHEJV1}
-    \strng{fullhash}{VSGHEJV1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
-    \field{abstract}{%
-    A survey is presented of the literature on greenhouse climate control,
-  positioning the various solutions and paradigms in the framework of optimal
-  control. A separation of timescales allows the separation of the economic
-  optimal control problem of greenhouse cultivation into an off-line problem at
-  the tactical level, and an on-line problem at the operational level. This
-  paradigm is used to classify the literature into three categories: focus on
-  operational control, focus on the tactical level, and truly integrated
-  control. Integrated optimal control warrants the best economical result, and
-  provides a systematic way to design control systems for the innovative
-  greenhouses of the future. Research issues and perspectives are listed as
-  well.%
-    }
-    \verb{doi}
-    \verb 10.3182/20101206-3-JP-3009.00004
-    \endverb
-    \field{issn}{14746670}
-    \field{number}{26}
-    \field{pages}{18\bibrangedash 33}
-    \field{shorttitle}{Optimal {{Greenhouse Cultivation Control}}}
-    \field{title}{Optimal {{Greenhouse Cultivation Control}}: {{Survey}} and
-  {{Perspectives}}}
-    \field{volume}{43}
-    \field{langid}{english}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LGQ2TGEQ/Van Stra
-    \verb ten and Henten - 2010 - Optimal Greenhouse Cultivation Control Survey
-    \verb  and.pdf
-    \endverb
-    \field{journaltitle}{IFAC Proceedings Volumes}
-    \field{year}{2010}
-    \field{urlday}{14}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
   \endentry
@@ -2228,6 +2138,62 @@
     \field{urlyear}{2024}
   \endentry
 
+  \entry{vanstratenOptimalGreenhouseCultivation2010}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VSG}{%
+         family={Van\bibnamedelima Straten},
+         familyi={V\bibinitperiod\bibinitdelim S\bibinitperiod},
+         given={G.},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HEJV}{%
+         family={Henten},
+         familyi={H\bibinitperiod},
+         given={E.\bibnamedelima J.\bibnamedelima Van},
+         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
+  V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VSGHEJV1}
+    \strng{fullhash}{VSGHEJV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    A survey is presented of the literature on greenhouse climate control,
+  positioning the various solutions and paradigms in the framework of optimal
+  control. A separation of timescales allows the separation of the economic
+  optimal control problem of greenhouse cultivation into an off-line problem at
+  the tactical level, and an on-line problem at the operational level. This
+  paradigm is used to classify the literature into three categories: focus on
+  operational control, focus on the tactical level, and truly integrated
+  control. Integrated optimal control warrants the best economical result, and
+  provides a systematic way to design control systems for the innovative
+  greenhouses of the future. Research issues and perspectives are listed as
+  well.%
+    }
+    \verb{doi}
+    \verb 10.3182/20101206-3-JP-3009.00004
+    \endverb
+    \field{issn}{14746670}
+    \field{number}{26}
+    \field{pages}{18\bibrangedash 33}
+    \field{shorttitle}{Optimal {{Greenhouse Cultivation Control}}}
+    \field{title}{Optimal {{Greenhouse Cultivation Control}}: {{Survey}} and
+  {{Perspectives}}}
+    \field{volume}{43}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LGQ2TGEQ/Van Stra
+    \verb ten and Henten - 2010 - Optimal Greenhouse Cultivation Control Survey
+    \verb  and.pdf
+    \endverb
+    \field{journaltitle}{IFAC Proceedings Volumes}
+    \field{year}{2010}
+    \field{urlday}{14}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
   \entry{ghoumariNonlinearConstrainedMPC2005}{article}{}
     \name{author}{3}{}{%
       {{hash=GM}{%
@@ -2282,6 +2248,80 @@
   ELECTRON AGRIC}
     \field{month}{12}
     \field{year}{2005}
+  \endentry
+
+  \entry{boersmaRobustSamplebasedModel2022}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BS}{%
+         family={Boersma},
+         familyi={B\bibinitperiod},
+         given={Sjoerd},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SC}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Congcong},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=vS}{%
+         family={{van Mourik}},
+         familyi={v\bibinitperiod},
+         given={Simon},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
+  MPC}
+    \strng{namehash}{BSSCvS1}
+    \strng{fullhash}{BSSCvS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Achieving optimal resource use efficiency is a key challenge in modern
+  greenhouse production systems. Optimal performance in terms of crop yield and
+  resource efficiency can in theory be achieved via optimal control. Standard
+  optimal controllers are not designed to deal with uncertainty, whereas
+  considerable model prediction errors occur due to the mismatch between the
+  model and the real system. This paper explores the relation between
+  parametric uncertainty, and performance with respect to crop yield, CO2
+  demand, ventilation demand, and heating energy. This is done using the
+  following steps 1) extension of an existing controller model with parametric
+  uncertainty, 2) design of a sample-based robust model predictive controller
+  and 3) analysis of control performance under increasing parametric
+  uncertainty. The results predict that control performance is significantly
+  sensitive to parametric uncertainty. A relative parameter uncertainty of
+  20\%, reduced crop yield with 11\% compared to the case without uncertainty.
+  Furthermore, a 20\% uncertainty decreased CO2 demand with 80\%, whereas it
+  increased ventilation demand with 96\%, and increased heating energy demand
+  with 90\%.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.ifacol.2022.11.135
+    \endverb
+    \field{issn}{2405-8963}
+    \field{number}{32}
+    \field{pages}{177\bibrangedash 182}
+    \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
+  {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
+    \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
+  System with Parametric Uncertainty}
+    \field{volume}{55}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
+    \verb et al. - 2022 - Robust sample-based model predictive control of a .pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/MQIUME67/S24058
+    \verb 96322027689.html
+    \endverb
+    \field{journaltitle}{IFAC-PapersOnLine}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
+    }
+    \field{month}{01}
+    \field{year}{2022}
+    \field{urlday}{05}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
   \endentry
 
   \entry{hemmingCherryTomatoProduction2020}{article}{}
@@ -3430,80 +3470,6 @@
     \field{month}{01}
     \field{year}{2020}
     \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
-  \entry{boersmaRobustSamplebasedModel2022}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BS}{%
-         family={Boersma},
-         familyi={B\bibinitperiod},
-         given={Sjoerd},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=SC}{%
-         family={Sun},
-         familyi={S\bibinitperiod},
-         given={Congcong},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=vS}{%
-         family={{van Mourik}},
-         familyi={v\bibinitperiod},
-         given={Simon},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \keyw{lettuce greenhouse,parametric uncertainties,robust MPC,sample-based
-  MPC}
-    \strng{namehash}{BSSCvS1}
-    \strng{fullhash}{BSSCvS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    Achieving optimal resource use efficiency is a key challenge in modern
-  greenhouse production systems. Optimal performance in terms of crop yield and
-  resource efficiency can in theory be achieved via optimal control. Standard
-  optimal controllers are not designed to deal with uncertainty, whereas
-  considerable model prediction errors occur due to the mismatch between the
-  model and the real system. This paper explores the relation between
-  parametric uncertainty, and performance with respect to crop yield, CO2
-  demand, ventilation demand, and heating energy. This is done using the
-  following steps 1) extension of an existing controller model with parametric
-  uncertainty, 2) design of a sample-based robust model predictive controller
-  and 3) analysis of control performance under increasing parametric
-  uncertainty. The results predict that control performance is significantly
-  sensitive to parametric uncertainty. A relative parameter uncertainty of
-  20\%, reduced crop yield with 11\% compared to the case without uncertainty.
-  Furthermore, a 20\% uncertainty decreased CO2 demand with 80\%, whereas it
-  increased ventilation demand with 96\%, and increased heating energy demand
-  with 90\%.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.ifacol.2022.11.135
-    \endverb
-    \field{issn}{2405-8963}
-    \field{number}{32}
-    \field{pages}{177\bibrangedash 182}
-    \field{series}{7th {{IFAC Conference}} on {{Sensing}}, {{Control}} and
-  {{Automation Technologies}} for {{Agriculture AGRICONTROL}} 2022}
-    \field{title}{Robust Sample-Based Model Predictive Control of a Greenhouse
-  System with Parametric Uncertainty}
-    \field{volume}{55}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/WAFF4E2D/Boersma
-    \verb et al. - 2022 - Robust sample-based model predictive control of a .pd
-    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/MQIUME67/S24058
-    \verb 96322027689.html
-    \endverb
-    \field{journaltitle}{IFAC-PapersOnLine}
-    \field{annotation}{%
-    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:18:41.330Z%
-    }
-    \field{month}{01}
-    \field{year}{2022}
-    \field{urlday}{05}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
   \endentry

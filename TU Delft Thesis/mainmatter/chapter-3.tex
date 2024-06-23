@@ -111,16 +111,6 @@ The penalty constants $c_{p_{\text{CO2}}},c_{p_{T_ub}},c_{p_{T_lb}},c_{p_{H}}$ w
     \caption{Penalty Constants}
     \label{tab:pen-constants}
 \end{table}
-\paragraph{Uncertainty} It is not the focus of this thesis to accurately model the uncertainty in a greenhouse crop environment, however, it is desirable to see the effect of uncertainty on the generated policy for each of the different algorithms. There are several sources of uncertainty in a greenhouse environment, including parametric uncertainty in the model, unmodeled dynamics, measurement uncertainty, and uncertainty in weather forecasts. The various instances of uncertainty observed in different aspects of the environment can ultimately be attributed to the uncertainty that manifests in the system's outputs. Thus, it was determined that in the stochastic case, there exists uncertainty in the change in the states between consecutive time steps. More specifically,for the discrete time model, it may be modelled as:
-
-\begin{equation}
-    \label{eq:uncertainty_model}
-    \begin{aligned}
-     x(k+1) = x(k) + (f(x(k),u(k),d(k) - x(k)) \cdot (1+W),\quad W \sim U(-\sigma, \sigma)  
-    \end{aligned}
-\end{equation}
-
-where $\sigma$ represents the degree of uncertainty in the evolving states, expressed as a percentage. The uniform distribution was chosen for its higher level of aggressiveness compared to the normal distribution. While it may not accurately represent the uncertainty at hand, it is a useful tool for evaluating the potential variability and risks associated with the various policies generated.
 
 
 
