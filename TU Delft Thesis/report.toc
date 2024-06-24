@@ -11,23 +11,22 @@
 \contentsline {subsection}{\numberline {2.1.1}Model Description}{6}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Model State Equations}{7}{subsection.2.1.2}%
 \contentsline {paragraph}{State Equations}{7}{subsection.2.1.2}%
-\contentsline {paragraph}{Process Equations}{7}{equation.2.1.5}%
-\contentsline {paragraph}{Output Measurement Equations}{8}{equation.2.1.15}%
+\contentsline {paragraph}{Process Equations}{7}{equation.2.1.6}%
+\contentsline {paragraph}{Output Measurement Equations}{8}{equation.2.1.16}%
 \contentsline {subsection}{\numberline {2.1.3}Uncertainty in this Thesis}{10}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Optimization Goal}{11}{subsection.2.1.4}%
-\contentsline {section}{\numberline {2.2}Reinforcement Learning}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Reinforcement Learning}{12}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}The RL problem}{12}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Q learning}{14}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Policy Optimization}{14}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Policy Optimization}{15}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Actor-Critic}{15}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}SAC}{15}{subsection.2.2.5}%
 \contentsline {section}{\numberline {2.3}MPC}{15}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Why MPC for Greenhouse Control?}{15}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}The General MPC problem}{15}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}EMPC}{17}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.1}The General MPC problem}{16}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}EMPC}{17}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2.4}RL and MPC in tandem}{17}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}The Optimality}{18}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Computational Effort}{18}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Computational Effort}{19}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}The Prediction Horizon}{19}{subsection.2.4.3}%
 \contentsline {chapter}{\numberline {3}Reinforcement Learning Setup}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Environment Description}{20}{section.3.1}%
@@ -98,8 +97,9 @@
 \contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{66}{section.8.3}%
 \contentsline {chapter}{References}{67}{chapter*.53}%
 \contentsline {chapter}{\numberline {A}RL \& RL Training }{71}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Selection of RL Algorithm}{71}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Agent Training}{71}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Value Function Training}{71}{section.A.3}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{72}{appendix.B}%
+\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{71}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{71}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Agent Training}{73}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Value Function Training}{73}{section.A.4}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{74}{appendix.B}%
 \contentsfinish 

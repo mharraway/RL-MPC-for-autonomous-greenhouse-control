@@ -2324,6 +2324,52 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{vandenbemdRobustDeepReinforcement}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=vW}{%
+         family={{van den Bemd}},
+         familyi={v\bibinitperiod},
+         given={W.J.G.M.},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{vW1}
+    \strng{fullhash}{vW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In this study we compare adaptations of two state of the art reinforcement
+  learning algorithms, PPO and SAC, to optimize grower profits in our own
+  simulated hydroponics lettuce greenhouse. We have shown that the application
+  of physics randomization significantly boosts the worst case performance of
+  both SAC and PPO. In our analysis, we trained the algorithms in a single
+  greenhouse and evaluated it in many different greenhouses. While the bare
+  version of PPO and SAC perform better than our baselines when evaluated in
+  the greenhouse it was trained on we observed severe performance degradation
+  when the evaluation greenhouse was altered. To solve this, we compared three
+  different methods. We tested RARL: Robust Adversarial Reinforcement Learning,
+  physics randomization and Gaussian observation noise as three adaptations for
+  PPO and SAC. We have shown empirically that reinforcement learning agents
+  using physics randomization perform better than the baselines in the
+  greenhouse it was trained on. The adapted algorithms show improved
+  performance in the worst case, maintaining performance in the average case,
+  and improved performance in the best case.%
+    }
+    \field{title}{Robust {{Deep Reinforcement Learning}} for {{Greenhouse
+  Control}} and {{Crop Yield Optimization}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HZT8EJG6/Bemd_W.p
+    \verb df
+    \endverb
+    \field{type}{phdthesis}
+    \field{annotation}{%
+    Read\_Status: New\\ Read\_Status\_Date: 2023-12-06T11:26:02.711Z%
+    }
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
   \entry{hemmingCherryTomatoProduction2020}{article}{}
     \name{author}{5}{}{%
       {{hash=HS}{%
@@ -2905,52 +2951,6 @@
     \field{eprintclass}{cs, eess, math}
     \field{month}{07}
     \field{year}{2023}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
-  \entry{vandenbemdRobustDeepReinforcement}{thesis}{}
-    \name{author}{1}{}{%
-      {{hash=vW}{%
-         family={{van den Bemd}},
-         familyi={v\bibinitperiod},
-         given={W.J.G.M.},
-         giveni={W\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{vW1}
-    \strng{fullhash}{vW1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    In this study we compare adaptations of two state of the art reinforcement
-  learning algorithms, PPO and SAC, to optimize grower profits in our own
-  simulated hydroponics lettuce greenhouse. We have shown that the application
-  of physics randomization significantly boosts the worst case performance of
-  both SAC and PPO. In our analysis, we trained the algorithms in a single
-  greenhouse and evaluated it in many different greenhouses. While the bare
-  version of PPO and SAC perform better than our baselines when evaluated in
-  the greenhouse it was trained on we observed severe performance degradation
-  when the evaluation greenhouse was altered. To solve this, we compared three
-  different methods. We tested RARL: Robust Adversarial Reinforcement Learning,
-  physics randomization and Gaussian observation noise as three adaptations for
-  PPO and SAC. We have shown empirically that reinforcement learning agents
-  using physics randomization perform better than the baselines in the
-  greenhouse it was trained on. The adapted algorithms show improved
-  performance in the worst case, maintaining performance in the average case,
-  and improved performance in the best case.%
-    }
-    \field{title}{Robust {{Deep Reinforcement Learning}} for {{Greenhouse
-  Control}} and {{Crop Yield Optimization}}}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/HZT8EJG6/Bemd_W.p
-    \verb df
-    \endverb
-    \field{type}{phdthesis}
-    \field{annotation}{%
-    Read\_Status: New\\ Read\_Status\_Date: 2023-12-06T11:26:02.711Z%
-    }
     \field{urlday}{01}
     \field{urlmonth}{12}
     \field{urlyear}{2023}
@@ -3788,6 +3788,821 @@
     \endverb
     \field{journaltitle}{IEEE TRANSACTIONS ON AUTOMATIC CONTROL}
     \field{year}{2020}
+  \endentry
+
+  \entry{hemmingRemoteControlGreenhouse2019}{article}{}
+    \name{author}{5}{}{%
+      {{hash=HS}{%
+         family={Hemming},
+         familyi={H\bibinitperiod},
+         given={Silke},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=dF}{%
+         family={{de Zwart}},
+         familyi={d\bibinitperiod},
+         given={Feije},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Elings},
+         familyi={E\bibinitperiod},
+         given={Anne},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=RI}{%
+         family={Righini},
+         familyi={R\bibinitperiod},
+         given={Isabella},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Petropoulou},
+         familyi={P\bibinitperiod},
+         given={Anna},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Multidisciplinary Digital Publishing Institute}%
+    }
+    \keyw{artificial intelligence,crop production,indoor farming,resource use
+  efficiency,sensors}
+    \strng{namehash}{HSdFEA+1}
+    \strng{fullhash}{HSdFEARIPA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The global population is increasing rapidly, together with the demand for
+  healthy fresh food. The greenhouse industry can play an important role, but
+  encounters difficulties finding skilled staff to manage crop production.
+  Artificial intelligence (AI) has reached breakthroughs in several areas,
+  however, not yet in horticulture. An international competition on
+  ``autonomous greenhouses'' aimed to combine horticultural expertise with AI
+  to make breakthroughs in fresh food production with fewer resources. Five
+  international teams, consisting of scientists, professionals, and students
+  with different backgrounds in horticulture and AI, participated in a
+  greenhouse growing experiment. Each team had a 96 m2 modern greenhouse
+  compartment to grow a cucumber crop remotely during a 4-month-period. Each
+  compartment was equipped with standard actuators (heating, ventilation,
+  screening, lighting, fogging, CO2 supply, water and nutrient supply). Control
+  setpoints were remotely determined by teams using their own AI algorithms.
+  Actuators were operated by a process computer. Different sensors continuously
+  collected measurements. Setpoints and measurements were exchanged via a
+  digital interface. Achievements in AI-controlled compartments were compared
+  with a manually operated reference. Detailed results on cucumber yield,
+  resource use, and net profit obtained by teams are explained in this paper.
+  We can conclude that in general AI performed well in controlling a
+  greenhouse. One team outperformed the manually-grown reference.%
+    }
+    \verb{doi}
+    \verb 10.3390/s19081807
+    \endverb
+    \field{issn}{1424-8220}
+    \field{number}{8}
+    \field{pages}{1807}
+    \field{title}{Remote {{Control}} of {{Greenhouse Vegetable Production}}
+  with {{Artificial Intelligence}}---{{Greenhouse Climate}}, {{Irrigation}},
+  and {{Crop Production}}}
+    \field{volume}{19}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/6VRHFHRV/Hemming
+    \verb et al. - 2019 - Remote Control of Greenhouse Vegetable Production .pd
+    \verb f
+    \endverb
+    \field{journaltitle}{Sensors}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:10.810Z%
+    }
+    \field{month}{01}
+    \field{year}{2019}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{silverGeneralReinforcementLearning2018}{article}{}
+    \name{author}{13}{}{%
+      {{hash=SD}{%
+         family={Silver},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Hubert},
+         familyi={H\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Schrittwieser},
+         familyi={S\bibinitperiod},
+         given={Julian},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AI}{%
+         family={Antonoglou},
+         familyi={A\bibinitperiod},
+         given={Ioannis},
+         giveni={I\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lai},
+         familyi={L\bibinitperiod},
+         given={Matthew},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Guez},
+         familyi={G\bibinitperiod},
+         given={Arthur},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LM}{%
+         family={Lanctot},
+         familyi={L\bibinitperiod},
+         given={Marc},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SL}{%
+         family={Sifre},
+         familyi={S\bibinitperiod},
+         given={Laurent},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kumaran},
+         familyi={K\bibinitperiod},
+         given={Dharshan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GT}{%
+         family={Graepel},
+         familyi={G\bibinitperiod},
+         given={Thore},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=LT}{%
+         family={Lillicrap},
+         familyi={L\bibinitperiod},
+         given={Timothy},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SK}{%
+         family={Simonyan},
+         familyi={S\bibinitperiod},
+         given={Karen},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=HD}{%
+         family={Hassabis},
+         familyi={H\bibinitperiod},
+         given={Demis},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread,Algorithms,Artificial Intelligence,Humans,Reinforcement
+  Psychology,Software,Video Games}
+    \strng{namehash}{SDHTSJ+1}
+    \strng{fullhash}{SDHTSJAILMGALMSLKDGTLTSKHD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The game of chess is the longest-studied domain in the history of
+  artificial intelligence. The strongest programs are based on a combination of
+  sophisticated search techniques, domain-specific adaptations, and handcrafted
+  evaluation functions that have been refined by human experts over several
+  decades. By contrast, the AlphaGo Zero program recently achieved superhuman
+  performance in the game of Go by reinforcement learning from self-play. In
+  this paper, we generalize this approach into a single AlphaZero algorithm
+  that can achieve superhuman performance in many challenging games. Starting
+  from random play and given no domain knowledge except the game rules,
+  AlphaZero convincingly defeated a world champion program in the games of
+  chess and shogi (Japanese chess), as well as Go.%
+    }
+    \verb{doi}
+    \verb 10.1126/science.aar6404
+    \endverb
+    \field{issn}{1095-9203}
+    \field{number}{6419}
+    \field{pages}{1140\bibrangedash 1144}
+    \field{title}{A General Reinforcement Learning Algorithm That Masters
+  Chess, Shogi, and {{Go}} through Self-Play}
+    \field{volume}{362}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/I5YDK529/Silver e
+    \verb t al_2018_A general reinforcement learning algorithm that masters che
+    \verb ss, shogi, and Go.pdf;/home/murray/snap/zotero-snap/common/Zotero/sto
+    \verb rage/XYYJXBX2/Silver et al_2018_A general reinforcement learning algo
+    \verb rithm that masters chess, shogi, and Go.pdf
+    \endverb
+    \field{journaltitle}{Science (New York, N.Y.)}
+    \field{month}{12}
+    \field{year}{2018}
+  \endentry
+
+  \entry{jonkerModelbasedReinforcementLearning}{article}{}
+    \name{author}{1}{}{%
+      {{hash=JM}{%
+         family={Jonker},
+         familyi={J\bibinitperiod},
+         given={M},
+         giveni={M},
+      }}%
+    }
+    \strng{namehash}{JM1}
+    \strng{fullhash}{JM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{Model-Based {{Reinforcement Learning}}: {{A Survey}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/8VWKVMGW/Jonker -
+    \verb  Model-based Reinforcement Learning A Survey.pdf
+    \endverb
+  \endentry
+
+  \entry{mnihAsynchronousMethodsDeep2016}{misc}{}
+    \name{author}{8}{}{%
+      {{hash=MV}{%
+         family={Mnih},
+         familyi={M\bibinitperiod},
+         given={Volodymyr},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=BAP}{%
+         family={Badia},
+         familyi={B\bibinitperiod},
+         given={Adri{\`a}\bibnamedelima Puigdom{\`e}nech},
+         giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Mirza},
+         familyi={M\bibinitperiod},
+         given={Mehdi},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Graves},
+         familyi={G\bibinitperiod},
+         given={Alex},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=LTP}{%
+         family={Lillicrap},
+         familyi={L\bibinitperiod},
+         given={Timothy\bibnamedelima P.},
+         giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=HT}{%
+         family={Harley},
+         familyi={H\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Silver},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=KK}{%
+         family={Kavukcuoglu},
+         familyi={K\bibinitperiod},
+         given={Koray},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{/unread,Computer Science - Machine Learning}
+    \strng{namehash}{MVBAPMM+1}
+    \strng{fullhash}{MVBAPMMGALTPHTSDKK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We propose a conceptually simple and lightweight framework for deep
+  reinforcement learning that uses asynchronous gradient descent for
+  optimization of deep neural network controllers. We present asynchronous
+  variants of four standard reinforcement learning algorithms and show that
+  parallel actor-learners have a stabilizing effect on training allowing all
+  four methods to successfully train neural network controllers. The best
+  performing method, an asynchronous variant of actor-critic, surpasses the
+  current state-of-the-art on the Atari domain while training for half the time
+  on a single multi-core CPU instead of a GPU. Furthermore, we show that
+  asynchronous actor-critic succeeds on a wide variety of continuous motor
+  control problems as well as on a new task of navigating random 3D mazes using
+  a visual input.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1602.01783
+    \endverb
+    \verb{eprint}
+    \verb 1602.01783
+    \endverb
+    \field{number}{arXiv:1602.01783}
+    \field{title}{Asynchronous {{Methods}} for {{Deep Reinforcement Learning}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/P74LBWL7/Mnih et
+    \verb al_2016_Asynchronous Methods for Deep Reinforcement Learning.pdf;/hom
+    \verb e/murray/snap/zotero-snap/common/Zotero/storage/DU2M8YPW/1602.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{06}
+    \field{year}{2016}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{silverDeterministicPolicyGradient}{article}{}
+    \name{author}{6}{}{%
+      {{hash=SD}{%
+         family={Silver},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=LG}{%
+         family={Lever},
+         familyi={L\bibinitperiod},
+         given={Guy},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Heess},
+         familyi={H\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Degris},
+         familyi={D\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=WD}{%
+         family={Wierstra},
+         familyi={W\bibinitperiod},
+         given={Daan},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Riedmiller},
+         familyi={R\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{SDLGHN+1}
+    \strng{fullhash}{SDLGHNDTWDRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In this paper we consider deterministic policy gradient algorithms for
+  reinforcement learning with continuous actions. The deterministic policy
+  gradient has a particularly appealing form: it is the expected gradient of
+  the action-value function. This simple form means that the deterministic
+  policy gradient can be estimated much more efficiently than the usual
+  stochastic policy gradient. To ensure adequate exploration, we introduce an
+  off-policy actor-critic algorithm that learns a deterministic target policy
+  from an exploratory behaviour policy. We demonstrate that deterministic
+  policy gradient algorithms can significantly outperform their stochastic
+  counterparts in high-dimensional action spaces.%
+    }
+    \field{title}{Deterministic {{Policy Gradient Algorithms}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/9WRATLT6/Silver e
+    \verb t al. - Deterministic Policy Gradient Algorithms.pdf
+    \endverb
+  \endentry
+
+  \entry{lillicrapContinuousControlDeep2019}{misc}{}
+    \name{author}{8}{}{%
+      {{hash=LTP}{%
+         family={Lillicrap},
+         familyi={L\bibinitperiod},
+         given={Timothy\bibnamedelima P.},
+         giveni={T\bibinitperiod\bibinitdelim P\bibinitperiod},
+      }}%
+      {{hash=HJJ}{%
+         family={Hunt},
+         familyi={H\bibinitperiod},
+         given={Jonathan\bibnamedelima J.},
+         giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=PA}{%
+         family={Pritzel},
+         familyi={P\bibinitperiod},
+         given={Alexander},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HN}{%
+         family={Heess},
+         familyi={H\bibinitperiod},
+         given={Nicolas},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=ET}{%
+         family={Erez},
+         familyi={E\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=TY}{%
+         family={Tassa},
+         familyi={T\bibinitperiod},
+         given={Yuval},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Silver},
+         familyi={S\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=WD}{%
+         family={Wierstra},
+         familyi={W\bibinitperiod},
+         given={Daan},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \strng{namehash}{LTPHJJPA+1}
+    \strng{fullhash}{LTPHJJPAHNETTYSDWD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We adapt the ideas underlying the success of Deep Q-Learning to the
+  continuous action domain. We present an actor-critic, model-free algorithm
+  based on the deterministic policy gradient that can operate over continuous
+  action spaces. Using the same learning algorithm, network architecture and
+  hyper-parameters, our algorithm robustly solves more than 20 simulated
+  physics tasks, including classic problems such as cartpole swing-up,
+  dexterous manipulation, legged locomotion and car driving. Our algorithm is
+  able to find policies whose performance is competitive with those found by a
+  planning algorithm with full access to the dynamics of the domain and its
+  derivatives. We further demonstrate that for many of the tasks the algorithm
+  can learn policies end-to-end: directly from raw pixel inputs.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1509.02971
+    \endverb
+    \verb{eprint}
+    \verb 1509.02971
+    \endverb
+    \field{number}{arXiv:1509.02971}
+    \field{title}{Continuous Control with Deep Reinforcement Learning}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/EK2G5K5J/Lillicra
+    \verb p et al_2019_Continuous control with deep reinforcement learning.pdf;
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/MFAS6Q3B/1509.htm
+    \verb l
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, stat}
+    \field{month}{07}
+    \field{year}{2019}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{schulmanTrustRegionPolicy2017}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=SJ}{%
+         family={Schulman},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Levine},
+         familyi={L\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Moritz},
+         familyi={M\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=JMI}{%
+         family={Jordan},
+         familyi={J\bibinitperiod},
+         given={Michael\bibnamedelima I.},
+         giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod},
+      }}%
+      {{hash=AP}{%
+         family={Abbeel},
+         familyi={A\bibinitperiod},
+         given={Pieter},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{/unread,Computer Science - Machine Learning}
+    \strng{namehash}{SJLSMP+1}
+    \strng{fullhash}{SJLSMPJMIAP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We describe an iterative procedure for optimizing policies, with guaranteed
+  monotonic improvement. By making several approximations to the
+  theoretically-justified procedure, we develop a practical algorithm, called
+  Trust Region Policy Optimization (TRPO). This algorithm is similar to natural
+  policy gradient methods and is effective for optimizing large nonlinear
+  policies such as neural networks. Our experiments demonstrate its robust
+  performance on a wide variety of tasks: learning simulated robotic swimming,
+  hopping, and walking gaits; and playing Atari games using images of the
+  screen as input. Despite its approximations that deviate from the theory,
+  TRPO tends to give monotonic improvement, with little tuning of
+  hyperparameters.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1502.05477
+    \endverb
+    \verb{eprint}
+    \verb 1502.05477
+    \endverb
+    \field{number}{arXiv:1502.05477}
+    \field{title}{Trust {{Region Policy Optimization}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/P3YT52TF/Schulman
+    \verb  et al_2017_Trust Region Policy Optimization.pdf;/home/murray/snap/zo
+    \verb tero-snap/common/Zotero/storage/M2SQXLZ5/1502.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{04}
+    \field{year}{2017}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{yoonUnderstandingActorCritic2019}{misc}{}
+    \name{author}{1}{}{%
+      {{hash=YC}{%
+         family={Yoon},
+         familyi={Y\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \keyw{/unread}
+    \strng{namehash}{YC1}
+    \strng{fullhash}{YC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Preliminaries%
+    }
+  \field{howpublished}{https://towardsdatascience.com/understanding-actor-critic-methods-931b97b6df3f}
+    \field{title}{Understanding {{Actor Critic Methods}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/YU5CQE2V/understa
+    \verb nding-actor-critic-methods-931b97b6df3f.html
+    \endverb
+    \field{journaltitle}{Medium}
+    \field{month}{07}
+    \field{year}{2019}
+    \field{urlday}{13}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{schulmanProximalPolicyOptimization2017}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=SJ}{%
+         family={Schulman},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=WF}{%
+         family={Wolski},
+         familyi={W\bibinitperiod},
+         given={Filip},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=DP}{%
+         family={Dhariwal},
+         familyi={D\bibinitperiod},
+         given={Prafulla},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=RA}{%
+         family={Radford},
+         familyi={R\bibinitperiod},
+         given={Alec},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KO}{%
+         family={Klimov},
+         familyi={K\bibinitperiod},
+         given={Oleg},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{/unread,Computer Science - Machine Learning}
+    \strng{namehash}{SJWFDP+1}
+    \strng{fullhash}{SJWFDPRAKO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We propose a new family of policy gradient methods for reinforcement
+  learning, which alternate between sampling data through interaction with the
+  environment, and optimizing a "surrogate" objective function using stochastic
+  gradient ascent. Whereas standard policy gradient methods perform one
+  gradient update per data sample, we propose a novel objective function that
+  enables multiple epochs of minibatch updates. The new methods, which we call
+  proximal policy optimization (PPO), have some of the benefits of trust region
+  policy optimization (TRPO), but they are much simpler to implement, more
+  general, and have better sample complexity (empirically). Our experiments
+  test PPO on a collection of benchmark tasks, including simulated robotic
+  locomotion and Atari game playing, and we show that PPO outperforms other
+  online policy gradient methods, and overall strikes a favorable balance
+  between sample complexity, simplicity, and wall-time.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1707.06347
+    \endverb
+    \verb{eprint}
+    \verb 1707.06347
+    \endverb
+    \field{number}{arXiv:1707.06347}
+    \field{title}{Proximal {{Policy Optimization Algorithms}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/E95GSGQL/Schulman
+    \verb  et al_2017_Proximal Policy Optimization Algorithms.pdf;/home/murray/
+    \verb snap/zotero-snap/common/Zotero/storage/VHCBYHNU/1707.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs}
+    \field{month}{08}
+    \field{year}{2017}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{fujimotoAddressingFunctionApproximation2018}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=FS}{%
+         family={Fujimoto},
+         familyi={F\bibinitperiod},
+         given={Scott},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=HH}{%
+         family={Hoof},
+         familyi={H\bibinitperiod},
+         given={Herke},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=MD}{%
+         family={Meger},
+         familyi={M\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {PMLR}%
+    }
+    \strng{namehash}{FSHHMD1}
+    \strng{fullhash}{FSHHMD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    In value-based reinforcement learning methods such as deep Q-learning,
+  function approximation errors are known to lead to overestimated value
+  estimates and suboptimal policies. We show that this problem persists in an
+  actor-critic setting and propose novel mechanisms to minimize its effects on
+  both the actor and the critic. Our algorithm builds on Double Q-learning, by
+  taking the minimum value between a pair of critics to limit overestimation.
+  We draw the connection between target networks and overestimation bias, and
+  suggest delaying policy updates to reduce per-update error and further
+  improve performance. We evaluate our method on the suite of OpenAI gym tasks,
+  outperforming the state of the art in every environment tested.%
+    }
+    \field{booktitle}{Proceedings of the 35th {{International Conference}} on
+  {{Machine Learning}}}
+    \field{issn}{2640-3498}
+    \field{pages}{1587\bibrangedash 1596}
+    \field{title}{Addressing {{Function Approximation Error}} in {{Actor-Critic
+  Methods}}}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/4YTPGXM5/Fujimoto
+    \verb  et al. - 2018 - Addressing Function Approximation Error in Actor-C.p
+    \verb df;/home/murray/snap/zotero-snap/common/Zotero/storage/DZRU8TN6/Fujim
+    \verb oto et al_2018_Addressing Function Approximation Error in Actor-Criti
+    \verb c Methods.pdf
+    \endverb
+    \field{month}{07}
+    \field{year}{2018}
+    \field{urlday}{13}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{haarnojaSoftActorCriticOffPolicy2018}{misc}{}
+    \name{author}{4}{}{%
+      {{hash=HT}{%
+         family={Haarnoja},
+         familyi={H\bibinitperiod},
+         given={Tuomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=ZA}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Aurick},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=AP}{%
+         family={Abbeel},
+         familyi={A\bibinitperiod},
+         given={Pieter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=LS}{%
+         family={Levine},
+         familyi={L\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{/unread,Computer Science - Artificial Intelligence,Computer Science -
+  Machine Learning,Statistics - Machine Learning}
+    \strng{namehash}{HTZAAP+1}
+    \strng{fullhash}{HTZAAPLS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Model-free deep reinforcement learning (RL) algorithms have been
+  demonstrated on a range of challenging decision making and control tasks.
+  However, these methods typically suffer from two major challenges: very high
+  sample complexity and brittle convergence properties, which necessitate
+  meticulous hyperparameter tuning. Both of these challenges severely limit the
+  applicability of such methods to complex, real-world domains. In this paper,
+  we propose soft actor-critic, an off-policy actor-critic deep RL algorithm
+  based on the maximum entropy reinforcement learning framework. In this
+  framework, the actor aims to maximize expected reward while also maximizing
+  entropy. That is, to succeed at the task while acting as randomly as
+  possible. Prior deep RL methods based on this framework have been formulated
+  as Q-learning methods. By combining off-policy updates with a stable
+  stochastic actor-critic formulation, our method achieves state-of-the-art
+  performance on a range of continuous control benchmark tasks, outperforming
+  prior on-policy and off-policy methods. Furthermore, we demonstrate that, in
+  contrast to other off-policy algorithms, our approach is very stable,
+  achieving very similar performance across different random seeds.%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.1801.01290
+    \endverb
+    \verb{eprint}
+    \verb 1801.01290
+    \endverb
+    \field{number}{arXiv:1801.01290}
+    \field{shorttitle}{Soft {{Actor-Critic}}}
+    \field{title}{Soft {{Actor-Critic}}: {{Off-Policy Maximum Entropy Deep
+  Reinforcement Learning}} with a {{Stochastic Actor}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/URSK6K8J/Haarnoja
+    \verb  et al_2018_Soft Actor-Critic.pdf;/home/murray/snap/zotero-snap/commo
+    \verb n/Zotero/storage/YJ8VW2U7/1801.html
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, stat}
+    \field{month}{08}
+    \field{year}{2018}
+    \field{urlday}{11}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
   \endentry
 \enddatalist
 \endinput

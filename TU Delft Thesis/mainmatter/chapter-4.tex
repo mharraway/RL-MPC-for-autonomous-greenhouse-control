@@ -5,7 +5,7 @@ This chapter presents the setup and creation of the MPC controller, and investig
 
 
 
-\section{Greenhouse MPC problem formulation}
+\section{Greenhouse MPC problem formulation}\label{section: greenhouse MPC formulation}
 In order to directly compare to RL and to the RL-MPC controller, it is important that the optimization goal is equivalent. As discussed in \autoref{ssection:optimization-goal}, it is desired to optimize the economic benefit of the greenhouse environment. Similarly to \autoref{section:env-description}, the optimization goal of the MPC is done to ensure that the sum of stage costs are equal to the actual economic benefit of the system. As such the following optimization goal is solved at every time step:
 
 \begin{subequations} \label{eq:mpc_ocp}

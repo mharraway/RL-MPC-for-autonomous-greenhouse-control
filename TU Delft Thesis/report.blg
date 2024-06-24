@@ -17,51 +17,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 13400 items from 5000.
+Reallocated field_info (elt_size=4) to 14940 items from 5000.
 Database file #1: report-blx.bib
 Database file #2: Thesis.bib
 Reallocated str_pool (elt_size=1) to 130000 items from 65000.
 Biblatex version: 3.19
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 60 entries,
+You've used 71 entries,
             6399 wiz_defined-function locations,
-            1832 strings with 96015 characters,
-and the built_in function-call counts, 639485 in all, are:
-= -- 48156
-> -- 20123
-< -- 2604
-+ -- 28580
-- -- 14050
-* -- 43994
-:= -- 79579
+            1931 strings with 110033 characters,
+and the built_in function-call counts, 794811 in all, are:
+= -- 60787
+> -- 24071
+< -- 3113
++ -- 35688
+- -- 16782
+* -- 54748
+:= -- 99949
 add.period$ -- 0
-call.type$ -- 60
-change.case$ -- 846
-chr.to.int$ -- 1374
-cite$ -- 118
-duplicate$ -- 63349
-empty$ -- 50486
-format.name$ -- 4818
-if$ -- 117936
+call.type$ -- 71
+change.case$ -- 1003
+chr.to.int$ -- 1620
+cite$ -- 140
+duplicate$ -- 79882
+empty$ -- 62132
+format.name$ -- 6011
+if$ -- 146226
 int.to.chr$ -- 0
-int.to.str$ -- 142
+int.to.str$ -- 171
 missing$ -- 0
-newline$ -- 2968
-num.names$ -- 2727
-pop$ -- 21635
+newline$ -- 3667
+num.names$ -- 3241
+pop$ -- 26120
 preamble$ -- 1
-purify$ -- 1372
+purify$ -- 1676
 quote$ -- 0
-skip$ -- 12652
+skip$ -- 15148
 stack$ -- 0
-substring$ -- 93168
-swap$ -- 12620
-text.length$ -- 2099
-text.prefix$ -- 2
+substring$ -- 117136
+swap$ -- 15300
+text.length$ -- 2535
+text.prefix$ -- 3
 top$ -- 1
-type$ -- 2026
+type$ -- 2400
 warning$ -- 0
-while$ -- 9090
+while$ -- 11592
 width$ -- 0
-write$ -- 2909
+write$ -- 3597
