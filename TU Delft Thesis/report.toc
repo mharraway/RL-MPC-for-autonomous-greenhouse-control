@@ -23,83 +23,83 @@
 \contentsline {subsection}{\numberline {2.2.5}SAC}{15}{subsection.2.2.5}%
 \contentsline {section}{\numberline {2.3}MPC}{15}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}The General MPC problem}{16}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}EMPC}{17}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}RL and MPC in tandem}{17}{section.2.4}%
+\contentsline {subsection}{\numberline {2.3.2}Economic Model Predictive Control (EMPC)}{17}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}RL and MPC in tandem}{18}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}The Optimality}{18}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Computational Effort}{19}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}The Prediction Horizon}{19}{subsection.2.4.3}%
-\contentsline {chapter}{\numberline {3}Reinforcement Learning Setup}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Environment Description}{20}{section.3.1}%
-\contentsline {paragraph}{Observation Space}{20}{section.3.1}%
-\contentsline {paragraph}{Action Space}{21}{equation.3.1.3}%
-\contentsline {paragraph}{Initial Conditions}{21}{equation.3.1.3}%
-\contentsline {paragraph}{Reward Function}{21}{equation.3.1.4}%
-\contentsline {section}{\numberline {3.2}Experimental Setup}{22}{section.3.2}%
-\contentsline {paragraph}{Weather Data}{23}{equation.3.2.7}%
-\contentsline {paragraph}{Deterministic and Stochastic Case}{23}{figure.caption.11}%
-\contentsline {paragraph}{Performance Metrics}{23}{figure.caption.11}%
-\contentsline {section}{\numberline {3.3}Hyper-parameter Tuning}{23}{section.3.3}%
-\contentsline {paragraph}{Activation Function}{24}{table.caption.12}%
-\contentsline {paragraph}{Discount Factor}{24}{table.caption.12}%
-\contentsline {section}{\numberline {3.4}Deterministic Results}{24}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Discount Factor}{24}{subsection.3.4.1}%
-\contentsline {paragraph}{Performance}{24}{figure.caption.13}%
-\contentsline {paragraph}{Value Function Approximation}{25}{figure.caption.13}%
-\contentsline {subsection}{\numberline {3.4.2}Activation Function}{26}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Observation Tuples}{27}{subsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.4.4}Final Results and Conclusion}{27}{subsection.3.4.4}%
-\contentsline {section}{\numberline {3.5}Stochastic Results}{29}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Conclusion}{30}{subsection.3.5.1}%
-\contentsline {section}{\numberline {3.6}Trained Value Function}{30}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Temporal Difference Learning}{30}{subsection.3.6.1}%
-\contentsline {paragraph}{Obtaining Data}{30}{subsection.3.6.1}%
-\contentsline {paragraph}{Training}{31}{table.caption.22}%
-\contentsline {subsection}{\numberline {3.6.2}Expected Return Learning}{31}{subsection.3.6.2}%
-\contentsline {paragraph}{Obtaining Data}{31}{subsection.3.6.2}%
-\contentsline {paragraph}{Training}{32}{equation.3.6.12}%
-\contentsline {paragraph}{Experimental Setup}{32}{equation.3.6.13}%
-\contentsline {subsection}{\numberline {3.6.3}Results}{34}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Conclusion}{37}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Model Predictive Control Setup}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Greenhouse MPC problem formulation}{39}{section.4.1}%
-\contentsline {paragraph}{Experimental Setup}{40}{equation.4.1.2}%
-\contentsline {section}{\numberline {4.2}Deterministic Results}{40}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Stochastic Results}{42}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Conclusion}{44}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Deterministic RL-MPC}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Implementation}{45}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}RL-MPC problem formulations}{45}{subsection.5.1.1}%
-\contentsline {paragraph}{Implementation 1}{45}{subsection.5.1.1}%
-\contentsline {paragraph}{Implementation 2}{46}{equation.5.1.3}%
-\contentsline {paragraph}{Implementation 3}{46}{equation.5.1.5}%
-\contentsline {paragraph}{Implementation 4}{47}{equation.5.1.6}%
-\contentsline {paragraph}{Implementation 5}{47}{equation.5.1.7}%
-\contentsline {paragraph}{Implementation 6}{48}{equation.5.1.8k}%
-\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{48}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Results - Implementations 1}{48}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Results - Implementations 2}{49}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Results - Implementation 3}{50}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Results - Implementation 4}{51}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Results - Implementation 5 and 6}{52}{section.5.6}%
-\contentsline {section}{\numberline {5.7}Final Result and Conclusion}{53}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{55}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{55}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Results - VF and Terminal Region}{57}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{58}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{60}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{60}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Taylor Approximation}{63}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Combined}{63}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{64}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{66}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Discussion}{66}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Conclusion}{66}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{66}{section.8.3}%
-\contentsline {chapter}{References}{67}{chapter*.53}%
-\contentsline {chapter}{\numberline {A}RL \& RL Training }{71}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{71}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{71}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Agent Training}{73}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Value Function Training}{73}{section.A.4}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{74}{appendix.B}%
+\contentsline {chapter}{\numberline {3}Reinforcement Learning Setup}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Environment Description}{21}{section.3.1}%
+\contentsline {paragraph}{Observation Space}{21}{section.3.1}%
+\contentsline {paragraph}{Action Space}{22}{equation.3.1.3}%
+\contentsline {paragraph}{Initial Conditions}{22}{equation.3.1.3}%
+\contentsline {paragraph}{Reward Function}{22}{equation.3.1.4}%
+\contentsline {section}{\numberline {3.2}Experimental Setup}{23}{section.3.2}%
+\contentsline {paragraph}{Weather Data}{24}{equation.3.2.7}%
+\contentsline {paragraph}{Deterministic and Stochastic Case}{24}{figure.caption.11}%
+\contentsline {paragraph}{Performance Metrics}{24}{figure.caption.11}%
+\contentsline {section}{\numberline {3.3}Hyper-parameter Tuning}{24}{section.3.3}%
+\contentsline {paragraph}{Activation Function}{25}{table.caption.12}%
+\contentsline {paragraph}{Discount Factor}{25}{table.caption.12}%
+\contentsline {section}{\numberline {3.4}Deterministic Results}{25}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Discount Factor}{25}{subsection.3.4.1}%
+\contentsline {paragraph}{Performance}{25}{figure.caption.13}%
+\contentsline {paragraph}{Value Function Approximation}{26}{figure.caption.13}%
+\contentsline {subsection}{\numberline {3.4.2}Activation Function}{27}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Observation Tuples}{28}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.4}Final Results and Conclusion}{28}{subsection.3.4.4}%
+\contentsline {section}{\numberline {3.5}Stochastic Results}{30}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Conclusion}{31}{subsection.3.5.1}%
+\contentsline {section}{\numberline {3.6}Trained Value Function}{31}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Temporal Difference Learning}{31}{subsection.3.6.1}%
+\contentsline {paragraph}{Obtaining Data}{31}{subsection.3.6.1}%
+\contentsline {paragraph}{Training}{32}{table.caption.22}%
+\contentsline {subsection}{\numberline {3.6.2}Expected Return Learning}{32}{subsection.3.6.2}%
+\contentsline {paragraph}{Obtaining Data}{32}{subsection.3.6.2}%
+\contentsline {paragraph}{Training}{33}{equation.3.6.12}%
+\contentsline {paragraph}{Experimental Setup}{33}{equation.3.6.13}%
+\contentsline {subsection}{\numberline {3.6.3}Results}{35}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Conclusion}{38}{section.3.7}%
+\contentsline {chapter}{\numberline {4}Model Predictive Control Setup}{40}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Greenhouse MPC problem formulation}{40}{section.4.1}%
+\contentsline {paragraph}{Experimental Setup}{41}{equation.4.1.2}%
+\contentsline {section}{\numberline {4.2}Deterministic Results}{41}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Stochastic Results}{43}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Conclusion}{45}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Deterministic RL-MPC}{46}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Implementation}{46}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}RL-MPC problem formulations}{46}{subsection.5.1.1}%
+\contentsline {paragraph}{Implementation 1}{46}{subsection.5.1.1}%
+\contentsline {paragraph}{Implementation 2}{47}{equation.5.1.3}%
+\contentsline {paragraph}{Implementation 3}{47}{equation.5.1.5}%
+\contentsline {paragraph}{Implementation 4}{48}{equation.5.1.6}%
+\contentsline {paragraph}{Implementation 5}{48}{equation.5.1.7}%
+\contentsline {paragraph}{Implementation 6}{49}{equation.5.1.8k}%
+\contentsline {subsection}{\numberline {5.1.2}Initial RL and MPC performance}{49}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Results - Implementations 1}{49}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Results - Implementations 2}{50}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Results - Implementation 3}{51}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Results - Implementation 4}{52}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Results - Implementation 5 and 6}{53}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Final Result and Conclusion}{54}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{56}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{56}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Results - VF and Terminal Region}{58}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusion}{59}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{61}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{61}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Taylor Approximation}{64}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Combined}{64}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{65}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{67}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Discussion}{67}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Conclusion}{67}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{67}{section.8.3}%
+\contentsline {chapter}{References}{68}{chapter*.53}%
+\contentsline {chapter}{\numberline {A}RL \& RL Training }{72}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{72}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{72}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Agent Training}{74}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Value Function Training}{74}{section.A.4}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{75}{appendix.B}%
 \contentsfinish 
