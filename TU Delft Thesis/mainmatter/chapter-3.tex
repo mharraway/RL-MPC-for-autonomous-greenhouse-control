@@ -1,13 +1,12 @@
 \chapter{Reinforcement Learning Setup}
 \label{chapter:RL}
-This chapter provides an overview of the process of developing the reinforcement learning (RL) agent that will be used in the development phase of the RL-MPC algorithm. This chapter focuses on the description of the environment on which the RL agent is trained, as well as the performance of the agent in both deterministic and stochastic environments. Finally, the training of a value function for a fixed policy is also investigated. 
+This chapter provides an overview of the process of developing the RL agent that will be used in the development phase of the RL-MPC algorithm. This chapter focuses on the description of the environment on which the RL agent is trained, as well as the performance of the agent in both deterministic and stochastic environments. Finally, the training of a value function for a fixed policy is also investigated. 
 
 \section{Environment Description} \label{section:env-description}
 This section describes the environment for the RL agent to learn an optimal policy. The environment is built on the Greenhouse model as described in \autoref{section:greenhouse-model} and outlines important features to successfully train an RL agent. This includes the observation space available for the agent to make decisions on, the action space available to the agent, the reward function, and finally the weather data that is used for the training period.
 
 \paragraph{Observation Space}
-The observation space of the agent must be carefully selected, in order to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions on as it is difficult to measure without disrupting the crop's life cycle. However, various methods exist for predicting the state of the crop dry mass such as a non-linear kalman observer \textbf{refXX}. It is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels are easily measured and form part of the observation space. The current weather conditions are also made available to the agent in order to make better decisions. As shown in \textbf{some section}, since the control input is dependent on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered to be time-aware, and so the current time step is also given to the agent. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days \textbf{as in Section XXX}, the problem is episodic. By incorporating time awareness, the agent is able to leverage the current time in order to make more optimal decisions. As discussed in \autoref{ssection:optimization-goal} and later in \autoref{paragraph:reward-function}, the optimization goal includes maximizing the growth difference between time steps, and so knowledge of the previous dry mass state, the the growth experienced in the previous time step may be beneficial to learning an optimal policy.
-As a result, the 3 following environment state tuples $s(k)$ at time $k$ are separately tested to represent the observation returned to the agent:
+The observation space of the agent must be carefully selected, in order to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions on as it is difficult to measure without disrupting the crop's life cycle. However, various methods exist for predicting the state of the crop dry mass such as a non-linear kalman observer and other machine learning techniques \cite{gongDeepLearningBased2021}. However it is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels are easily measured and form part of the observation space. The current weather conditions are also made available to the agent in order to make better decisions. As shown in \autoref{section:greenhouse-model}, since the control input is dependent on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered to be time-aware, and so the current time step is also given to the agent. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days (as discussed in \autoref{ssection:optimization-goal}), the problem is episodic. By incorporating time awareness, the agent is able to leverage the current time in order to make more optimal decisions. As discussed in \autoref{ssection:optimization-goal} and later in \autoref{paragraph:reward-function}, the optimization goal includes maximizing the growth difference between time steps, and so knowledge of the previous dry mass state, the growth experienced in the previous time step may be beneficial to learning an optimal policy. However, the 3 following environment state tuples $s(k)$ at time $k$ have been  separately tested to represent the observation returned to the agent:
 \begin{equation}
 \label{eq:obs-tuple-1}
     s(k) = (y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
@@ -23,18 +22,19 @@ As a result, the 3 following environment state tuples $s(k)$ at time $k$ are sep
 \begin{equation}
     s(k) = (y_1(k-1),y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
 \end{equation}
-It is noted, that \autoref{eq:obs-tuple-3} is expected to perform better than \autoref{eq:obs-tuple-1} and \autoref{eq:obs-tuple-2} since more information is provided regarding the Markov decision processes of the model and the reward received, thereby allowing the agent to potential infer the system dynamics more accurately. However \autoref{eq:obs-tuple-1} and \autoref{eq:obs-tuple-2} are simpler, with \autoref{eq:obs-tuple-1} facilitating the learning of a value function and integration in the RL-MPC algorithm as discussed in \textbf{section XXX}. 
+
+It is noted, that \autoref{eq:obs-tuple-3} is expected to perform better than \autoref{eq:obs-tuple-1} and \autoref{eq:obs-tuple-2} since more information is provided regarding the Markov decision processes of the model and the reward received, thereby allowing the agent to potential infer the system dynamics more accurately. However \autoref{eq:obs-tuple-1} is the simplest and therefore facilitates the learning of a value function and easier integration in the RL-MPC algorithm as discussed in \autoref{section:trained-vf} and \autoref{section:rlmpc implementation} respectively. It was found that no substantial benefit was gained in providing the previous knowledge of the previous drymass state of the crop, hence for simplicity \autoref{eq:obs-tuple-1} was further used in this thesis.
 
 \paragraph{Action Space}
-The continuous action space, denoted as $A$, is defined as $ \subseteq [-1,1]^3$, where $a \in A$. In order to ensure that the current control input, $u(k)$ satisfies the constraints outlined in  \textbf{show equation}, the agent's action, denoted as $a(k)$, is regarded as a modification to the control input. Consequently, the current control input can be determined as follows:
+The continuous action space, denoted as $A$, is defined as $ \subseteq [-1,1]^3$, where $a \in A$. In order to ensure that the current control input, $u(k)$ satisfies the constraints outlined in  \autoref{eq:input constraints}, the agent's action, denoted as $a(k)$, is regarded as a modification to the control input. Consequently, the current control input can be determined as follows:
 $$
-u(k) = clip(u(k-1) + a(k) \cdot \delta u(k)^{max},u_{min}, u_{max})
+u(k) = clip(u(k-1) + a(k) \cdot \delta u_{max},u_{min}, u_{max})
 $$
 
-where $\delta u(k)^{max},u_{min}, u_{max}$ are defined in \textbf{section here}
+where $\delta u_{max}(k),u_{min}, u_{max}$ are defined in \autoref{ssection:optimization-goal}
 
 \paragraph{Initial Conditions}
-Initial conditions were kept constant for every episode for both the stochastic and deterministic case and shown in \autoref{eq:init-conditions}.The values in question were obtained from the sources as cited in \textbf{ref XXX and ref XXX}.
+Initial conditions were kept constant for every episode for both the stochastic and deterministic case and shown in \autoref{eq:init-conditions}.
 
 \begin{equation}
     \label{eq:init-conditions}
@@ -51,16 +51,16 @@ Initial conditions were kept constant for every episode for both the stochastic 
 
 \paragraph{Reward Function}
 \label{paragraph:reward-function}
-The reward function is modelled after the optimization goal as defined in \textbf{section/equation} and represents the same optimization goal as defined for the Model predictive control OCP. Although the van Henten model sufficiently describes the dynamics of lettuce growth in a climate-controlled environment, it does not do so over the entire state space. Therefore state constraints are imposed to ensure states are operated within reasonable limits to ensure realistic conditions. As stated in \textbf{Section XXX}, state constraints cannot be directly imposed but can be indirectly incorporated through a penalty function within the reward function. It is common practice to impose a linear penalty function for state violations when learning a policy with RL for stability reasons \textbf{ref XXX}. As such, the resulting reward function becomes:
+The reward function is modeled after the optimization goal as defined in \autoref{ssection:optimization-goal} and represents the same optimization goal as defined for the MPC OCP. Although the van Henten model sufficiently describes the dynamics of lettuce growth in a climate-controlled environment, it does not do so over the entire state space. Therefore state constraints are imposed to ensure states are operated within reasonable limits to ensure realistic conditions. As stated in \autoref{section:RL}, state constraints cannot be directly imposed but can be indirectly incorporated through a penalty function within the reward function. It is common practice to impose a linear penalty function for state violations when learning a policy with RL. As such, the resulting reward function becomes:
 
 \begin{equation}\label{eq:reward_fn}
     \begin{aligned}
-        & R(k)  = \kappa_{1} \cdot (y(k)- y(k-1)) - (\kappa_{2} \cdot u_1(k) + \kappa_{3} \cdot u_2(k) + \kappa_{4} \cdot u_3(k))  \\ 
+        & R(k)  = c_{price_3} \cdot (y(k)- y(k-1)) - (c_{price_1} \cdot u_1(k) + c_{price_2} \cdot u_2(k) + 0 \cdot u_3(k))  \\ 
         & - (P_{c02} \cdot y_2(k) + P_T \cdot y_3(k) + P_H \cdot y_4(k))
     \end{aligned}
 \end{equation}
 
-where $\kappa_{let},\kappa_{c02},\kappa_{u_v},\kappa_{u_q}$ are defined in \textbf{section XXX} and correspond to the pricing of the the lettuce and control inputs
+where $c_{price_1},c_{price_2},c_{price_3}$ are defined in \autoref{ssection:optimization-goal} and correspond to the pricing of the lettuce and control inputs
 and the penalty terms $P_{c02},P_T,P_H$ are defined as follows:
 
 \begin{equation}
@@ -88,7 +88,7 @@ c_{p_{H}} \cdot (y_4^{\text{min}} - y_4(k)) & \text{if } y_4(k) < y_4^{\text{min
 \\
 \end{aligned}
 \end{equation}
-The penalty constants $c_{p_{\text{CO2}}},c_{p_{T_ub}},c_{p_{T_lb}},c_{p_{H}}$ were found in empirically in \textbf{ref XXX} in order to effectively account for deviations from desired states and their impact on the economic benefit. It should be noted that the upper bound of the temperature  imposes stricter penalties for violations compared to the lower bounds due to the absence of active cooling in the system.  Thus, during periods of increased temperature throughout the day, it is important for the agent to make appropriate decisions. The penalty constants and their respective units are displayed in \autoref{tab:pen-constants}. The selection of minimum and maximum temperatures was based on the typical operating ranges for lettuce crops and the acceptable levels of CO2 for human brief operation.
+The penalty constants $c_{p_{\text{CO2}}},c_{p_{T_ub}},c_{p_{T_lb}},c_{p_{H}}$ were found in empirically in \cite{jansenOptimalControlLettuce2023} in order to effectively account for deviations from desired states and their impact on the economic benefit. It should be noted that the upper bound of the temperature  imposes stricter penalties for violations compared to the lower bounds due to the absence of active cooling in the system.  Thus, during periods of increased temperature throughout the day, it is important for the agent to make appropriate decisions. The penalty constants and their respective units are displayed in \autoref{tab:pen-constants}. The selection of minimum and maximum temperatures was based on the typical operating ranges for lettuce crops and the acceptable levels of CO2 for human brief operation.
 
 \begin{table}[h]
     \centering
@@ -116,22 +116,15 @@ The penalty constants $c_{p_{\text{CO2}}},c_{p_{T_ub}},c_{p_{T_lb}},c_{p_{H}}$ w
 
 \section{Experimental Setup} \label{section:experimental-setup}
 
-The duration of the growing period for lettuce was determined based on the findings of \textbf{reference XXX}, which indicate that the growing period typically falls within the range of 30 to 50 days. Therefore, a fixed growing period of fixed 40 day was selected. \textbf{Ref XXX} states that discretizing the van Henten model using a time-step between 15 minutes and 1 hour is recommended. Therefore, a time interval of 30 minutes was selected for the purpose of this study. As a result, over a duration of 40 days (1 episode or 1 complete simulation), there is a total of:
-$$
-k_{total} = \frac{40 \frac{days}{growing \, period} \cdot 24 \frac{hrs}{day} \cdot 60 \frac{min}{hr}}{30 \frac{min}{timestep}} = 1920 \frac{time \, steps}{growing \, period}
-$$
-The initial interval of 30 minutes was originally set at 15 minutes. However, this decision was revised due to the excessive computational burden it imposed on the MPC solver, with minimal benefits. Consequently, extending the time step enables an exponential speedup in the simulation of the 40-day period, while causing only minor deterioration in performance. As a consequence of this, there is a noticeable increase in the rate at which RL training occurs, thereby allowing for a larger quantity of training episodes.
-\\
+
 To facilitate the learning process of RL, the observations returned from the environment were normalized by a running mean and variance. The VecNormalizeWrapper in Stable-Baselines3 is responsible for updating the mean and variance for every observation received from the environment. The observation is normalized as per \autoref{eq:state-normalization} and clipped between $[-10,10]$.
 
 \begin{equation}\label{eq:state-normalization}
     obs_{norm} = \frac{(obs - \mu_{obs}) }{\sqrt{\sigma^2_{obs} + 1\cdot 10^{-8}}}
 \end{equation}
 
-where $\mu_{obs}$ and $\sigma^2_{obs}$ represent the running mean and variance, respectively.The value $1\cdot 10^{-8}$ is included to prevent division by zero. Although the VecNormalizeWrapper also facilitates this process, it is necessary to replicate this step when incorporating it into the RL-MPC algorithm. Finally, in order to ensure reproducibility, a seed value of 4 was used for the generation of random numbers.
+where $\mu_{obs}$ and $\sigma^2_{obs}$ represent the running mean and variance, respectively. The value $1\cdot 10^{-8}$ is included to prevent division by zero. Although the VecNormalizeWrapper also facilitates this process, it is necessary to replicate this step when incorporating it into the RL-MPC algorithm. Finally, in order to ensure reproducibility, a seed value of 4 was used for the generation of random numbers.
 This seed value was utilized for both the initialization of neural network weights and the selection of actions for exploration purposes.
-
-
 
 \paragraph{Weather Data}
 
@@ -146,10 +139,10 @@ The weather data used in training is obtained from the VenLow Greenhouse in Blei
 
 
 \paragraph{Deterministic and Stochastic Case}
-When learning a policy in both stochastic and deterministic environments, the key distinction lies in the evolution of the state of the greenhouse. In the stochastic case, this evolution follows the principles outlined in \autoref{eq:uncertainty_model}. In the stochastic case, three levels of uncertainty were tested, namely $\sigma = 20\%$,$\sigma = 40\%$ and $\sigma = 80\%$. Although these uncertainty levels might be considered extreme, it was desirable to learn a policy for each of these uncertainty levels to compare to MPC and RL-MPC under identical conditions of uncertainty. The optimal configuration(s) that produce the most favorable outcomes in the deterministic scenario will be employed in the stochastic scenario, and there will be no reevaluation of hyperparameters. WWhile the stochastic environment provides a representation of a scenario closer to real-life conditions, the deterministic case offers a nominal measure of the RL agent's performance and the resulting RL-MPC algorithm when combined with MPC.
+When learning a policy in both stochastic and deterministic environments, the key distinction lies in the evolution of the state of the greenhouse. In the stochastic case, this evolution follows the principles outlined in \autoref{eq:uncertainty_model}. In the stochastic case, three levels of uncertainty were tested, namely $\delta_p = 5\%$,$\delta_p = 10\%$ and $\delta_p = 20\%$. Although these uncertainty levels might be considered extreme, it was desirable to learn a policy for each of these uncertainty levels to compare to MPC and RL-MPC under identical conditions of uncertainty. The optimal configuration(s) that produce the most favorable outcomes in the deterministic scenario will be employed in the stochastic scenario, and there will be no reevaluation of hyperparameters. While the stochastic environment provides a representation of a scenario closer to real-life conditions, the deterministic case offers a nominal measure of the RL agent's performance and the resulting RL-MPC algorithm when combined with MPC.
 
 \paragraph{Performance Metrics}
-The primary performance metric used for evaluating RL agents is the cumulative reward obtained over the 40-day growing period. As demonstrated in \autoref{eq:reward_fn}. The performance metric under consideration is conceptually equivalent to the EPI (\textbf{eq XXX}) minus the summed temperature, C02 and humidity violations. This is a natural selection of the final performance metric as it directly corresponds to what the agent is optimizing, and subsequently, what the MPC and RL-MPC controllers are optimizing. Other metrics include the EPI, total growth, total C02 usage, total heating, computational time to compute control input, temperature and c02 violations. It is difficult to compare these lesser performance metric across policies, since these are all form part of the reward function (with the exception of the computational time) and are not directly optimized. Therefore, making comparisons would not be meaningful, and only observations can be made. However, the computational time taken to compute the optimal control action is an important metric, particularly when combining RL with MPC. 
+The primary performance metric used for evaluating RL agents is the final cumulative reward obtained over the 40-day growing period. As demonstrated in \autoref{eq:reward_fn}. The performance metric under consideration is conceptually equivalent to the EPI (\autoref{eq:epi}) minus the summed temperature, C02 and humidity violations. This is a natural selection of the final performance metric as it directly corresponds to what the agent is optimizing, and subsequently, what the MPC and RL-MPC controllers are optimizing. Other metrics include the EPI, total growth, total C02 usage, total heating, computational time to compute control input, temperature and c02 violations. It is difficult to compare these lesser performance metric across policies, since these are all form part of the reward function (with the exception of the computational time) and are not directly optimized. Therefore, making comparisons would not be meaningful, and only observations can be made. However, the computational time taken to compute the optimal control action is an important metric, particularly when combining RL with MPC. Finally, when comparing the controllers in a stochastic environment, the variance of the final cumulative reward is also examined.
 
 \section{Hyper-parameter Tuning}
 The process of hyper-parameter tuning is frequently laborious and requires exhaustive exploration to determine the best configuration to maximize the cumulative reward of the agent. Therefore, the final hyper-parameters are posted in \autoref{tab:hyper-params} and were found empirically. Refer to \textbf{appendix A} for a more comprehensive analysis of the obtained hyper-parameters. The discount factor and activation function are not reported here. The effect of these two hyper-parameters are important to consider when integrating the value function of the learned agent with MPC. The defaults provided by SB3 are used for hyper-parameters that are not reported.
@@ -172,106 +165,102 @@ The process of hyper-parameter tuning is frequently laborious and requires exhau
     \label{tab:hyper-params}
 \end{table}
 
-\paragraph{Activation Function} The importance of the activation function lies in whether the resulting activation allows the output of the neural network to be differentiable with respect to the inputs. For instance, the ReLu activation function is a commonly used activation function due to its simplicity and superior convergence \textbf{ref XX}. Although ReLu is differentiable with respect to the weight of the neural network, it is not differentiable with respect to the inputs of the neural network. This is important to note since it is necessary for the trained value function to be differentiable with respect to its inputs if it is to be used as a cost function in the MPC formulation. Hence, the tanh function may be used instead, as it is a frequently used activation function that is differentiable with respect to the inputs.
+\paragraph{Activation Function} The importance of the activation function lies in whether the resulting activation allows the output of the neural network to be differentiable with respect to the inputs. For instance, the ReLu activation function is a commonly used activation function due to its simplicity and superior convergence, in contrast to activation functions like tanh and sigmoid, which also encounter the issue of vanishing gradient. Although ReLu is differentiable with respect to the weight of the neural network, it is not differentiable with respect to the inputs of the neural network. This is important to note since it is necessary for the trained value function to be differentiable with respect to its inputs if it is to be used as a cost function in the MPC formulation. Hence, the tanh function may be used instead, as it is a frequently used activation function that is differentiable with respect to the inputs.
 
-\paragraph{Discount Factor} Another consideration is the discount factor, denoted as $\gamma$. Since the problem is episodic and therefore the cumulative rewards are bounded, it is possible to have a $\gamma = 1$. By setting the discount factor $\gamma$ to 1, the agent is able to consider the entire prediction horizon when making decisions regarding its actions. Additionally, the value function obtained during training satisfies \textbf{equation XXX} indicating that it contains information pertaining to the entire prediction horizon. Having $\gamma < 1$ will shorten the agent's 'prediction horizon' and the resulting value function may not provide significant benefits for the MPC. However, it may stabilize the learning and therefore yield a better policy as compared to when $\gamma = 1$. \\
+\paragraph{Discount Factor} Another consideration is the discount factor, denoted as $\gamma$. Since the problem is episodic and therefore the cumulative rewards are bounded, it is possible to have a $\gamma = 1$. By setting the discount factor $\gamma$ to 1, the agent is able to consider the entire prediction horizon when making decisions regarding its actions. Additionally, the value function obtained during training satisfies would contain information pertaining to the entire prediction horizon which is highly desirable especially for optimizing economic benefit. Having $\gamma < 1$ will shorten the agent's 'prediction horizon' and the resulting value function may not provide significant benefits for the MPC when integrated. However, it may stabilize the learning and therefore yield a better policy as compared to when $\gamma = 1$. \\
 Results pertaining to the activation function and discount factor are shown and discussed in \autoref{section:rl-deterministic-results}
 
-
-
-
-
 \section{Deterministic Results}
-The outcomes of modifying the discount factor, the activation function, and the impact of the three distinct observations provided to the agent (\autoref{eq:obs-tuple-1}, \autoref{eq:obs-tuple-2}, \autoref{eq:obs-tuple-3}) are presented and examined in this section.Finally, a discussion of the chosen policies and the identification of the desirable characteristics that can be integrated with the MPC framework. While there are several hyperparameters that can impact the performance of the resulting RL policy, this section will focus on the discount factor and activation function. These two hyperparameters are considered necessary aspects of the RL policy, particularly when it is desired to integrate it MPC.
-
+The outcomes of modifying the discount factor and the activation function  are presented and examined in this section.Finally, a discussion of the chosen policies and the identification of the desirable characteristics that can be integrated with the MPC is performed. While there are several hyperparameters that can impact the performance of the resulting RL policy, this section will focus on the discount factor and activation function. These two hyperparameters are considered necessary aspects of the RL policy, particularly when it is desired to integrate it with MPC. 
 
 \subsection{Discount Factor}
-The tests conducted involved returning the observation to the agent as specified in Equation (2) of the observation tuple, with the hyper parameters as specified in \autoref{tab:hyper-params}. The impact of the discount factor on the agent's performance and the generated value function is investigated. 
+Typically, the discount factor lies between 0.9 and 0.99. It is desirable for economic optimization to have this discount factor as close to 1 as possible. Therefore 4 discount factors were tested, namely 1,0.99,0.95 and 0.9. Going any lower may yield a more stable learning procedure at the cost of a more myopic policy. To note, that the ReLu activation function is used for the following results pertaining to the investigation of the discount factor.
+The value functions trained on their respective discount factor is denoted $V_\pi(s|\gamma)$.
 
-\begin{figure}
-     \centering
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/gamma_reward_training.eps}
-         \caption{Cumulative Reward per Training Step}
-         \label{fig:gamma_reward_training}
-     \end{subfigure}
-     \begin{subfigure}[b]{0.49\textwidth}
-         \centering
-         \includegraphics[width=\textwidth]{figures/gamma_reward_final.eps}
-         \caption{Final Cumulative Reward}
-         \label{fig:gamma_reward_final}
-     \end{subfigure}
-        \caption{Discount Factor vs Cumulative Rewards}
-        \label{fig:gamma-vs-rewards}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = \textwidth]{figures/gamma_reward.eps}
+	\caption{Cumulative Reward vs Discount factor ($\gamma$)}
+	\label{fig:gamma_vs_reward}
 \end{figure}
 
 \paragraph{Performance} 
-The cumulative reward achieved over the training period and the final cumulative reward achieved for each different discount factor are depicted in \autoref{fig:gamma_reward_training} and \autoref{fig:gamma_reward_final} respectively.
-As can be seen in \autoref{fig:gamma-vs-rewards}, it is clear that $\gamma = 1$ does not perform as well as lower discount factors. It is noted that the degradation in performance comes from the increase in problem complexity when the discount factor is 1. Hence, it becomes more difficult in finding an optimal policy, requiring a different set of hyper-parameters and potentially a significantly larger number of training episodes. However, the policy generated with this discount factor will provide a value function that holds information across the entire time horizon, which is desirable. \\
-In the deterministic case, one can assess the accuracy of the obtained value function by comparing the predicted values of each state and time step visited during the 40-day simulation with the actual values of the visited states. In addition, the predicted value of each state may also be compared to the cumulative rewards obtained at each state. One can determine the precise value of each state visited in the simulation by adding up the rewards from that state onwards, as per \textbf{eq XXX}, with the respective discount factor used.
+The cumulative reward achieved over the training period and the final cumulative reward achieved for each different discount factor are depicted in \autoref{fig:gamma_vs_reward}. The cumulative reward per training step serves an example of the learning process, while the final cumulative reward depicts the performance of the RL system after training. As can be seen in \autoref{fig:gamma_vs_reward}, it is clear that $\gamma = 1$ does not perform as well as lower discount factors. It is noted that the degradation in performance comes from the increase in problem complexity when the discount factor is 1. Hence, it becomes more difficult in finding an optimal policy, requiring a different set of hyper-parameters and potentially a significantly larger number of training episodes. However, the policy generated with this discount factor will provide a value function that holds information across the entire time horizon, which is desirable. Conversely, the learning procedure is much more stable when lower discount values are used and a thus a higher final cumulative reward is achieved. Given the desirability of utilising the value function in the MPC formulation, it is necessary to analyse the value function for each of the tested discount factors.\\
 
-\paragraph{Value Function Approximation}
-It is difficult to determine whether the critic has converged. Given that the critic serves as a q-value function approximator, the actor must identify the optimal action for a given state in order to compute the value of that state using the critic. Therefore, convergence of the value function is dependent upon the actor policy as well. Although the training curves indicate that the critic has converged, it has only converged in alignment with the actor. In order to assess whether the critic (and actor) has achieved convergence in predicting the value function, it is possible to visualize and compare the actual and predicted value of a given state.\\
-For each discount factor, the predicted value of each state and the cumulative rewards obtained thus far were plotted and evaluated, for the entire 40 day period. It is noted that for the deterministic case, the realizations of state trajectories and rewards received do not differ between simulations, hence the exact value of each state may be calculated. 
+\paragraph{Value Function}
+It is difficult to determine whether the critic has converged. Given that the critic serves as a q-value function approximator in the SAC algorithm, the actor must identify the optimal action for a given state in order to compute the value of that state using the critic. Therefore, convergence of the value function is dependent upon the actor policy as well. Although the training curves indicate that the critic has converged, it has only converged in alignment with the actor's policy. In order to assess whether the critic (and actor) has achieved convergence in predicting the value function, it is necessary to visualize and compare the actual,as computed by \autoref{eq:total-return}, and the predicted value, as given by the learned value function, of a given visited state during the 40-day simulation. In addition, to compare the accuracy of the learned value function to a value function that encompasses the entire prediction horizon (a non-discounted value function), \autoref{eq:v0} may be used as a visual aid.\\
 
+\begin{equation}\label{eq:v0}
+	\begin{aligned}
+		V(s_k) &= r_k + V(s_{k+1}) \\
+		\therefore V(s_{k-1}) &= r_{k-1} + V(s_{k}) \\
+		\therefore V(s_{k-2}) &= r_{k-2} + r_{k-1} + V(s_{k}) \\
+		\therefore V(s_{0}) &= \sum_{i=0}^{k-1} {r_{i}} + V(s_{k})   \\
+	\end{aligned}
+\end{equation}
+
+During each time step, the computation of the initial state's value is determined by the cumulative rewards received up to that point, as well as the approximation of the current state's value using the value function. If the value function is able to approximate the value of a state (a non-discounted value function) accurately, then \autoref{eq:v0} should yield the same result for every time step, resulting in a horizontal line, $y = V_\phi(s_0)$.
+
+For each discount factor, the predicted value of each state and the cumulative rewards obtained thus far were plotted and evaluated, for the entire 40 day period. It is noted that for the deterministic case, the realizations of state trajectories and rewards received do not differ between simulations, hence the exact value of each state may be calculated. Moreover, it is also noted that a value function trained with a $\gamma=1$ is the only value function that would be able to approximate  $y = V_\phi(s_0)$ as given in \autoref{eq:v0}, however it serves as an important visual aid to show the accuracy of the trained value functions.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth]{figures/vf_vs_gamma.pdf}
-    \caption{Value vs Discount factor}
+    \caption{Predicted value vs actual value vs Discount factor}
     \label{fig:vf-vs-gamma}
 \end{figure}
 
-The figure shown in \autoref{fig:vf-vs-gamma}  illustrates the comparison between the predicted and actual value of each state for each discount factor. In addition the cumulative reward at each time step is also logged. The left-hand side axis represents the values, while the right-hand side axis represents the cumulative reward. It is acknowledged that the trajectory of the actual value  (for $\gamma = 1$) is a horizontally reflected trajectory of the cumulative reward trajectory and can be seen in \autoref{fig:vf-vs-gamma}. Naturally this is not the case for discount factors lower than one, since the value only embeds knowledge of future rewards to be received over a shorter horizon. It is seen that the lower the discount factor, the more accurate the predicted value of a state is. This may be due to the decrease in problem complexity and therefore more accurate approximations. When $\gamma = 0.9$, the critic is capable of accurately predicting the actual value of a state. However, it falls short in accurately representing the true value of a state over the entire time horizon, given its nature of discounting future rewards. The same can be said for all discount factors lower than one. It was important to train an actor and critic with a $\gamma = 1$ because it was believed that the trained critic, despite having a worse performing policy,  could still provide a reasonable estimation of the value of a state throughout the entire simulation. Upon examining \autoref{fig:vf-vs-gamma}, it becomes evident that this assumption is incorrect. During the investigation into suitable hyper-parameters for the learning agent, it was observed that when $\gamma = 1$, the trained critic struggled to accurately estimate the value of a state in all cases. \autoref{fig:vf-vs-gamma} is just one such realization. 
+The figure shown in \autoref{fig:vf-vs-gamma}  illustrates the comparison between the predicted and actual value of each state for each discount factor. In addition the cumulative reward at each time step is also logged, naturally the cumulative reward differs slightly since the policy generated is also dependent on the obtained value function. \\
+It is acknowledged that the trajectory of the actual value for each state  (for $\gamma = 1$) is a horizontally reflected trajectory of the cumulative reward trajectory and can be seen in \autoref{fig:vf-vs-gamma}. Naturally this is not the case for discount factors lower than one, since the value only embeds knowledge of future rewards to be received over a shorter horizon. This is further seen by the predicted $V_{\pi}(s_0)$, whereby the value functions do not produce a horizontal $V_{\pi}(s_0)$ curve, indicating their inadequacy in predicting the true non discounted value function. Not even $V_{\pi}(s|\gamma = 1)$ predicts this true value function accurately, shown by the clear non-horizontal predicted $V_{\pi}(s_0)$ curve.\\
+It is also noted that the lower the discount factor, the more accurate the predicted value of a state becomes as seen my the overlapping 'Predicted Value' and 'Actual Value' curves. This may be due to the decrease in problem complexity and therefore more accurate approximations. When $\gamma = 0.9$, the critic is capable of accurately predicting the actual value of a state. However, it falls short in accurately representing the true value of a state over the entire time horizon, given its nature of discounting future rewards. The same can be said for all discount factors lower than one. It was important to train an actor and critic with a $\gamma = 1$ because it was believed that the trained critic, despite having a worse performing policy,  could still provide a reasonable estimation of the value of a state throughout the entire simulation. Upon examining \autoref{fig:vf-vs-gamma}, it becomes evident that this assumption is incorrect. During the investigation into suitable hyper-parameters for the learning agent, it was observed that when $\gamma = 1$, the trained critic struggled to accurately estimate the value of a state in all cases. \autoref{fig:vf-vs-gamma} is just one such realization. 
 
 \subsection{Activation Function}
-It is also important for the trained critic to utilize a differentiable activation functions to ensure differentiability. This is done so that it may be used within the MPC framework. However, such an activation function, such as the commonly used tanh activation function may or may not yield desirable results in terms of maximizing cumulative reward. This section compares the performance of a learned agent with tanh activation functions against and agent with ReLu activation functions for a $\gamma = 1$ and $\gamma = 0.95$ with the ReLu acting as the baseline performance. 
+It is also important for the trained critic to utilize a differentiable activation functions to ensure differentiability. This is done so that it may be used within the MPC framework. However, such an activation function, such as the commonly used tanh activation function may or may not yield desirable results in terms of maximizing cumulative reward. This section compares the performance of a learned agent with tanh activation functions against and agents with ReLu activation functions for a $\gamma = 1$ and $\gamma = 0.95$ with the ReLu acting as the baseline performance. 
 
 
+	
 \begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-   & \multicolumn{2}{c|}{Performance} & \\
-   \hline
-  Discount Factor & ReLu & tanh & SpeedUp (\%) \\
-\hline
-  1   & 3.72 & 3.44 & -7.53 \\
-\hline
-0.95 & 4.40& 4.17& -6.08 \\
-\hline
-\end{tabular}
-\caption{Effect of the tanh activation function}
-\label{table:tanh-act-fn}
+	\centering
+	\begin{tabular}{c c c c}
+		\toprule
+		\multirow{2}{*}{\textbf{Discount Factor}} & \multicolumn{2}{c}{\textbf{Performance}} & \multirow{2}{*}{\textbf{SpeedUp (\%)}} \\
+		\cmidrule{2-3}
+		& \textbf{ReLU} & \textbf{tanh} &  \\
+		\midrule
+		\textbf{1}   & 3.72 & 3.44 & -7.53 \\
+		\textbf{0.95} & 4.40 & 4.17 & -6.08 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Effect of different activation functions (ReLU and tanh) on performance and speed-up at varying discount factors.}
+	\label{table:tanh-act-fn}
 \end{table}
+	
 
-\autoref{table:tanh-act-fn} displays the effect of the tanh activation on the agents final performance. it is clear that ReLu significantly outperforms the tanh activation function in terms of total cumulative reward. This situation presents a dilemma. It is desirable to have an effective reinforcement learning policy in which the critic has differentiability. By incorporating the concept of differentiability into the critic, it seems that there is a decline in performance.While additional investigation into the hyperparameters may be necessary to reject this notion,  the focus of this thesis does not lie in the development of the optimal RL generated policy. Rather, \autoref{chapter:RL} aims to create a policy, and accurate critic, that is competitive with MPC so that when merged, produces a potentially better policy.
 
-\subsection{Observation Tuples}
-\todo{Might go into appendix}
 
+\autoref{table:tanh-act-fn} displays the effect of the tanh activation on the agents final performance. it is clear that ReLu significantly outperforms the tanh activation function in terms of total cumulative reward. This situation presents a dilemma. It is desirable to have an effective reinforcement learning policy in which the critic has differentiability. By incorporating the concept of differentiability into the critic, it seems that there is a decline in performance. While additional investigation into the hyperparameters may be necessary to reject this notion,  the focus of this thesis does not lie in the development of the best possible RL generated policy. Rather, \autoref{chapter:RL} aims to create a policy and an accurate critic, that is competitive with MPC so that when merged, produces a potentially better policy. However, these results suggest that special care should be taken when merging RL with MPC.
 
 \subsection{Final Results and Conclusion}
 \label{section:rl-deterministic-results}
-From the findings, the best policy produced by RL is with the hyperparameter shown in \autoref{tab:hyper-params}, with a $\gamma = 0.95$ and with ReLu activation functions. And while the best performing policy is desired, this configuration does not produce adequate conditions for its critic to be used in the MPC formulation, namely the value function does not hold information across the entire prediction horizon and it is not differentiable. And an agent, learned with a $\gamma = 1$ and tanh activation function results in a worse performing policy and a critic that struggles to accurately predict the value of states. With that being stated, a critic that has undergone training with a discount factor of $\gamma = 0.95$ is able to accurately predict the value of a state and may still possess sufficient knowledge regarding future rewards to be advantageous for MPC. Additionally, a critic learned with a $\gamma = 1$, albeit bad approximations, may also provide enough information. Therefore, the selected agents (the actor and the critic) to be attempted to be merged with MPC and shown in \autoref{tab:selected_agents}. 
+From the findings, the best policy produced by RL is with the hyperparameters shown in \autoref{tab:hyper-params}, with a $\gamma = 0.95$ and with ReLu activation functions. And while the best performing policy is desired, this configuration does not produce adequate conditions for its critic to be used in the MPC formulation, namely the value function does not hold information across the entire prediction horizon and it is not differentiable. And an agent, learned with a $\gamma = 1$ and tanh activation function results in a worse performing policy and a critic that struggles to accurately predict the value of states. With that being said, a critic that has undergone training with a discount factor of $\gamma = 0.95$ is able to accurately predict the value of a state and may still possess sufficient knowledge regarding future rewards to be advantageous for MPC. Additionally, a critic learned with a $\gamma = 1$, albeit bad approximations, may also provide enough information.
+However, the next section delves into how a value function may be trained on a fixed policy, and if an accurate differentiable value function can be trained on the best performing policy, then all other configurations are unnecessary. However a time-series analysis of the state and input trajectories were performed with the agent configuration shown in \autoref{tab:selected_agents}. 
 
-\begin{table}[h]
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-         Agent & $\gamma$ & Activation Function & Final Performance \\
-         \hline
-         Agent 1& $0.95$ & ReLu & 4.27 \\
-         Agent 2& $0.95$ & Tanh & 4.18 \\
-         Agent 3& $1$ & Tanh & 3.03 \\
-         \hline
-    \end{tabular}
-    \caption{Selected Agents}
-    \label{tab:selected_agents}
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c c c c}
+		\toprule
+		\textbf{Agent} & $\boldsymbol{\gamma}$ & \textbf{Activation Function} & \textbf{Final Performance} \\
+		\midrule
+		\textbf{ 1} & 0.95 & ReLU & 4.27 \\
+		\textbf{ 2} & 0.95 & Tanh & 4.18 \\
+		\textbf{ 3} & 1 & Tanh & 3.03 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Performance of selected agents with different activation functions and discount factors}
+	\label{tab:selected_agents}
 \end{table}
-
-Although Agent 1, \autoref{tab:selected_agents} performs the best, its critic cannot be used in the MPC formulation. However \autoref{section:trained-vf} discusses how this issue may be addressed. 
 
 \begin{figure}[H]
     \centering
@@ -280,8 +269,6 @@ Although Agent 1, \autoref{tab:selected_agents} performs the best, its critic ca
     \label{fig:selected-policies-outputs}
 \end{figure}
 
-
-
 \begin{figure}[H]
     \centering
     \includegraphics[width = \textwidth]{figures/selected_policies_inputs.pdf}
@@ -289,8 +276,7 @@ Although Agent 1, \autoref{tab:selected_agents} performs the best, its critic ca
     \label{fig:selected-policies-inputs}
 \end{figure}
 
-The time series plot of the system outputs and inputs across the 40-day period for every agent as selected in \autoref{tab:selected_agents} is shown in \autoref{fig:selected-policies-outputs}. These time series plots are similar to as those reported in \textbf{ref XXX and XXX}. Direct comparisons are not possible since in \textbf{ref XXX} does not specify the weather data range used and the reward function differs from what is used in this thesis. Furthermore, \textbf{ref XXX} include additional constraints on the temperature levels during the day to encourage heating by solar radiation during the day and the heating system by night. These constraints were not imposed in this paper as it aimed to provide RL with greater autonomy in optimizing EPI while minimizing constraint violations deemed dangerous for plant and/or human operation. Furthermore, \textbf{ref XX} also reports similar results, however a direct comparison is not possible, since hyper-parameters and reward function differs. However, it is noted that results, time series and cumulative rewards, are similar enough to give confidence in the training of the RL agent.
-
+The time series plot of the system outputs and inputs across the 40-day period for every agent as selected in \autoref{tab:selected_agents} is shown in \autoref{fig:selected-policies-outputs}. These time series plots are similar to as those reported in \cite{jansenOptimalControlLettuce2023,morcegoReinforcementLearningModel2023}. Direct comparisons are not possible since \cite{morcegoReinforcementLearningModel2023} does not specify the weather data range used and the reward function differs from what is used in this thesis. Furthermore, \cite{morcegoReinforcementLearningModel2023} include additional constraints on the temperature levels during the day to encourage heating by solar radiation during the day and the heating system by night. These constraints were not included in this paper because the thesis aimed to give RL more independence in optimising EPI while minimising dangerous constraint violations for plant and/or human operation. Furthermore, \cite{jansenOptimalControlLettuce2023} also reports similar results, however a direct comparison is not possible, since hyper-parameters and reward function differs. However, it is noted that results, time series and cumulative rewards, are similar enough to give confidence in the correct training of the RL agent.
 \begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|}
@@ -312,11 +298,11 @@ The time series plot of the system outputs and inputs across the 40-day period f
 \end{table}
 
 
- Other performance metrics are reported for completeness in \autoref{tab:perf-metrics-selected-policies}. The computational time needed to compute the optimal control action is noted to take $\approx 0.2ms$. This is expected since a simple inference of the actor network is required to calculate the optimal action.
+Other performance metrics are reported for completeness in \autoref{tab:perf-metrics-selected-policies}. The computational time needed to compute the optimal control action is noted to take $\approx 0.2ms$. This is expected since a simple inference of the actor network is required to calculate the optimal action. Other metrics as reported in \autoref{tab:perf-metrics-selected-policies} may be useful metrics in designing a controller specifically for greenhouse control, however the RL-MPC controller developed in this thesis focuses on economic optimization of a system and is tested on a greenhouse.
  
 \section{Stochastic Results} \label{section:rl-stochastic-results}
-In training the stochastic RL agent, the best hyper-parameter configuration was used, namely the same as Agent 1 (\autoref{tab:selected_agents}). Although this produces a critic that is problematic for the integration with MPC, this is solved in \autoref{section:trained-vf}. Three stochastic agents were trained, each trained on a different level of uncertainty as specified in \autoref{section:env-description} with the uncertainty model according to \autoref{eq:uncertainty_model}. All stochastic agents used the same hyper-parameters as Agent 1. Performance metrics are reported and a comparison is made with the nominal model (Agent 1 from \autoref{tab:selected_agents}). Performance metrics are evaluated by repeating the 40-day simulation period 30 times and taking the average and variance of the cumulative rewards over the complete time horizon.
-Each agent is assigned a name based on the degree of uncertainty on which they received training. For example, an agent that has undergone training in a stochastic environment with a $\sigma = 20\%$ is referred to as 'Agent 0.2'. The agent named 'Agent 1' will be referred to as the 'Nominal Agent'. Each Agent is compared to the other stochastic Agents in an environment with each level of uncertainty.
+In training the stochastic RL agent the same hyper-parameter configuration was used that produced the best nominal agent, namely the same configuration as Agent 1 (\autoref{tab:selected_agents}). Although this produces a critic that is problematic for the integration with MPC, this is solved in \autoref{section:trained-vf}. Three stochastic agents were trained, each trained on a different level of uncertainty as specified in \autoref{section:env-description} with the uncertainty model according to \autoref{eq:uncertainty_model}. Performance metrics are reported and a comparison is made with the nominal model (Agent 1 from \autoref{tab:selected_agents}). Performance metrics are evaluated by repeating the 40-day simulation period 30 times and taking the average and variance of the cumulative rewards over the complete time horizon.
+Each agent is assigned a name based on the degree of uncertainty on which they received training. For example, an agent that has undergone training in a stochastic environment with a $\delta_p= 20\%$ is referred to as 'Agent 0.2'. The agent named 'Agent 1' will be referred to as the 'Nominal Agent'. Each Agent is compared to the other stochastic Agents in an environment with every level of uncertainty.
 
 \begin{figure}[H]
     \centering
@@ -325,29 +311,31 @@ Each agent is assigned a name based on the degree of uncertainty on which they r
     \label{fig:stochastic-rl-policies}
 \end{figure}
 
-The final mean cumulative reward and variance of each agent under different uncertainty levels are presented in \ref{fig:stochastic-rl-policies}. As expected, as more uncertainty is injected into the environment, mean cumulative reward decreases and the variance increases. This is clear across all agents. It is also evident that each agent outperforms others in terms of performance, as indicated by higher mean cumulative reward and lower variance,  when tested on the same level of uncertainty on which it was trained. However, it seems that in the nominal case ($\sigma = 0\%$), the agent trained on a $5\%$ uncertainty level (Agent 0.05) outperforms the nominal agent, this could be due to the agent having explored more due to the noise. Moreover, Agent 0.2 seems to achieve a higher average cumulative reward than Agent 0.1 when tested on a $10\%$ uncertain model.
+The final mean cumulative reward and variance of each agent under different uncertainty levels are presented in \ref{fig:stochastic-rl-policies}. As expected, as more uncertainty is injected into the environment, mean cumulative reward decreases and the variance increases. There is a noticeable trend where agents trained with higher levels of uncertainty tend to have a slower decline in performance as uncertainty increases, although they may not perform as well at lower levels of uncertainty compared to agents trained with lower levels of uncertainty. Similarly, agents trained on higher uncertainty levels maintain a lower variance in their final cumulative reward as uncertainty increases, compared to agents trained on data with lower uncertainty. Although in practice, the uncertainty is not known however if a more reliable policy is desired, training a reinforcement learning agent on a higher level of uncertainty than expected may achieve the desired outcomes. Also in general, th
+
+Results also suggest that an agent trained on a level of uncertainty does not necessarily produce the best policy for that level of uncertainty. It seems that in the nominal case ($\sigma = 0\%$), the agent trained on a $5\%$ uncertainty level (Agent 0.05) outperforms the nominal agent. Moreover, Agent 0.2 seems to achieve a higher average cumulative reward than Agent 0.1 when tested on a $10\%$ uncertain model. It is anticipated that agents who are trained and tested based on their respective uncertainty would exhibit superior performance. However, this disparity in performance can be attributed to the agent's increased exploration as a result of the added noise.
 
 \subsection{Conclusion}
-It is widely recognized that RL has the capability to address uncertainty through appropriate training methods, as evidenced by the findings presented in \autoref{fig:stochastic-rl-policies}. The incorporation of these stochastic policies into the MPC framework will be examined to determine whether a RL policy learned from stochastic data can transfer its characteristics to the RL-MPC framework. Finally, each agent, specifically the Nominal agent, Agent0.05, Agent0.1, and Agent0.2, is employed in its corresponding stochastic environment. Although Agent0.05 may outperform the Nominal Agent under nominal conditions, for the purpose of this thesis, its corresponding agent would be used.
+It is widely recognized that RL has the capability to address uncertainty through appropriate training methods, as evidenced by the findings presented in \autoref{fig:stochastic-rl-policies}. The incorporation of these stochastic policies into the MPC framework will be examined to determine whether a RL policy learned from stochastic data can transfer its characteristics to the RL-MPC framework. Finally, each agent, specifically the Nominal agent, Agent0.05, Agent0.1, and Agent0.2, is employed in its corresponding stochastic environment. Although Agent0.05 may outperform the Nominal Agent under nominal conditions, for the purpose of this thesis, its corresponding agent would be used. Moreover, the value function as trained by the RL algorithm is clearly problematic as the selection of the activation function and prediction horizon play a significant role in accuracy and the performance of the learned value function and policy respectively.
 
 \section{Trained Value Function}
 \label{section:trained-vf}
 
 Although training an agent using SAC produces an actor and a critic network, it was shown in \autoref{section:rl-deterministic-results} that the produced critic had undesirable characteristics.
-This critic was trained based on a changing policy that was dependent on the critic itself, therefore it is not surprising that the approximation to the value function was sub-optimal. However this section aims at training a value function approximator with a fixed policy\footnote{This fixed policy may come from any control lay, however the RL policy is used due to its computational efficiency in determining control actions, enabling large amounts of data points and/or trajectories to be obtained}. Therefore, a value function may be trained on the best policy obtained. Additionally, there is more freedom in choosing the architecture of the value function since it is now trained independently of the policy. Therefore, simpler models may be made to approximate the value function. Specifically, upon inspection of \autoref{fig:selected-policies-outputs} and \autoref{fig:vf-vs-gamma}, it is noticed that the cumulative reward at each time step is mostly dependent on the state of the crop's dry mass at time $k$, due to the similarity in the two curves. Therefore it may be possible to learn a value approximator solely based on the crop's dry mass and current time. Two methods were employed to various value function approximators, namely the temporal difference learning method and expected return method. It is noted that this value function is only accurate under the policy it was trained on, and that the neural networks used for as the value function approximator must be made up with tanh activation functions to ensure differentiability. 
-
+This critic was trained based on a changing policy that was dependent on the critic itself, therefore it is not surprising that the approximation to the value function was sub-optimal. However this section aims at training a value function approximator with a fixed policy\footnote{This fixed policy may come from any control lay, however the RL policy is used due to its computational efficiency in determining control actions, enabling large amounts of data points and/or trajectories to be obtained}. Therefore, a value function may be trained on the best policy obtained in \autoref{section:rl-deterministic-results}, namely Agent 1 (\autoref{tab:selected_agents}). Additionally, there is more freedom in choosing the architecture of the value function since it is now trained independently of the policy. Therefore, simpler models may be made to approximate the value function. Specifically, upon inspection of \autoref{fig:selected-policies-outputs} and \autoref{fig:vf-vs-gamma}, it is noticed that the cumulative reward at each time step is mostly dependent on the state of the crop's dry mass at time $k$, due to the similarity in the two curves. Therefore it may be possible to learn a value approximator solely based on the crop's dry mass and current time. It is noted that this value function is only accurate under the policy it was trained on. Lastly the tanh activation functions must be used to ensure differentiability.\\
+Two methods were employed to learn various value function approximators, namely the temporal difference learning method and expected return method, each with their respective advantages.
 
 
 \subsection{Temporal Difference Learning}
 \label{ssection:td-learning}
-This method uses a similar method by which SAC, DDPG and TD3 update their critic. Most similar to DDPG. Two neural networks are used to represent the value function, a current and target network. The mean squared bellman error is minimized between the target values (from the target network) and the current values (from the current network) as shown in \textbf{eq XXX}. Moreover, a polyak averaging is used to update the target networks. 
+This method uses a similar method by which SAC, DDPG and TD3 update their critic. Most similar to DDPG. Two neural networks are used to represent the value function, a current and target network. The mean squared bellman error is minimized between the target values (from the target network) and the current values (from the current network) as shown in \textbf{eq XXX}. Moreover, a polyak averaging is used to update the target networks. This method is very sample-efficient compared to the Expected Return learning. As a result, it will be easier to cover a wide range of states in the sampled state space. Consequently, the method is effective in learning a value function that can effectively generalise across the entire state space. This sample efficiency allows one to generate data from an MPC policy, as done in \cite{linReinforcementLearningBasedModel2023}, however the RL policy was used because of its significant speed.
 
 \paragraph{Obtaining Data}
-To obtain data, the nominal Agent (or Agent 1 \autoref{tab:selected_agents}) was used. A similar approach in obtaining data as in \textbf{ref xxx} was used. Along the nominal trajectory, $q$ ($q \in \mathbb{N}_{>0}$) internal states, $x$ and inputs, $u$ were uniformly sampled from $\hat{\mathbb{X}}^4$ and $\hat{\mathbb{U}}^3$ at time k respectively. So that at time $k$, a set denoted as $\hat{S}_{k} = \{\hat{s}_{k_1},\hat{s}_{k_2},...,\hat{s}_{k_q}\}$, where $\hat{s}_{k_i}$ is constructed using \autoref{eq:obs-tuple-1} from the sampled states and inputs. Each element in $\hat{S}_k$, denoted $\hat{s}_{k_i}$, is taken separately as an initial state and evolved one step in time with the RL agent, receiving a reward $\hat{r}_{k_i}$ and a boolean $d$ indicating whether a terminal state has been reached. $\hat{s}_{k_i}$ and $\hat{s}_{{k+1}_i}$ are both normalized as per \autoref{eq:agent-normalize} and stored in a transition tuple along with the received reward and $d$, denoted as $(\hat{s}_{k_i},\hat{s}_{{k+1}_i},\hat{s}_{k_i},d)$. The environment is then set back to the actual state $s_k$ and evolved for one time step, and the process repeats itself, until the 40 day period is over. The transition tuple of the actual system is also stored. To ensure a value function approximator generalizes well across the state space, the quality of sampled internal states and inputs is important. From the time series plot \autoref{fig:selected-policies-outputs} and \autoref{fig:selected-policies-inputs} is can be seen that not the entire state space needs to be sampled, especially for the dry mass state, $x_1$. The control actions were sampled across the the entire set $\mathbb{U}^3$ as shown in \textbf{eq XXX}. States $x_2,x_3,x_4$ were sampled with a range slightly larger than their respective minimum and maximum constraints range. This decision was made as it was deemed unnecessary to sample states that significantly violate constraints.  Finally, $x_1$ was sampled around the nominal $x_1$ trajectory such that the sampled state space $\hat{\mathbb{X}}^4$ is defined as:
+The nominal Agent (Agent 1 from \autoref{tab:selected_agents}) was used to acquire the data. A similar methodology for data acquisition as described in \cite{linReinforcementLearningBasedModel2023} was employed. Along the nominal trajectory, $q$ ($q \in \mathbb{N}_{>0}$) internal states, $x$ and inputs $u$, were uniformly sampled from $\hat{\mathbb{X}}^4$ (\autoref{eq:td_state_space}) and ${\mathbb{U}}^3$ at time k respectively. So that at time $k$, a set denoted as $\hat{S}_{k} = \{\hat{s}_{k_1},\hat{s}_{k_2},...,\hat{s}_{k_q}\}$, where $\hat{s}_{k_i}$ is constructed using \autoref{eq:obs-tuple-1} from the sampled states and inputs. Each element in $\hat{S}_k$, denoted $\hat{s}_{k_i}$, is taken separately as an initial state and evolved one step in time with the RL agent, receiving a reward $\hat{r}_{k_i}$ and a boolean $d$ indicating whether a terminal state has been reached. $\hat{s}_{k_i}$ and $\hat{s}_{{k+1}_i}$ are both normalized as per \autoref{eq:state-normalization} and stored in a transition tuple along with the received reward and $d$, denoted as $(\hat{s}_{k_i},\hat{s}_{{k+1}_i},\hat{s}_{k_i},d)$. The environment is then set back to the actual state $s_k$ and evolved for one time step, and the process repeats itself, until the 40 day period is over. The transition tuple of the actual system is also stored. To ensure a value function approximator generalizes well across the state space, the quality of sampled internal states and inputs is important. From the time series plot \autoref{fig:selected-policies-outputs} and \autoref{fig:selected-policies-inputs} is can be seen that not the entire state space needs to be sampled, especially for the dry mass state, $x_1$. The control actions were sampled across the the entire set $\mathbb{U}^3$ as shown in \autoref{eq:input constraints}. States $x_2,x_3,x_4$ were sampled with a range slightly larger than their respective minimum and maximum constraints (\autoref{eq:state constraints}) range. This decision was made as it was deemed unnecessary to sample states that significantly violate constraints.  Finally, $x_1$ was sampled around the nominal $x_1$ trajectory such that the sampled state space $\hat{\mathbb{X}}^4$ is defined as:
 
 
 
-\begin{equation}\label{eq:state_space}
+\begin{equation}\label{eq:td_state_space}
 \begin{split}
 \hat{\mathbb{X}}^4 = \{ (x_1, x_2, x_3, x_4) \mid\ & x_1 \in [\hat{x}_{1\min}(x_{1_k}), \hat{x}_{1\max}(x_{1_k})], \\
 & x_2 \in [\hat{x}_{2\min}, \hat{x}_{2\max}], \\
@@ -377,6 +365,24 @@ where the bounds are specified in \autoref{tab:sample_bounds_td} and were found 
     \label{tab:sample_bounds_td}
 \end{table}
 
+With only 10 additional samples every time step ($q=10$), the desired state space can be adequately covered.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = \textwidth]{figures/sampled_y_td.pdf}
+	\caption{Sampled States for Temporal Difference}
+	\label{fig:sampled-states-TD}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = \textwidth]{figures/sampled_u_td.pdf}
+	\caption{Sampled Inputs for Temporal Difference}
+	\label{fig:sampled-inpts-TD}
+\end{figure}
+
+\autoref{fig:sampled-states-TD} and \autoref{fig:sampled-inpts-TD} display the states and inputs that were sampled during a 40-day period respectively, with an additional 10 samples taken at each time step, resulting in a total of $21120$ data points, or transition tuples.
+
+
 
 \paragraph{Training}
 Once data is generated, it is split into a validation and training dataset with a $20\%$ and $80\%$ split respectively to ensure that the function approximator does not over fit to the seen data. Transition tuples are sampled from the training set and the following loss function is minimized:
@@ -391,16 +397,15 @@ where $\phi$ and $\phi_{targ}$ are the current and target weights of the respect
     \phi_{targ} \leftarrow (1 - \rho) \phi_{targ} + \rho \phi
 \end{equation}
 
-where $\rho$ represents the Polyak coefficient, which is a hyperparameter that needs to be tuned.
+where $\rho$ represents the Polyak coefficient, which is a hyperparameter that needs to be tuned. Despite its widespread usage, it was discovered that the learning of the value function was consistently unstable regardless of the chosen hyperparameters. It failed to learn an appropriate value function, but further research can be conducted to make it functional. However, stable learning was not attained in this thesis.
 
-
-\emph{Show the sampled state space}
 
 \subsection{Expected Return Learning}
-This method includes obtaining the expected return of each state visited, from a simulated trajectory under a fixed policy, and using them as targets for that state. Compared to the temporal difference learning method, this approach has the advantage of training being significantly more stable since, in contrast to the TD method, targets remain unchanged as the function approximator's weights are updated. However, this method of learning requires a lot of data. Many trajectories must be simulated until the end, and the return must be calculated for each state visited. More importantly, only starting states are sampled, which makes it harder to obtain the same data spread as the TD-method. In contrast, the TD-method allows for higher data spread because trajectories only include one time step, which makes it possible to sample more initial states across the state space. 
+This method includes obtaining the expected return of each state visited, from a simulated trajectory under a fixed policy, and using them as targets for that state. In comparison to the temporal difference learning method, this approach offers the benefit of training that is considerably more stable. Unlike the TD method, the targets remain unchanged while the weights of the function approximator are updated. However, this method of learning is much less sample efficient, requiring significant more data to generalize across the state space. Many trajectories are simulated until termination, and the return must be calculated for each state visited. More importantly, only starting states of the trajectory are sampled, which makes it harder to obtain the same data spread as the TD-method.
 
 \paragraph{Obtaining Data}
-The same number of starting points must be sampled in order to obtain a spread that is comparable to the TD-Method; however, because the trajectory must be run through to the end of the simulation, a significantly larger amount of computational data is needed. However, targets are calculated not only for the initial state, but also for each state encountered along the trajectory. This means that fewer initial points are required, but it is still necessary to select them appropriately. A similar approach to \autoref{ssection:td-learning} was used, however, all states and inputs were uniformly sampled around a region of the nominal trajectory at time $k$ and not only the dry mass. Therefore, initial states and inputs were sampled from $\hat{\mathbb{X}^4}$ and $\hat{\mathbb{U}^3}$ and time $k$ is uniformly sampled across the entire time horizon as shown in \autoref{eq:TR-sample-space}.
+A greater number of starting points must be sampled in order to obtain a spread that is comparable to the TD-Method; however, because the trajectory must be run through to the end of the simulation, a significantly larger amount of data is needed. However, targets are calculated not only for the initial state, but also for each state encountered along the trajectory by using \autoref{eq:total-return}. Given the inferior sample efficiency of this method, it is important to carefully choose the initial points to ensure that the learned value function can effectively generalise across the state space that the agent is likely to encounter during its simulation.
+A similar approach to \autoref{ssection:td-learning} was used, however, all states and inputs were uniformly sampled around a region of the nominal trajectory at time $k$ and not only the dry mass, $y_1$. Therefore, initial states and inputs were sampled from $\hat{\mathbb{X}^4}$ and $\hat{\mathbb{U}^3}$ and time $k$ is uniformly sampled across the entire time horizon as shown in \autoref{eq:TR-sample-space}.
 
 \begin{equation}\label{eq:TR-sample-space}
 \begin{split}
@@ -411,7 +416,7 @@ The same number of starting points must be sampled in order to obtain a spread t
     \hat{\mathbb{U}}^3 &= \{ (\hat{u}_1, \hat{u}_2, \hat{u}_3) \mid\ \hat{u}_1 \in [\hat{u}_{1\min}(u_{1_k}), \hat{u}_{1\max}(u_{1_k})], \\
     &\quad \hat{u}_2 \in [\hat{u}_{2\min}(u_{2_k}), \hat{u}_{2\max}(u_{2_k})], \\
     &\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3_k}), \hat{u}_{3\max}(u_{3_k})] \} \\
-    & k \sim \mathcal{U}(0,1919)  \\
+    & k \sim U(0,1919)  \\
 \end{split}
 \end{equation}
 
@@ -424,52 +429,46 @@ where the minimum and maximum limits are calculated as per \autoref{eq:min-max-t
 \end{aligned}
 \end{equation}
 
-where represent the minimum and maximum range of the sample state space for a specific state, respectively, and ${z}_{k}$ represents the nominal trajectory. $\sigma$ denotes the desired spread of sampled initial states, which is expressed as a percentage.
-In doing this, initial states maybe sampled around/near the nominal trajectory. As can be seen from \autoref{fig:selected-policies-inputs} and \autoref{fig:selected-policies-outputs} and later in \textbf{fig xxx}, it can be observed that the performance of policies can vary significantly with minimal changes in the nominal state and input trajectories. Therefore, this approach of sampling initial states and inputs is deemed appropriate. Finally , Agent 1 (or the nominal Agent) was used for the fixed policy. Given that the computation of a control action requires a time of $0.2 ms$, it is possible to sample a large number of trajectories in order to achieve appropriate coverage of both state and input spaces.
+which represent the minimum and maximum range of the sample state space for a specific state and input where ${z}_{k}$ represents the nominal trajectory. $\sigma$ denotes the desired spread of sampled initial states, which is expressed as a percentage.
+In doing this, initial states maybe uniformly sampled around/near the nominal trajectory. As can be seen from \autoref{fig:selected-policies-inputs} and \autoref{fig:selected-policies-outputs}, it can be observed that the performance of policies can vary significantly with minimal changes in the  state and input trajectories. Thus, it can be expected that sampling the trajectories in this manner covers enough of the state space to represent the optimal trajectory. Because these methods require a significant amount of sampled data, it is not practical to use an MPC controller. Therefore, Agent 1 (or the nominal Agent) was employed to implement the fixed policy. Given that the computation of a control action requires a time of $0.2 ms$, it is possible to sample a large number of trajectories in order to achieve appropriate coverage of both state and input spaces.
 In the case of stochastic conditions, the same state may yield a different return, therefore if a state has been visited more than once, then the mean of the return is used as training data.
 
 \paragraph{Training}
-Once trajectories is sampled, for each state observed/visited, the total return is calculated, and the tuple $(s,TR)$ stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation.  A neural network as a function approximator is now trained with inputs as the state and labels as the total return and the loss function in \autoref{eq:vf_tr_loss} is minimized with the Adam optimizer.
+Once trajectories is sampled, for each state observed/visited, the total return is calculated, and the tuple $(s_k,TR)$ stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation.  A neural network as a function approximator is now trained with inputs as the state, $s_k$,and labels as the total return,$TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimized with the Adam optimizer.
 
 \begin{equation}\label{eq:vf_tr_loss}
     \mathcal{L}(\phi, \mathcal{D}) =  \mathbb{E} [(V_{\phi}(s_k) - TR)^2]
 \end{equation}
 
-where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s_k$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.
+where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s_k$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.\\
+
 
 
 \paragraph{Experimental Setup}
 To investigate the effect of the value function in the MPC framework, it was decided to train four value functions that were based on different architects and/or states used as inputs. These models are listed in \autoref{tab:various-vf} along with their distinctive network architecture. All models were trained on 200 epochs with a learning rate of $1 \cdot 10^{-3}$ and batch size of $1024$.
 
 \begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|}
-    \hline
-         Name & Observation Space & Hidden Layers & Neurons per layer   \\
-         $V_1$& \autoref{eq:obs-tuple-1} & $2$ & $128$ \\  
-         $V_2$& \autoref{eq:obs-tuple-1} & $2$ & $32$ \\  
-         $V_3$& \autoref{eq:obs-tuple-1} & $1 $& $128$ \\  
-         $V_4$& $(y_1(k),k)$ & $2$ & $128$ \\  
-         \hline
-    \end{tabular}
-    \caption{Value Functions}
-    \label{tab:various-vf}
+	\centering
+	\renewcommand{\arraystretch}{1.3}
+	\setlength{\tabcolsep}{12pt}
+	\begin{tabular}{cccc}
+		\toprule
+		\textbf{Name} & \textbf{Observation Space} & \textbf{Hidden Layers} & \textbf{Neurons per Layer} \\
+		\midrule
+		$V_{\phi_1}$ & \autoref{eq:obs-tuple-1} & 2 & 128 \\  
+		$V_{\phi_2}$ & \autoref{eq:obs-tuple-1} & 2 & 32 \\  
+		$V_{\phi_3}$ & \autoref{eq:obs-tuple-1} & 1 & 128 \\  
+		$V_{\phi_4}$ & $(y_1(k), k)$ & 2 & 128 \\  
+		\bottomrule
+	\end{tabular}
+	\caption{Value Functions}
+	\label{tab:various-vf}
 \end{table}
 
-Each value function was trained on the nominal agent, Agent 1. Additionally, $V_4$ was trained on each stochastic policy, namely 'Agent 0.05', 'Agent 0.1', and 'Agent 0.2'. 1000 trajectories were simulated and sampled from these agents, resulting in nearly one million data points consisting of states and their corresponding total return. Finally, the initial state and inputs were sampled with a spread of $\sigma = 0.5$ to ensure adequate coverage of the state and inputs spaces. The architects are chosen based on the principle that each subsequent architecture model becomes less complex, with $V_1$ serving as the initial baseline architecture. This is done to investigate the effect of these value functions in the RL-MPC framework.
+Each value function was trained on the nominal agent, Agent 1. Additionally, $V_{\phi_4}$ was trained on each stochastic policy, namely 'Agent 0.05', 'Agent 0.1', and 'Agent 0.2'. 1000 trajectories were simulated and sampled from these agents, resulting in nearly one million data points consisting of states and their corresponding total return. Finally, the initial state and inputs were sampled with a spread of $\sigma = 0.5$ to ensure adequate coverage of the state and inputs spaces. The architects are chosen based on the principle that each subsequent architecture model becomes less complex, with $V_{\phi_1}$ serving as the initial baseline architecture. This is done to investigate the effect of these value functions in the RL-MPC framework.
 
 Performance metrics include the squared error between the predicted total return and the actual total return as shown in \autoref{eq:vf_tr_loss}. Moreover, the accuracy of the resulting value function across the simulation period will be visualized by using \autoref{eq:v0}.
 
-\begin{equation}\label{eq:v0}
-\begin{aligned}
-    V(s_k) &= r_k + V(s_{k+1}) \\
-    \therefore V(s_{k-1}) &= r_{k-1} + V(s_{k}) \\
-    \therefore V(s_{k-2}) &= r_{k-2} + r_{k-1} + V(s_{k}) \\
-    \therefore V(s_{0}) &= \sum_{i=0}^{k-1} {r_{i}} + V(s_{k})   \\
-\end{aligned}
-\end{equation}
-
-During each time step, the computation of the initial state's value will be determined by the cumulative rewards received up to that point, as well as the approximation of the current state's value using the value function. If the value function is able to approximate the value of a state accurately, then \autoref{eq:v0} should yield the same result for every time step, resulting in a horizontal line, $y = V(s_0)$.
 
 \begin{figure}[H]
     \centering
@@ -486,7 +485,7 @@ During each time step, the computation of the initial state's value will be dete
     \label{fig:sampled-inputs-TR}
 \end{figure}
 
-\autoref{fig:sampled-states-TR} and \autoref{fig:sampled-inputs-TR} are the results of all the trajectories sampled from the nominal agent. The figures reveals that the sampled trajectories exhibit a lesser extent of coverage of the state and input spaces as compared to the temporal difference learning. Nevertheless, a sufficient level of coverage is achieved. Following the completion of training and validation, a small number of additional trajectories will be sampled in order to verify the sufficient accuracy of the prediction model.
+\autoref{fig:sampled-states-TR} and \autoref{fig:sampled-inputs-TR} are the results of all the 1000 trajectories sampled from the nominal agent. The figures reveals that the sampled trajectories exhibit a lesser extent of coverage of the state and input spaces as compared to the temporal difference learning, \autoref{fig:sampled-states-TD} and \autoref{fig:sampled-inpts-TD}. Nevertheless, a sufficient level of coverage is achieved. Following the completion of training and validation, a small number of additional trajectories will be sampled in order to verify the accuracy of the prediction model.
 
 
 \subsection{Results}
@@ -499,7 +498,7 @@ During each time step, the computation of the initial state's value will be dete
 \end{figure}
 
 
-\autoref{fig:tr_perf_curves} displays the loss curves of all four models trained on data generated by the nominal agent. As expected, the baseline model ($V_1$) is able to achieve the highest accuracy compared to the simpler models.This can be attributed to its more complex structure, with each subsequent simpler model exhibiting lower accuracy. Nevertheless, when utilizing the reduced observation space model, denoted as $V_4$, the model demonstrates a high level of accuracy, as evidenced by a mean squared error of less than $0.5\%$ between the actual and predicted values.
+\autoref{fig:tr_perf_curves} displays the loss curves of all four models trained on data generated by the nominal agent. As expected, the baseline model ($V_{\phi_1}$) is able to achieve the highest accuracy compared to the simpler models. This can be attributed to its more complex structure and using the full observation returned by the agent, with each subsequent simpler model exhibiting lower accuracy. Nevertheless, when utilizing the reduced observation space model, denoted as $V_{\phi_4}$, the model demonstrates a high level of accuracy, as evidenced by a mean squared error of less than $0.5\%$ between the actual and predicted values. The high level of accuracy indicates that the value of a state is primarily influenced by the current time and the condition of the crop's dry mass. In addition, when incorporating these value functions into the RL-MPC framework, the optimizer would only need to optimise over 2 variables for $V_{\phi_4}$, as opposed to 11 variables for the other value functions. 
 
 \begin{figure}[H]
 	\centering
@@ -535,7 +534,8 @@ During each time step, the computation of the initial state's value will be dete
 \end{figure}
 
 
-\autoref{fig:vf_heatmaps} gives a visual representation of the value of a state given the dry mass and time. It is noted that although $V_1,V_2$ and $V_3$ require an observation space as given in \autoref{eq:obs-tuple-1} to determine its value, since the value is highly dependent on the dry mass state and time, the other states in the observation space were averaged. $V_4$ naturally has an observation space of only time and the dry mass state. The lower and upper limits in \autoref{fig:vf_heatmaps} are displayed to indicate the range within which the value function approximator can be deemed reliable. This range corresponds to the portion of the sample space from which the dry mass was sampled for training. The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the highest return is observed at the beginning of the growing period, which can be attributed to the longer duration of the growing period. Moreover,  having a higher dry mass at any specific time leads to greater rewards, this behavior is seen across all four models within the training bounds. It is important to note that the greenhouse model limits the dry mass to a maximum of $400 g \cdot m^-2$, therefore for dry masses close to this value, very little reward can be expected, hence the lower returns in \autoref{fig:vf_heatmaps}. The primary difference is that the level of smoothness in $V_3$ as depicted in \autoref{fig:v3_heatmap} seems notably higher than that of even \autoref{fig:v4_heatmap}, which is exclusively trained on the present time and dry mass. It is anticipated that the opposite would be true, as more intricate models would be capable of fitting the data with greater precision.
+\autoref{fig:vf_heatmaps} gives a visual representation of the value of a state given the dry mass and time. It is noted that although $V_{\phi_1},V_{\phi_2}$ and $V_{\phi_3}$ require an observation space as given in \autoref{eq:obs-tuple-1} to determine its value, since the value is highly dependent on the dry mass state and time, the other states in the observation space were averaged. $V_{\phi_4}$ naturally has an observation space of only time and the dry mass state. The lower and upper limits in \autoref{fig:vf_heatmaps} are displayed to indicate the range within which the value function approximator can be deemed reliable. This range corresponds to the portion of the sample space from which the dry mass was sampled for training. \\
+The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the highest return is observed at the beginning of the growing period, which can be attributed to the longer duration of the growing period. Moreover,  having a higher dry mass at any specific time leads to greater rewards, this behavior is seen across all four models within the training bounds. It is important to note that the greenhouse model limits the dry mass to a maximum of $400 g \cdot m^{-2}$, therefore for dry masses close to this value, very little reward can be expected, hence the lower returns in \autoref{fig:vf_heatmaps}. While it is reasonable to anticipate that a higher dry mass would result in a greater return, the reward function is actually determined by the difference in growth. Consequently, the return is calculated based on the difference in growth starting from the initial state. It is also noted that \autoref{fig:vf_heatmaps} suggests that the value function is smooth with respect to the drymass and time.
 
 
 \begin{figure}[H]
@@ -545,7 +545,7 @@ During each time step, the computation of the initial state's value will be dete
 	\label{fig:tr_predictions_long}
 \end{figure}
 
-\autoref{fig:tr_predictions_long} displays a time series plot of the cumulative rewards plotted against the predicted value at each time step. This plot is similar to what is shown in \autoref{fig:vf-vs-gamma}. Additionally, it includes the calculated $V_(s_0)$ at each time step using \autoref{eq:v0} as a visual indicator of the accuracy of the value function. As demonstrated in \autoref{fig:tr_predictions_long} in conjunction with \autoref{fig:tr_perf_curves}, the predicted values show a high level of accuracy. This is evident from the nearly perfect horizontal line at $V_(s_0)$ that spans across the prediction horizon.  However, what is interesting and that cannot be seen in \autoref{fig:vf_heatmaps} is the level of noise present in each prediction. Naturally, $V_4$ is not able to make a precise prediction of the value since it only gets the time and dry mass as inputs, however its prediction is a lot smoother than all the others. This observation strongly suggests that the primary factors determining the value of a state are its drymass and time, while the minor fluctuations in rewards and corresponding expected return resulting from other factors have negligible influence across the entire time horizon.
+\autoref{fig:tr_predictions_long} displays a time series plot of the cumulative rewards plotted against the predicted value at each time step over the entire simulation period. This plot is similar to what is shown in \autoref{fig:vf-vs-gamma}. Additionally, it includes the calculated $V_\pi (s_0)$ at each time step using \autoref{eq:v0} as a visual indicator of the accuracy of the value function. As demonstrated in \autoref{fig:tr_predictions_long} in conjunction with \autoref{fig:tr_perf_curves}, the predicted values show a high level of accuracy. This is evident from the nearly perfect horizontal line at $V_\phi (s_0)$ that spans across the prediction horizon and substantially outperforms the prediction accuracy of the trained value functions in \autoref{fig:vf-vs-gamma}.  However, what is interesting and that cannot be seen in \autoref{fig:vf_heatmaps} but in \autoref{fig:tr_predictions_long} is the level of noise present in each prediction. Naturally, $V_{\phi_4}$ is not able to make a precise prediction of the value since it only gets the time and dry mass as inputs, however its prediction is a lot smoother than all the others. While $V_{\phi_1}$,$V_{\phi_2}$,$V_{\phi_3}$ may be more accurate, more noise is present. This observation again suggests that the primary factors determining the value of a state are its drymass and time, while the minor fluctuations in rewards and expected return are influenced by other factors that have minimal impact over the entire time period.
 
 
 
@@ -562,7 +562,7 @@ During each time step, the computation of the initial state's value will be dete
 \autoref{fig:tr_predictions_short} shows a time series of the cumulative reward and predicted values over a two day span. 
 
 \begin{remark}\label{rem:vf-smoothness}
-	It is evident that while $V_1, V_2, V_3$ can produce more precise estimations (as demonstrated by the proximity of their prediction line $V_{s_0}$ to the actual value), $V_4$ remains significantly smoother. Moreover, $V_3$ is not as smooth as it may have seemed in \autoref{fig:vf_heatmaps} and displays the highest level of noise across the four models trained. Although this is one realization of a trajectory,this behavior was observed in all simulated trajectories.
+	It is evident that while $V_{\phi_1}, V_{\phi_2}, V_{\phi_3}$ can produce more precise estimations (as demonstrated by the proximity of their prediction line $V_{s_0}$ to the actual value), $V_{\phi_4}$ remains significantly smoother. Moreover, $V_3$ is not as smooth as it may have seemed in \autoref{fig:vf_heatmaps} and displays the highest level of noise across the four models trained. Although this is one realization of a trajectory,this behavior was observed in all simulated trajectories. This behaviour should be noted since it is important for integrating it with MPC
 \end{remark}
 
 
@@ -573,13 +573,14 @@ During each time step, the computation of the initial state's value will be dete
 	\caption{Drymass vs Time vs Value - Stochastic}
 	\label{fig:vf_heatmap_stochastic}
 \end{figure}
-Finally, for each level of uncertainty in the environment, a value function was trained with its corresponding agent. \autoref{fig:vf_heatmap_stochastic} displays the same heatmap as \autoref{fig:vf_heatmaps}, yielding similar behaviour as compared to the nominal conditions. However, it appears to be more coarse, particularly beyond the range of the training data.
+Finally, for each level of uncertainty in the environment, a value function was trained with its corresponding agent. \autoref{fig:vf_heatmap_stochastic} displays the same heatmap as \autoref{fig:vf_heatmaps}, yielding similar behaviour as compared to the nominal conditions. However, it appears to be more coarse, particularly beyond the range of the training data. Specifically, it seems that for high uncertainties (i.e. $20\%$), it seems that the trained value function exhibits a higher degree on non-linearity as compared to the others trained on lower levels of uncertainty. This may indicate that more sample trajectories are required for further training, however it seems to still generalize well in the region of the nominal trajectory.
 
 
 \section{Conclusion}
-The objective of this chapter was to develop a policy that is competitive with MPC and value function that can accurately approximate the expected return given the state of the environment, both for the nominal and stochastic environment. \\
+The objective of this chapter was to develop a policy that is competitive with MPC and a value function that can accurately approximate the expected return given the state of the environment, both for the nominal and stochastic environment. \\
 It was discovered that a policy trained with a discount factor of 1 resulted in a critic that provides inaccurate value estimations and a policy that performs worse than an agent trained with lower discount factors. While reducing the discount factor leads to improved policies and a more precise critic, the critics fail to provide information about the entire growth period. Furthermore, in order to integrate the critic with MPC, it is necessary for the critic to be differentiable. This requires the use of the tanh activation function. However, using this activation function leads to a policy that is not as effective as when using a non-differentiable activation function like ReLu. \\
-Given these obstacles, it became evident that additional measures were necessary. It was decided to train separate critics on the best rl policies obtained. Therefore lower discount factors and non-differentiable activation functions may be used. The best policy found and trained on the nominal data was denoted as Agent 1 with parameters shown in \autoref{tab:selected_agents}. Using the same hyper parameters as Agent 1, 3 different agents were learned based on each level of uncertainty in the greenhouse model, namely Agent0.05, Agent0.1 and Agent0.2. \\
-Empirical evidence demonstrated that the stochastic agents outperformed the nominal model in terms of both the average cumulative reward and the variability in reward across different levels of uncertainty. After generating sufficient policies for both the nominal and stochastic environment, it was necessary to train an appropriate critic/value function approximator. Four different model architectures were used to train the critics, where each model architecture becomes progressively less complex. Every agent, whether in the nominal or stochastic case, had a critic that was trained to evaluate its policy under its particular level of uncertainty.\\
+Given these obstacles, it became evident that additional measures were necessary. It was decided to train a separate critic/value-function on the best rl policy obtained. Therefore lower discount factors and non-differentiable activation functions may be used in the training of the policy. The best policy found and trained on the nominal data was denoted as Agent 1 with parameters shown in \autoref{tab:selected_agents}. Using the same hyper parameters as Agent 1, 3 different agents were learned based on each level of uncertainty in the greenhouse model, namely 'Agent 0.05', 'Agent 0.1' and 'Agent 0.2'. \\
+Empirical evidence demonstrated that the stochastic agents were more robust to noise than the nominal agent. Agents trained with greater levels of uncertainty exhibited policies with reduced variance across different levels of uncertainty. While the overall performance decreased as uncertainty levels increased in the environment, the decline becomes more gradual when trained on higher levels of uncertainty.\\
+After generating sufficient policies for both the nominal and stochastic environment, it was necessary to train an appropriate critic/value function approximator. Four different model architectures were used to train the critics, where each model architecture becomes progressively less complex. Every agent, whether in the nominal or stochastic case, had a critic that was trained to evaluate its policy under its particular level of uncertainty.\\
 Results showed that accurate value function approximators could be trained, provided enough data was sampled. However, although they were accurate, the predictions were very noisy, which could be problematic later on when integrating the function appropriators into the RL-MPC framework. However, the simplest model architecture,trained on only the dry mass state and time, provided very smooth predictions, albeit not as accurate as the more complex models. It was this model architecture that was used to train value function approximators for the stochastic agents.\\
 These agents and corresponding value function establishes the foundation for incorporating RL with MPC into the RL-MPC framework.

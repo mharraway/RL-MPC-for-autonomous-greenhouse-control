@@ -25,7 +25,7 @@ Due to the relative simplicity of lettuce crop models, they find utility alongsi
 	\label{fig:van_henten_model}
 \end{figure}
 
-\autoref{fig:van_henten_model} displays a graphical representation of the used greenhouse model from the works of \cite{hentenGreenhouseClimateManagement1994}. The control inputs are highlighted in red, the states of the indoor climate in blue, the state of the crops in green and the external disturbances given in black. The states of the system, control inputs, disturbances and outputs are described in \autoref{eq: model vectors}.
+\autoref{fig:van_henten_model} displays a graphical representation of the used greenhouse model from the works of \cite{hentenGreenhouseClimateManagement1994}. The control inputs are highlighted in red, the states of the indoor climate in blue, the state of the crops in green and the external disturbances given in black. The states of the system, control inputs, disturbances and outputs are described in \autoref{eq: model vectors} where $x \in \mathbb{X}^4$, $u \in \mathbb{U}^3$, $d \in \mathbb{D}^4$ and $y \in \mathbb{Y}^4$.
 
 \begin{equation}
 	\begin{aligned}
@@ -177,6 +177,10 @@ where $R,c_T,P,M_{C0_2},c_{H_20,4},c_{H_20,5},c_{H_20,6}$ are constants and thei
 		& y(k) = g(x(k),u(k),p)
 	\end{aligned}
 \end{equation}
+
+\cite{vanstratenUserAcceptedOptimal2000} states that discretizing the van Henten model using a time-step between 15 minutes and 1 hour is recommended. Therefore, a time interval of 30 minutes was selected for the purpose of this study. 
+The initial interval of 30 minutes was originally set at 15 minutes. However, this decision was revised due to the excessive computational burden it imposed on the MPC solver, with minimal benefits. Consequently, extending the time step enables an exponential speedup in the simulation of the 40-day period, while causing only minor deterioration in performance. As a consequence of this, there is a noticeable increase in the rate at which RL training occurs, thereby allowing for a larger quantity of training episodes.
+
 
 \begin{table}[H]
 	\begin{center}
@@ -335,18 +339,51 @@ where the states and output measurements of the system are uncertain and $\hat{p
 Maximising the economic profit of the greenhouse is highly desirable. This concept essentially involves maximising the lettuce's size while minimising the resources used throughout its entire growth period. The optimisation goal can be modeled and is referred to by the economic profit indicator (EPI), as demonstrated below:
 
 \begin{equation}\label{eq:epi}
-	EPI = \sum_{ts}^{tf} (c_{p1} \cdot u_1(t) + c_{p2} \cdot u_2(t)) - c_{p3} \cdot y_1(tf)
+	EPI = \sum_{ts}^{tf} (c_{price_1} \cdot u_1(t) + c_{price_2} \cdot u_2(t)) - c_{price_3} \cdot y_1(tf)
 \end{equation}
 
-where $t_s$ denotes the starting time, $t_f$ the end time, $c_{p1},c_{p2}$ the pricing coefficients of injecting $C0_2$ and heating respectively and $c_{p3}$ as the price of lettuce. These pricing factors are shown in \autoref{tab:pricing factors}. It is important to highlight that ventilation, such as opening windows, does not incur any costs and therefore does not have a pricing factor.
+where $t_s$ denotes the starting time, $t_f$ the end time, $c_{p1},c_{p2}$ the pricing coefficients of injecting $C0_2$ and heating respectively and $c_{p3}$ as the price of lettuce. These pricing factors are shown in \autoref{tab:pricing factors}. It is important to highlight that ventilation, such as opening windows, does not incur any costs and therefore does not have a pricing factor. Although it is also possible to optimize $tf$, i.e. when is the best time to sell the lettuce, it is decided to keep the growing period fixed. The duration of the growing period for lettuce typically falls within the range of 30 to 50 days. Therefore, a fixed growing period of 40 days was selected.As a result, over a duration of 40 days (1 episode or 1 complete simulation), there is a total of:
+$$
+k_{total} = \frac{40 \frac{days}{growing \, period} \cdot 24 \frac{hrs}{day} \cdot 60 \frac{min}{hr}}{30 \frac{min}{timestep}} = 1920 \frac{time \, steps}{growing \, period}
+$$
+
+Moreover, this optimization goal is subject to constraints where the control constraints are:
+
+\begin{equation}\label{eq:input constraints}
+	\begin{aligned}
+		&u_{min} = \begin{pmatrix}
+			0&0&0
+		\end{pmatrix}^T \\
+	&u_{max} = \begin{pmatrix}
+		1.2&7.5&150
+	\end{pmatrix}^T	\\
+& \delta u_{max} = \frac{1}{10} u_{max}
+	\end{aligned}
+\end{equation}
+
+and the state constraints are defined as:
+
+\begin{equation}\label{eq:state constraints}
+	\begin{aligned}
+		&y_{min} = \begin{pmatrix}
+			0&500&10&0
+		\end{pmatrix}^T \\
+		&y_{max} = \begin{pmatrix}
+			\infty&1600&20&100
+		\end{pmatrix}^T	\\
+		& \delta_u = \frac{1}{10} u_{max}
+	\end{aligned}
+\end{equation}
+
+The values in question were obtained from typical horticultural practices. In many papers, such as in \cite{boersmaRobustSamplebasedModel2022}, the lower and upperbound of the indoor temperature is time-varying in order to aid MPC in making better decisions. It was decided to keep the lower and upper bounds of the temperature constant in order to fully test the RL and specifically the MPC in an economic optimization setting.
 
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c c|}
 		\hline
-		$c_{p1}$& $3.4308\cdot 10^{-4}$ \\
-		$c_{p2}$& $6.405\cdot 10^{-5}$\\
-		$c_{p3}$& $22.285$\\ 
+		$c_{price_1}$& $3.4308\cdot 10^{-4}$ \\
+		$c_{price_2}$& $6.405\cdot 10^{-5}$\\
+		$c_{price_3}$& $22.285$\\ 
 		\hline
 	\end{tabular}
 	\caption{Pricing factors}
@@ -366,7 +403,7 @@ The pricing factors includes the discrete time interval $h$, as well as the requ
 The prices for $C0_{2_{price}}$, $Heating_{price}$, and $Let_{price}$ were sourced from \cite{vandenbemdRobustDeepReinforcement}, while the factors for harvestable fresh weight, $c_{\tau}$ and $c_{fw}$, were obtained from \cite{hentenGreenhouseClimateManagement1994}. While these factors may not accurately reflect the present economic conditions, it is important to keep these factors constant when comparing the algorithms MPC, RL, and RL-MPC. This ensures a meaningful comparison between algorithms which aligns with one of the objectives of this thesis. This optimisation goal as shown in \autoref{eq:epi} makes the reward incredible sparce, making it difficult to optimise this directly with both MPC and RL. Consequently, both algorithms utilise a stage costs/rewards received at every time interval, whereby the total sum of these stage costs over the duration of growth corresponds to the optimisation objective in \autoref{eq:epi}. \autoref{section:env-description} and \autoref{section: greenhouse MPC formulation} further discusses the implementation of \autoref{eq:epi} for RL and MPC respectively.
 
 
-\section{Reinforcement Learning}
+\section{Reinforcement Learning}\label{section:RL}
 
 With the surge in AI development, the demand for optimal greenhouse control has brought RL into the spotlight. Although AI algorithms are widely used in the farming and Horticulture industry, most of the application is centered around the detection and protection of plant and crop quality such as plant stress, pest, disease and weed detection \cite{hemmingCherryTomatoProduction2020}. Moreover, the prediction of crop yield and growth has also been an area of area of focus for AI owing to its unparalleled non-linear approximation capabilities \cite{gongDeepLearningBased2021}. Additionally, recent advancements in RL has displayed its ability to far outperform humans in decision making when presented with large complex problem spaces \cite{bonsaiWhyReinforcementLearning2017} due to its ability in finding the optimal control. Because of RL's ability to evaluate optimal control actions for large state spaces, it has shown great success such as in Google DeepMind's chess engine, AlphaZero, creating ones of the most powerful chess engines in the world. Furthermore, reinforcement learning has demonstrated exceptional proficiency in handling uncertainty and disturbances \cite{daaboulUncertaintyPredictionModelbased2020}. This makes it an ideal control strategy for greenhouse management, particularly considering the uncertainties inherent in weather conditions and crop growth. \\
 
@@ -408,11 +445,10 @@ Furthermore, the agent follows a deterministic policy $\pi$ that establishes a m
 \end{equation}
 However this is only relevant for scenarios where there is a time horizon and/or an idea of a final time step $T$ such as a task with some defined end point or events that are episodic in nature. This does not however extend to the greenhouse control problem as it does not necessarily follow naturally identifiable episodes, and therefore the notion of an infinite time horizon with discounted returns is introduced. Where the return function now becomes:
 
-\begin{equation}
+\begin{equation} \label{eq:total-return}
 	\begin{aligned}
 		G_t  = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots = \sum_{k=0}^\infty \gamma^k R_{t+k+1} = R_{t+1} + \gamma G_{t+1}
 	\end{aligned}
-	\label{infinity_return}
 \end{equation}
 
 and the discount factor $\gamma \in [0,1]$. Although the return (\autoref{infinity_return}) is a sum of an infinite number of terms, it is still finite if the reward is nonzero and constant if $\gamma < 1$ \cite{suttonReinforcementLearningIntroduction2014}. As the discount factor, $\gamma$, approaches one, the more future rewards are considered.  In contrast, values approaching zero render the agent "myopic", focusing solely on maximizing immediate rewards. The discount factor, $\gamma$, commonly fall within the range of 0.9 to 0.995 \cite{vandenbemdRobustDeepReinforcement}. This is an important concept since it can be shown that if the rewards are bounded (i.e. $\in R$) and a discount value of $\gamma <1$ is used, then a stable optimal policy can be found \cite{bertsekasNewtonMethodReinforcement2022}. There follows that a value function exists, under a specific policy $\pi$ of a state $s$, denoted as $v_{\pi}$ and defined as the expected return starting in state $s$ and following the policy $\pi$ thereafter. This value function is depicted below in \autoref{value_function}.
@@ -528,7 +564,7 @@ Moreover, actor-critic algorithms are also suitable in tackling continuous state
 \emph{A brief explanation of how SAC works and how it learns}
 
 
-\section{MPC}
+\section{MPC}\label{section:MPC}
 MPC demonstrates exceptional proficiency in managing constrained Multiple Input, Multiple Output (MIMO) systems, making it highly effective in applications like greenhouse control. Moreover, MPC's ability to handle non-linear dynamics and its optimality has contributed to its widespread adoption and has become the standard approach for implementing constrained multivariable control in the process industry \cite{daiDiscreteTimeModelPredictive2012}. Nearly every application introduces constraints, whether it be on the state of the system or the control inputs. Actuators, constrained by physical and safety limits such as temperature or pressure control, makes it necessary for controllers to handle such constraints. While the online computational time for such controllers may be expensive, for slow dynamics such as a greenhouse, sufficient computational time is available to accommodate this. Furthermore, the ongoing trend of faster computation mitigates this concern, making it less of a problem.
 
 Although many control schemes exist in controlling greenhouses, it has been shown that an MPC controller outperforms an adaptive PID controller for greenhouse air control in \cite{ghoumariNonlinearConstrainedMPC2005}. Even though the control of a greenhouse is inherently non-linear, non-linear Model Predictive Control schemes have demonstrated effectiveness in handling this complexity, as evidenced in \cite{gruberNonlinearMPCBased2011, montoyaHybridcontrolledApproachMaintaining2016} specifically for temperature control in a greenhouse. Furthermore, \cite{bersaniModelPredictiveControl2020} shows insight of the performance of MPC when optimized for energy savings of a greenhouse, displaying impressive results over set-point tracking controllers. Further, \cite{boersmaRobustSamplebasedModel2022} successfully implements a robust MPC to control the economic benefit of a greenhouse with parametric uncertainty, displaying its potential in greenhouse control. Moreover, as confirmed by \cite{bersaniModelPredictiveControl2020}, MPC stands out as the most effective control approach in smart greenhouses for energy savings. The study concludes that MPC is particularly advantageous when the system's dynamics can be reasonable approximated by a model and are sufficiently slow relative to the required time needed to perform the optimization.
@@ -567,38 +603,33 @@ By adopting EMPC, it becomes feasible that dynamic, transient or time varying op
 
 \cite{rawlingsFundamentalsEconomicModel2012} further showed  in the case of a chemical process, despite the increase in economic benefits, the EMPC  resulted in unstable plant dynamics which is highly undesirable for such a process. While a greenhouse may not experience this, it is still possible to encounter undesirable transient effects. For example, during the initial stages of the growth phase, the EMPC may not find it advantageous to expend energy due to the minimal growth, which could potentially cause irreparable harm to the plant. Nevertheless, this stage could arguably be considered the most crucial phase of the crop cycle in order to achieve optimal economic gain, as maximising crop growth in the early stages may have cumulative effects throughout the entire growth period.
 
- In order to achieve performance and stability, a terminal constraint in the optimal control problem is introduced \cite{amritEconomicOptimizationUsing2011}. This terminal constraint must be selected carefully to achieve the desired performance and stability \cite{rawlingsFundamentalsEconomicModel2012}. However, \cite{amritEconomicOptimizationUsing2011}, introduces a terminal cost function with a terminal region constraint and demonstrates its superiority over a terminal constraint in terms of performance while maintaining system stability. Although, it is possible to develop a terminal cost/constrain to achieve desired closed-loop performance and stability, authors of \cite{rawlingsFundamentalsEconomicModel2012}, \cite{amritEconomicOptimizationUsing2011} and \cite{ellisTutorialReviewEconomic2014} acknowledge the difficulties in constructing such an appropriate terminal cost/constrain and a corresponding terminal region. Limited works provide theoretical analysis in order to construct an appropriate terminal cost in the absence of stability constraints. Most often, simulations are performed to design cost functions suitable for the specific application. Importantly, only two methodologies exist to assure closed-loop performance: to use a sufficiently large prediction horizon or the application of an appropriate terminal region and cost function \cite{ellisTutorialReviewEconomic2014}. Stability of the system's dynamics is not necessary a concern, due to the nature of the greenhouse control system.
+ In order to achieve performance and stability, a terminal constraint in the optimal control problem is introduced \cite{amritEconomicOptimizationUsing2011}. This terminal constraint must be selected carefully to achieve the desired performance and stability \cite{rawlingsFundamentalsEconomicModel2012}. However, \cite{amritEconomicOptimizationUsing2011}, introduces a terminal cost function with a terminal region constraint and demonstrates its superiority over a terminal constraint in terms of performance while maintaining system stability. Although, it is possible to develop a terminal cost/constrain to achieve desired closed-loop performance and stability, authors of \cite{rawlingsFundamentalsEconomicModel2012}, \cite{amritEconomicOptimizationUsing2011} and \cite{ellisTutorialReviewEconomic2014} acknowledge the difficulties in constructing such an appropriate terminal cost/constrain and a corresponding terminal region. Limited works provide theoretical analysis in order to construct an appropriate terminal cost in the absence of stability constraints. Most often, simulations are performed to design cost functions suitable for the specific application. Importantly, two main methodologies exist to assure closed-loop performance: to use a sufficiently large prediction horizon or the application of an appropriate terminal region and cost function \cite{ellisTutorialReviewEconomic2014}. Stability of the system's dynamics is not necessarily a concern, due to the nature of the greenhouse control system.
 
 \section{RL and MPC in tandem}
-Reinforcement Learning (RL) and Model Predictive Control (MPC) are both techniques used in the field of control theory, but they have distinct approaches and strategies. While RL and MPC share the overarching goal through optimal control, their methodologies differ, with RL focusing on learning from interactions and MPC relying on model-based optimization over a finite time horizon. 
-Both control algorithms bring their respective advantages and disadvantages, with extensive similarities between the two. It becomes evident to merge the two strategies in the hope of creating a control scheme that combines the benefits of both. 
+MPC is recognized for its sample efficiency, robustness and constraint handling.However its prediction horizon, especially for economic prediction horizon is a shortfall. Moreover, large and complex systems may lead to a non-convex optimization problem which are computationally expensive to solve and may lead to sub-optimal control. Finally, model mismatch and uncertainties in forecasted disturbances can lead to a significant deterioration in control effectiveness \cite{arroyoReinforcedModelPredictive2022}.
 
-MPC finds optimality in solving a finite-horizon problem in a receding fashion.  In this process, the controller is recognized for its sample efficiency, robustness and constraint handling. However, it falls short in terms of adaptability. Moreover, large and complex systems may lead to a non-convex optimization problem which are computationally expensive to solve and may lead to sub-optimal control. Finally, model mismatch and uncertainties in forecasted disturbances can lead to a significant deterioration in control effectiveness \cite{arroyoReinforcedModelPredictive2022}.
+While RL is predominantly explored within the machine learning community, its usefulness in the control space is undeniable. Although RL might suffer from the curse of dimensionality, necessitating a reduction of states and control action, the introduction of neural networks and actor-critic algorithms addresses this issue.
 
-While reinforcement learning (RL) is predominantly explored within the machine learning community, its usefulness in the control space is undeniable. Its ability to learn from interactions with the environment leads to its high adaptability and uncertainty handling, however it struggles with constraints. The quality of control is strongly influenced by the training of the reinforcement learning (RL) algorithm. Nevertheless, the popularity of RL in control research persists due to its capacity to handle complex systems. Although RL might suffer from the curse of dimensionality, necessitating a reduction of states and control action, the introduction of neural networks and actor-critic algorithms addresses this issue.
+To differentiate this thesis from the concept of employing MPC as a function approximator, a concise explanation will be provided. This aims to clarify to the reader what the thesis does not focus on. As discussed in \autoref{sec:rl}, the DQN is usually implemented as a neural network and is parameterized by a vector $\bold{\theta}$. The approximated value of a state $s$, parameterized by a weight vector  $\theta$ is then given as $ \hat{v}(s,\theta) = v^*(s)$ where $\hat{v}$ \cite{lubbersAutonomousGreenhouseClimate2023}. However, it is possible to use a MPC scheme instead of a neural network to facilitate parametrization for approximating the value function and policy. This is the goal of using MPC as a function approximator for RL. This thesis does not explore this concept. It instead explores the design and implementation of an (E)NMPC algorithm that utilizes the value function learned by RL in its optimal control problem formulation to propagate information beyond the prediction horizon. 
 
-
-Several methods are available that seek to integrate the two control schemes, shedding light on the strengths and weaknesses of the resulting controller with respect to its specific application. There are two main ways to combine RL and MPC, either by truncating the objective function of the MPC (or rolling out the bellman-equation) or using the MPC as the function approximator of the learning agent. The former strategy will be further explored in this thesis.
-
-To differentiate this thesis from the concept of employing Model Predictive Control (MPC) as a function approximator, a concise explanation will be provided. This aims to clarify to the reader what the thesis does not focus on. As discussed in \autoref{sec:rl}, the DQN is usually implemented as a neural network and is parameterized by a vector $\bold{\theta}$. The approximated value of a state $s$, parameterized by a weight vector  $\theta$ is then given as $ \hat{v}(s,\theta) = v^*(s)$ where $\hat{v}$ \cite{lubbersAutonomousGreenhouseClimate2023}. However, it is possible to use a MPC scheme instead of a neural network to facilitate parametrization for approximating the value function and policy. This is the goal of using MPC as a function approximator for RL. This thesis does not explore this concept. It instead explores the design and implementation of an (E)NMPC algorithm that utilizes the value function learned by RL in its optimal control problem formulation to propagate information beyond the prediction horizon. 
-
-In order to gain insight in how the two optimal schemes will be combined, it is imperative to understand the differences and similarities of the two algorithms. Key areas such as the approach, optimality, computational effort and prediction horizon will be discussed and compared in order to motivate and understand the connection between the two control schemes. This section summarizes \cite{arroyoReinforcedModelPredictive2022} works with added literature from \cite{bertsekasNewtonMethodReinforcement2022} and \cite{linReinforcementLearningBasedModel2023}.
+In order to gain insight in how the two optimal schemes will be combined, it is imperative to understand the differences and similarities of the two algorithms. Key areas such as the approach, optimality, computational effort and prediction horizon is discussed and compared in order to motivate and understand the connection between the two control schemes. This section summarizes \cite{arroyoReinforcedModelPredictive2022} works with added literature from \cite{bertsekasNewtonMethodReinforcement2022} and \cite{linReinforcementLearningBasedModel2023}.
 
 \subsection{The Optimality}
- As mentioned in \autoref{sec:rl} and \autoref{sec:mpc}, both control strategies \textbf{are optimal in that they} attempt to solve the infinite prediction horizon problem.
+As mentioned in \autoref{section:RL} and \autoref{section:MPC}, both control strategies attempt to solve the infinite prediction horizon problem.
 
 The quality of the solution obtained through MPC is subject to the accuracy of the prediction model, which is further simplified to reduce computational burden. However, optimality of the direct optimization methods of the MPC problem is obtained through the Karush–Kuhn–Tucker conditions which are necessary conditions for optimality. Moreover, the local optimal policy obtained may also be sub-optimal due to multiple local optima in the case of non-linear optimization problems.
 
-In contrast, if the state space is countable and the MDP is perfectly known, DP algorithms (which relay on Bellman's principle), offer sufficient conditions for global optimality. However, these algorithms are significantly impacted by the curse of dimensionality. Consequently , approximations are used such as RL. 
-Although RL can only guarantee optimality under specific conditions when solving the Bellman equation \autoref{eq:optimal bellman equation}, the approximated value function contains global optimal information so that the infinite-horizon control policy may be obtained \cite{linReinforcementLearningBasedModel2023}. It is important to note that this is only an approximation. Moreover, RL does not directly impose state and control constraints. While it is possible to indirectly incorporate these constraints through the reward function, such an approach does not ensure that the optimal policy obtained will inherently adhere to these constraints. This becomes an issue when the problem at hand is safety critical.
+In contrast, if the state space is countable and the MDP is perfectly known, DP algorithms (which relay on Bellman's principle), offer sufficient conditions for global optimality. However, these algorithms are significantly impacted by the curse of dimensionality. Consequently, approximations are used such as RL. 
+Although RL can only guarantee optimality under specific conditions when solving the Bellman equation \autoref{eq:optimal bellman equation}, the approximated value function contains global optimal information so that the infinite-horizon control policy may be obtained \cite{linReinforcementLearningBasedModel2023}. It is important to note that this is only an approximation. Moreover, RL does not directly impose state and control constraints. While it is possible to indirectly incorporate these constraints through the reward function, such an approach does not ensure that the  policy obtained will inherently adhere to these constraints. 
+
 \subsection{Computational Effort}
  The online computational cost of MPC stands out as one of the principal drawbacks of this control strategy, particularly when dealing with complex models featuring numerous variables to optimize. Thus the model is often simplified, resulting in sub-optimal policies. In comparison to DP and RL algorithms, large computational power is expended training the policy, even for simple systems. However, once training is completed, the estimated optimal action may be given by a function evaluation of the policy. The evaluation of the policy, typical through a feed forward pass of a neural network, leads to a limitation in flexibility, especially in continuous control scenarios. Moreover, in obtaining an accurate value function proves to be difficult due to instability, rank loss and overestimation bias of the value function. This is especially prevalent for complex non-linear systems such as a greenhouse.
  
 \subsection{The Prediction Horizon}
-Arguably, the most crucial characteristic of both control strategies lies in their respective prediction horizon. Both are predictive controllers, with Model Predictive Control (MPC) employing explicit optimization over a finite prediction horizon to determine the optimal control action. On the other hand, Reinforcement Learning (RL) explores and interacts with its environment to learn the optimal action, optimizing for both immediate and discounted future rewards.
+The most important characteristic of the two algorithms is the prediction horizon, and especially for economic optimization that cover a long time horizon with a system with slow dynamics.As mentioned, MPC employs explicit optimization over a finite prediction horizon to determine the optimal control action. On the other hand, RL explores and interacts with its environment to learn the optimal action, optimizing for both immediate and discounted future rewards.
 Hence, a shortcoming of MPC is the finite prediction horizon. This limitation becomes even more pronounced when dealing with sparse rewards and slow system dynamics. In such cases, actions taken at the current time step may only yield rewards past the prediction horizon, causing the MPC controller to be myopic. It is possible to counteract this drawback with an extended prediction horizon, however, as discussed, this increases the complexity and computational burden of the controller.
 
-In contrast, RL aims to predict the optimal action to take over an infinite time horizon by incorporating a discount factor on rewards.This discount factor provides a measure of how much future rewards contribute to determining the optimal action. This bears similarities to the prediction horizon concept employed in MPC controllers. For RL, it can be shown, through geometric series convergence thatthe prediction horizon of the MPC controller is equivalent to $N_p = 1/(1 - \gamma)$ \cite{arroyoReinforcedModelPredictive2022}.
+In contrast, RL aims to predict the optimal action to take over an infinite time horizon by incorporating a discount factor on rewards.This discount factor bears similarities to the prediction horizon concept employed in MPC controllers. For RL, it can be shown, through geometric series convergence that the prediction horizon of the MPC controller is equivalent to $N_p = 1/(1 - \gamma)$ \cite{arroyoReinforcedModelPredictive2022}.
 It is noted that the prediction horizon over the RL can extend to infinite when $\gamma = 1$, however convergence of the total rewards gained is not guaranteed,  emphasizing the significance of the discount factor $\gamma$. Nonetheless, discounted infinite prediction horizons generally result in improved long-term behaviour. However, as stated in \cite{arroyoReinforcedModelPredictive2022}, RL makes less efficient use of forecasted information. This inefficiency arises because all future knowledge is condensed and presented to the agent's observation without retaining its time dependency. Consequently, the agent is required to implicitly learn the system's dynamics through interactions with the environment, leading to the difficulty of understanding the time dependency of its actions on future rewards. In comparison, MPC naturally preserves the time dependency since it has the system’s dynamics formulated in its problem, however since it only looks N steps forward, it produces a locally optimal policy \cite{linReinforcementLearningBasedModel2023}. A synergistic approach to combining the two control strategies would be to have a MPC controller optimize a short prediction horizon while propagating global information provided by RL. This integration of the two controllers is further justified in the context of greenhouse dynamics, where actions executed at the current time step may result in rewards that manifest over the long term. Finally, as outlined in \autoref{sssec:empc} within the work of \cite{ellisTutorialReviewEconomic2014}, it is imperative, when employing an EMPC, to construct the optimal control problem with an adequate terminal constraint to ensure the performance of the system.  This terminal constraint, which must encapsulate information beyond the prediction horizon, underscores the evident synergy with the value function acquired through RL to provide the required information for the desired system performance.
 
 

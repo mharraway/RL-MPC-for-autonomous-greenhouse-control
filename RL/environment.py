@@ -169,30 +169,29 @@ class greenhouseEnv(gym.Env):
         #Temp
         max_temp_traj = 30
         min_temp_traj = 7
-        # random_x[2] =  np.random.uniform(min_temp_traj,max_temp_traj)
-        bounds_min = self.x.ravel()[2]- (std)* (max_temp_traj-min_temp_traj)/2
-        bounds_max = self.x.ravel()[2]+ (std)* (max_temp_traj-min_temp_traj)/2
-        bounds_min = np.maximum(bounds_min,min_temp_traj)
-        bounds_max = np.minimum(bounds_max,max_temp_traj)
-        random_x[2] =  np.random.uniform(bounds_min,bounds_max)
+        random_x[2] =  np.random.uniform(min_temp_traj,max_temp_traj)
+        # bounds_min = self.x.ravel()[2]- (std)* (max_temp_traj-min_temp_traj)/2
+        # bounds_max = self.x.ravel()[2]+ (std)* (max_temp_traj-min_temp_traj)/2
+        # bounds_min = np.maximum(bounds_min,min_temp_traj)
+        # bounds_max = np.minimum(bounds_max,max_temp_traj)
+        # random_x[2] =  np.random.uniform(bounds_min,bounds_max)
         
         #C02
         
-        
-        bounds_min = self.y.ravel()[1]- (std)*(1800-400)/2
-        bounds_max = self.y.ravel()[1]+ (std)*(1800-400)/2
-        bounds_min = np.maximum(bounds_min,400)
-        bounds_max = np.minimum(bounds_max,1800)        
-        random_x[1] =  np.random.uniform(co2ppm2dens(random_x[2],bounds_min),co2ppm2dens(random_x[2],bounds_max))
-        # random_x[1] =  np.random.uniform(co2ppm2dens(random_x[2],400),co2ppm2dens(random_x[2],1800))
+        # bounds_min = self.y.ravel()[1]- (std)*(1800-400)/2
+        # bounds_max = self.y.ravel()[1]+ (std)*(1800-400)/2
+        # bounds_min = np.maximum(bounds_min,400)
+        # bounds_max = np.minimum(bounds_max,1800)        
+        # random_x[1] =  np.random.uniform(co2ppm2dens(random_x[2],bounds_min),co2ppm2dens(random_x[2],bounds_max))
+        random_x[1] =  np.random.uniform(co2ppm2dens(random_x[2],400),co2ppm2dens(random_x[2],1800))
         
         #Hum
-        bounds_min = self.y.ravel()[3]- (std)*(100-50)/2
-        bounds_max = self.y.ravel()[3]+ (std)*(100-50)/2
-        bounds_min = np.maximum(bounds_min, 50)
-        bounds_max = np.minimum(bounds_max, 100)  
-        random_x[3] =  np.random.uniform(rh2vaporDens(random_x[2],bounds_min),rh2vaporDens(random_x[2],bounds_max))
-        # random_x[3] =  np.random.uniform(rh2vaporDens(random_x[2],50),rh2vaporDens(random_x[2],100))
+        # bounds_min = self.y.ravel()[3]- (std)*(100-50)/2
+        # bounds_max = self.y.ravel()[3]+ (std)*(100-50)/2
+        # bounds_min = np.maximum(bounds_min, 50)
+        # bounds_max = np.minimum(bounds_max, 100)  
+        # random_x[3] =  np.random.uniform(rh2vaporDens(random_x[2],bounds_min),rh2vaporDens(random_x[2],bounds_max))
+        random_x[3] =  np.random.uniform(rh2vaporDens(random_x[2],50),rh2vaporDens(random_x[2],100))
           
         random_x = np.clip(random_x,x_min,x_max)
         random_y = self.g(random_x, nominal_params).toarray().ravel() 
@@ -211,13 +210,13 @@ class greenhouseEnv(gym.Env):
         bounds_max = np.minimum(bounds_max, u_max[1])  
         random_u[1] = np.random.uniform(bounds_min,bounds_max)
         
-        bounds_min = self.u.ravel()[2]- (std)*(u_max[2]-u_min[2])/2
-        bounds_max = self.u.ravel()[2]+ (std)*(u_max[2]-u_min[2])/2
-        bounds_min = np.maximum(bounds_min, u_min[2])
-        bounds_max = np.minimum(bounds_max, u_max[2])  
-        random_u[2] = np.random.uniform(bounds_min,bounds_max)
+        # bounds_min = self.u.ravel()[2]- (std)*(u_max[2]-u_min[2])/2
+        # bounds_max = self.u.ravel()[2]+ (std)*(u_max[2]-u_min[2])/2
+        # bounds_min = np.maximum(bounds_min, u_min[2])
+        # bounds_max = np.minimum(bounds_max, u_max[2])  
+        # random_u[2] = np.random.uniform(bounds_min,bounds_max)
         
-        # random_u = np.random.uniform(u_min,u_max)
+        random_u = np.random.uniform(u_min,u_max)
         # random_u = np.random.uniform(loc = self.u.ravel(), scale = std*self.u.ravel())
         random_u = np.clip(random_u, u_min, u_max)
         

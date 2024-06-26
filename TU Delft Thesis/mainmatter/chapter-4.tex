@@ -1,6 +1,6 @@
 \chapter{Model Predictive Control Setup}
 \label{chapter:MPC}
-This chapter presents the setup and creation of the MPC controller, and investigates the performance of the resulting controller on the greenhouse environment. Moreover, the effect of the prediction horizon is investigated on both nominal and stochastic conditions. The works in this chapter is similar to what is presented in \cite{boersmaRobustSamplebasedModel2022} and \cite{morcegoReinforcementLearningModel2023}. However, direct comparisons are not possible. \cite{boersmaRobustSamplebasedModel2022} develops to create a robust sample based controller, while this chapter will focus on constructing a conventional Model Predictive Controller (MPC). This is done to examine the effects of uncertainty on this controller and later asses whether the integration of RL can mitigate these effects. In \cite{morcegoReinforcementLearningModel2023}, such an MPC controller is developed. However, it does not provide specific weather data. Finally the optimization goal used in this thesis differs from that in both papers. However, a qualitative comparison may be done.
+This chapter presents the setup and creation of the MPC controller, and investigates the performance of the resulting controller on the greenhouse environment. Moreover, the effect of the prediction horizon is investigated on both nominal and stochastic conditions. The works in this chapter is similar to what is presented in \cite{boersmaRobustSamplebasedModel2022} and \cite{morcegoReinforcementLearningModel2023}. However, direct comparisons are not possible. \cite{boersmaRobustSamplebasedModel2022} develops to create a robust sample based controller, while this chapter will focus on constructing a conventional MPC. This is done to examine the effects of uncertainty on this controller and later asses whether the integration of RL can mitigate these effects. In \cite{morcegoReinforcementLearningModel2023}, such an MPC controller is developed. However, it does not provide specific weather data. Finally the optimization goal used in this thesis differs from that in both papers. However, a qualitative comparison may be done.
 
 
 
@@ -13,7 +13,7 @@ In order to directly compare to RL and to the RL-MPC controller, it is important
 		\min_{u(k),x(k)} & \sum_{k = k_0}^{k_0 + N_p-1} {l(u(k), y(k))} \\
 		\text{s.t.} \quad & x(k+1) = f(x(k), u(k), d(k), p),  \label{eq:constraint-1} \\
 		& y(k) = g(x(k+1), p), \label{eq:constraint-dynamics} \\
-		& -\delta u \leq u(k) - u(k-1) \leq \delta u, \label{eq:constraint-delta-u} \\
+		& -\delta u_max \leq u(k) - u(k-1) \leq \delta u_max, \label{eq:constraint-delta-u} \\
 		& u_{\min} \leq u(k) \leq u_{\max}, \label{eq:constraint-u-limits}\\
 		& x(k_0) = x_{k_0}. \label{eq:constraint-initial}
 	\end{align}

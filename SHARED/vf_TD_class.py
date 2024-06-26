@@ -215,9 +215,10 @@ class value_function_TD():
         obs_log, obs_next_log, pairs= [],[],[]
         obs_now, info = env.reset()
         done = False
+        nominal_traj = []
         
         for k in tqdm(range(max_steps)):
-                
+            nominal_traj.append(obs_now)
             for s in range(extra_samples):
             #Construct random observation
                 env.freeze()
@@ -250,7 +251,7 @@ class value_function_TD():
             
             #Next time step  
             obs_now = obs_next
-        return obs_log, obs_next_log,pairs
+        return obs_log, obs_next_log,pairs, np.vstack(nominal_traj)
         
     def test_with_agent(self):
         self.neural_net.eval()
