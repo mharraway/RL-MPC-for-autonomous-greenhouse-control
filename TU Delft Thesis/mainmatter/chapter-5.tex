@@ -15,7 +15,7 @@ The integration of RL into MPC will increasingly involve more complex implementa
 
 \subsection{RL-MPC problem formulations}
 
-\paragraph{Implementation 1}
+\paragraph{Implementation RL-MPC 1}
 Implementation 1 is identical to \autoref{eq:mpc_ocp}, but with the inclusion of initial guesses. However, instead of utilising the previous solution to the state and input trajectories as initial guesses, these initial guesses are provided by the RL agent. Two sets of initial guesses will be tested and compared with one another. The solution to the OCP in \autoref{eq:mpc_ocp} at time $k$  can be denoted as:
 
 \begin{equation}\label{eq:sol-mpc-ocp}
@@ -45,58 +45,46 @@ such that
 
  \begin{equation}\label{eq:horizon_extension}
  	\begin{aligned}
- 		&\tilde{\mathbf{x}}_{k|k} = &[\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k},p)]^T\\ 
- 		&\tilde{\mathbf{u}}_{k|k} = &[\mathbf{u}_{k|k-1},\pi(x_{k-1 + N_p|k-1})]^T\\
+ 		&\tilde{\mathbf{x}}_{k|k} = [\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k},p)]^T\\ 
+ 		&\tilde{\mathbf{u}}_{k|k} = [\mathbf{u}_{k|k-1},\pi(x_{k-1 + N_p|k-1})]^T\\
  	\end{aligned}
  \end{equation}
 
 \begin{equation}\label{eq:actor_roll_out}
 	\begin{aligned}
-		&\hat{\mathbf{x}}^{k_1} = [x_{k_1},f(x_{k_1},\pi(x_{k_1}),d_{k_1},p),..., f(x_{k_1 + N_p-1}, \pi(x_{k_1 + N_p-1}), d_{k_1 + Np-1},p)]^T \\ 
-		&\hat{\mathbf{u}}^{k_1} = [\pi(x_{k_1},\pi(x_{k_1+1}),...,\pi(x_{k_1+Np-1})]^T \\ 
+		&\hat{\mathbf{x}}_{k|k} = [x_{k|k},f(x_{k|k},\pi(x_{k|k}),d_{k|k},p),..., f(x_{k+N_p-1|k}, \pi(x_{k + N_p-1|k}), d_{k_1 + Np-1|k},p)]^T \\ 
+		&\hat{\mathbf{u}}_{k|k} = [\pi(x_{k|k},\pi(x_{k+1|k}),...,\pi(x_{k+Np-1|k})]^T \\ 
 	\end{aligned}
 	\end{equation}
 
+\autoref{eq:horizon_extension} takes the previous time steps solution, shifts it in time and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. This method can be interpreted as extending the horizon. So for every time step, the initial guesses of the sequence of actions and states are extended by one time step. \autoref{eq:actor_roll_out} unrolls the RL policy $\pi(\cdot)$ from the current state until the end of the prediction horizon. Consequently, the  solutions obtained from the previous time, $\mathbf{x}_{k|k}$ and $\mathbf{u}_{k|k}$, step are disregarded, thus generating a new sequence without relying on the previous time step's solutions. It must be noted, that for the first time step, $k=0$, initial guesses given by \autoref{eq:initial-guess-2} is used for both cases, therefore $\tilde{x}_{k|k} \leftarrow \hat{x}_{k|k}$ and $\tilde{u}_{k|k} \leftarrow \hat{u}_{k|k}$.
 
-%\begin{equation}\label{eq:initial-guess-1}
-%	\begin{aligned}
-%		&\tilde{\mathbf{x}}_{k+1|k+1} = [x_{k + 1|k+1},...,x_{k + N_p}|k+1, f(x_{k + N_p|k+1}, \pi(x_{k + N_p|k+1}), d_{k_0 + Np},p)]^T \\ 
-%		&\tilde{\mathbf{u}}^{k_1} = [u_{k_0 + 1},...,u_{k_0 + N_p - 1}, \pi(x_{k_0 + N_p})]^T \\ 
-%	\end{aligned}
-%\end{equation}
-%
-%\begin{equation}\label{eq:initial-guess-2}
-%	\begin{aligned}
-%	&\hat{\mathbf{x}}^{k_1} = [x_{k_1},f(x_{k_1},\pi(x_{k_1}),d_{k_1},p),..., f(x_{k_1 + N_p-1}, \pi(x_{k_1 + N_p-1}), d_{k_1 + Np-1},p)]^T \\ 
-%	&\hat{\mathbf{u}}^{k_1} = [\pi(x_{k_1},\pi(x_{k_1+1}),...,\pi(x_{k_1+Np-1})]^T \\ 
-%\end{aligned}
-%\end{equation}
+Based on prior analyses, the process of generating these initial guesses are extremely fast. Furthermore, since it comes from a policy that is comparable to the MPC's, these initial guesses can be used for more than just initial guesses. The subsequent implementations explore the significance of these initial guesses,  particularly the initial guesses mentioned in \autoref{eq:initial-guess-1}.
 
-The first initial guess (\autoref{eq:initial-guess-1}) takes the previous time steps solution, shifts it and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. Essentially the actor is unrolled once from the last time step of the previous solution to \autoref{eq:mpc_ocp}. The second initial guess,\autoref{eq:initial-guess-2}, involves unrolling the actor $Np$ steps from the current state, and using the resulting actions and states as initial guesses. 
-
-\paragraph{Implementation 2}
-The second implementation incorporates a terminal constraint. The asymptotic average performance of the EMPC can be guaranteed to be no worse than the performance of a optimal reference trajectory under certain assumptions. From \cite{amritEconomicOptimizationUsing2011}, these assumptions are:
+\paragraph{Implementation RL-MPC 2}
+The second implementation incorporates a terminal constraint in addition to the initial guesses. \cite{risbeckEconomicModelPredictive2020}, \cite{amritEconomicOptimizationUsing2011} proves that an appropriate terminal constraint can result in superior performance. It is shown that through this terminal constraint, for a time-varying system, performance can be guaranteed to be as least as good as a reference trajectory, $(\mathbf{x}_r, \mathbf{u}_r)$,  that serves as a bases for a meaningful economic performance for the system. The terminal constraint should be imposed to keep the system close to this reference trajectory. Since the RL policy can be used as the optimal reference policy, it can be guaranteed that the resulting policy will be at least as good as the RL policy.  The asymptotic average performance of the EMPC can be guaranteed to be no worse than the performance of a reference trajectory under the following assumptions from \cite{amritEconomicOptimizationUsing2011,risbeckEconomicModelPredictive2020}:
 
 \hspace{1cm} \textbf{Assumption 1} (Properties of constraint sets) The set $\mathbb{Z}$ is compact, where $\mathbb{Z} \subseteq \mathbb{X} \times \mathbb{U}$
 
 \hspace{1cm} \textbf{Assumption 2}  (Continuity of cost and system) The functions $l(\cdot), f(\cdot)$ are continuous on $\mathbb{Z}$. The terminal cost function $V_f(\cdot)$ is continuous on $\mathbb{X}_f$ 
 
-\hspace{1cm} \textbf{Assumption 3} (Stability assumption) There exist a compact terminal region $\mathbb{X}_f \subseteq \mathbb{X}$, containing the point $x_s$ in its interior, and control law $\kappa_f : \mathbb{X}_f \rightarrow \mathbb{U}$, such that the following holds 
+\hspace{1cm} \textbf{Assumption 3}  The reference trajectory $(\mathbf{x}_r, \mathbf{u}_r)$ satisfies $f(x_r(k),u_r(k),d(k),p)=x_r(k+1)$
+
+\hspace{1cm} \textbf{Assumption 4} (Stability assumption) There exist a compact terminal region $\mathbb{X}_f \subseteq \mathbb{X}$, containing the point $x_r$ in its interior, and control law $\kappa_f : \mathbb{X}_f \rightarrow \mathbb{U}$, such that the following holds 
 \begin{equation}\label{eq:assumption_3}
-	V_f(f(x,\kappa_f(x))) \leq V_f(x) - l(x,\kappa_f(x)) + l(x_s,u_s) \quad \forall x \in \mathbb{X}_f
+	V_f(f(x,\kappa_f(x))) \leq V_f(x) - l(x,\kappa_f(x)) + l(x_r(t),u_r(t)) \quad \forall x \in \mathbb{X}_f
 \end{equation}
 
-Assumptions 1 and 2 holds since all states and inputs are bounded and the stage cost, as defined in \autoref{eq:mpc_stage_cost} is continuous. For this implementation, $V_f(\cdot) \equiv 0$, therefore, assumption 3 clearly holds since $x,\kappa_f(x)$ is constrained to $x_s,u_s$.
- \cite{risbeckEconomicModelPredictive2020}, \cite{amritEconomicOptimizationUsing2011} proves that to ensure this for a time-varying system a reference trajectory ($\tilde{\mathbf{x}},\tilde{\mathbf{u}}$) that serves as a bases for a meaningful economic performance for the system must be provided. The terminal constraint should be imposed to keep the system close to this reference trajectory. Since the RL policy can be used as the optimal reference policy, it can be guaranteed that the resulting policy will be at least as good as the RL policy. In order to keep the EMPC close to RL's reference trajectory, initial guesses as given in \autoref{eq:initial-guess-1} with a terminal constraint equal to the last initial guess such that:
+Assumptions 1, 2, 3 holds since all states and inputs are bounded and the stage cost, as defined in \autoref{eq:mpc_stage_cost} is continuous. For this implementation, $V_f(\cdot) \equiv 0$ since no terminal cost function is used, therefore, assumption 3 clearly holds if $x,\kappa_f(x)$ is constrained to $x_r,u_r$. Therefore, if the terminal state was constrained to the last initial guess of \autoref{eq:initial-guess-1}, it would constrain it to the RL's reference policy. Therefore the terminal constraint would be imposed on the last state of the solution such that:
 
 \begin{equation}\label{eq:terminal-constraint-ocp}
-	\begin{aligned}
-		& x^{k_0}_{Np} = \mathbf{e}_{Np}^T \tilde{\mathbf{x}}^{k_0}\\
-		& u^{k_0}_{Np-1} = \mathbf{e}_{Np-1}^T\tilde{\mathbf{u}}^{k_0}\\
-	\end{aligned}
+\begin{aligned}
+	&\mathbf{x}_{k+Np|k} = \tilde{x}_{k+Np|k}\\ 
+	&\mathbf{u}_{k+Np-1|k} = \tilde{u}_{k+Np-1|k}\\
+\end{aligned}
 \end{equation}
 
-where $\mathbf{e}_{Np+1}$ and $\mathbf{e}_{Np}$ represents the $i$th standard basis vector in $\mathbb{R}^{Np+1}$ and $\mathbb{R}^{Np}$ respectively. i.e., $e_i$ provides a selection vector to extract the last state and input from the initial guess, to be used as a terminal constraint. Both the last control input and the state must be constrained since the current control action depends on the previous control action (\autoref{eq:constraint-delta-u}).
+However, for lols, this implementation is also tested for initial guesses as given by \autoref{eq:initial-guess-2}, no performance guarantees exist since the reference trajecory would be dependent on the current state, and therefore change every time step.
 
 \paragraph{Implementation 3}
 Implementation 3 builds upon implementation 2, in that instead of providing a terminal constraint, a terminal region as provided by the actor will be used. The terminal region is defined as:
