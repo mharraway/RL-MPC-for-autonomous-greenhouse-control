@@ -3803,6 +3803,63 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{wachterImplementationInteriorpointFilter2006}{article}{}
+    \name{author}{2}{}{%
+      {{hash=WA}{%
+         family={W{\"a}chter},
+         familyi={W\bibinitperiod},
+         given={Andreas},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BLT}{%
+         family={Biegler},
+         familyi={B\bibinitperiod},
+         given={Lorenz\bibnamedelima T.},
+         giveni={L\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \keyw{49M37,65K05,90C30,90C51,Barrier method,Filter method,Interior-point
+  method,Line search,Nonconvex constrained optimization,Nonlinear programming}
+    \strng{namehash}{WABLT1}
+    \strng{fullhash}{WABLT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    We present a primal-dual interior-point algorithm with a filter line-search
+  method for nonlinear programming. Local and global convergence properties of
+  this method were analyzed in previous work. Here we provide a comprehensive
+  description of the algorithm, including the feasibility restoration phase for
+  the filter method, second-order corrections, and inertia correction of the
+  KKT matrix. Heuristics are also considered that allow faster performance.
+  This method has been implemented in the IPOPT code, which we demonstrate in a
+  detailed numerical study based on 954 problems from the CUTEr test set. An
+  evaluation is made of several line-search options, and a comparison is
+  provided with two state-of-the-art interior-point codes for nonlinear
+  programming.%
+    }
+    \verb{doi}
+    \verb 10.1007/s10107-004-0559-y
+    \endverb
+    \field{issn}{1436-4646}
+    \field{number}{1}
+    \field{pages}{25\bibrangedash 57}
+    \field{title}{On the Implementation of an Interior-Point Filter Line-Search
+  Algorithm for Large-Scale Nonlinear Programming}
+    \field{volume}{106}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/7BMP8P3Z/Wächter
+    \verb  and Biegler - 2006 - On the implementation of an interior-point filt
+    \verb er .pdf
+    \endverb
+    \field{journaltitle}{Mathematical Programming}
+    \field{month}{03}
+    \field{year}{2006}
+    \field{urlday}{26}
+    \field{urlmonth}{06}
+    \field{urlyear}{2024}
+  \endentry
+
   \entry{risbeckEconomicModelPredictive2020}{article}{}
     \name{author}{2}{}{%
       {{hash=RMJ}{%

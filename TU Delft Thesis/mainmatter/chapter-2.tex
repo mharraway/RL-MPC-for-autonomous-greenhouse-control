@@ -571,7 +571,7 @@ Although many control schemes exist in controlling greenhouses, it has been show
 
 Additionally, MPC has been shown to have a strong theoretical foundation. Researches have developed rigorous methods in analysing performance and stability on a MPC under certain conditions, including the optimality and robustness of the implemented controller. Indeed, if the system dynamics are known, it is possible to design an MPC to fulfill specific design requirements \cite{rawlingsModelPredictiveControl2017}. Nevertheless, while a solid mathematical framework exists for set-point tracking MPC, the same level of assurance cannot be provided for economic MPCs (EMPC), which aim to optimise for economic benefits.
 
-\subsection {The General MPC problem}
+\subsection {The General MPC problem}\label{ssection:general-mpc}
 MPC is an advanced method of control that uses a model of the system to predict the behaviour of the system over a finite horizon, known as the prediction horizon. The MPC controller  aims to solve the infinite-horizon optimal control problem (OCP) as a series of finite-horizon problems in order to make the problem computationally tractable \cite{beckenbachAddressingInfinitehorizonOptimization2018}. At each discrete time interval, the MPC solves the optimisation problem over this prediction horizon to compute the optimal inputs that minimize a given cost function, subject to constraints such as the system dynamics, initial state and state and control constraints. Each optimisation yields a sequence on control actions to take over this prediction horizon . The first control input is applied to the system, and at the subsequent time step, the system is sampled again and the entire process is recalculated providing an updated control sequence. While this approach is not optimal, it is an approximation of the infinite time horizon problem and has been shown to yield excellent results in practice as discussed above. The choice of prediction horizon length is often a trade-off between computational efficiency and the desired control performance. 
 
 While MPC can be used for both continuous and discrete time system dynamics,  continuous time system must be discretized to render the optimal control problem (OCP) tractable. This is necessary since a continuous time system gives rise to an infinite-dimensional problem. Therefore the discrete case will be considered as illustrated in \autoref{eq:greenhouse_model_discrete}.
@@ -580,7 +580,7 @@ It is possible that the state may be unknown (as in \autoref{eq:greenhouse_model
 \begin{equation}
 	\begin{aligned}
 		& \min_{x(k_0:N_p+1),u(k_0:N_p)} J(x(k),u(k)) = \\ 
-		& \min_{x(k_0:N_p+1),u(k_0:N_p)} \sum_{k=k_0}^{N_p} l(x(k),u(k)) + V_T(x(N_p +1))  \\
+		& \min_{x(k_0:N_p+1),u(k_0:N_p)} \sum_{k=k_0}^{N_p-1} l(x(k),u(k)) + V_T(x(N_p))  \\
 		\text{s.t.} \quad  & x(k_0) = x_{k_0}                              & \forall k = k_0,\hdots, N_p,\\
 		& x(k+1) = f(x(k),u(k),d, p)       & \forall k = k_0,\hdots, N_p,\\
 		& y(k) = g(x(k),u(k),d,p)                 & \forall k = k_0,\hdots, N_p,\\

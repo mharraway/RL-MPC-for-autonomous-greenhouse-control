@@ -1,44 +1,76 @@
 \chapter{Deterministic RL-MPC}
 \label{chapter:deterministic_RL_MPC}
 
-This chapter aims to construct the RL-MPC framework and examines various implementations to determine their effectiveness. The resulting contollers are evaluated by comparing it with the MPC and RL controllers developed in previous sections. In addition, this chapter will analyze the nominal case in which the model is precisely known. 
-
+This chapter aims to construct the RL-MPC framework and examines various implementations to determine their effectiveness. The resulting contollers are evaluated by comparing it with the MPC and RL controllers developed in previous sections. The implementations serve as a means for the reader to understand the construction of the final RL-MPC algorithm, as each subsequent implementation builds upon the previous one. In addition, this chapter will analyze the nominal case in which the parameters of the model and environment are known. 
 
 The smoothness of the value function curve is crucial because, when optimized, it can lead to the generation of numerous local optima, which can disrupt the controller's performance.
 
 
 \section{Implementation} \label{section:rlmpc implementation}
 While there are numerous implementations of RL-MPC, there is limited research focused on maximizing economic benefit specifically for continuous state and action spaces while training RL separately from MPC. As stated in \cite{ellisTutorialReviewEconomic2014} and \cite{amritEconomicOptimizationUsing2011}, an EMPC without a terminal constraint and/or terminal cost function does not provide performance and stability guarantees. Specifically \cite{ellisTutorialReviewEconomic2014} states that a terminal constraint is required to ensure closed-loop performance, while \cite{amritEconomicOptimizationUsing2011} extends this concept by proving that applying a terminal region constraint with an appropriate terminal cost function is required to guarantee closed-loop performance. \cite{amritEconomicOptimizationUsing2011} further claims that the terminal cost function with a terminal region is superior to the terminal constraint because it increases the size of the feasible set of initial conditions and may possibly improve the closed-loop performance. However finding such suitable terminal constraints and cost functions prove to be very difficult. It is the objective of this thesis is to ascertain whether the RL agent is capable of providing this.\\
+Furthermore, when considering the RL perspective in these implementations, it is important to note that the learned value function is merely an approximation. Consequently, when this value function is utilised in MPC, it is effectively unrolled and value iterations are executed. This process has the potential to result in an improved policy compared to the original policy that generated the value function.
 
-The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions trained by the nominal agent will then be used at the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function.
+
+The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions as trained by the nominal agent (\autoref{tab:various-vf}) will then be used as the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function.
 
 \subsection{RL-MPC problem formulations}
 
 \paragraph{Implementation 1}
-Implementation 1 is the same as \autoref{eq:mpc_ocp}, with the addition of initial guesses. Two sets of initial guesses will be tested and compared with one another. Given that the solution to the OCP in \autoref{eq:mpc_ocp} at time $k_0$ denoted as:
-
+Implementation 1 is identical to \autoref{eq:mpc_ocp}, but with the inclusion of initial guesses. However, instead of utilising the previous solution to the state and input trajectories as initial guesses, these initial guesses are provided by the RL agent. Two sets of initial guesses will be tested and compared with one another. The solution to the OCP in \autoref{eq:mpc_ocp} at time $k$  can be denoted as:
 
 \begin{equation}\label{eq:sol-mpc-ocp}
 	\begin{aligned}
-		&\mathbf{x}^{k_0} = [x_{k_0},x_{k_0 + 1},x_{k_0 + 2}, ...,x_{k_0 + N_p}] \\ 
-		&\mathbf{u}^{k_0} = [u_{k_0},u_{k_0 + 1}, ...,u_{k_0 + N_p-1}] \\
+		&\mathbf{x}_{k|k} = [x_{k|k},x_{k_+ 1|k},x_{k + 2|k}, ...,x_{k + N_p|k}]^T \\ 
+		&\mathbf{u}_{k|k} = [u_{k|k},u_{k + 1|k}, ...,u_{k + N_p-1|k}]^T \\
 	\end{aligned}
 \end{equation}
 
-then the two sets of initial guesses at the next time, $k_1$ step can be denoted as:
+The two sets of initial guesses at the $k$ step is denoted as:
+
 \begin{equation}\label{eq:initial-guess-1}
 	\begin{aligned}
-		&\tilde{\mathbf{x}}^{k_1} = [x_{k_0 + 1},...,x_{k_0 + N_p}, f(x_{k_0 + N_p}, \pi(x_{k_0 + N_p}), d_{k_0 + Np},p)]^T \\ 
-		&\tilde{\mathbf{u}}^{k_1} = [u_{k_0 + 1},...,u_{k_0 + N_p - 1}, \pi(x_{k_0 + N_p})]^T \\ 
+		&\tilde{\mathbf{x}}_{k|k} = [\tilde{x}_{k|k},\tilde{x}_{k+1|k},...,\tilde{x}_{k + N_p|k}]^T \\ 
+		&\tilde{\mathbf{u}}_{k|k} = [\tilde{u}_{k|k},\tilde{u}_{k + 1|k},...,\tilde{u}_{k + N_p - 1|k}]^T\\ 
 	\end{aligned}
 \end{equation}
 
 \begin{equation}\label{eq:initial-guess-2}
 	\begin{aligned}
-	&\tilde{\mathbf{x}}^{k_1} = [x_{k_1},f(x_{k_1},\pi(x_{k_1}),d_{k_1},p),..., f(x_{k_1 + N_p-1}, \pi(x_{k_1 + N_p-1}), d_{k_1 + Np-1},p)]^T \\ 
-	&\tilde{\mathbf{u}}^{k_1} = [\pi(x_{k_1},\pi(x_{k_1+1}),...,\pi(x_{k_1+Np-1})]^T \\ 
-\end{aligned}
+		&\hat{\mathbf{x}}_{k|k} = [\hat{x}_{k|k},\hat{x}_{k+1|k},...,\hat{x}_{k + N_p|k}]^T \\ 
+		&\hat{\mathbf{u}}_{k|k} = [\hat{u}_{k|k},\hat{u}_{k + 1|k},...,\hat{u}_{k + N_p - 1|k}]^T\\ 
+	\end{aligned}
 \end{equation}
+
+such that
+
+ \begin{equation}\label{eq:horizon_extension}
+ 	\begin{aligned}
+ 		&\tilde{\mathbf{x}}_{k|k} = &[\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k},p)]^T\\ 
+ 		&\tilde{\mathbf{u}}_{k|k} = &[\mathbf{u}_{k|k-1},\pi(x_{k-1 + N_p|k-1})]^T\\
+ 	\end{aligned}
+ \end{equation}
+
+\begin{equation}\label{eq:actor_roll_out}
+	\begin{aligned}
+		&\hat{\mathbf{x}}^{k_1} = [x_{k_1},f(x_{k_1},\pi(x_{k_1}),d_{k_1},p),..., f(x_{k_1 + N_p-1}, \pi(x_{k_1 + N_p-1}), d_{k_1 + Np-1},p)]^T \\ 
+		&\hat{\mathbf{u}}^{k_1} = [\pi(x_{k_1},\pi(x_{k_1+1}),...,\pi(x_{k_1+Np-1})]^T \\ 
+	\end{aligned}
+	\end{equation}
+
+
+%\begin{equation}\label{eq:initial-guess-1}
+%	\begin{aligned}
+%		&\tilde{\mathbf{x}}_{k+1|k+1} = [x_{k + 1|k+1},...,x_{k + N_p}|k+1, f(x_{k + N_p|k+1}, \pi(x_{k + N_p|k+1}), d_{k_0 + Np},p)]^T \\ 
+%		&\tilde{\mathbf{u}}^{k_1} = [u_{k_0 + 1},...,u_{k_0 + N_p - 1}, \pi(x_{k_0 + N_p})]^T \\ 
+%	\end{aligned}
+%\end{equation}
+%
+%\begin{equation}\label{eq:initial-guess-2}
+%	\begin{aligned}
+%	&\hat{\mathbf{x}}^{k_1} = [x_{k_1},f(x_{k_1},\pi(x_{k_1}),d_{k_1},p),..., f(x_{k_1 + N_p-1}, \pi(x_{k_1 + N_p-1}), d_{k_1 + Np-1},p)]^T \\ 
+%	&\hat{\mathbf{u}}^{k_1} = [\pi(x_{k_1},\pi(x_{k_1+1}),...,\pi(x_{k_1+Np-1})]^T \\ 
+%\end{aligned}
+%\end{equation}
 
 The first initial guess (\autoref{eq:initial-guess-1}) takes the previous time steps solution, shifts it and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. Essentially the actor is unrolled once from the last time step of the previous solution to \autoref{eq:mpc_ocp}. The second initial guess,\autoref{eq:initial-guess-2}, involves unrolling the actor $Np$ steps from the current state, and using the resulting actions and states as initial guesses. 
 
