@@ -78,8 +78,8 @@
 \contentsline {section}{\numberline {5.2}Results - RL-MPC 1}{52}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Results - RL-MPC 2}{53}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Results - RL-MPC 3}{54}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Results - RL-MPC 4}{54}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Results - Implementation 5 and 6}{56}{section.5.6}%
+\contentsline {section}{\numberline {5.5}Results - RL-MPC 4}{55}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Results - RL-MPC 5 and 6}{56}{section.5.6}%
 \contentsline {section}{\numberline {5.7}Final Result and Conclusion}{57}{section.5.7}%
 \contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{59}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{59}{section.6.1}%
@@ -87,18 +87,18 @@
 \contentsline {section}{\numberline {6.3}Conclusion}{62}{section.6.3}%
 \contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{64}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{64}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Taylor Approximation}{67}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Taylor Approximation}{66}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Combined}{67}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{68}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{70}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Discussion}{70}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Conclusion}{70}{section.8.2}%
-\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{70}{section.8.3}%
-\contentsline {chapter}{References}{71}{chapter*.54}%
-\contentsline {chapter}{\numberline {A}RL \& RL Training }{76}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{76}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{76}{section.A.2}%
-\contentsline {section}{\numberline {A.3}Agent Training}{78}{section.A.3}%
-\contentsline {section}{\numberline {A.4}Value Function Training}{78}{section.A.4}%
-\contentsline {chapter}{\numberline {B}RL-MPC}{79}{appendix.B}%
+\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{67}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{69}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Discussion}{69}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Conclusion}{69}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Recommendations \& Future Work}{69}{section.8.3}%
+\contentsline {chapter}{References}{70}{chapter*.54}%
+\contentsline {chapter}{\numberline {A}RL \& RL Training }{75}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{75}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{75}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Agent Training}{77}{section.A.3}%
+\contentsline {section}{\numberline {A.4}Value Function Training}{77}{section.A.4}%
+\contentsline {chapter}{\numberline {B}RL-MPC}{78}{appendix.B}%
 \contentsfinish 

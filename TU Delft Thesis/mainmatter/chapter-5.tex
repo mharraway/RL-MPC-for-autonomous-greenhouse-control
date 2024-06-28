@@ -11,7 +11,7 @@ While there are numerous implementations of RL-MPC, there is limited research fo
 Furthermore, when considering the RL perspective in these implementations, it is important to note that the learned value function is merely an approximation. Consequently, when this value function is utilised in MPC, it is effectively unrolled and value iterations are executed. This process has the potential to result in an improved policy compared to the original policy that generated the value function.
 
 
-The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions as trained by the nominal agent (\autoref{tab:various-vf}) will then be used as the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function.
+The integration of RL into MPC will increasingly involve more complex implementations to analyze the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, a terminal constraint will be established by the RL agent. Following this, a terminal constraint region will be defined, also determined by the RL agent. The various value functions as trained by the nominal agent (\autoref{tab:various-vf}) will then be used as the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented in order to explore an slightly alternative application of the value function. The integration of the value function into the MPC's optimal control is facilitated by L4Casadi \cite{}
 
 \subsection{RL-MPC problem formulations}
 
@@ -174,7 +174,7 @@ The lack of performance guarantees for the terminal constraint and initial guess
 The computational time for the control input significantly increases. The terminal constraint may be excessively limiting the MPC due to the presence of a sub-optimal terminal constraint, particularly when dealing with longer prediction horizons.
 
 \section{Results - RL-MPC 3}
-This implementation aims to move away from the terminal constraint and allow the MPC more freedom by providing it with a terminal region constraint as outlined in \autoref{eq:terminal-region}, with a chosen $\delta_T = 5\%$, allowing for a $10\%$ deviation in the terminal state. As claimed in \cite{amritEconomicOptimizationUsing2011}, this could prove to be more beneficial than the terminal constraint, provided that an appropriate cost function is supplied. For this implementation, the cost function supplied is effectively $V(s) \equiv 0$. 
+This implementation aims to move away from the terminal constraint and allow the MPC more freedom by providing it with a terminal region constraint as outlined in \autoref{eq:terminal-region}, with a chosen $\delta_T = 5\%$, allowing for a $10\%$ deviation in the terminal state. As claimed in \cite{amritEconomicOptimizationUsing2011}, this could prove to be more beneficial than the terminal constraint, provided that an appropriate cost function is supplied. For this implementation, the cost function supplied is effectively $V_f(\cdot) \equiv 0$. 
 
 
 \begin{figure}[H]
@@ -184,11 +184,11 @@ This implementation aims to move away from the terminal constraint and allow the
 	\label{fig:rlmpc-impl3}
 \end{figure}
 
-The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior final cumulative reward in comparison to the MPC even at longer prediction horizons. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike the MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
+The results from the implementation are depicted in \autoref{fig:rlmpc-impl3}. Shortening the prediction time horizons results in a substantial increase in the overall cumulative reward compared to both the standalone MPC and RL policies. Furthermore, the RL-MPC obtains a marginally superior final cumulative reward in comparison to the MPC even at longer prediction horizons with both terminal regions generated from each set of initial guess. Lastly, it appears that this performance is increasing monotonically with an increase in prediction horizon, unlike the MPC. This could indicate that an appropriate cost function and terminal region has been found to  guarantee performance and stability. However, longer prediction horizons would be required to provide conclusive evidence of this.\\
 
-Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. This is likely because the terminal region is less limiting than the terminal constraint,  while also providing guidance to the MPC, resulting in reduced computational times. This is particularly noticeable at longer prediction horizons. It was noted that less instabilities in the solver were encountered at higher prediction horizons and thus could be the reason for such noticeable speedup.
+Additionally, this terminal region also allowed for a lower computation time of the control inputs, with a more noticeable faster compute time at longer prediction horizons. This is likely because the terminal region is less limiting than the terminal constraint,  while also providing guidance to the MPC, resulting in reduced computational times. This is particularly noticeable at longer prediction horizons. It was noted that less instabilities in the solver were encountered at higher prediction horizons and thus could be the reason for such noticeable speedup. It is also noted that \autoref{fig:rlmpc-impl3} suggests that the terminal region is robust manner in ensuring performance in that in can come from a fixed reference trajectory or a changing one, as shown from the construction of the terminal region by $(\tilde{\mathbf{x}}_{k|k}, \tilde{\mathbf{u}}_{k|k})$ and $(\hat{\mathbf{x}}_{k|k}, \hat{\mathbf{u}}_{k|k})$ respectively. 
 
-It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability. 
+ It is noted that the resulting performance (increase in total cumulative reward and decrease in computational time) of the RL-MPC policy outperforms both standalone policies, even when the terminal region and initial guesses are supplied by a policy that performs substantially worse than the MPC controller. This underscores the necessity of giving certain future-oriented information to the EMPC in order to attain optimal economic advantage, performance, and stability. 
 
 \section{Results - RL-MPC 4}
 This implementation investigates the effect of a supplying the MPC with a cost function, specifically an approximate value function represented by a neural network, $V_{\phi}$. Each value function as listed in \autoref{tab:various-vf} are tested as a terminal cost function for the MPC.
@@ -235,19 +235,19 @@ The performance of ${V}_{\phi_4}$ is superior to the others (at prediction horiz
 
 
 \section{Results - RL-MPC 5 and 6}
-Implementation 5 aims to incorporate both a terminal region constraint as well as a terminal cost function. $\tilde{V}_4$ is used as a cost function with a terminal region generated by initial guesses as in \autoref{eq:initial-guess-1}, with a $\delta_T =5\%$. Implementation 6 solves two problems, each with its own initial guesses and terminal region (\autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} respectively).It determines the optimal policy by evaluating the terminal state in each solution using the value function.
+Implementation RL-MPC 5 aims to incorporate both a terminal region constraint as well as a terminal cost function. ${V}_{\phi_4}$ is used as a cost function with a terminal region generated by $(\tilde{\mathbf{x}}_{k|k},\tilde{\mathbf{u}}_{k|k})$ initial guesses as in \autoref{eq:initial-guess-1}, with a $\delta_T =5\%$. Implementation RL-MPC 6 solves two problems, each with its own initial guesses, ($(\tilde{\mathbf{x}}_{k|k},\tilde{\mathbf{u}}_{k|k})$ and $(\hat{\mathbf{x}}_{k|k},\hat{\mathbf{u}}_{k|k})$) that are used to construct each of the problem's terminal region. After solving the two problems, it determines the optimal policy by evaluating the terminal state in each solution using the value function.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_5_6.eps}
 	\caption{MPC vs RL-MPC with terminal region and cost function vs RL-MPC solving two separate problems and evaluating best policy with value function}
 	\label{fig:rlmpc-impl5-6}
 \end{figure}
-As demonstrated in \autoref{fig:rlmpc-impl5-6}, both implementations outperform the standalone MPC and RL policies across all MPC prediction horizons. The computational time of implementation 6 is notably higher because it solves two optimisation problems instead of just one. Nevertheless, it is possible to solve the 2 problems in parallel, effectively reducing the computational time by half. Although the performance gains are substantial as compared to the standalone MPC, it is noted that majority of this performance increase is due to the terminal region constraint. In addition, this constraint on the terminal region also seems to make the performance increase monotonically, even with the addition of the value function. Furthermore, despite the inclusion of a neural network in the optimisation problem (Implementation 5), the computational time is reduced to a similar level as the standalone MPC when a terminal region constraint is present. 
 
+As demonstrated in \autoref{fig:rlmpc-impl5-6}, both implementations outperform the standalone MPC and RL policies across all MPC prediction horizons. The computational time of implementation RL-MPC 6 is notably higher because it solves two optimisation problems instead of just one. However, it is possible to solve the 2 problems in parallel, effectively reducing the computational time by half. Although the performance gains are substantial as compared to the standalone MPC, it is noted that majority of this performance increase may be due to the terminal region constraint. Furthermore, despite the inclusion of a neural network in the optimisation problem (Implementation RL-MPC 5), the computational time is reduced to a similar level as the standalone MPC when a terminal region constraint is present. Whether a cost function is necessary or not when a terminal region constraint already improves performance so much is investigated in \autoref{section:final-rl-mpc-nominal}.
 
-However , whether a value function is necessary when the terminal region
 \section{Final Result and Conclusion} \label{section:final-rl-mpc-nominal}
-The three best implementations are compared, namely Implementation 3 (with guesses and terminal region provided by \autoref{eq:initial-guess-1}), Implementation 5 and 6.
+The three best implementations are compared, namely RL-MPC 3 (with $\tilde{x}_{k|k}$,$\tilde{u}_{k|k}$), RL-MPC 5 and 6.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_final.eps}
@@ -260,21 +260,27 @@ The final results of the mentioned implementations are shown in \autoref{fig:rlm
 
 \begin{table}[H]
 	\centering
-	\caption{RL-MPC 3 and 5 vs MPC and RL}
+	\renewcommand{\arraystretch}{1.3}
+	\setlength{\tabcolsep}{8pt}
+	\caption{Performance Comparison: RL-MPC 3 and 5 vs. MPC and RL}
 	\label{tab:rlmpc-3-5-vs-MPC-and-RL}
 	\resizebox{\columnwidth}{!}{%
-		\begin{tabular}{|c|cc|cc|cc|cc|cc|cc|cl|}
-			\hline
-			& \multicolumn{2}{c|}{1hr} & \multicolumn{2}{c|}{2hr} & \multicolumn{2}{c|}{3 hr} & \multicolumn{2}{c|}{4 hr} & \multicolumn{2}{c|}{5 hr} & \multicolumn{2}{c|}{6 hr} & \multicolumn{2}{c|}{RL  @ 1 hr} \\
-			& Perf & Time & Perf & Time & Perf & Time & Perf & Time & Perf & Time & Perf & Time & \multicolumn{2}{c|}{Perf} \\ \cline{2-15} 
-			RL-MPC 3 (\%) & 19.91 & 10.91 & 5.191 & 2.38 & 0.79 & -5.38 & 0.21 & -8.47 & 0.328 & -16.2 & 0.67 & -18.95 & \multicolumn{2}{c|}{4.67} \\
-			RL-MPC 5 (\%) & 20.32 & 24.26 & 5.84 & 18.26 & 1.44 & 44.37 & 0.57 & 3.68 & 0.435 & 2.71 & 0.746 & -7.86 & \multicolumn{2}{c|}{5.02} \\ \hline
+		\begin{tabular}{ccccccccccc}
+			\toprule
+			& \multicolumn{2}{c}{1 hr} & \multicolumn{2}{c}{2 hr} & \multicolumn{2}{c}{3 hr} & \multicolumn{2}{c}{4 hr} & \multicolumn{2}{c}{5 hr} \\
+			\cmidrule(lr){2-11}
+			& Perf & Time & Perf & Time & Perf & Time & Perf & Time & Perf & Time \\
+			\midrule
+			RL-MPC 3 (\%) & 19.91 & 10.91 & 5.191 & 2.38 & 0.79 & -5.38 & 0.21 & -8.47 & 0.328 & -16.2 \\
+			RL-MPC 5 (\%) & 20.32 & 24.26 & 5.84 & 18.26 & 1.44 & 44.37 & 0.57 & 3.68 & 0.435 & 2.71 \\
+			\bottomrule
 		\end{tabular}%
 	}
 \end{table}
 
+
 \autoref{tab:rlmpc-3-5-vs-MPC-and-RL} displays the performance increase of RL-MPC 3 and RL-MPC 5 against the nominal MPC and a comparison with RL at a 1hr prediction horizon. Incorporating both a terminal region and value function  appears to offer minimal advantages compared to only using a terminal region, as the marginal improvement in performance results in a significantly larger increase in computational time. This reiterates the importance of reducing the computational cost of the neural network in the optimization problem. As seen in \autoref{fig:rlmpc-final}, RL-MPC 6 offers promising results as an alternative method to using the value function, and could yield even more benefits when more than two initial trajectories and terminal regions are provided by various agents and methods. The computational time of RL-MPC 6 can be theoretically halved by solving the problems in parallel, resulting in a compute cost similar to RL-MPC 3 and a similar performance to RL-MPC 5. Further research should be conducted on this implementation in the future.\\
-While the combination of RL and MPC shows promising results, it is important to note that the simulations remain deterministic. These results primarily indicate which implementations are worth testing further in a stochastic environment, to create a more accurate depiction of reality. Moreover, is may be tempting to use RL-MPC 2 (with terminal constraint) to guarantee performance as good as RL. However, in a stochastic environment, this may not be practically achievable and there are no equivalent performance guarantees available. It may not be feasible because the terminal constraint, as determined by the generated reference trajectory, may not be attainable due to the random nature of the state evolution. Consequently, allowing a terminal region relaxes this constraint and makes the problem computational tractable. Finally, a value function derived from a policy that inherently considers uncertainty can provide the MPC with valuable insights regarding the impact of uncertainty on its calculated control actions. Therefore, RL-MPC 3 and RL-MPC 5 are suitable choices for testing in a stochastic environment.
+While the combination of RL and MPC shows promising results, it is important to note that the simulations remain deterministic. These results primarily indicate which implementations are worth testing further in a stochastic environment, to create a more accurate depiction of reality. Moreover, is may be tempting to use RL-MPC 2 (with terminal constraint) to guarantee performance as good as RL. However, in a stochastic environment, this may not be practically achievable and there are no equivalent performance guarantees available. This approach may not be feasible because the terminal constraint, as determined by the generated reference trajectory, may not be attainable due to the random nature of the state evolution. Consequently, allowing a terminal region relaxes this constraint and makes the problem computational tractable. Finally, a value function derived from a policy that inherently considers uncertainty can provide the MPC with valuable insights regarding the impact of uncertainty on its calculated control actions. Therefore, RL-MPC 3 and RL-MPC 5 are suitable choices for testing in a stochastic environment. For computational reasons, RL-MPC 6 was not tested on a stochastic environment, however further research should be conducted to investigate its efficacy. 
 
 
 
