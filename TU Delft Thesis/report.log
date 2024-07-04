@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  4 JUL 2024 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  4 JUL 2024 15:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1937,17 +1937,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-Package epstopdf Info: Source file: <figures/sampled_states_TR.eps>
-(epstopdf)                    date: 2024-05-26 07:07:26
-(epstopdf)                    size: 52067608 bytes
-(epstopdf)             Output file: <figures/sampled_states_TR-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-05-26 09:25:27
-(epstopdf)                    size: 12727933 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/sampled_states_TR-
-eps-converted-to.pdf figures/sampled_states_TR.eps>
-(epstopdf)             \includegraphics on input line 475.
-Package epstopdf Info: Output file is already uptodate.
 <figures/sampled_states_TR-eps-converted-to.pdf, id=1423, 1084.05pt x 361.35pt>
 
 File: figures/sampled_states_TR-eps-converted-to.pdf Graphic file (type pdf)
@@ -1956,17 +1945,6 @@ Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.pdf  used o
 n input line 475.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 [35]
-Package epstopdf Info: Source file: <figures/sampled_inputs_TR.eps>
-(epstopdf)                    date: 2024-05-26 07:07:26
-(epstopdf)                    size: 30522734 bytes
-(epstopdf)             Output file: <figures/sampled_inputs_TR-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-05-26 09:25:37
-(epstopdf)                    size: 6710190 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/sampled_inputs_TR-
-eps-converted-to.pdf figures/sampled_inputs_TR.eps>
-(epstopdf)             \includegraphics on input line 483.
-Package epstopdf Info: Output file is already uptodate.
 <figures/sampled_inputs_TR-eps-converted-to.pdf, id=1431, 1084.05pt x 361.35pt>
 
 File: figures/sampled_inputs_TR-eps-converted-to.pdf Graphic file (type pdf)
@@ -1982,17 +1960,6 @@ Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 495
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [36 <./figures/sampled_states_TR-eps-converted-to.pdf> <./figures/sampled_inpu
 ts_TR-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/deep_full_heatmap.eps>
-(epstopdf)                    date: 2024-05-26 07:50:53
-(epstopdf)                    size: 72047629 bytes
-(epstopdf)             Output file: <figures/deep_full_heatmap-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-05-26 09:43:48
-(epstopdf)                    size: 2074682 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/deep_full_heatmap-
-eps-converted-to.pdf figures/deep_full_heatmap.eps>
-(epstopdf)             \includegraphics on input line 507.
-Package epstopdf Info: Output file is already uptodate.
 <figures/deep_full_heatmap-eps-converted-to.pdf, id=1532, 462.72874pt x 347.297
 5pt>
 File: figures/deep_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
@@ -2004,17 +1971,6 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 508.
 LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
 (Font)              scaled to size 7.0pt on input line 508.
-Package epstopdf Info: Source file: <figures/deep_less_heatmap.eps>
-(epstopdf)                    date: 2024-05-25 19:20:55
-(epstopdf)                    size: 72039564 bytes
-(epstopdf)             Output file: <figures/deep_less_heatmap-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-05-26 09:45:12
-(epstopdf)                    size: 2098778 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/deep_less_heatmap-
-eps-converted-to.pdf figures/deep_less_heatmap.eps>
-(epstopdf)             \includegraphics on input line 514.
-Package epstopdf Info: Output file is already uptodate.
 <figures/deep_less_heatmap-eps-converted-to.pdf, id=1533, 462.72874pt x 347.297
 5pt>
 File: figures/deep_less_heatmap-eps-converted-to.pdf Graphic file (type pdf)
@@ -2022,17 +1978,6 @@ File: figures/deep_less_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/deep_less_heatmap-eps-converted-to.pdf  used o
 n input line 514.
 (pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
-Package epstopdf Info: Source file: <figures/shallow_full_heatmap.eps>
-(epstopdf)                    date: 2024-05-26 09:42:39
-(epstopdf)                    size: 72047646 bytes
-(epstopdf)             Output file: <figures/shallow_full_heatmap-eps-converted
--to.pdf>
-(epstopdf)                    date: 2024-05-26 09:45:34
-(epstopdf)                    size: 1916821 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/shallow_full_heatm
-ap-eps-converted-to.pdf figures/shallow_full_heatmap.eps>
-(epstopdf)             \includegraphics on input line 521.
-Package epstopdf Info: Output file is already uptodate.
 <figures/shallow_full_heatmap-eps-converted-to.pdf, id=1534, 462.72874pt x 347.
 2975pt>
 File: figures/shallow_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
@@ -2041,17 +1986,6 @@ File: figures/shallow_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/shallow_full_heatmap-eps-converted-to.pdf  use
 d on input line 521.
 (pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
-Package epstopdf Info: Source file: <figures/deep_reduced_heatmap.eps>
-(epstopdf)                    date: 2024-05-26 07:56:35
-(epstopdf)                    size: 72055817 bytes
-(epstopdf)             Output file: <figures/deep_reduced_heatmap-eps-converted
--to.pdf>
-(epstopdf)                    date: 2024-05-26 09:45:56
-(epstopdf)                    size: 2109835 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/deep_reduced_heatm
-ap-eps-converted-to.pdf figures/deep_reduced_heatmap.eps>
-(epstopdf)             \includegraphics on input line 528.
-Package epstopdf Info: Output file is already uptodate.
 <figures/deep_reduced_heatmap-eps-converted-to.pdf, id=1535, 462.72874pt x 347.
 2975pt>
 File: figures/deep_reduced_heatmap-eps-converted-to.pdf Graphic file (type pdf)
@@ -2061,17 +1995,6 @@ Package pdftex.def Info: figures/deep_reduced_heatmap-eps-converted-to.pdf  use
 d on input line 528.
 (pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
  [37 <./figures/tr_training_graphs.pdf>]
-Package epstopdf Info: Source file: <figures/vf_time_predictions_long.eps>
-(epstopdf)                    date: 2024-05-26 11:24:31
-(epstopdf)                    size: 263092 bytes
-(epstopdf)             Output file: <figures/vf_time_predictions_long-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2024-05-26 11:25:09
-(epstopdf)                    size: 78755 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/vf_time_prediction
-s_long-eps-converted-to.pdf figures/vf_time_predictions_long.eps>
-(epstopdf)             \includegraphics on input line 543.
-Package epstopdf Info: Output file is already uptodate.
 <figures/vf_time_predictions_long-eps-converted-to.pdf, id=1581, 722.7pt x 361.
 35pt>
 File: figures/vf_time_predictions_long-eps-converted-to.pdf Graphic file (type 
@@ -2084,17 +2007,6 @@ Package pdftex.def Info: figures/vf_time_predictions_long-eps-converted-to.pdf
 [38 <./figures/deep_full_heatmap-eps-converted-to.pdf> <./figures/deep_less_hea
 tmap-eps-converted-to.pdf> <./figures/shallow_full_heatmap-eps-converted-to.pdf
 > <./figures/deep_reduced_heatmap-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/vf_time_predictions_short.eps>
-(epstopdf)                    date: 2024-05-26 11:23:40
-(epstopdf)                    size: 68378 bytes
-(epstopdf)             Output file: <figures/vf_time_predictions_short-eps-conv
-erted-to.pdf>
-(epstopdf)                    date: 2024-05-26 11:25:09
-(epstopdf)                    size: 25020 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/vf_time_prediction
-s_short-eps-converted-to.pdf figures/vf_time_predictions_short.eps>
-(epstopdf)             \includegraphics on input line 554.
-Package epstopdf Info: Output file is already uptodate.
 <figures/vf_time_predictions_short-eps-converted-to.pdf, id=1757, 722.7pt x 361
 .35pt>
 File: figures/vf_time_predictions_short-eps-converted-to.pdf Graphic file (type
@@ -2105,17 +2017,6 @@ Package pdftex.def Info: figures/vf_time_predictions_short-eps-converted-to.pdf
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [39 <./figures/vf_time_predictions_long-eps-converted-to.pdf> <./figures/vf_ti
 me_predictions_short-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/vf_heatmap_stochastic.eps>
-(epstopdf)                    date: 2024-06-26 12:53:36
-(epstopdf)                    size: 238742257 bytes
-(epstopdf)             Output file: <figures/vf_heatmap_stochastic-eps-converte
-d-to.pdf>
-(epstopdf)                    date: 2024-06-26 12:55:12
-(epstopdf)                    size: 6398610 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/vf_heatmap_stochas
-tic-eps-converted-to.pdf figures/vf_heatmap_stochastic.eps>
-(epstopdf)             \includegraphics on input line 572.
-Package epstopdf Info: Output file is already uptodate.
 <figures/vf_heatmap_stochastic-eps-converted-to.pdf, id=1855, 578.16pt x 578.16
 pt>
 File: figures/vf_heatmap_stochastic-eps-converted-to.pdf Graphic file (type pdf
@@ -2369,7 +2270,7 @@ Package logreq Info: Writing requests to 'report.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  46837 strings out of 475735
- 930871 string characters out of 5784786
+ 931330 string characters out of 5784786
  1888759 words of memory out of 5000000
  66120 multiletter control sequences out of 15000+600000
  700325 words of font info for 354 fonts, out of 8000000 for 9000
