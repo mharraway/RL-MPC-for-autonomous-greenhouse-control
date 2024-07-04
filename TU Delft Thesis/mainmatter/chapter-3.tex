@@ -6,7 +6,7 @@ This chapter provides an overview of the process of developing the RL agent that
 This section describes the environment for the RL agent to learn an optimal policy. The environment is built on the Greenhouse model as described in \autoref{section:greenhouse-model} and outlines important features to successfully train an RL agent. This includes the observation space available for the agent to make decisions on, the action space available to the agent, the reward function, and finally the weather data that is used for the training period.
 
 \paragraph{Observation Space}
-The observation space of the agent must be carefully selected, in order to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions on as it is difficult to measure without disrupting the crop's life cycle. However, various methods exist for predicting the state of the crop dry mass such as a non-linear kalman observer and other machine learning techniques \cite{gongDeepLearningBased2021}. However it is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels are easily measured and form part of the observation space. The current weather conditions are also made available to the agent in order to make better decisions. As shown in \autoref{section:greenhouse-model}, since the control input is dependent on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered to be time-aware, and so the current time step is also given to the agent. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days (as discussed in \autoref{ssection:optimization-goal}), the problem is episodic. By incorporating time awareness, the agent is able to leverage the current time in order to make more optimal decisions. As discussed in \autoref{ssection:optimization-goal} and later in \autoref{paragraph:reward-function}, the optimization goal includes maximizing the growth difference between time steps, and so knowledge of the previous dry mass state, the growth experienced in the previous time step may be beneficial to learning an optimal policy. However, the 3 following environment state tuples $s(k)$ at time $k$ have been  separately tested to represent the observation returned to the agent:
+The observation space of the agent must be carefully selected, in order to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions on as it is difficult to measure without disrupting the crop's life cycle. However, various methods exist for predicting the state of the crop dry mass such as a non-linear kalman observer and other machine learning techniques \cite{gongDeepLearningBased2021}. However it is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels are easily measured and form part of the observation space. The current weather conditions are also made available to the agent in order to make better decisions. As shown in \autoref{section:greenhouse-model}, since the control input is dependent on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered to be time-aware, and so the current time step is also given to the agent. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days (as discussed in \autoref{ssection:optimization-goal}), the problem is episodic. By incorporating time awareness, the agent is able to leverage the current time in order to make more optimal decisions. As discussed in \autoref{ssection:optimization-goal} and later in \autoref{paragraph:reward-function}, the optimization goal includes maximizing the growth difference between time stpdf, and so knowledge of the previous dry mass state, the growth experienced in the previous time step may be beneficial to learning an optimal policy. However, the 3 following environment state tuples $s(k)$ at time $k$ have been  separately tested to represent the observation returned to the agent:
 \begin{equation}
 \label{eq:obs-tuple-1}
     s(k) = (y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
@@ -130,7 +130,7 @@ This seed value was utilized for both the initialization of neural network weigh
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/weather_data.eps}
+    \includegraphics[width=\textwidth]{figures/weather_data.pdf}
     \caption{Weather Data}
     \label{fig:weather-data}
 \end{figure}
@@ -181,7 +181,7 @@ The value functions trained on their respective discount factor is denoted $V_\p
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/gamma_reward.eps}
+	\includegraphics[width = \textwidth]{figures/gamma_reward.pdf}
 	\caption{Cumulative Reward vs Discount factor ($\gamma$)}
 	\label{fig:gamma_vs_reward}
 \end{figure}
@@ -306,7 +306,7 @@ Each agent is assigned a name based on the degree of uncertainty on which they r
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{figures/stochastic_rl_policies.eps}
+    \includegraphics[width = \textwidth]{figures/stochastic_rl_policies.pdf}
     \caption{Stochastic RL policy performances}
     \label{fig:stochastic-rl-policies}
 \end{figure}
@@ -388,7 +388,7 @@ With only 10 additional samples every time step ($q=10$), the desired state spac
 Once data is generated, it is split into a validation and training dataset with a $20\%$ and $80\%$ split respectively to ensure that the function approximator does not over fit to the seen data. Transition tuples are sampled from the training set and the following loss function is minimized:
 
 \begin{equation}\label{eq:vf_td_loss}
-    \mathcal{L}(\phi, \mathcal{D}) =  V_{\phi}(s_k) - (r_k + (1-d) V_{\phi_{targ}} (s_{k+1}))
+    L(\phi, \mathcal{D}) =  V_{\phi}(s_k) - (r_k + (1-d) V_{\phi_{targ}} (s_{k+1}))
 \end{equation}
 
 where $\phi$ and $\phi_{targ}$ are the current and target weights of the respective function approximators and $\mathcal{D}$ is the training data set. The Adam optimizer is used to minimize \autoref{eq:vf_td_loss} over a batch size $\mathcal{B}$. The target weight $\phi_{targ}$ are updated every learning iteration by Polyak averaging $\phi$ by:
@@ -492,7 +492,7 @@ Performance metrics include the squared error between the predicted total return
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{figures/tr_training_graphs.eps}
+    \includegraphics[width = \textwidth]{figures/tr_training_graphs.pdf}
     \caption{Performance Curves, trained on the nominal Agent}
     \label{fig:tr_perf_curves}
 \end{figure}

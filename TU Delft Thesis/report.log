@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  28 JUN 2024 13:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  4 JUL 2024 14:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1612,7 +1612,7 @@ Package biblatex Info: ... file 'report.bbl' found.
 (./report.bbl)
 Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
-<figures/cover.jpg, id=316, 685.56125pt x 1027.84pt>
+<figures/cover.jpg, id=296, 685.56125pt x 1027.84pt>
 File: figures/cover.jpg Graphic file (type jpg)
 <use figures/cover.jpg>
 Package pdftex.def Info: figures/cover.jpg  used on input line 36.
@@ -1628,7 +1628,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `RobotoSlab-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/logo-white.pdf, id=317, 114.08723pt x 45.99081pt>
+<figures/logo-white.pdf, id=297, 114.08723pt x 45.99081pt>
 File: figures/logo-white.pdf Graphic file (type pdf)
 <use figures/logo-white.pdf>
 Package pdftex.def Info: figures/logo-white.pdf  used on input line 36.
@@ -1691,7 +1691,7 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 st/fonts/enc/dvips/roboto/rbto_j2bk2t.enc} <./figures/cover.jpg> <./figures/log
 o-white.pdf>]
 (./frontmatter/title-report.tex
-<figures/logo-black.pdf, id=330, 114.08723pt x 45.99081pt>
+<figures/logo-black.pdf, id=310, 114.08723pt x 45.99081pt>
 File: figures/logo-black.pdf Graphic file (type pdf)
 <use figures/logo-black.pdf>
 Package pdftex.def Info: figures/logo-black.pdf  used on input line 62.
@@ -1778,7 +1778,7 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 20.
 LaTeX Font Info:    Font shape `T1/RobotoSlab-TLF/b/n' aliased to
 (Font)              `T1/RobotoSlab-TLF/bold/n' on input line 20.
-<figures/van_henten_model.png, id=565, 633.86812pt x 331.2375pt>
+<figures/van_henten_model.png, id=545, 633.86812pt x 331.2375pt>
 File: figures/van_henten_model.png Graphic file (type png)
 <use figures/van_henten_model.png>
 Package pdftex.def Info: figures/van_henten_model.png  used on input line 23.
@@ -1807,7 +1807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
-<figures/agent-environment.png, id=691, 500.46976pt x 178.86826pt>
+<figures/agent-environment.png, id=668, 500.46976pt x 178.86826pt>
 File: figures/agent-environment.png Graphic file (type png)
 <use figures/agent-environment.png>
 Package pdftex.def Info: figures/agent-environment.png  used on input line 422.
@@ -1822,50 +1822,26 @@ LaTeX Warning: Reference `infinity_return' on page 14 undefined on input line 4
 LaTeX Warning: Reference `infinity_return' on page 14 undefined on input line 4
 72.
 
-[14] [15] [16]
+[14] [15] [16] [17]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 593.
+d on input line 667.
 
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 593.
+(Font)              scaled to size 10.0pt on input line 667.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 7.3pt on input line 593.
+(Font)              scaled to size 7.3pt on input line 667.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 5.5pt on input line 593.
-[17]
-
-LaTeX Warning: Reference `sec:rl' on page 18 undefined on input line 612.
-
-[18]
-
-LaTeX Warning: Reference `eq:optimal bellman equation' on page 19 undefined on 
-input line 622.
-
-
-LaTeX Warning: Reference `sssec:empc' on page 19 undefined on input line 632.
-
-[19]) (./mainmatter/chapter-3.tex [20]
+(Font)              scaled to size 5.5pt on input line 667.
+[18] [19]) (./mainmatter/chapter-3.tex [20]
 Chapter 3.
 [21
 
 ] [22]
-Package epstopdf Info: Source file: <figures/weather_data.eps>
-(epstopdf)                    date: 2024-06-28 11:02:46
-(epstopdf)                    size: 165465 bytes
-(epstopdf)             Output file: <figures/weather_data-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2024-06-28 11:03:02
-(epstopdf)                    size: 54951 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/weather_data-eps-c
-onverted-to.pdf figures/weather_data.eps>
-(epstopdf)             \includegraphics on input line 133.
-Package epstopdf Info: Output file is already uptodate.
-<figures/weather_data-eps-converted-to.pdf, id=876, 1084.05pt x 361.35pt>
-File: figures/weather_data-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/weather_data-eps-converted-to.pdf>
-Package pdftex.def Info: figures/weather_data-eps-converted-to.pdf  used on inp
-ut line 133.
+<figures/weather_data.pdf, id=852, 1084.05pt x 361.35pt>
+File: figures/weather_data.pdf Graphic file (type pdf)
+<use figures/weather_data.pdf>
+Package pdftex.def Info: figures/weather_data.pdf  used on input line 133.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 
 
@@ -1875,23 +1851,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./figures/weather_data-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/gamma_reward.eps>
-(epstopdf)                    date: 2024-06-28 11:02:47
-(epstopdf)                    size: 38935 bytes
-(epstopdf)             Output file: <figures/gamma_reward-eps-converted-to.pdf>
-
-(epstopdf)                    date: 2024-06-28 11:03:02
-(epstopdf)                    size: 19564 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/gamma_reward-eps-c
-onverted-to.pdf figures/gamma_reward.eps>
-(epstopdf)             \includegraphics on input line 184.
-Package epstopdf Info: Output file is already uptodate.
-<figures/gamma_reward-eps-converted-to.pdf, id=941, 722.7pt x 289.08pt>
-File: figures/gamma_reward-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/gamma_reward-eps-converted-to.pdf>
-Package pdftex.def Info: figures/gamma_reward-eps-converted-to.pdf  used on inp
-ut line 184.
+[24 <./figures/weather_data.pdf>]
+<figures/gamma_reward.pdf, id=920, 722.7pt x 289.08pt>
+File: figures/gamma_reward.pdf Graphic file (type pdf)
+<use figures/gamma_reward.pdf>
+Package pdftex.def Info: figures/gamma_reward.pdf  used on input line 184.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 185.
@@ -1911,8 +1875,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[26 <./figures/gamma_reward-eps-converted-to.pdf>]
-<figures/vf_vs_gamma.pdf, id=1005, 722.7pt x 578.16pt>
+[26 <./figures/gamma_reward.pdf>]
+<figures/vf_vs_gamma.pdf, id=984, 722.7pt x 578.16pt>
 File: figures/vf_vs_gamma.pdf Graphic file (type pdf)
 <use figures/vf_vs_gamma.pdf>
 Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 210.
@@ -1921,14 +1885,14 @@ Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 210.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/selected_policies_outputs.pdf, id=1072, 1084.05pt x 361.35pt>
+<figures/selected_policies_outputs.pdf, id=1051, 1084.05pt x 361.35pt>
 File: figures/selected_policies_outputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_outputs.pdf>
 Package pdftex.def Info: figures/selected_policies_outputs.pdf  used on input l
 ine 267.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 [28]
-<figures/selected_policies_inputs.pdf, id=1079, 722.7pt x 361.35pt>
+<figures/selected_policies_inputs.pdf, id=1058, 722.7pt x 361.35pt>
 File: figures/selected_policies_inputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_inputs.pdf>
 Package pdftex.def Info: figures/selected_policies_inputs.pdf  used on input li
@@ -1936,26 +1900,13 @@ ne 274.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [29 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
 uts.pdf>]
-Package epstopdf Info: Source file: <figures/stochastic_rl_policies.eps>
-(epstopdf)                    date: 2024-06-28 11:02:49
-(epstopdf)                    size: 49373 bytes
-(epstopdf)             Output file: <figures/stochastic_rl_policies-eps-convert
-ed-to.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:02
-(epstopdf)                    size: 24932 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_rl_poli
-cies-eps-converted-to.pdf figures/stochastic_rl_policies.eps>
-(epstopdf)             \includegraphics on input line 309.
-Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_rl_policies-eps-converted-to.pdf, id=1198, 722.7pt x 216.81
-pt>
-File: figures/stochastic_rl_policies-eps-converted-to.pdf Graphic file (type pd
-f)
-<use figures/stochastic_rl_policies-eps-converted-to.pdf>
-Package pdftex.def Info: figures/stochastic_rl_policies-eps-converted-to.pdf  u
-sed on input line 309.
+<figures/stochastic_rl_policies.pdf, id=1176, 722.7pt x 216.81pt>
+File: figures/stochastic_rl_policies.pdf Graphic file (type pdf)
+<use figures/stochastic_rl_policies.pdf>
+Package pdftex.def Info: figures/stochastic_rl_policies.pdf  used on input line
+ 309.
 (pdftex.def)             Requested size: 448.1309pt x 134.44064pt.
- [30 <./figures/stochastic_rl_policies-eps-converted-to.pdf>]
+ [30 <./figures/stochastic_rl_policies.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+zplsups on input lin
 e 325.
 
@@ -1971,22 +1922,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
 (Font)              scaled to size 8.0pt on input line 325.
  [31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
-<figures/sampled_y_td.pdf, id=1285, 462.52798pt x 346.89601pt>
+<figures/sampled_y_td.pdf, id=1272, 722.7pt x 361.35pt>
 File: figures/sampled_y_td.pdf Graphic file (type pdf)
 <use figures/sampled_y_td.pdf>
 Package pdftex.def Info: figures/sampled_y_td.pdf  used on input line 372.
-(pdftex.def)             Requested size: 448.1309pt x 336.1129pt.
-<figures/sampled_u_td.pdf, id=1286, 462.52798pt x 346.89601pt>
+(pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
+<figures/sampled_u_td.pdf, id=1273, 722.7pt x 361.35pt>
 File: figures/sampled_u_td.pdf Graphic file (type pdf)
 <use figures/sampled_u_td.pdf>
 Package pdftex.def Info: figures/sampled_u_td.pdf  used on input line 378.
-(pdftex.def)             Requested size: 448.1309pt x 336.1129pt.
- [32] [33 <./figures/sampled_y_td.pdf>] [34 <./figures/sampled_u_td.pdf>]
+(pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
+ [32] [33 <./figures/sampled_y_td.pdf> <./figures/sampled_u_td.pdf>] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-[35]
 Package epstopdf Info: Source file: <figures/sampled_states_TR.eps>
 (epstopdf)                    date: 2024-05-26 07:07:26
 (epstopdf)                    size: 52067608 bytes
@@ -1998,13 +1948,14 @@ Package epstopdf Info: Source file: <figures/sampled_states_TR.eps>
 eps-converted-to.pdf figures/sampled_states_TR.eps>
 (epstopdf)             \includegraphics on input line 475.
 Package epstopdf Info: Output file is already uptodate.
-<figures/sampled_states_TR-eps-converted-to.pdf, id=1330, 1084.05pt x 361.35pt>
+<figures/sampled_states_TR-eps-converted-to.pdf, id=1423, 1084.05pt x 361.35pt>
 
 File: figures/sampled_states_TR-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/sampled_states_TR-eps-converted-to.pdf>
 Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.pdf  used o
 n input line 475.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
+[35]
 Package epstopdf Info: Source file: <figures/sampled_inputs_TR.eps>
 (epstopdf)                    date: 2024-05-26 07:07:26
 (epstopdf)                    size: 30522734 bytes
@@ -2016,31 +1967,21 @@ Package epstopdf Info: Source file: <figures/sampled_inputs_TR.eps>
 eps-converted-to.pdf figures/sampled_inputs_TR.eps>
 (epstopdf)             \includegraphics on input line 483.
 Package epstopdf Info: Output file is already uptodate.
-<figures/sampled_inputs_TR-eps-converted-to.pdf, id=1331, 1084.05pt x 361.35pt>
+<figures/sampled_inputs_TR-eps-converted-to.pdf, id=1431, 1084.05pt x 361.35pt>
 
 File: figures/sampled_inputs_TR-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/sampled_inputs_TR-eps-converted-to.pdf>
 Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.pdf  used o
 n input line 483.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
- [36 <./figures/sampled_states_TR-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/tr_training_graphs.eps>
-(epstopdf)                    date: 2024-06-28 11:02:50
-(epstopdf)                    size: 195398 bytes
-(epstopdf)             Output file: <figures/tr_training_graphs-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:02
-(epstopdf)                    size: 60270 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/tr_training_graphs
--eps-converted-to.pdf figures/tr_training_graphs.eps>
-(epstopdf)             \includegraphics on input line 495.
-Package epstopdf Info: Output file is already uptodate.
-<figures/tr_training_graphs-eps-converted-to.pdf, id=1390, 722.7pt x 361.35pt>
-File: figures/tr_training_graphs-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/tr_training_graphs-eps-converted-to.pdf>
-Package pdftex.def Info: figures/tr_training_graphs-eps-converted-to.pdf  used 
-on input line 495.
+<figures/tr_training_graphs.pdf, id=1436, 722.7pt x 361.35pt>
+File: figures/tr_training_graphs.pdf Graphic file (type pdf)
+<use figures/tr_training_graphs.pdf>
+Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 495
+.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
+ [36 <./figures/sampled_states_TR-eps-converted-to.pdf> <./figures/sampled_inpu
+ts_TR-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/deep_full_heatmap.eps>
 (epstopdf)                    date: 2024-05-26 07:50:53
 (epstopdf)                    size: 72047629 bytes
@@ -2052,7 +1993,7 @@ Package epstopdf Info: Source file: <figures/deep_full_heatmap.eps>
 eps-converted-to.pdf figures/deep_full_heatmap.eps>
 (epstopdf)             \includegraphics on input line 507.
 Package epstopdf Info: Output file is already uptodate.
-<figures/deep_full_heatmap-eps-converted-to.pdf, id=1392, 462.72874pt x 347.297
+<figures/deep_full_heatmap-eps-converted-to.pdf, id=1532, 462.72874pt x 347.297
 5pt>
 File: figures/deep_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/deep_full_heatmap-eps-converted-to.pdf>
@@ -2074,7 +2015,7 @@ Package epstopdf Info: Source file: <figures/deep_less_heatmap.eps>
 eps-converted-to.pdf figures/deep_less_heatmap.eps>
 (epstopdf)             \includegraphics on input line 514.
 Package epstopdf Info: Output file is already uptodate.
-<figures/deep_less_heatmap-eps-converted-to.pdf, id=1393, 462.72874pt x 347.297
+<figures/deep_less_heatmap-eps-converted-to.pdf, id=1533, 462.72874pt x 347.297
 5pt>
 File: figures/deep_less_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/deep_less_heatmap-eps-converted-to.pdf>
@@ -2092,7 +2033,7 @@ Package epstopdf Info: Source file: <figures/shallow_full_heatmap.eps>
 ap-eps-converted-to.pdf figures/shallow_full_heatmap.eps>
 (epstopdf)             \includegraphics on input line 521.
 Package epstopdf Info: Output file is already uptodate.
-<figures/shallow_full_heatmap-eps-converted-to.pdf, id=1394, 462.72874pt x 347.
+<figures/shallow_full_heatmap-eps-converted-to.pdf, id=1534, 462.72874pt x 347.
 2975pt>
 File: figures/shallow_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2111,7 +2052,7 @@ Package epstopdf Info: Source file: <figures/deep_reduced_heatmap.eps>
 ap-eps-converted-to.pdf figures/deep_reduced_heatmap.eps>
 (epstopdf)             \includegraphics on input line 528.
 Package epstopdf Info: Output file is already uptodate.
-<figures/deep_reduced_heatmap-eps-converted-to.pdf, id=1395, 462.72874pt x 347.
+<figures/deep_reduced_heatmap-eps-converted-to.pdf, id=1535, 462.72874pt x 347.
 2975pt>
 File: figures/deep_reduced_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -2119,8 +2060,7 @@ File: figures/deep_reduced_heatmap-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures/deep_reduced_heatmap-eps-converted-to.pdf  use
 d on input line 528.
 (pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
- [37 <./figures/sampled_inputs_TR-eps-converted-to.pdf> <./figures/tr_training_
-graphs-eps-converted-to.pdf>]
+ [37 <./figures/tr_training_graphs.pdf>]
 Package epstopdf Info: Source file: <figures/vf_time_predictions_long.eps>
 (epstopdf)                    date: 2024-05-26 11:24:31
 (epstopdf)                    size: 263092 bytes
@@ -2132,7 +2072,7 @@ rted-to.pdf>
 s_long-eps-converted-to.pdf figures/vf_time_predictions_long.eps>
 (epstopdf)             \includegraphics on input line 543.
 Package epstopdf Info: Output file is already uptodate.
-<figures/vf_time_predictions_long-eps-converted-to.pdf, id=1481, 722.7pt x 361.
+<figures/vf_time_predictions_long-eps-converted-to.pdf, id=1581, 722.7pt x 361.
 35pt>
 File: figures/vf_time_predictions_long-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2140,9 +2080,10 @@ pdf)
 Package pdftex.def Info: figures/vf_time_predictions_long-eps-converted-to.pdf 
  used on input line 543.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [38 <./figures/deep_full_heatmap-eps-converted-to.pdf> <./figures/deep_less_he
-atmap-eps-converted-to.pdf> <./figures/shallow_full_heatmap-eps-converted-to.pd
-f> <./figures/deep_reduced_heatmap-eps-converted-to.pdf>]
+
+[38 <./figures/deep_full_heatmap-eps-converted-to.pdf> <./figures/deep_less_hea
+tmap-eps-converted-to.pdf> <./figures/shallow_full_heatmap-eps-converted-to.pdf
+> <./figures/deep_reduced_heatmap-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/vf_time_predictions_short.eps>
 (epstopdf)                    date: 2024-05-26 11:23:40
 (epstopdf)                    size: 68378 bytes
@@ -2154,7 +2095,7 @@ erted-to.pdf>
 s_short-eps-converted-to.pdf figures/vf_time_predictions_short.eps>
 (epstopdf)             \includegraphics on input line 554.
 Package epstopdf Info: Output file is already uptodate.
-<figures/vf_time_predictions_short-eps-converted-to.pdf, id=1657, 722.7pt x 361
+<figures/vf_time_predictions_short-eps-converted-to.pdf, id=1757, 722.7pt x 361
 .35pt>
 File: figures/vf_time_predictions_short-eps-converted-to.pdf Graphic file (type
  pdf)
@@ -2175,7 +2116,7 @@ d-to.pdf>
 tic-eps-converted-to.pdf figures/vf_heatmap_stochastic.eps>
 (epstopdf)             \includegraphics on input line 572.
 Package epstopdf Info: Output file is already uptodate.
-<figures/vf_heatmap_stochastic-eps-converted-to.pdf, id=1755, 578.16pt x 578.16
+<figures/vf_heatmap_stochastic-eps-converted-to.pdf, id=1855, 578.16pt x 578.16
 pt>
 File: figures/vf_heatmap_stochastic-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -2192,64 +2133,41 @@ Chapter 4.
 
 LaTeX Warning: Citation 'Andersson2018' on page 43 undefined on input line 45.
 
-Package epstopdf Info: Source file: <figures/mpc_nominal.eps>
-(epstopdf)                    date: 2024-06-28 11:02:50
-(epstopdf)                    size: 35417 bytes
-(epstopdf)             Output file: <figures/mpc_nominal-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:03
-(epstopdf)                    size: 20204 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/mpc_nominal-eps-co
-nverted-to.pdf figures/mpc_nominal.eps>
-(epstopdf)             \includegraphics on input line 52.
-Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_nominal-eps-converted-to.pdf, id=1850, 722.7pt x 289.08pt>
-File: figures/mpc_nominal-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/mpc_nominal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/mpc_nominal-eps-converted-to.pdf  used on inpu
-t line 52.
+<figures/mpc_nominal.pdf, id=1950, 722.7pt x 289.08pt>
+File: figures/mpc_nominal.pdf Graphic file (type pdf)
+<use figures/mpc_nominal.pdf>
+Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [43]
-<figures/mpc_outputs_time_series.pdf, id=1864, 1084.05pt x 361.35pt>
+<figures/mpc_outputs_time_series.pdf, id=1964, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 62.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1865, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1965, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 69.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [44 <./figures/mpc_nominal-eps-converted-to.pdf> <./figures/mpc_outputs_time_s
-eries.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1973, 722.7pt x 578.16pt>
+ [44 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
+<figures/stochastic_mpc_rewards_time.pdf, id=2077, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
  line 82.
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
- [45 <./figures/mpc_inputs_times_series.pdf>]
-Package epstopdf Info: Source file: <figures/stochastic_mpc_perf.eps>
-(epstopdf)                    date: 2024-06-28 11:02:53
-(epstopdf)                    size: 44484 bytes
-(epstopdf)             Output file: <figures/stochastic_mpc_perf-eps-converted-
-to.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:03
-(epstopdf)                    size: 24081 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_mpc_per
-f-eps-converted-to.pdf figures/stochastic_mpc_perf.eps>
-(epstopdf)             \includegraphics on input line 91.
-Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_mpc_perf-eps-converted-to.pdf, id=2030, 722.7pt x 289.08pt>
 
-File: figures/stochastic_mpc_perf-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/stochastic_mpc_perf-eps-converted-to.pdf>
-Package pdftex.def Info: figures/stochastic_mpc_perf-eps-converted-to.pdf  used
- on input line 91.
+[45 <./figures/mpc_inputs_times_series.pdf>]
+<figures/stochastic_mpc_perf.pdf, id=2134, 722.7pt x 289.08pt>
+File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
+<use figures/stochastic_mpc_perf.pdf>
+Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 91
+.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [46 <./figures/stochastic_mpc_rewards_time.pdf> <./figures/stochastic_mpc_perf
--eps-converted-to.pdf>]) (./mainmatter/chapter-5.tex [47]
+.pdf>]) (./mainmatter/chapter-5.tex [47]
 Chapter 5.
 
 LaTeX Warning: Citation '' on page 48 undefined on input line 14.
@@ -2257,302 +2175,134 @@ LaTeX Warning: Citation '' on page 48 undefined on input line 14.
 [48
 
 ] [49] [50]
-Package epstopdf Info: Source file: <figures/mpc_vs_rl_nominal.eps>
-(epstopdf)                    date: 2024-06-28 11:02:54
-(epstopdf)                    size: 39899 bytes
-(epstopdf)             Output file: <figures/mpc_vs_rl_nominal-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:03
-(epstopdf)                    size: 22522 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/mpc_vs_rl_nominal-
-eps-converted-to.pdf figures/mpc_vs_rl_nominal.eps>
-(epstopdf)             \includegraphics on input line 142.
-Package epstopdf Info: Output file is already uptodate.
-<figures/mpc_vs_rl_nominal-eps-converted-to.pdf, id=2205, 722.7pt x 289.08pt>
-File: figures/mpc_vs_rl_nominal-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/mpc_vs_rl_nominal-eps-converted-to.pdf>
-Package pdftex.def Info: figures/mpc_vs_rl_nominal-eps-converted-to.pdf  used o
-n input line 142.
+<figures/mpc_vs_rl_nominal.pdf, id=2315, 722.7pt x 289.08pt>
+File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
+<use figures/mpc_vs_rl_nominal.pdf>
+Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 142.
+
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [51]
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_1.eps>
-(epstopdf)                    date: 2024-06-28 11:02:54
-(epstopdf)                    size: 47976 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_1-eps-converted-to.pdf
->
-(epstopdf)                    date: 2024-06-28 11:03:03
-(epstopdf)                    size: 29054 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_1-eps-
-converted-to.pdf figures/rl_mpc_impl_1.eps>
-(epstopdf)             \includegraphics on input line 154.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_1-eps-converted-to.pdf, id=2228, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_1-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_1-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_1-eps-converted-to.pdf  used on in
-put line 154.
+<figures/rl_mpc_impl_1.pdf, id=2339, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_1.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 154.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [52 <./figures/mpc_vs_rl_nominal-eps-converted-to.pdf> <./figures/rl_mpc_impl_
-1-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_2.eps>
-(epstopdf)                    date: 2024-06-28 11:02:55
-(epstopdf)                    size: 49522 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_2-eps-converted-to.pdf
->
-(epstopdf)                    date: 2024-06-28 11:03:04
-(epstopdf)                    size: 31523 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_2-eps-
-converted-to.pdf figures/rl_mpc_impl_2.eps>
-(epstopdf)             \includegraphics on input line 165.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_2-eps-converted-to.pdf, id=2360, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_2-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_2-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_2-eps-converted-to.pdf  used on in
-put line 165.
+ [52 <./figures/mpc_vs_rl_nominal.pdf> <./figures/rl_mpc_impl_1.pdf>]
+<figures/rl_mpc_impl_2.pdf, id=2472, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_2.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 165.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
-[53 <./figures/rl_mpc_impl_2-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_3.eps>
-(epstopdf)                    date: 2024-06-28 11:02:55
-(epstopdf)                    size: 49497 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_3-eps-converted-to.pdf
->
-(epstopdf)                    date: 2024-06-28 11:03:04
-(epstopdf)                    size: 31454 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_3-eps-
-converted-to.pdf figures/rl_mpc_impl_3.eps>
-(epstopdf)             \includegraphics on input line 182.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_3-eps-converted-to.pdf, id=2445, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_3-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_3-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_3-eps-converted-to.pdf  used on in
-put line 182.
+[53 <./figures/rl_mpc_impl_2.pdf>]
+<figures/rl_mpc_impl_3.pdf, id=2555, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_3.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 182.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[54 <./figures/rl_mpc_impl_3-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_4.eps>
-(epstopdf)                    date: 2024-06-28 11:02:55
-(epstopdf)                    size: 54702 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_4-eps-converted-to.pdf
->
-(epstopdf)                    date: 2024-06-28 11:03:04
-(epstopdf)                    size: 33192 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_4-eps-
-converted-to.pdf figures/rl_mpc_impl_4.eps>
-(epstopdf)             \includegraphics on input line 199.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_4-eps-converted-to.pdf, id=2529, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_4-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_4-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_4-eps-converted-to.pdf  used on in
-put line 199.
+[54 <./figures/rl_mpc_impl_3.pdf>]
+<figures/rl_mpc_impl_4.pdf, id=2637, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_4.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 199.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_4_1.eps>
-(epstopdf)                    date: 2024-06-28 11:02:56
-(epstopdf)                    size: 53089 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_4_1-eps-converted-to.p
-df>
-(epstopdf)                    date: 2024-06-28 11:03:04
-(epstopdf)                    size: 32219 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_4_1-ep
-s-converted-to.pdf figures/rl_mpc_impl_4_1.eps>
-(epstopdf)             \includegraphics on input line 209.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_4_1-eps-converted-to.pdf, id=2535, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_4_1-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_4_1-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_4_1-eps-converted-to.pdf  used on 
-input line 209.
+<figures/rl_mpc_impl_4_1.pdf, id=2643, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_4_1.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 209.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [55 <./figures/rl_mpc_impl_4-eps-converted-to.pdf>]
+ [55 <./figures/rl_mpc_impl_4.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-[56 <./figures/rl_mpc_impl_4_1-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_5_6.eps>
-(epstopdf)                    date: 2024-06-28 11:03:12
-(epstopdf)                    size: 44367 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_5_6-eps-converted-to.p
-df>
-(epstopdf)                    date: 2024-06-28 11:05:02
-(epstopdf)                    size: 27827 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_5_6-ep
-s-converted-to.pdf figures/rl_mpc_impl_5_6.eps>
-(epstopdf)             \includegraphics on input line 242.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_5_6-eps-converted-to.pdf, id=2687, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_5_6-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_5_6-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_5_6-eps-converted-to.pdf  used on 
-input line 242.
+[56 <./figures/rl_mpc_impl_4_1.pdf>]
+<figures/rl_mpc_impl_5_6.pdf, id=2807, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_5_6.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 242.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-Package epstopdf Info: Source file: <figures/rl_mpc_impl_final.eps>
-(epstopdf)                    date: 2024-06-28 11:04:40
-(epstopdf)                    size: 48316 bytes
-(epstopdf)             Output file: <figures/rl_mpc_impl_final-eps-converted-to
-.pdf>
-(epstopdf)                    date: 2024-06-28 11:05:02
-(epstopdf)                    size: 30664 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/rl_mpc_impl_final-
-eps-converted-to.pdf figures/rl_mpc_impl_final.eps>
-(epstopdf)             \includegraphics on input line 253.
-Package epstopdf Info: Output file is already uptodate.
-<figures/rl_mpc_impl_final-eps-converted-to.pdf, id=2690, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_final-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_final-eps-converted-to.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_final-eps-converted-to.pdf  used o
-n input line 253.
-(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [57 <./figures/rl_mpc_impl_5_6-eps-converted-to.pdf> <./figures/rl_mpc_impl_fi
-nal-eps-converted-to.pdf>]) (./mainmatter/chapter-6.tex [58]
-Chapter 6.
-Package epstopdf Info: Source file: <figures/stochastic_rl_vs_mpc.eps>
-(epstopdf)                    date: 2024-06-28 11:36:13
-(epstopdf)                    size: 53215 bytes
-(epstopdf)             Output file: <figures/stochastic_rl_vs_mpc-eps-converted
--to.pdf>
-(epstopdf)                    date: 2024-06-28 11:36:18
-(epstopdf)                    size: 27754 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_rl_vs_m
-pc-eps-converted-to.pdf figures/stochastic_rl_vs_mpc.eps>
-(epstopdf)             \includegraphics on input line 12.
-Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_rl_vs_mpc-eps-converted-to.pdf, id=2837, 722.7pt x 433.62pt
->
-File: figures/stochastic_rl_vs_mpc-eps-converted-to.pdf Graphic file (type pdf)
+<figures/rl_mpc_impl_final.pdf, id=2810, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_final.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 253.
 
-<use figures/stochastic_rl_vs_mpc-eps-converted-to.pdf>
-Package pdftex.def Info: figures/stochastic_rl_vs_mpc-eps-converted-to.pdf  use
-d on input line 12.
+(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
+ [57 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]) (./mai
+nmatter/chapter-6.tex [58]
+Chapter 6.
+<figures/stochastic_rl_vs_mpc.pdf, id=2966, 722.7pt x 433.62pt>
+File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
+<use figures/stochastic_rl_vs_mpc.pdf>
+Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
+2.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
 [59
 
 ]
-Package epstopdf Info: Source file: <figures/stochastic_rl_vs_mpc_impl3.eps>
-(epstopdf)                    date: 2024-06-28 11:01:00
-(epstopdf)                    size: 65388 bytes
-(epstopdf)             Output file: <figures/stochastic_rl_vs_mpc_impl3-eps-con
-verted-to.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:05
-(epstopdf)                    size: 31161 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_rl_vs_m
-pc_impl3-eps-converted-to.pdf figures/stochastic_rl_vs_mpc_impl3.eps>
-(epstopdf)             \includegraphics on input line 29.
-Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_rl_vs_mpc_impl3-eps-converted-to.pdf, id=2846, 722.7pt x 43
-3.62pt>
-File: figures/stochastic_rl_vs_mpc_impl3-eps-converted-to.pdf Graphic file (typ
-e pdf)
-<use figures/stochastic_rl_vs_mpc_impl3-eps-converted-to.pdf>
-Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3-eps-converted-to.pd
-f  used on input line 29.
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2975, 722.7pt x 433.62pt>
+File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
+<use figures/stochastic_rl_vs_mpc_impl3.pdf>
+Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
+line 29.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
- [60 <./figures/stochastic_rl_vs_mpc-eps-converted-to.pdf>] [61 <./figures/stoc
-hastic_rl_vs_mpc_impl3-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/stochastic_realife.eps>
-(epstopdf)                    date: 2024-06-28 11:01:01
-(epstopdf)                    size: 40327 bytes
-(epstopdf)             Output file: <figures/stochastic_realife-eps-converted-t
-o.pdf>
-(epstopdf)                    date: 2024-06-28 11:03:05
-(epstopdf)                    size: 22409 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/stochastic_realife
--eps-converted-to.pdf figures/stochastic_realife.eps>
-(epstopdf)             \includegraphics on input line 43.
-Package epstopdf Info: Output file is already uptodate.
-<figures/stochastic_realife-eps-converted-to.pdf, id=2990, 722.7pt x 289.08pt>
-File: figures/stochastic_realife-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/stochastic_realife-eps-converted-to.pdf>
-Package pdftex.def Info: figures/stochastic_realife-eps-converted-to.pdf  used 
-on input line 43.
+ [60 <./figures/stochastic_rl_vs_mpc.pdf>] [61 <./figures/stochastic_rl_vs_mpc_
+impl3.pdf>]
+<figures/stochastic_realife.pdf, id=3131, 722.7pt x 289.08pt>
+File: figures/stochastic_realife.pdf Graphic file (type pdf)
+<use figures/stochastic_realife.pdf>
+Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
+
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [62 <./figures/stochastic_realife-eps-converted-to.pdf>]) (./mainmatter/chapte
-r-7.tex [63]
+ [62 <./figures/stochastic_realife.pdf>])
+(./mainmatter/chapter-7.tex [63]
 Chapter 7.
-Package epstopdf Info: Source file: <figures/speed_up_neurons.eps>
-(epstopdf)                    date: 2024-06-28 11:01:02
-(epstopdf)                    size: 42705 bytes
-(epstopdf)             Output file: <figures/speed_up_neurons-eps-converted-to.
-pdf>
-(epstopdf)                    date: 2024-06-28 11:03:05
-(epstopdf)                    size: 24520 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/speed_up_neurons-e
-ps-converted-to.pdf figures/speed_up_neurons.eps>
-(epstopdf)             \includegraphics on input line 12.
-Package epstopdf Info: Output file is already uptodate.
-<figures/speed_up_neurons-eps-converted-to.pdf, id=3060, 722.7pt x 289.08pt>
-File: figures/speed_up_neurons-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/speed_up_neurons-eps-converted-to.pdf>
-Package pdftex.def Info: figures/speed_up_neurons-eps-converted-to.pdf  used on
- input line 12.
+<figures/speed_up_neurons.pdf, id=3206, 722.7pt x 289.08pt>
+File: figures/speed_up_neurons.pdf Graphic file (type pdf)
+<use figures/speed_up_neurons.pdf>
+Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [64
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=3066, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=3212, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
 line 22.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
- [65 <./figures/speed_up_neurons-eps-converted-to.pdf> <./figures/speed_up_neur
-ons_bar_graph.png>]
+ [65 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
+>]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-Package epstopdf Info: Source file: <figures/taylor_speed_up.eps>
-(epstopdf)                    date: 2024-06-28 11:01:01
-(epstopdf)                    size: 37618 bytes
-(epstopdf)             Output file: <figures/taylor_speed_up-eps-converted-to.p
-df>
-(epstopdf)                    date: 2024-06-28 11:03:10
-(epstopdf)                    size: 21757 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/taylor_speed_up-ep
-s-converted-to.pdf figures/taylor_speed_up.eps>
-(epstopdf)             \includegraphics on input line 38.
-Package epstopdf Info: Output file is already uptodate.
-<figures/taylor_speed_up-eps-converted-to.pdf, id=3139, 722.7pt x 289.08pt>
-File: figures/taylor_speed_up-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/taylor_speed_up-eps-converted-to.pdf>
-Package pdftex.def Info: figures/taylor_speed_up-eps-converted-to.pdf  used on 
-input line 38.
+<figures/taylor_speed_up.pdf, id=3285, 722.7pt x 289.08pt>
+File: figures/taylor_speed_up.pdf Graphic file (type pdf)
+<use figures/taylor_speed_up.pdf>
+Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 38.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[66 <./figures/taylor_speed_up-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figures/final_speed_up.eps>
-(epstopdf)                    date: 2024-06-28 13:20:03
-(epstopdf)                    size: 44726 bytes
-(epstopdf)             Output file: <figures/final_speed_up-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2024-06-28 13:20:13
-(epstopdf)                    size: 25824 bytes
-(epstopdf)             Command: <repstopdf --outfile=figures/final_speed_up-eps
--converted-to.pdf figures/final_speed_up.eps>
-(epstopdf)             \includegraphics on input line 52.
-Package epstopdf Info: Output file is already uptodate.
-<figures/final_speed_up-eps-converted-to.pdf, id=3201, 722.7pt x 289.08pt>
-File: figures/final_speed_up-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/final_speed_up-eps-converted-to.pdf>
-Package pdftex.def Info: figures/final_speed_up-eps-converted-to.pdf  used on i
-nput line 52.
+[66 <./figures/taylor_speed_up.pdf>]
+<figures/final_speed_up.pdf, id=3349, 722.7pt x 289.08pt>
+File: figures/final_speed_up.pdf Graphic file (type pdf)
+<use figures/final_speed_up.pdf>
+Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [67 <./figures/final_speed_up-eps-converted-to.pdf>]) (./mainmatter/conclusion
-.tex [68]
+ [67 <./figures/final_speed_up.pdf>])
+(./mainmatter/conclusion.tex [68]
 Chapter 8.
-) [69
+[69
 
-]
+] [70]) [71]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 72.
 Package microtype Info: Character `029' is missing
@@ -2569,17 +2319,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `npxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [70
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}] [71] [
-72]
-[73] (./appendix/appendix-a.tex [74]
+[72
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
+[73] [74] [75] (./appendix/appendix-a.tex [76]
 Appendix A.
 
-LaTeX Warning: Reference `rl_fundamentals' on page 75 undefined on input line 4
+LaTeX Warning: Reference `rl_fundamentals' on page 77 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3388, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3550, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2588,14 +2338,14 @@ Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `greenhouse_model' on page 75 undefined on input line 
+LaTeX Warning: Reference `greenhouse_model' on page 77 undefined on input line 
 21.
 
-[75
+[77
 
-] [76 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [77]
+] [78 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [79]
 Appendix B.
-) [78
+) [80
 
 ] (./report.aux)
  ***********
@@ -2607,7 +2357,7 @@ L3 programming layer <2023-06-05>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: EF2EE873FCD5024AF4FE774219005C86;11984.
+(rerunfilecheck)             Checksum: 14A46E2B4D09F9D6D7DFDBA38DD25E62;11234.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2618,13 +2368,13 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46827 strings out of 475735
- 931894 string characters out of 5784786
+ 46837 strings out of 475735
+ 930871 string characters out of 5784786
  1888759 words of memory out of 5000000
- 66122 multiletter control sequences out of 15000+600000
- 700207 words of font info for 353 fonts, out of 8000000 for 9000
+ 66120 multiletter control sequences out of 15000+600000
+ 700325 words of font info for 354 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,101p,2341b,2151s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,101p,2341b,2159s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texlive/te
@@ -2641,10 +2391,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (85 pages, 38426235 bytes).
+Output written on report.pdf (87 pages, 39687178 bytes).
 PDF statistics:
- 3598 PDF objects out of 4296 (max. 8388607)
- 1834 compressed objects within 19 object streams
- 373 named destinations out of 1000 (max. 500000)
- 61777 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 3761 PDF objects out of 4296 (max. 8388607)
+ 1824 compressed objects within 19 object streams
+ 383 named destinations out of 1000 (max. 500000)
+ 61737 words of extra memory for PDF output out of 61914 (max. 10000000)
 

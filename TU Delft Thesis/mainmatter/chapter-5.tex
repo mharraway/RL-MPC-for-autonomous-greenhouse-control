@@ -57,7 +57,7 @@ such that
 	\end{aligned}
 	\end{equation}
 
-\autoref{eq:horizon_extension} takes the previous time steps solution, shifts it in time and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. This method can be interpreted as extending the horizon. So for every time step, the initial guesses of the sequence of actions and states are extended by one time step. \autoref{eq:actor_roll_out} unrolls the RL policy $\pi(\cdot)$ from the current state until the end of the prediction horizon. Consequently, the  solutions obtained from the previous time, $\mathbf{x}_{k|k}$ and $\mathbf{u}_{k|k}$, step are disregarded, thus generating a new sequence without relying on the previous time step's solutions. It must be noted, that for the first time step, $k=0$, initial guesses given by \autoref{eq:initial-guess-2} is used for both cases, therefore $\tilde{x}_{k|k} \leftarrow \hat{x}_{k|k}$ and $\tilde{u}_{k|k} \leftarrow \hat{u}_{k|k}$.
+\autoref{eq:horizon_extension} takes the previous time stpdf solution, shifts it in time and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. This method can be interpreted as extending the horizon. So for every time step, the initial guesses of the sequence of actions and states are extended by one time step. \autoref{eq:actor_roll_out} unrolls the RL policy $\pi(\cdot)$ from the current state until the end of the prediction horizon. Consequently, the  solutions obtained from the previous time, $\mathbf{x}_{k|k}$ and $\mathbf{u}_{k|k}$, step are disregarded, thus generating a new sequence without relying on the previous time step's solutions. It must be noted, that for the first time step, $k=0$, initial guesses given by \autoref{eq:initial-guess-2} is used for both cases, therefore $\tilde{x}_{k|k} \leftarrow \hat{x}_{k|k}$ and $\tilde{u}_{k|k} \leftarrow \hat{u}_{k|k}$.
 
 Based on prior analyses, the process of generating these initial guesses are extremely fast. Furthermore, since it comes from a policy that is comparable to the MPC's, these initial guesses can be used for more than just initial guesses. The subsequent implementations explore the significance of these initial guesses,  particularly the initial guesses mentioned in \autoref{eq:initial-guess-1}.
 
@@ -139,7 +139,7 @@ A review of the RL, $\pi(\cdot)$, and MPC,$\kappa(\cdot)$, policies are evaluate
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/mpc_vs_rl_nominal.eps}
+	\includegraphics[width=\textwidth]{figures/mpc_vs_rl_nominal.pdf}
 	\caption{MPC vs RL in nominal conditions}
 	\label{fig:rl-vs-mpc-nominal}
 \end{figure}
@@ -151,7 +151,7 @@ A review of the RL, $\pi(\cdot)$, and MPC,$\kappa(\cdot)$, policies are evaluate
 This implementation consists of passing in initial guesses for the MPC solver by unrolling the agent. Initial guess 1 refers to \autoref{eq:initial-guess-1} and Initial guess 2 refers to \autoref{eq:initial-guess-2}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_1.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_1.pdf}
 	\caption{MPC vs MPC with initial guesses}
 	\label{fig:rlmpc-impl1}
 \end{figure}
@@ -162,7 +162,7 @@ This implementation consists of passing in initial guesses for the MPC solver by
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_2.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_2.pdf}
 	\caption{MPC with terminal constraints from agent}
 	\label{fig:rlmpc-impl2}
 \end{figure}
@@ -179,7 +179,7 @@ This implementation aims to move away from the terminal constraint and allow the
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_3.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_3.pdf}
 	\caption{MPC with terminal region}
 	\label{fig:rlmpc-impl3}
 \end{figure}
@@ -196,7 +196,7 @@ This implementation investigates the effect of a supplying the MPC with a cost f
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4.pdf}
 	\caption{MPC with terminal cost function}
 	\label{fig:rlmpc-impl4-all-states}
 \end{figure}
@@ -206,7 +206,7 @@ It is natural to observe an increase in computational time in \autoref{fig:rlmpc
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4_1.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_4_1.pdf}
 	\caption{MPC with terminal cost function}
 	\label{fig:rlmpc-impl4-only-drymass}
 \end{figure}
@@ -239,7 +239,7 @@ Implementation RL-MPC 5 aims to incorporate both a terminal region constraint as
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_5_6.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_5_6.pdf}
 	\caption{MPC vs RL-MPC with terminal region and cost function vs RL-MPC solving two separate problems and evaluating best policy with value function}
 	\label{fig:rlmpc-impl5-6}
 \end{figure}
@@ -250,7 +250,7 @@ As demonstrated in \autoref{fig:rlmpc-impl5-6}, both implementations outperform 
 The three best implementations are compared, namely RL-MPC 3 (with $\tilde{x}_{k|k}$,$\tilde{u}_{k|k}$), RL-MPC 5 and 6.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_final.eps}
+	\includegraphics[width=\textwidth]{figures/rl_mpc_impl_final.pdf}
 	\caption{MPC final }
 	\label{fig:rlmpc-final}
 \end{figure}

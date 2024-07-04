@@ -3917,6 +3917,36 @@
     \field{year}{2020}
   \endentry
 
+  \entry{GreenLightOpenSource2020}{article}{}
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Greenhouse models are important tools for the analysis and design of
+  greenhouse systems and for offering decision support to growers. While many
+  model{\dots}%
+    }
+    \verb{doi}
+    \verb 10.1016/j.biosystemseng.2020.03.010
+    \endverb
+    \field{issn}{1537-5110}
+    \field{pages}{61\bibrangedash 81}
+    \field{shorttitle}{{{GreenLight}} -- {{An}} Open Source Model for
+  Greenhouses with Supplemental Lighting}
+    \field{title}{{{GreenLight}} -- {{An}} Open Source Model for Greenhouses
+  with Supplemental Lighting: {{Evaluation}} of Heat Requirements under {{LED}}
+  and {{HPS}} Lamps}
+    \field{volume}{194}
+    \field{langid}{american}
+    \field{journaltitle}{Biosystems Engineering}
+    \field{month}{06}
+    \field{year}{2020}
+    \field{urlday}{04}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
   \entry{hemmingRemoteControlGreenhouse2019}{article}{}
     \name{author}{5}{}{%
       {{hash=HS}{%
