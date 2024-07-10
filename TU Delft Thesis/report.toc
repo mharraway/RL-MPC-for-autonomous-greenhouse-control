@@ -32,10 +32,10 @@
 \contentsline {paragraph}{Reward Function}{22}{equation.3.1.4}%
 \contentsline {section}{\numberline {3.2}Experimental Setup}{23}{section.3.2}%
 \contentsline {paragraph}{Weather Data}{23}{equation.3.2.7}%
-\contentsline {paragraph}{Deterministic and Stochastic Case}{23}{figure.caption.11}%
+\contentsline {paragraph}{Deterministic and Stochastic Case}{24}{figure.caption.11}%
 \contentsline {paragraph}{Performance Metrics}{24}{figure.caption.11}%
 \contentsline {section}{\numberline {3.3}Hyper-parameter Tuning}{24}{section.3.3}%
-\contentsline {paragraph}{Activation Function}{24}{table.caption.12}%
+\contentsline {paragraph}{Activation Function}{25}{table.caption.12}%
 \contentsline {paragraph}{Discount Factor}{25}{table.caption.12}%
 \contentsline {section}{\numberline {3.4}Deterministic Results}{25}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Discount Factor}{25}{subsection.3.4.1}%
@@ -47,7 +47,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Conclusion}{31}{subsection.3.5.1}%
 \contentsline {section}{\numberline {3.6}Trained Value Function}{31}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Temporal Difference Learning}{31}{subsection.3.6.1}%
-\contentsline {paragraph}{Obtaining Data}{32}{subsection.3.6.1}%
+\contentsline {paragraph}{Obtaining Data}{31}{subsection.3.6.1}%
 \contentsline {paragraph}{Training}{33}{figure.caption.23}%
 \contentsline {subsection}{\numberline {3.6.2}Expected Return Learning}{34}{subsection.3.6.2}%
 \contentsline {paragraph}{Obtaining Data}{34}{subsection.3.6.2}%

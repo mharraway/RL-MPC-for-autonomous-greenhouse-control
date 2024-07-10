@@ -55,7 +55,7 @@ The reward function is modeled after the optimization goal as defined in \autore
 
 \begin{equation}\label{eq:reward_fn}
     \begin{aligned}
-        & R(k)  = c_{price_3} \cdot (y(k)- y(k-1)) - (c_{price_1} \cdot u_1(k) + c_{price_2} \cdot u_2(k) + 0 \cdot u_3(k))  \\ 
+        & R(k)  = c_{price_3} \cdot (y_1(k)- y_1(k-1)) - (c_{price_1} \cdot u_1(k) + c_{price_2} \cdot u_2(k) + 0 \cdot u_3(k))  \\ 
         & - (P_{c02} \cdot y_2(k) + P_T \cdot y_3(k) + P_H \cdot y_4(k))
     \end{aligned}
 \end{equation}
@@ -74,8 +74,8 @@ c_{p_{\text{CO2}}} \cdot (y_2^{\text{min}} - y_2(k)) & \text{if } y_2(k) < y_2^{
 \\
 & P_{T} = 
 \begin{cases} 
-c_{p_{T_ub}} \cdot (y_3(k) - y_3^{\text{max}}) & \text{if } y_3(k) > y_3^{\text{max}} , \\
-c_{p_{T_lb}} \cdot (y_3^{\text{min}} - y_3(k)) & \text{if } y_3(k) < y_3^{\text{min}} , \\
+c_{p_{T_{ub}}} \cdot (y_3(k) - y_3^{\text{max}}) & \text{if } y_3(k) > y_3^{\text{max}} , \\
+c_{p_{T_{lb}}} \cdot (y_3^{\text{min}} - y_3(k)) & \text{if } y_3(k) < y_3^{\text{min}} , \\
 0 & \text{otherwise}
 \end{cases}
 \\
@@ -128,7 +128,7 @@ This seed value was utilized for both the initialization of neural network weigh
 
 \paragraph{Weather Data}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{figures/weather_data.pdf}
     \caption{Weather Data}
@@ -255,7 +255,7 @@ However, the next section delves into how a value function may be trained on a f
 		\midrule
 		\textbf{ 1} & 0.95 & ReLU & 4.27 \\
 		\textbf{ 2} & 0.95 & Tanh & 4.18 \\
-		\textbf{ 3} & 1 & Tanh & 3.03 \\
+		\textbf{ 3} & 1 & Tanh & 3.44 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Performance of selected agents with different activation functions and discount factors}
@@ -369,13 +369,13 @@ With only 10 additional samples every time step ($q=10$), the desired state spac
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/sampled_y_td.pdf}
+	\includegraphics[width = \textwidth]{figures/sampled_y_td.png}
 	\caption{Sampled States for Temporal Difference}
 	\label{fig:sampled-states-TD}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/sampled_u_td.pdf}
+	\includegraphics[width = \textwidth]{figures/sampled_u_td.png}
 	\caption{Sampled Inputs for Temporal Difference}
 	\label{fig:sampled-inpts-TD}
 \end{figure}
@@ -437,7 +437,7 @@ In the case of stochastic conditions, the same state may yield a different retur
 Once trajectories is sampled, for each state observed/visited, the total return is calculated, and the tuple $(s_k,TR)$ stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation.  A neural network as a function approximator is now trained with inputs as the state, $s_k$,and labels as the total return,$TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimized with the Adam optimizer.
 
 \begin{equation}\label{eq:vf_tr_loss}
-    \mathcal{L}(\phi, \mathcal{D}) =  \mathbb{E} [(V_{\phi}(s_k) - TR)^2]
+    L(\phi, \mathcal{D}) =   V_{\phi}(s_k) - \mathbb{E}(G_t(s_k))
 \end{equation}
 
 where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s_k$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.\\
@@ -472,7 +472,7 @@ Performance metrics include the squared error between the predicted total return
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{figures/sampled_states_TR-eps-converted-to.pdf}
+    \includegraphics[width = \textwidth]{figures/sampled_states_TR-eps-converted-to.png}
     \caption{Sampled States}
     \label{fig:sampled-states-TR}
 \end{figure}
@@ -480,7 +480,7 @@ Performance metrics include the squared error between the predicted total return
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width = \textwidth]{figures/sampled_inputs_TR-eps-converted-to.pdf}
+    \includegraphics[width = \textwidth]{figures/sampled_inputs_TR-eps-converted-to.png}
     \caption{Sampled Inputs from Nominal conditions}
     \label{fig:sampled-inputs-TR}
 \end{figure}
@@ -502,33 +502,7 @@ Performance metrics include the squared error between the predicted total return
 
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{figures/deep_full_heatmap-eps-converted-to.pdf}
-		\caption{$V_1$}
-		\label{fig:v1_heatmap}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{figures/deep_less_heatmap-eps-converted-to.pdf}
-		\caption{$V_2$}
-		\label{fig:v2_heatmap}
-	\end{subfigure}
-	\vfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{figures/shallow_full_heatmap-eps-converted-to.pdf}
-		\caption{$V_3$}
-		\label{fig:v3_heatmap}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{figures/deep_reduced_heatmap-eps-converted-to.pdf}
-		\caption{$V_4$}
-		\label{fig:v4_heatmap}
-	\end{subfigure}
+	\includegraphics[width = 0.8\textwidth]{figures/vf_heatmap_deterministic.png}
 	\caption{Value vs Drymass vs time}
 	\label{fig:vf_heatmaps}
 \end{figure}
@@ -540,7 +514,7 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/vf_time_predictions_long-eps-converted-to.pdf}
+	\includegraphics[width = \textwidth]{figures/vf_time_predictions_long.pdf}
 	\caption{Value predictions - Entire Time Horizon}
 	\label{fig:tr_predictions_long}
 \end{figure}
@@ -551,7 +525,7 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/vf_time_predictions_short-eps-converted-to.pdf}
+	\includegraphics[width = \textwidth]{figures/vf_time_predictions_short.pdf}
 	\caption{Value predictions - 2 Days}
 	\label{fig:tr_predictions_short}
 \end{figure}
@@ -569,7 +543,7 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/vf_heatmap_stochastic-eps-converted-to.pdf}
+	\includegraphics[width = \textwidth]{figures/vf_heatmap_stochastic-eps-converted-to.png}
 	\caption{Drymass vs Time vs Value - Stochastic}
 	\label{fig:vf_heatmap_stochastic}
 \end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  4 JUL 2024 15:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  10 JUL 2024 11:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1843,15 +1843,7 @@ File: figures/weather_data.pdf Graphic file (type pdf)
 <use figures/weather_data.pdf>
 Package pdftex.def Info: figures/weather_data.pdf  used on input line 133.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[23]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24 <./figures/weather_data.pdf>]
+ [23 <./figures/weather_data.pdf>] [24]
 <figures/gamma_reward.pdf, id=920, 722.7pt x 289.08pt>
 File: figures/gamma_reward.pdf Graphic file (type pdf)
 <use figures/gamma_reward.pdf>
@@ -1865,34 +1857,30 @@ LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 185.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
 (Font)              scaled to size 6.2pt on input line 185.
- [25]
+
 Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
-
+[25 <./figures/gamma_reward.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
-[26 <./figures/gamma_reward.pdf>]
-<figures/vf_vs_gamma.pdf, id=984, 722.7pt x 578.16pt>
+<figures/vf_vs_gamma.pdf, id=978, 722.7pt x 578.16pt>
 File: figures/vf_vs_gamma.pdf Graphic file (type pdf)
 <use figures/vf_vs_gamma.pdf>
 Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 210.
 (pdftex.def)             Requested size: 448.1309pt x 358.50842pt.
- [27 <./figures/vf_vs_gamma.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[26] [27 <./figures/vf_vs_gamma.pdf>]
 <figures/selected_policies_outputs.pdf, id=1051, 1084.05pt x 361.35pt>
 File: figures/selected_policies_outputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_outputs.pdf>
 Package pdftex.def Info: figures/selected_policies_outputs.pdf  used on input l
 ine 267.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-[28]
-<figures/selected_policies_inputs.pdf, id=1058, 722.7pt x 361.35pt>
+ [28]
+<figures/selected_policies_inputs.pdf, id=1059, 722.7pt x 361.35pt>
 File: figures/selected_policies_inputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_inputs.pdf>
 Package pdftex.def Info: figures/selected_policies_inputs.pdf  used on input li
@@ -1900,7 +1888,7 @@ ne 274.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [29 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
 uts.pdf>]
-<figures/stochastic_rl_policies.pdf, id=1176, 722.7pt x 216.81pt>
+<figures/stochastic_rl_policies.pdf, id=1175, 722.7pt x 216.81pt>
 File: figures/stochastic_rl_policies.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_policies.pdf>
 Package pdftex.def Info: figures/stochastic_rl_policies.pdf  used on input line
@@ -1909,8 +1897,7 @@ Package pdftex.def Info: figures/stochastic_rl_policies.pdf  used on input line
  [30 <./figures/stochastic_rl_policies.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+zplsups on input lin
 e 325.
-
-(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplsups.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplsups.fd
 File: t1zplsups.fd 2015/01/17 v1.0
 )
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
@@ -1921,112 +1908,81 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
 (Font)              scaled to size 8.0pt on input line 325.
- [31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
-<figures/sampled_y_td.pdf, id=1272, 722.7pt x 361.35pt>
-File: figures/sampled_y_td.pdf Graphic file (type pdf)
-<use figures/sampled_y_td.pdf>
-Package pdftex.def Info: figures/sampled_y_td.pdf  used on input line 372.
+
+[31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
+<figures/sampled_y_td.png, id=1271, 722.7pt x 361.35pt>
+File: figures/sampled_y_td.png Graphic file (type png)
+<use figures/sampled_y_td.png>
+Package pdftex.def Info: figures/sampled_y_td.png  used on input line 372.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-<figures/sampled_u_td.pdf, id=1273, 722.7pt x 361.35pt>
-File: figures/sampled_u_td.pdf Graphic file (type pdf)
-<use figures/sampled_u_td.pdf>
-Package pdftex.def Info: figures/sampled_u_td.pdf  used on input line 378.
+<figures/sampled_u_td.png, id=1272, 722.7pt x 361.35pt>
+File: figures/sampled_u_td.png Graphic file (type png)
+<use figures/sampled_u_td.png>
+Package pdftex.def Info: figures/sampled_u_td.png  used on input line 378.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [32] [33 <./figures/sampled_y_td.pdf> <./figures/sampled_u_td.pdf>] [34]
+
+[32] [33 <./figures/sampled_y_td.png> <./figures/sampled_u_td.png>] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
-<figures/sampled_states_TR-eps-converted-to.pdf, id=1423, 1084.05pt x 361.35pt>
+<figures/sampled_states_TR-eps-converted-to.png, id=1422, 1084.05pt x 361.35pt>
 
-File: figures/sampled_states_TR-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/sampled_states_TR-eps-converted-to.pdf>
-Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.pdf  used o
+File: figures/sampled_states_TR-eps-converted-to.png Graphic file (type png)
+<use figures/sampled_states_TR-eps-converted-to.png>
+Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.png  used o
 n input line 475.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 [35]
-<figures/sampled_inputs_TR-eps-converted-to.pdf, id=1431, 1084.05pt x 361.35pt>
+<figures/sampled_inputs_TR-eps-converted-to.png, id=1430, 1084.05pt x 361.35pt>
 
-File: figures/sampled_inputs_TR-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/sampled_inputs_TR-eps-converted-to.pdf>
-Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.pdf  used o
+File: figures/sampled_inputs_TR-eps-converted-to.png Graphic file (type png)
+<use figures/sampled_inputs_TR-eps-converted-to.png>
+Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.png  used o
 n input line 483.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/tr_training_graphs.pdf, id=1436, 722.7pt x 361.35pt>
+<figures/tr_training_graphs.pdf, id=1435, 722.7pt x 361.35pt>
 File: figures/tr_training_graphs.pdf Graphic file (type pdf)
 <use figures/tr_training_graphs.pdf>
 Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 495
 .
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [36 <./figures/sampled_states_TR-eps-converted-to.pdf> <./figures/sampled_inpu
-ts_TR-eps-converted-to.pdf>]
-<figures/deep_full_heatmap-eps-converted-to.pdf, id=1532, 462.72874pt x 347.297
-5pt>
-File: figures/deep_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/deep_full_heatmap-eps-converted-to.pdf>
-Package pdftex.def Info: figures/deep_full_heatmap-eps-converted-to.pdf  used o
-n input line 507.
-(pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
-LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 7.0pt on input line 508.
-LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
-(Font)              scaled to size 7.0pt on input line 508.
-<figures/deep_less_heatmap-eps-converted-to.pdf, id=1533, 462.72874pt x 347.297
-5pt>
-File: figures/deep_less_heatmap-eps-converted-to.pdf Graphic file (type pdf)
-<use figures/deep_less_heatmap-eps-converted-to.pdf>
-Package pdftex.def Info: figures/deep_less_heatmap-eps-converted-to.pdf  used o
-n input line 514.
-(pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
-<figures/shallow_full_heatmap-eps-converted-to.pdf, id=1534, 462.72874pt x 347.
-2975pt>
-File: figures/shallow_full_heatmap-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figures/shallow_full_heatmap-eps-converted-to.pdf>
-Package pdftex.def Info: figures/shallow_full_heatmap-eps-converted-to.pdf  use
-d on input line 521.
-(pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
-<figures/deep_reduced_heatmap-eps-converted-to.pdf, id=1535, 462.72874pt x 347.
-2975pt>
-File: figures/deep_reduced_heatmap-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figures/deep_reduced_heatmap-eps-converted-to.pdf>
-Package pdftex.def Info: figures/deep_reduced_heatmap-eps-converted-to.pdf  use
-d on input line 528.
-(pdftex.def)             Requested size: 197.62659pt x 148.32814pt.
+ [36 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
+ts_TR-eps-converted-to.png>]
+<figures/vf_heatmap_deterministic.png, id=1446, 867.24pt x 722.7pt>
+File: figures/vf_heatmap_deterministic.png Graphic file (type png)
+<use figures/vf_heatmap_deterministic.png>
+Package pdftex.def Info: figures/vf_heatmap_deterministic.png  used on input li
+ne 505.
+(pdftex.def)             Requested size: 358.50609pt x 298.75702pt.
  [37 <./figures/tr_training_graphs.pdf>]
-<figures/vf_time_predictions_long-eps-converted-to.pdf, id=1581, 722.7pt x 361.
-35pt>
-File: figures/vf_time_predictions_long-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use figures/vf_time_predictions_long-eps-converted-to.pdf>
-Package pdftex.def Info: figures/vf_time_predictions_long-eps-converted-to.pdf 
- used on input line 543.
+<figures/vf_time_predictions_long.pdf, id=1492, 722.7pt x 361.35pt>
+File: figures/vf_time_predictions_long.pdf Graphic file (type pdf)
+<use figures/vf_time_predictions_long.pdf>
+Package pdftex.def Info: figures/vf_time_predictions_long.pdf  used on input li
+ne 517.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
 
-[38 <./figures/deep_full_heatmap-eps-converted-to.pdf> <./figures/deep_less_hea
-tmap-eps-converted-to.pdf> <./figures/shallow_full_heatmap-eps-converted-to.pdf
-> <./figures/deep_reduced_heatmap-eps-converted-to.pdf>]
-<figures/vf_time_predictions_short-eps-converted-to.pdf, id=1757, 722.7pt x 361
-.35pt>
-File: figures/vf_time_predictions_short-eps-converted-to.pdf Graphic file (type
- pdf)
-<use figures/vf_time_predictions_short-eps-converted-to.pdf>
-Package pdftex.def Info: figures/vf_time_predictions_short-eps-converted-to.pdf
-  used on input line 554.
+[38 <./figures/vf_heatmap_deterministic.png>]
+<figures/vf_time_predictions_short.pdf, id=1507, 722.7pt x 361.35pt>
+File: figures/vf_time_predictions_short.pdf Graphic file (type pdf)
+<use figures/vf_time_predictions_short.pdf>
+Package pdftex.def Info: figures/vf_time_predictions_short.pdf  used on input l
+ine 528.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [39 <./figures/vf_time_predictions_long-eps-converted-to.pdf> <./figures/vf_ti
-me_predictions_short-eps-converted-to.pdf>]
-<figures/vf_heatmap_stochastic-eps-converted-to.pdf, id=1855, 578.16pt x 578.16
+ [39 <./figures/vf_time_predictions_long.pdf> <./figures/vf_time_predictions_sh
+ort.pdf>]
+<figures/vf_heatmap_stochastic-eps-converted-to.png, id=1611, 578.16pt x 578.16
 pt>
-File: figures/vf_heatmap_stochastic-eps-converted-to.pdf Graphic file (type pdf
+File: figures/vf_heatmap_stochastic-eps-converted-to.png Graphic file (type png
 )
-<use figures/vf_heatmap_stochastic-eps-converted-to.pdf>
-Package pdftex.def Info: figures/vf_heatmap_stochastic-eps-converted-to.pdf  us
-ed on input line 572.
+<use figures/vf_heatmap_stochastic-eps-converted-to.png>
+Package pdftex.def Info: figures/vf_heatmap_stochastic-eps-converted-to.png  us
+ed on input line 546.
 (pdftex.def)             Requested size: 448.1309pt x 448.13112pt.
-) (./mainmatter/chapter-4.tex [40 <./figures/vf_heatmap_stochastic-eps-converte
-d-to.pdf>] [41]
+)
+(./mainmatter/chapter-4.tex [40 <./figures/vf_heatmap_stochastic-eps-converted-
+to.png>] [41]
 Chapter 4.
 [42
 
@@ -2034,26 +1990,26 @@ Chapter 4.
 
 LaTeX Warning: Citation 'Andersson2018' on page 43 undefined on input line 45.
 
-<figures/mpc_nominal.pdf, id=1950, 722.7pt x 289.08pt>
+<figures/mpc_nominal.pdf, id=1654, 722.7pt x 289.08pt>
 File: figures/mpc_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_nominal.pdf>
 Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [43]
-<figures/mpc_outputs_time_series.pdf, id=1964, 1084.05pt x 361.35pt>
+<figures/mpc_outputs_time_series.pdf, id=1668, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 62.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1965, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1669, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 69.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [44 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=2077, 722.7pt x 578.16pt>
+<figures/stochastic_mpc_rewards_time.pdf, id=1781, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
@@ -2061,7 +2017,7 @@ Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
 
 [45 <./figures/mpc_inputs_times_series.pdf>]
-<figures/stochastic_mpc_perf.pdf, id=2134, 722.7pt x 289.08pt>
+<figures/stochastic_mpc_perf.pdf, id=1836, 722.7pt x 289.08pt>
 File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 91
@@ -2076,20 +2032,20 @@ LaTeX Warning: Citation '' on page 48 undefined on input line 14.
 [48
 
 ] [49] [50]
-<figures/mpc_vs_rl_nominal.pdf, id=2315, 722.7pt x 289.08pt>
+<figures/mpc_vs_rl_nominal.pdf, id=2017, 722.7pt x 289.08pt>
 File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_nominal.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 142.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [51]
-<figures/rl_mpc_impl_1.pdf, id=2339, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_1.pdf, id=2040, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 154.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [52 <./figures/mpc_vs_rl_nominal.pdf> <./figures/rl_mpc_impl_1.pdf>]
-<figures/rl_mpc_impl_2.pdf, id=2472, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_2.pdf, id=2174, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 165.
@@ -2100,7 +2056,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--173
  []
 
 [53 <./figures/rl_mpc_impl_2.pdf>]
-<figures/rl_mpc_impl_3.pdf, id=2555, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_3.pdf, id=2257, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_3.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 182.
@@ -2111,12 +2067,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--188
  []
 
 [54 <./figures/rl_mpc_impl_3.pdf>]
-<figures/rl_mpc_impl_4.pdf, id=2637, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4.pdf, id=2339, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 199.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_4_1.pdf, id=2643, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4_1.pdf, id=2345, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 209.
@@ -2127,12 +2083,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--217
  []
 
 [56 <./figures/rl_mpc_impl_4_1.pdf>]
-<figures/rl_mpc_impl_5_6.pdf, id=2807, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_5_6.pdf, id=2508, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 242.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_final.pdf, id=2810, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_final.pdf, id=2511, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 253.
@@ -2141,7 +2097,7 @@ Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 253.
  [57 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]) (./mai
 nmatter/chapter-6.tex [58]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2966, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2668, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
@@ -2150,7 +2106,7 @@ Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 [59
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2975, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2677, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
@@ -2158,7 +2114,7 @@ line 29.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
  [60 <./figures/stochastic_rl_vs_mpc.pdf>] [61 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=3131, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2833, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
@@ -2167,7 +2123,7 @@ Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
  [62 <./figures/stochastic_realife.pdf>])
 (./mainmatter/chapter-7.tex [63]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=3206, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2907, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
@@ -2175,7 +2131,7 @@ Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
 [64
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=3212, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2913, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
@@ -2187,13 +2143,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-<figures/taylor_speed_up.pdf, id=3285, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=2986, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
 Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 38.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [66 <./figures/taylor_speed_up.pdf>]
-<figures/final_speed_up.pdf, id=3349, 722.7pt x 289.08pt>
+<figures/final_speed_up.pdf, id=3051, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
 Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 52.
@@ -2230,7 +2186,7 @@ Appendix A.
 LaTeX Warning: Reference `rl_fundamentals' on page 77 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3550, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3252, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2269,11 +2225,11 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46837 strings out of 475735
- 931330 string characters out of 5784786
+ 46769 strings out of 475735
+ 928751 string characters out of 5784786
  1888759 words of memory out of 5000000
- 66120 multiletter control sequences out of 15000+600000
- 700325 words of font info for 354 fonts, out of 8000000 for 9000
+ 66062 multiletter control sequences out of 15000+600000
+ 693985 words of font info for 347 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,2341b,2159s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
@@ -2292,10 +2248,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (87 pages, 39687178 bytes).
+Output written on report.pdf (87 pages, 7704348 bytes).
 PDF statistics:
- 3761 PDF objects out of 4296 (max. 8388607)
- 1824 compressed objects within 19 object streams
+ 3462 PDF objects out of 3580 (max. 8388607)
+ 1792 compressed objects within 18 object streams
  383 named destinations out of 1000 (max. 500000)
- 61737 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 57626 words of extra memory for PDF output out of 61914 (max. 10000000)
 

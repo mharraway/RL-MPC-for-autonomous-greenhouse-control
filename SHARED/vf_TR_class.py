@@ -28,8 +28,9 @@ from torch.utils.data import Dataset, DataLoader
 
 
 class neural_net (nn.Module):
-    def __init__(self,input_dim, hidden_dim) -> None:
+    def __init__(self,input_dim, hidden_dim,hidden_layers) -> None:
         super(neural_net,self).__init__()
+        self.hh = hidden_layers
         self.fc1 = nn.Linear(input_dim, hidden_dim) 
         self.fc2 = nn.Linear(hidden_dim, hidden_dim) 
         self.fc3 = nn.Linear(hidden_dim, 1)  
@@ -38,8 +39,8 @@ class neural_net (nn.Module):
         
     def forward(self, x):
         x = self.act_fn(self.fc1(x))
-        # if h == 2:
-        x = self.act_fn(self.fc2(x))
+        # if self.h == 2:
+        # x = self.act_fn(self.fc2(x))
         x = self.fc3(x)
         return x
     
@@ -72,7 +73,7 @@ class value_function_TR():
         self.hidden_layers = hidden_layers
         self.reduced = reduced
         
-        self.neural_net = neural_net(input_dim,hidden_dim)
+        self.neural_net = neural_net(input_dim,hidden_dim, hidden_layers)
         self.neural_net.weights_reset()
         
         self.optimizer = optim.Adam(self.neural_net.parameters(), lr=learning_rate)

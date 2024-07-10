@@ -173,8 +173,8 @@ where $R,c_T,P,M_{C0_2},c_{H_20,4},c_{H_20,5},c_{H_20,6}$ are constants and thei
 
 \begin{equation}\label{eq:greenhouse_model_discrete}
 	\begin{aligned}
-		& x(k+1) = f(x(k),u(k),p) \\
-		& y(k) = g(x(k),u(k),p)
+		& x(k+1) = f(x(k),u(k),d(k),p) \\
+		& y(k) = g(x(k),p)
 	\end{aligned}
 \end{equation}
 
@@ -321,12 +321,12 @@ It is not the focus of this thesis to accurately model the uncertainty in a gree
 		\hat{p} \sim U(\mu_p, \delta_p)  
 	\end{aligned}
 \end{equation}
-where $\mu_p$ is the mean value of the parameters $p$ (shown in \autoref{tab:model constants and descriptions}), and $\delta_p$ is expressed as a percentage where the upper and lower bounds of the distribution is expressed as $p(1-\delta_p)$ and $p(1+\delta_p)$. It must be noted that since all parameters are perturbed, including parameters of the output measurement equations, output noise is also introduced. The uniform distribution was chosen for its higher level of aggressiveness compared to the normal distribution. While it may not accurately represent the uncertainty at hand, it is a useful tool for evaluating the potential variability and risks associated with the various policies generated especially at higher degrees of uncertainty. Introducing this uncertainty results in the following system dynamics:
+where $\mu_p = p$ is the mean value of the parameters  (shown in \autoref{tab:model constants and descriptions}), and $\delta_p$ is expressed as a percentage where the upper and lower bounds of the distribution is expressed as $p(1-\delta_p)$ and $p(1+\delta_p)$. It must be noted that since all parameters are perturbed, including parameters of the output measurement equations, output noise is also introduced. The uniform distribution was chosen for its higher level of aggressiveness compared to the normal distribution. While it may not accurately represent the uncertainty at hand, it is a useful tool for evaluating the potential variability and risks associated with the various policies generated especially at higher degrees of uncertainty. Introducing this uncertainty results in the following system dynamics:
 
 \begin{equation}\label{eq:greenhouse_model_discrete_uncertain}
 	\begin{aligned}
-		& \hat x(k+1) = f(\hat x(k),u(k),d,\hat p) \\
-		& \hat y(k) = g(\hat x(k),u(k),d,\hat p)
+		& \hat x(k+1) = f(\hat x(k),u(k),d(k),\hat p) \\
+		& \hat y(k) = g(\hat x(k),\hat p)
 	\end{aligned}
 \end{equation}
 
