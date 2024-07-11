@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  10 JUL 2024 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  11 JUL 2024 23:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1415,68 +1415,68 @@ Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 \c@definition=\count521
 \c@remark=\count522
 Package translations Info: No language package found. I am going to use `englis
-h' as default language. on input line 22.
+h' as default language. on input line 26.
 LaTeX Font Info:    Trying to load font information for T1+zplTLF on input line
- 22.
+ 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zpltlf.fd
 File: t1zpltlf.fd 2021/05/25 v1.0 font definition file for T1/zpl/TLF
 )
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 22.
+(Font)              scaled to size 10.0pt on input line 26.
 \@quotelevel=\count523
 \@quotereset=\count524
  (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 22.
+LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 26.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
- 22.
+ 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/npxexa/m/n on input line 26.
 LaTeX Font Info:    Trying to load font information for U+npxexa on input line 
-22.
+26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxexa.fd
 File: unpxexa.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxexa.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for LMS/npxsy/m/n on input line 26.
 LaTeX Font Info:    Trying to load font information for LMS+npxsy on input line
- 22.
+ 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/lmsnpxsy.fd
 File: lmsnpxsy.fd 2016/07/04 Fontinst v1.933 font definitions for LMS/npxsy.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for LMX/npxexx/m/n on input line 26.
 LaTeX Font Info:    Trying to load font information for LMX+npxexx on input lin
-e 22.
+e 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/lmxnpxexx.fd
 File: lmxnpxexx.fd 2016/07/04 Fontinst v1.933 font definitions for LMX/npxexx.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Info: Command `\dddot' is already robust on input line 22.
-LaTeX Info: Command `\ddddot' is already robust on input line 22.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Info: Command `\dddot' is already robust on input line 26.
+LaTeX Info: Command `\ddddot' is already robust on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictio
 nary-english.trsl
@@ -1484,7 +1484,7 @@ File: translations-basic-dictionary-english.trsl (english translation file `tra
 nslations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `english'. on input line 22.
+or `english'. on input line 26.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1525,25 +1525,25 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-Package hyperref Info: Link coloring OFF on input line 22.
+Package hyperref Info: Link coloring OFF on input line 26.
  (./report.out)
 (./report.out)
 \@outlinefile=\write5
 \openout5 = `report.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 22.
-Package microtype Info: Applying patch `item' on input line 22.
-Package microtype Info: Applying patch `toc' on input line 22.
-Package microtype Info: Applying patch `eqnum' on input line 22.
-Package microtype Info: Applying patch `footnote' on input line 22.
-Package microtype Info: Applying patch `verbatim' on input line 22.
+LaTeX Info: Redefining \microtypecontext on input line 26.
+Package microtype Info: Applying patch `item' on input line 26.
+Package microtype Info: Applying patch `toc' on input line 26.
+Package microtype Info: Applying patch `eqnum' on input line 26.
+Package microtype Info: Applying patch `footnote' on input line 26.
+Package microtype Info: Applying patch `verbatim' on input line 26.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 22.
+LaTeX Info: Redefining \showhyphens on input line 26.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1610,15 +1610,15 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'report.bbl' found.
 
 (./report.bbl)
-Package biblatex Info: Reference section=0 on input line 22.
-Package biblatex Info: Reference segment=0 on input line 22.
+Package biblatex Info: Reference section=0 on input line 26.
+Package biblatex Info: Reference segment=0 on input line 26.
 <figures/cover.jpg, id=296, 685.56125pt x 1027.84pt>
 File: figures/cover.jpg Graphic file (type jpg)
 <use figures/cover.jpg>
-Package pdftex.def Info: figures/cover.jpg  used on input line 36.
+Package pdftex.def Info: figures/cover.jpg  used on input line 40.
 (pdftex.def)             Requested size: 597.50787pt x 895.89174pt.
 LaTeX Font Info:    Trying to load font information for T1+RobotoSlab-TLF on in
-put line 36.
+put line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/roboto/T1RobotoSlab-TLF.fd
 File: T1RobotoSlab-TLF.fd 2019/12/11 (autoinst) Font definitions for T1/RobotoS
@@ -1631,25 +1631,25 @@ Package microtype Info: Loading generic protrusion settings for font family
 <figures/logo-white.pdf, id=297, 114.08723pt x 45.99081pt>
 File: figures/logo-white.pdf Graphic file (type pdf)
 <use figures/logo-white.pdf>
-Package pdftex.def Info: figures/logo-white.pdf  used on input line 36.
+Package pdftex.def Info: figures/logo-white.pdf  used on input line 40.
 (pdftex.def)             Requested size: 156.84854pt x 63.23299pt.
 LaTeX Font Info:    Trying to load font information for OT1+zplTLF on input lin
-e 36.
+e 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/ot1zpltlf.fd
 File: ot1zpltlf.fd 2021/05/25 v1.0 font definition file for OT1/zpl/TLF
 )
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 36.
+(Font)              scaled to size 10.0pt on input line 40.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplTLF' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 36.
+(Font)              scaled to size 7.3pt on input line 40.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 36.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
+(Font)              scaled to size 5.5pt on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1658,7 +1658,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1668,19 +1668,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+npxmia on input line 
-36.
+40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxmia.fd
 File: unpxmia.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxmia.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsym on input line 
-36.
+40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsym.fd
 File: unpxsym.fd 2015/03/21 Fontinst v1.933 font definitions for U/npxsym.
 )
 LaTeX Font Info:    Trying to load font information for U+npxsyc on input line 
-36.
+40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/unpxsyc.fd
 File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
@@ -1744,12 +1744,12 @@ Chapter 1.
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 96.0pt on input line 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
@@ -1758,12 +1758,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
 ] [2]
 LaTeX Font Info:    Trying to load font information for TS1+zplTLF on input lin
-e 27.
+e 23.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 File: ts1zpltlf.fd 2021/11/24 v1.0 fd file for TS1/zplTLF
 )
 LaTeX Font Info:    Font shape `TS1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 27.
+(Font)              scaled to size 10.0pt on input line 23.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplTLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1778,7 +1778,7 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 12.0pt on input line 20.
 LaTeX Font Info:    Font shape `T1/RobotoSlab-TLF/b/n' aliased to
 (Font)              `T1/RobotoSlab-TLF/bold/n' on input line 20.
-<figures/van_henten_model.png, id=545, 633.86812pt x 331.2375pt>
+<figures/van_henten_model.png, id=544, 633.86812pt x 331.2375pt>
 File: figures/van_henten_model.png Graphic file (type png)
 <use figures/van_henten_model.png>
 Package pdftex.def Info: figures/van_henten_model.png  used on input line 23.
@@ -1789,140 +1789,135 @@ LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 24.
  [6 <./figures/van_henten_model.png>] [7]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 170.
+(Font)              scaled to size 7.3pt on input line 150.
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 170.
- [8]
-Overfull \hbox (67.45189pt too wide) in paragraph at lines 187--240
+(Font)              scaled to size 5.5pt on input line 150.
+
+Overfull \hbox (67.45189pt too wide) in paragraph at lines 167--220
  [] 
  []
 
-[9] [10] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+[8] [9]
+
+LaTeX Warning: Reference `tab:pricing factors' on page 10 undefined on input li
+ne 325.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
 
  []
 
-<figures/agent-environment.png, id=668, 500.46976pt x 178.86826pt>
+<figures/agent-environment.png, id=662, 500.46976pt x 178.86826pt>
 File: figures/agent-environment.png Graphic file (type png)
 <use figures/agent-environment.png>
-Package pdftex.def Info: figures/agent-environment.png  used on input line 422.
+Package pdftex.def Info: figures/agent-environment.png  used on input line 412.
 
 (pdftex.def)             Requested size: 336.09818pt x 120.12767pt.
-[13 <./figures/agent-environment.png>]
+[12 <./figures/agent-environment.png>]
 
-LaTeX Warning: Reference `infinity_return' on page 14 undefined on input line 4
-54.
+LaTeX Warning: Reference `infinity_return' on page 13 undefined on input line 4
+42.
 
 
-LaTeX Warning: Reference `infinity_return' on page 14 undefined on input line 4
-72.
+LaTeX Warning: Reference `infinity_return' on page 13 undefined on input line 4
+60.
 
-[14] [15] [16] [17]
+[13] [14] [15] [16]
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 667.
+d on input line 655.
 
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 667.
+(Font)              scaled to size 10.0pt on input line 655.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 7.3pt on input line 667.
+(Font)              scaled to size 7.3pt on input line 655.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 5.5pt on input line 667.
-[18] [19]) (./mainmatter/chapter-3.tex [20]
+(Font)              scaled to size 5.5pt on input line 655.
+[17] [18]) (./mainmatter/chapter-3.tex [19]
 Chapter 3.
-[21
+[20
 
-] [22]
-<figures/weather_data.pdf, id=852, 1084.05pt x 361.35pt>
+] [21]
+<figures/weather_data.pdf, id=849, 1084.05pt x 361.35pt>
 File: figures/weather_data.pdf Graphic file (type pdf)
 <use figures/weather_data.pdf>
-Package pdftex.def Info: figures/weather_data.pdf  used on input line 133.
+Package pdftex.def Info: figures/weather_data.pdf  used on input line 128.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
- [23 <./figures/weather_data.pdf>] [24]
-<figures/gamma_reward.pdf, id=920, 722.7pt x 289.08pt>
+ [22] [23 <./figures/weather_data.pdf>]
+<figures/gamma_reward.pdf, id=918, 722.7pt x 289.08pt>
 File: figures/gamma_reward.pdf Graphic file (type pdf)
 <use figures/gamma_reward.pdf>
-Package pdftex.def Info: figures/gamma_reward.pdf  used on input line 184.
+Package pdftex.def Info: figures/gamma_reward.pdf  used on input line 177.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 185.
+(Font)              scaled to size 8.0pt on input line 178.
 LaTeX Font Info:    Font shape `OT1/zplTLF/m/n' will be
-(Font)              scaled to size 6.2pt on input line 185.
+(Font)              scaled to size 6.2pt on input line 178.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 185.
+(Font)              scaled to size 8.0pt on input line 178.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 6.2pt on input line 185.
-
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
-
- []
-
-[25 <./figures/gamma_reward.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-
- []
-
-<figures/vf_vs_gamma.pdf, id=978, 722.7pt x 578.16pt>
+(Font)              scaled to size 6.2pt on input line 178.
+ [24] [25 <./figures/gamma_reward.pdf>]
+<figures/vf_vs_gamma.pdf, id=982, 722.7pt x 578.16pt>
 File: figures/vf_vs_gamma.pdf Graphic file (type pdf)
 <use figures/vf_vs_gamma.pdf>
-Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 210.
+Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 202.
 (pdftex.def)             Requested size: 448.1309pt x 358.50842pt.
-[26] [27 <./figures/vf_vs_gamma.pdf>]
-<figures/selected_policies_outputs.pdf, id=1051, 1084.05pt x 361.35pt>
+ [26 <./figures/vf_vs_gamma.pdf>]
+<figures/selected_policies_outputs.pdf, id=1050, 1084.05pt x 361.35pt>
 File: figures/selected_policies_outputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_outputs.pdf>
 Package pdftex.def Info: figures/selected_policies_outputs.pdf  used on input l
-ine 267.
+ine 254.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
- [28]
-<figures/selected_policies_inputs.pdf, id=1059, 722.7pt x 361.35pt>
+ [27]
+<figures/selected_policies_inputs.pdf, id=1058, 722.7pt x 361.35pt>
 File: figures/selected_policies_inputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_inputs.pdf>
 Package pdftex.def Info: figures/selected_policies_inputs.pdf  used on input li
-ne 274.
+ne 261.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [29 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
+ [28 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
 uts.pdf>]
-<figures/stochastic_rl_policies.pdf, id=1175, 722.7pt x 216.81pt>
+<figures/stochastic_rl_policies.pdf, id=1176, 722.7pt x 216.81pt>
 File: figures/stochastic_rl_policies.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_policies.pdf>
 Package pdftex.def Info: figures/stochastic_rl_policies.pdf  used on input line
- 309.
+ 294.
 (pdftex.def)             Requested size: 448.1309pt x 134.44064pt.
- [30 <./figures/stochastic_rl_policies.pdf>]
+ [29 <./figures/stochastic_rl_policies.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+zplsups on input lin
-e 325.
- (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplsups.fd
+e 307.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/t1zplsups.fd
 File: t1zplsups.fd 2015/01/17 v1.0
 )
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
-(Font)              scaled to size 10.0pt on input line 325.
+(Font)              scaled to size 10.0pt on input line 307.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplsups' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
-(Font)              scaled to size 8.0pt on input line 325.
-
-[31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
-<figures/sampled_y_td.png, id=1271, 722.7pt x 361.35pt>
+(Font)              scaled to size 8.0pt on input line 307.
+ [30{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
+<figures/sampled_y_td.png, id=1272, 722.7pt x 361.35pt>
 File: figures/sampled_y_td.png Graphic file (type png)
 <use figures/sampled_y_td.png>
-Package pdftex.def Info: figures/sampled_y_td.png  used on input line 372.
+Package pdftex.def Info: figures/sampled_y_td.png  used on input line 354.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-<figures/sampled_u_td.png, id=1272, 722.7pt x 361.35pt>
+<figures/sampled_u_td.png, id=1273, 722.7pt x 361.35pt>
 File: figures/sampled_u_td.png Graphic file (type png)
 <use figures/sampled_u_td.png>
-Package pdftex.def Info: figures/sampled_u_td.png  used on input line 378.
+Package pdftex.def Info: figures/sampled_u_td.png  used on input line 360.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-
-[32] [33 <./figures/sampled_y_td.png> <./figures/sampled_u_td.png>] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 443--444
+ [31] [32 <./figures/sampled_y_td.png> <./figures/sampled_u_td.png>] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
@@ -1931,121 +1926,117 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--444
 File: figures/sampled_states_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_states_TR-eps-converted-to.png>
 Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.png  used o
-n input line 475.
+n input line 452.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-[35]
+[34]
 <figures/sampled_inputs_TR-eps-converted-to.png, id=1430, 1084.05pt x 361.35pt>
 
 File: figures/sampled_inputs_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_inputs_TR-eps-converted-to.png>
 Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.png  used o
-n input line 483.
+n input line 460.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 <figures/tr_training_graphs.pdf, id=1435, 722.7pt x 361.35pt>
 File: figures/tr_training_graphs.pdf Graphic file (type pdf)
 <use figures/tr_training_graphs.pdf>
-Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 495
+Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 471
 .
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [36 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
+ [35 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
 ts_TR-eps-converted-to.png>]
-<figures/vf_heatmap_deterministic.png, id=1446, 867.24pt x 722.7pt>
+<figures/vf_heatmap_deterministic.png, id=1445, 867.24pt x 722.7pt>
 File: figures/vf_heatmap_deterministic.png Graphic file (type png)
 <use figures/vf_heatmap_deterministic.png>
 Package pdftex.def Info: figures/vf_heatmap_deterministic.png  used on input li
-ne 505.
+ne 482.
 (pdftex.def)             Requested size: 358.50609pt x 298.75702pt.
- [37 <./figures/tr_training_graphs.pdf>]
-<figures/vf_time_predictions_long.pdf, id=1492, 722.7pt x 361.35pt>
+ [36 <./figures/tr_training_graphs.pdf>]
+<figures/vf_time_predictions_long.pdf, id=1494, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_long.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_long.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_long.pdf  used on input li
-ne 517.
+ne 494.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
 
-[38 <./figures/vf_heatmap_deterministic.png>]
-<figures/vf_time_predictions_short.pdf, id=1507, 722.7pt x 361.35pt>
+[37 <./figures/vf_heatmap_deterministic.png>]
+<figures/vf_time_predictions_short.pdf, id=1509, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_short.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_short.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_short.pdf  used on input l
-ine 528.
+ine 505.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [39 <./figures/vf_time_predictions_long.pdf> <./figures/vf_time_predictions_sh
+ [38 <./figures/vf_time_predictions_long.pdf> <./figures/vf_time_predictions_sh
 ort.pdf>]
-<figures/vf_heatmap_stochastic-eps-converted-to.png, id=1611, 578.16pt x 578.16
-pt>
-File: figures/vf_heatmap_stochastic-eps-converted-to.png Graphic file (type png
-)
-<use figures/vf_heatmap_stochastic-eps-converted-to.png>
-Package pdftex.def Info: figures/vf_heatmap_stochastic-eps-converted-to.png  us
-ed on input line 546.
+<figures/vf_heatmap_stochastic.png, id=1613, 578.16pt x 578.16pt>
+File: figures/vf_heatmap_stochastic.png Graphic file (type png)
+<use figures/vf_heatmap_stochastic.png>
+Package pdftex.def Info: figures/vf_heatmap_stochastic.png  used on input line 
+524.
 (pdftex.def)             Requested size: 448.1309pt x 448.13112pt.
-)
-(./mainmatter/chapter-4.tex [40 <./figures/vf_heatmap_stochastic-eps-converted-
-to.png>] [41]
+ [39 <./figures/vf_heatmap_stochastic.png>]) (./mainmatter/chapter-4.tex [40]
 Chapter 4.
-[42
+[41
 
 ]
 
-LaTeX Warning: Citation 'Andersson2018' on page 43 undefined on input line 45.
+LaTeX Warning: Citation 'Andersson2018' on page 42 undefined on input line 45.
 
-<figures/mpc_nominal.pdf, id=1654, 722.7pt x 289.08pt>
+<figures/mpc_nominal.pdf, id=1655, 722.7pt x 289.08pt>
 File: figures/mpc_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_nominal.pdf>
 Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[43]
-<figures/mpc_outputs_time_series.pdf, id=1668, 1084.05pt x 361.35pt>
+[42]
+<figures/mpc_outputs_time_series.pdf, id=1670, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 62.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1669, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1671, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 69.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [44 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1781, 722.7pt x 578.16pt>
+ [43 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
+<figures/stochastic_mpc_rewards_time.pdf, id=1783, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
  line 82.
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
 
-[45 <./figures/mpc_inputs_times_series.pdf>]
-<figures/stochastic_mpc_perf.pdf, id=1836, 722.7pt x 289.08pt>
+[44 <./figures/mpc_inputs_times_series.pdf>]
+<figures/stochastic_mpc_perf.pdf, id=1838, 722.7pt x 289.08pt>
 File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 91
 .
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [46 <./figures/stochastic_mpc_rewards_time.pdf> <./figures/stochastic_mpc_perf
-.pdf>]) (./mainmatter/chapter-5.tex [47]
+ [45 <./figures/stochastic_mpc_rewards_time.pdf> <./figures/stochastic_mpc_perf
+.pdf>]) (./mainmatter/chapter-5.tex [46]
 Chapter 5.
 
-LaTeX Warning: Citation '' on page 48 undefined on input line 14.
+LaTeX Warning: Citation '' on page 47 undefined on input line 14.
 
-[48
+[47
 
-] [49] [50]
-<figures/mpc_vs_rl_nominal.pdf, id=2017, 722.7pt x 289.08pt>
+] [48] [49]
+<figures/mpc_vs_rl_nominal.pdf, id=2019, 722.7pt x 289.08pt>
 File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_nominal.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 142.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [51]
-<figures/rl_mpc_impl_1.pdf, id=2040, 722.7pt x 289.08pt>
+ [50]
+<figures/rl_mpc_impl_1.pdf, id=2042, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 154.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [52 <./figures/mpc_vs_rl_nominal.pdf> <./figures/rl_mpc_impl_1.pdf>]
-<figures/rl_mpc_impl_2.pdf, id=2174, 722.7pt x 289.08pt>
+ [51 <./figures/mpc_vs_rl_nominal.pdf> <./figures/rl_mpc_impl_1.pdf>]
+<figures/rl_mpc_impl_2.pdf, id=2176, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 165.
@@ -2055,8 +2046,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
-[53 <./figures/rl_mpc_impl_2.pdf>]
-<figures/rl_mpc_impl_3.pdf, id=2257, 722.7pt x 289.08pt>
+[52 <./figures/rl_mpc_impl_2.pdf>]
+<figures/rl_mpc_impl_3.pdf, id=2259, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_3.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 182.
@@ -2066,127 +2057,127 @@ Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[54 <./figures/rl_mpc_impl_3.pdf>]
-<figures/rl_mpc_impl_4.pdf, id=2339, 722.7pt x 289.08pt>
+[53 <./figures/rl_mpc_impl_3.pdf>]
+<figures/rl_mpc_impl_4.pdf, id=2340, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 199.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_4_1.pdf, id=2345, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4_1.pdf, id=2346, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 209.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [55 <./figures/rl_mpc_impl_4.pdf>]
+ [54 <./figures/rl_mpc_impl_4.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 216--217
 
  []
 
-[56 <./figures/rl_mpc_impl_4_1.pdf>]
-<figures/rl_mpc_impl_5_6.pdf, id=2508, 722.7pt x 289.08pt>
+[55 <./figures/rl_mpc_impl_4_1.pdf>]
+<figures/rl_mpc_impl_5_6.pdf, id=2510, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 242.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_final.pdf, id=2511, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_final.pdf, id=2513, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 253.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [57 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]) (./mai
-nmatter/chapter-6.tex [58]
+ [56 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]) (./mai
+nmatter/chapter-6.tex [57]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2668, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2670, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 2.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
-[59
+[58
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2677, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2679, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
 line 29.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
- [60 <./figures/stochastic_rl_vs_mpc.pdf>] [61 <./figures/stochastic_rl_vs_mpc_
+ [59 <./figures/stochastic_rl_vs_mpc.pdf>] [60 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=2833, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2835, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [62 <./figures/stochastic_realife.pdf>])
-(./mainmatter/chapter-7.tex [63]
+ [61 <./figures/stochastic_realife.pdf>])
+(./mainmatter/chapter-7.tex [62]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2907, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2909, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[64
+[63
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2913, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2915, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
 line 22.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
- [65 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
+ [64 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-<figures/taylor_speed_up.pdf, id=2986, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=2989, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
 Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 38.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[66 <./figures/taylor_speed_up.pdf>]
-<figures/final_speed_up.pdf, id=3051, 722.7pt x 289.08pt>
+[65 <./figures/taylor_speed_up.pdf>]
+<figures/final_speed_up.pdf, id=3052, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
 Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [67 <./figures/final_speed_up.pdf>])
-(./mainmatter/conclusion.tex [68]
+ [66 <./figures/final_speed_up.pdf>])
+(./mainmatter/conclusion.tex [67]
 Chapter 8.
-[69
+[68
 
-] [70]) [71]
+] [69]) [70]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 72.
+(Font)              scaled to size 10.0pt on input line 76.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/zplTLF/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-72.
+76.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 72.
+(Font)              scaled to size 10.0pt on input line 76.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `npxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[72
+[71
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-[73] [74] [75] (./appendix/appendix-a.tex [76]
+[72] [73] (./appendix/appendix-a.tex [74]
 Appendix A.
 
-LaTeX Warning: Reference `rl_fundamentals' on page 77 undefined on input line 4
+LaTeX Warning: Reference `rl_fundamentals' on page 75 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3252, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3247, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2195,14 +2186,14 @@ Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `greenhouse_model' on page 77 undefined on input line 
+LaTeX Warning: Reference `greenhouse_model' on page 75 undefined on input line 
 21.
 
-[77
+[75
 
-] [78 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [79]
+] [76 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [77]
 Appendix B.
-) [80
+) [78
 
 ] (./report.aux)
  ***********
@@ -2214,7 +2205,7 @@ L3 programming layer <2023-06-05>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 14A46E2B4D09F9D6D7DFDBA38DD25E62;11234.
+(rerunfilecheck)             Checksum: 391E082692D4F7A1021569F250E33F6D;11183.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2225,13 +2216,13 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46769 strings out of 475735
- 928751 string characters out of 5784786
- 1888759 words of memory out of 5000000
+ 46770 strings out of 475735
+ 928317 string characters out of 5784786
+ 1892759 words of memory out of 5000000
  66062 multiletter control sequences out of 15000+600000
- 693985 words of font info for 347 fonts, out of 8000000 for 9000
+ 694419 words of font info for 351 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,101p,2341b,2159s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,101p,2407b,2153s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texlive/te
@@ -2248,10 +2239,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (87 pages, 7704348 bytes).
+Output written on report.pdf (85 pages, 7322112 bytes).
 PDF statistics:
- 3462 PDF objects out of 3580 (max. 8388607)
- 1792 compressed objects within 18 object streams
- 383 named destinations out of 1000 (max. 500000)
+ 3457 PDF objects out of 3580 (max. 8388607)
+ 1789 compressed objects within 18 object streams
+ 380 named destinations out of 1000 (max. 500000)
  57626 words of extra memory for PDF output out of 61914 (max. 10000000)
 

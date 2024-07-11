@@ -684,6 +684,105 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{bertsekasNewtonMethodReinforcement2022}{article}{}
+    \name{author}{1}{}{%
+      {{hash=BD}{%
+         family={Bertsekas},
+         familyi={B\bibinitperiod},
+         given={Dimitri},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \keyw{AlphaZero,Dynamic programming over an infinite horizon,Model
+  predictive control,Off-line training,On-line play,Reinforcement learning}
+    \strng{namehash}{BD1}
+    \strng{fullhash}{BD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    The purpose of this paper is to propose and develop a new conceptual
+  framework for approximate Dynamic Programming (DP) and Reinforcement Learning
+  (RL). This framework centers around two algorithms, which are designed
+  largely independently of each other and operate in synergy through the
+  powerful mechanism of Newton's method. We call these the off-line training
+  and the on-line play algorithms; the names are borrowed from some of the
+  major successes of RL involving games. Primary examples are the recent (2017)
+  AlphaZero program (which plays chess), and the similarly structured and
+  earlier (1990s) TD-Gammon program (which plays backgammon). In these game
+  contexts, the off-line training algorithm is the method used to teach the
+  program how to evaluate positions and to generate good moves at any given
+  position, while the on-line play algorithm is the method used to play in real
+  time against human or computer opponents. Both AlphaZero and TD-Gammon were
+  trained off-line extensively using neural networks and an approximate version
+  of the fundamental DP algorithm of policy iteration. Yet the AlphaZero player
+  that was obtained off-line is not used directly during on-line play (it is
+  too inaccurate due to approximation errors that are inherent in off-line
+  neural network training). Instead a separate on-line player is used to select
+  moves, based on multistep lookahead minimization and a terminal position
+  evaluator that was trained using experience with the off-line player. The
+  on-line player performs a form of policy improvement, which is not degraded
+  by neural network approximations. As a result, it greatly improves the
+  performance of the off-line player. Similarly, TD-Gammon performs on-line a
+  policy improvement step using one-step or two-step lookahead minimization,
+  which is not degraded by neural network approximations. To this end it uses
+  an off-line neural network-trained terminal position evaluator, and
+  importantly it also extends its on-line lookahead by rollout (simulation with
+  the one-step lookahead player that is based on the position evaluator). An
+  important lesson from AlphaZero and TD-Gammon is that the performance of an
+  off-line trained policy can be greatly improved by on-line approximation in
+  value space, with long lookahead (involving minimization or rollout with the
+  off-line policy, or both), and terminal cost approximation that is obtained
+  off-line. This performance enhancement is often dramatic and is due to a
+  simple fact, which is couched on algorithmic mathematics and is the focal
+  point of this work: (a) Approximation in value space with one-step lookahead
+  minimization amounts to a step of Newton's method for solving Bellman's
+  equation. (b) The starting point for the Newton step is based on the results
+  of off-line training, and may be enhanced by longer lookahead minimization
+  and on-line rollout. Indeed the major determinant of the quality of the
+  on-line policy is the Newton step that is performed on-line, while off-line
+  training plays a secondary role by comparison. Significantly, the synergy
+  between off-line training and on-line play also underlies Model Predictive
+  Control (MPC), a major control system design methodology that has been
+  extensively developed since the 1980s. This synergy can be understood in
+  terms of abstract models of infinite horizon DP and simple geometrical
+  constructions, and helps to explain the all-important stability issues within
+  the MPC context. In this work we aim to provide insights (often based on
+  visualization), which explain the beneficial effects of on-line decision
+  making on top of off-line training. In the process, we will bring out the
+  strong connections between the artificial intelligence view of RL, and the
+  control theory views of MPC and adaptive control. While we will deemphasize
+  mathematical proofs, there is considerable related analysis, which supports
+  our conclusions and can be found in the author's recent RL books (Bertsekas,
+  2019; Bertsekas, 2020), and the abstract DP monograph (Bertsekas, 2022). One
+  of our principal aims is to show, through the algorithmic ideas of Newton's
+  method and the unifying principles of abstract DP, that the
+  AlphaZero/TD-Gammon methodology of approximation in value space and rollout
+  applies very broadly to deterministic and stochastic optimal control
+  problems, involving both discrete and continuous search spaces, as well as
+  finite and infinite horizon.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.rico.2022.100121
+    \endverb
+    \field{issn}{2666-7207}
+    \field{pages}{100121}
+    \field{title}{Newton's Method for Reinforcement Learning and Model
+  Predictive Control}
+    \field{volume}{7}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/TVN52CBX/Bertseka
+    \verb s - 2022 - Newton’s method for reinforcement learning and mod.pdf;/
+    \verb home/murray/snap/zotero-snap/common/Zotero/storage/SXJ525DZ/S26667207
+    \verb 22000157.html
+    \endverb
+    \field{journaltitle}{Results in Control and Optimization}
+    \field{month}{06}
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
   \entry{arroyoReinforcedModelPredictive2022}{article}{}
     \name{author}{4}{}{%
       {{hash=AJ}{%
@@ -1075,105 +1174,6 @@
     \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZER2BVBI/Bertseka
     \verb s - Lessons from AlphaZero for Optimal, Model Predicti.pdf
     \endverb
-  \endentry
-
-  \entry{bertsekasNewtonMethodReinforcement2022}{article}{}
-    \name{author}{1}{}{%
-      {{hash=BD}{%
-         family={Bertsekas},
-         familyi={B\bibinitperiod},
-         given={Dimitri},
-         giveni={D\bibinitperiod},
-      }}%
-    }
-    \keyw{AlphaZero,Dynamic programming over an infinite horizon,Model
-  predictive control,Off-line training,On-line play,Reinforcement learning}
-    \strng{namehash}{BD1}
-    \strng{fullhash}{BD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    The purpose of this paper is to propose and develop a new conceptual
-  framework for approximate Dynamic Programming (DP) and Reinforcement Learning
-  (RL). This framework centers around two algorithms, which are designed
-  largely independently of each other and operate in synergy through the
-  powerful mechanism of Newton's method. We call these the off-line training
-  and the on-line play algorithms; the names are borrowed from some of the
-  major successes of RL involving games. Primary examples are the recent (2017)
-  AlphaZero program (which plays chess), and the similarly structured and
-  earlier (1990s) TD-Gammon program (which plays backgammon). In these game
-  contexts, the off-line training algorithm is the method used to teach the
-  program how to evaluate positions and to generate good moves at any given
-  position, while the on-line play algorithm is the method used to play in real
-  time against human or computer opponents. Both AlphaZero and TD-Gammon were
-  trained off-line extensively using neural networks and an approximate version
-  of the fundamental DP algorithm of policy iteration. Yet the AlphaZero player
-  that was obtained off-line is not used directly during on-line play (it is
-  too inaccurate due to approximation errors that are inherent in off-line
-  neural network training). Instead a separate on-line player is used to select
-  moves, based on multistep lookahead minimization and a terminal position
-  evaluator that was trained using experience with the off-line player. The
-  on-line player performs a form of policy improvement, which is not degraded
-  by neural network approximations. As a result, it greatly improves the
-  performance of the off-line player. Similarly, TD-Gammon performs on-line a
-  policy improvement step using one-step or two-step lookahead minimization,
-  which is not degraded by neural network approximations. To this end it uses
-  an off-line neural network-trained terminal position evaluator, and
-  importantly it also extends its on-line lookahead by rollout (simulation with
-  the one-step lookahead player that is based on the position evaluator). An
-  important lesson from AlphaZero and TD-Gammon is that the performance of an
-  off-line trained policy can be greatly improved by on-line approximation in
-  value space, with long lookahead (involving minimization or rollout with the
-  off-line policy, or both), and terminal cost approximation that is obtained
-  off-line. This performance enhancement is often dramatic and is due to a
-  simple fact, which is couched on algorithmic mathematics and is the focal
-  point of this work: (a) Approximation in value space with one-step lookahead
-  minimization amounts to a step of Newton's method for solving Bellman's
-  equation. (b) The starting point for the Newton step is based on the results
-  of off-line training, and may be enhanced by longer lookahead minimization
-  and on-line rollout. Indeed the major determinant of the quality of the
-  on-line policy is the Newton step that is performed on-line, while off-line
-  training plays a secondary role by comparison. Significantly, the synergy
-  between off-line training and on-line play also underlies Model Predictive
-  Control (MPC), a major control system design methodology that has been
-  extensively developed since the 1980s. This synergy can be understood in
-  terms of abstract models of infinite horizon DP and simple geometrical
-  constructions, and helps to explain the all-important stability issues within
-  the MPC context. In this work we aim to provide insights (often based on
-  visualization), which explain the beneficial effects of on-line decision
-  making on top of off-line training. In the process, we will bring out the
-  strong connections between the artificial intelligence view of RL, and the
-  control theory views of MPC and adaptive control. While we will deemphasize
-  mathematical proofs, there is considerable related analysis, which supports
-  our conclusions and can be found in the author's recent RL books (Bertsekas,
-  2019; Bertsekas, 2020), and the abstract DP monograph (Bertsekas, 2022). One
-  of our principal aims is to show, through the algorithmic ideas of Newton's
-  method and the unifying principles of abstract DP, that the
-  AlphaZero/TD-Gammon methodology of approximation in value space and rollout
-  applies very broadly to deterministic and stochastic optimal control
-  problems, involving both discrete and continuous search spaces, as well as
-  finite and infinite horizon.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.rico.2022.100121
-    \endverb
-    \field{issn}{2666-7207}
-    \field{pages}{100121}
-    \field{title}{Newton's Method for Reinforcement Learning and Model
-  Predictive Control}
-    \field{volume}{7}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/TVN52CBX/Bertseka
-    \verb s - 2022 - Newton’s method for reinforcement learning and mod.pdf;/
-    \verb home/murray/snap/zotero-snap/common/Zotero/storage/SXJ525DZ/S26667207
-    \verb 22000157.html
-    \endverb
-    \field{journaltitle}{Results in Control and Optimization}
-    \field{month}{06}
-    \field{year}{2022}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
   \endentry
 
   \entry{linReinforcementLearningBasedModel2023}{article}{}
@@ -1647,174 +1647,6 @@
     \field{month}{09}
     \field{year}{2022}
     \field{urlday}{15}
-    \field{urlmonth}{01}
-    \field{urlyear}{2024}
-  \endentry
-
-  \entry{royPAPrecisionAgriculture2002}{article}{}
-    \name{author}{4}{}{%
-      {{hash=RJC}{%
-         family={Roy},
-         familyi={R\bibinitperiod},
-         given={J.\bibnamedelima C.},
-         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
-      }}%
-      {{hash=BT}{%
-         family={Boulard},
-         familyi={B\bibinitperiod},
-         given={T.},
-         giveni={T\bibinitperiod},
-      }}%
-      {{hash=KC}{%
-         family={Kittas},
-         familyi={K\bibinitperiod},
-         given={C.},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=WS}{%
-         family={Wang},
-         familyi={W\bibinitperiod},
-         given={S.},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \keyw{/unread}
-    \strng{namehash}{RJCBTKC+1}
-    \strng{fullhash}{RJCBTKCWS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
-    \field{abstract}{%
-    In this paper, the characterization and modelling of the most relevant
-  convective transfers contributing to the elaboration of the greenhouse
-  climate are reviewed. Convective transfers include heat and mass transfers
-  between air and solid surfaces (walls, roof, leaves) along with air, heat,
-  water vapour and tracer gas transfers to or from the inside air. Adopting the
-  assumption that the greenhouse is a perfectly stirred tank, the specific
-  characterization methods associated with this approach are reviewed. The
-  perfectly stirred tank approach requires the assumption of uniform
-  temperature, humidity and CO2 content inside the greenhouse and uses a `big
-  leaf' model to treat the plant canopy and describe the exchanges of latent
-  and sensible heat with inside air. The simulation of the ventilation
-  processes associated with this simplified approach is based on the Bernoulli
-  equation and on the experimental determination of semi-empirical parameters
-  by means of air exchange rate measurements. The techniques used to measure
-  temperature and air exchange rates measurements pertaining to the whole
-  greenhouse volume are presented. A complete panorama of the studies in
-  relation to the transfer coefficients between the different surfaces together
-  with the ventilation performances of various greenhouse types are also
-  presented. This paper is the first part of a review of the convective
-  transfers in greenhouses and in the second paper, a similar study based on
-  the approach of the distributed climate is presented.%
-    }
-    \verb{doi}
-    \verb 10.1006/bioe.2002.0107
-    \endverb
-    \field{issn}{1537-5110}
-    \field{number}{1}
-    \field{pages}{1\bibrangedash 20}
-    \field{shorttitle}{{{PA}}---{{Precision Agriculture}}}
-    \field{title}{{{PA}}---{{Precision Agriculture}}: {{Convective}} and
-  {{Ventilation Transfers}} in {{Greenhouses}}, {{Part}} 1: The {{Greenhouse}}
-  Considered as a {{Perfectly Stirred Tank}}}
-    \field{volume}{83}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/5JSL3N9F/Roy et a
-    \verb l_2002_PA—Precision Agriculture.pdf;/home/murray/snap/zotero-snap/c
-    \verb ommon/Zotero/storage/PP5XF4WM/S1537511002901078.html
-    \endverb
-    \field{journaltitle}{Biosystems Engineering}
-    \field{month}{09}
-    \field{year}{2002}
-    \field{urlday}{16}
-    \field{urlmonth}{01}
-    \field{urlyear}{2024}
-  \endentry
-
-  \entry{kuijpersModelSelectionCommon2019}{article}{}
-    \name{author}{6}{}{%
-      {{hash=KWJP}{%
-         family={Kuijpers},
-         familyi={K\bibinitperiod},
-         given={Wouter J.\bibnamedelima P.},
-         giveni={W\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
-  P\bibinitperiod},
-      }}%
-      {{hash=vMJG}{%
-         family={{van de Molengraft}},
-         familyi={v\bibinitperiod},
-         given={Marinus J.\bibnamedelima G.},
-         giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim
-  G\bibinitperiod},
-      }}%
-      {{hash=vS}{%
-         family={{van Mourik}},
-         familyi={v\bibinitperiod},
-         given={Simon},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=vA}{%
-         family={{van 't Ooster}},
-         familyi={v\bibinitperiod},
-         given={Albertus},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=HS}{%
-         family={Hemming},
-         familyi={H\bibinitperiod},
-         given={Silke},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=vEJ}{%
-         family={{van Henten}},
-         familyi={v\bibinitperiod},
-         given={Eldert\bibnamedelima J.},
-         giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-    }
-    \keyw{/unread,Common structure,Model selection,Tomato crop growth models}
-    \strng{namehash}{KWJPvMJGvS+1}
-    \strng{fullhash}{KWJPvMJGvSvAHSvEJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{shorttitle}
-    \field{abstract}{%
-    Crop modelling is an essential part of biosystems engineering; selecting or
-  developing a crop model for a specific application, having its requirements
-  and desires, is difficult if not impossible without the required domain
-  knowledge. This paper presents a fundamentally different model selection
-  approach based on biological functionalities. This is enabled by a common
-  structure, which allows for a combining of components, yielding new models.
-  This increased design space allows the development of models which are better
-  suited to the application than the original models. The use of a common
-  structure, and its potential, are demonstrated by a use-case involving the
-  selection of a tomato crop model for a model-based control application, but
-  the rationales and methodologies can apply to other crops and applications as
-  well. In this paper, 27 valid model combinations have been created from 4
-  models. In the use-case presented, the models are compared to data
-  originating from a real system. The predictive performance of a model is
-  quantified by the Root-Mean-Squared-Error (RSME) between the predictions and
-  data. One trade-off is model accuracy versus computational speed. With the
-  model set used, a 13\% decrease in RSME was obtained by allowing a 7.5\%
-  increase in model computation time compared to one of the original models.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.biosystemseng.2019.09.010
-    \endverb
-    \field{issn}{1537-5110}
-    \field{pages}{247\bibrangedash 257}
-    \field{shorttitle}{Model Selection with a Common Structure}
-    \field{title}{Model Selection with a Common Structure: {{Tomato}} Crop
-  Growth Models}
-    \field{volume}{187}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/QAN5NZ69/Kuijpers
-    \verb  et al_2019_Model selection with a common structure.pdf;/home/murray/
-    \verb snap/zotero-snap/common/Zotero/storage/NQPMKUWG/S1537511019308323.htm
-    \verb l
-    \endverb
-    \field{journaltitle}{Biosystems Engineering}
-    \field{month}{11}
-    \field{year}{2019}
-    \field{urlday}{16}
     \field{urlmonth}{01}
     \field{urlyear}{2024}
   \endentry

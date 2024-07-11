@@ -7,11 +7,15 @@
 
 %% Additional packages and commands
 \usepackage{parskip}
+\usepackage{cleveref}
 \setlist{itemsep=-2pt} % Reducing white space in lists slightly
 \renewcommand{\deg}{\si{\degree}\xspace} % Use \deg easily, everywhere
 %\usepackage{amsthm}
 \newtheorem{theorem}{Theorem} %[section]
 \newtheorem{definition}{Definition}
+
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{Section}{Sections}
 
 %\theoremstyle{remark}
 \newtheorem{remark}{Remark}
@@ -25,7 +29,7 @@
 
 %% Define the main parameters
 \title{RL-MPC for Autonomous Greenhouse Control}
-\subtitle{Combining RL and MPC to maximize  \\ the economic benefit of a Greenhouse}
+\subtitle{Combining RL and MPC to maximise  \\ the economic benefit of a greenhouse}
 \author{Murray Harraway}
 
 \subject{Systems and Control Masters Thesis} % Cover only
