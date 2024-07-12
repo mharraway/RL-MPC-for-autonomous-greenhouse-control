@@ -80,14 +80,14 @@
 \contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{59}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Results - VF and Terminal Region}{61}{section.6.2}%
 \contentsline {section}{\numberline {6.3}Conclusion}{62}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Computational Speed Up of RL-MPC}{64}{chapter.7}%
+\contentsline {chapter}{\numberline {7}Computational Speed up of RL-MPC}{64}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{64}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Taylor Approximation}{66}{section.7.2}%
 \contentsline {section}{\numberline {7.3}Combined}{67}{section.7.3}%
 \contentsline {section}{\numberline {7.4}Discussion and Conclusion}{67}{section.7.4}%
 \contentsline {chapter}{\numberline {8}Discussion and Conclusion}{69}{chapter.8}%
 \contentsline {section}{\numberline {8.1}Conclusion}{69}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Recommendations \& Future Work}{70}{section.8.2}%
+\contentsline {section}{\numberline {8.2}Recommendations and Future Work}{70}{section.8.2}%
 \contentsline {chapter}{References}{72}{chapter*.56}%
 \contentsline {chapter}{\numberline {A}RL \& RL Training }{76}{appendix.A}%
 \contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{76}{section.A.1}%

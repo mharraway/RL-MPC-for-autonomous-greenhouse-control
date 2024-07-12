@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  12 JUL 2024 17:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  12 JUL 2024 19:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2100,7 +2100,7 @@ Chapter 6.
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
-2.
+1.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
 [59
 
@@ -2109,52 +2109,47 @@ Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
-line 29.
+line 24.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
  [60 <./figures/stochastic_rl_vs_mpc.pdf>] [61 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
 <figures/stochastic_realife.pdf, id=2839, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
-Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
+Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 36.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [62 <./figures/stochastic_realife.pdf>])
 (./mainmatter/chapter-7.tex [63]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2913, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2912, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
-Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
+Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 11.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [64
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2919, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2918, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
-line 22.
+line 20.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
  [65 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-<figures/taylor_speed_up.pdf, id=2993, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=2992, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
-Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 38.
+Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 36.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[66 <./figures/taylor_speed_up.pdf>]
-<figures/final_speed_up.pdf, id=3057, 722.7pt x 289.08pt>
+<figures/final_speed_up.pdf, id=2994, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
-Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 52.
+Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 50.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [67 <./figures/final_speed_up.pdf>])
-(./mainmatter/conclusion.tex [68]
+ [66 <./figures/taylor_speed_up.pdf>] [67 <./figures/final_speed_up.pdf>]) (./m
+ainmatter/conclusion.tex [68]
 Chapter 8.
 [69
 
@@ -2185,7 +2180,7 @@ Appendix A.
 LaTeX Warning: Reference `rl_fundamentals' on page 76 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3251, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3254, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2216,7 +2211,7 @@ LaTeX Warning: There were undefined references.
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: ED554D5A33385266ED9A1204C5A5D6F2;11183.
+(rerunfilecheck)             Checksum: 99CE565D640E433F8FBDFE8AAC150884;11190.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2250,10 +2245,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (86 pages, 7324661 bytes).
+Output written on report.pdf (86 pages, 7324500 bytes).
 PDF statistics:
- 3461 PDF objects out of 3580 (max. 8388607)
- 1793 compressed objects within 18 object streams
+ 3464 PDF objects out of 3580 (max. 8388607)
+ 1791 compressed objects within 18 object streams
  384 named destinations out of 1000 (max. 500000)
  57626 words of extra memory for PDF output out of 61914 (max. 10000000)
 
