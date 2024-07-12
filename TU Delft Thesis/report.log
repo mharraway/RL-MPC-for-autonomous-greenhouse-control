@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  11 JUL 2024 23:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  12 JUL 2024 17:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1426,14 +1426,20 @@ LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 10.0pt on input line 26.
 \@quotelevel=\count523
 \@quotereset=\count524
- (./report.aux)
+ (./report.aux
+
+LaTeX Warning: Label `eq:constraint-initial' multiply defined.
+
+
+LaTeX Warning: Label `eq:constraint-initial@cref' multiply defined.
+
+)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 26.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
  26.
-
-(/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 26.
@@ -1951,27 +1957,29 @@ Package pdftex.def Info: figures/vf_heatmap_deterministic.png  used on input li
 ne 482.
 (pdftex.def)             Requested size: 358.50609pt x 298.75702pt.
  [36 <./figures/tr_training_graphs.pdf>]
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 491.
 <figures/vf_time_predictions_long.pdf, id=1494, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_long.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_long.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_long.pdf  used on input li
-ne 494.
+ne 496.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
 
 [37 <./figures/vf_heatmap_deterministic.png>]
-<figures/vf_time_predictions_short.pdf, id=1509, 722.7pt x 361.35pt>
+<figures/vf_time_predictions_short.pdf, id=1510, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_short.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_short.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_short.pdf  used on input l
-ine 505.
+ine 507.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [38 <./figures/vf_time_predictions_long.pdf> <./figures/vf_time_predictions_sh
 ort.pdf>]
-<figures/vf_heatmap_stochastic.png, id=1613, 578.16pt x 578.16pt>
+<figures/vf_heatmap_stochastic.png, id=1614, 578.16pt x 578.16pt>
 File: figures/vf_heatmap_stochastic.png Graphic file (type png)
 <use figures/vf_heatmap_stochastic.png>
 Package pdftex.def Info: figures/vf_heatmap_stochastic.png  used on input line 
-524.
+526.
 (pdftex.def)             Requested size: 448.1309pt x 448.13112pt.
  [39 <./figures/vf_heatmap_stochastic.png>]) (./mainmatter/chapter-4.tex [40]
 Chapter 4.
@@ -1979,28 +1987,28 @@ Chapter 4.
 
 ]
 
-LaTeX Warning: Citation 'Andersson2018' on page 42 undefined on input line 45.
+LaTeX Warning: Citation 'Andersson2018' on page 42 undefined on input line 46.
 
-<figures/mpc_nominal.pdf, id=1655, 722.7pt x 289.08pt>
+<figures/mpc_nominal.pdf, id=1658, 722.7pt x 289.08pt>
 File: figures/mpc_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_nominal.pdf>
-Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 52.
+Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 53.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 [42]
-<figures/mpc_outputs_time_series.pdf, id=1670, 1084.05pt x 361.35pt>
+<figures/mpc_outputs_time_series.pdf, id=1673, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 62.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1671, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1674, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 69.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [43 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1783, 722.7pt x 578.16pt>
+<figures/stochastic_mpc_rewards_time.pdf, id=1786, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
@@ -2008,7 +2016,7 @@ Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
 
 [44 <./figures/mpc_inputs_times_series.pdf>]
-<figures/stochastic_mpc_perf.pdf, id=1838, 722.7pt x 289.08pt>
+<figures/stochastic_mpc_perf.pdf, id=1841, 722.7pt x 289.08pt>
 File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 91
@@ -2018,139 +2026,139 @@ Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 91
 .pdf>]) (./mainmatter/chapter-5.tex [46]
 Chapter 5.
 
-LaTeX Warning: Citation '' on page 47 undefined on input line 14.
+LaTeX Warning: Citation '' on page 47 undefined on input line 12.
 
 [47
 
 ] [48] [49]
-<figures/mpc_vs_rl_nominal.pdf, id=2019, 722.7pt x 289.08pt>
+<figures/mpc_vs_rl_nominal.pdf, id=2022, 722.7pt x 289.08pt>
 File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_nominal.pdf>
-Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 142.
+Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 140.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [50]
-<figures/rl_mpc_impl_1.pdf, id=2042, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_1.pdf, id=2044, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 154.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [51 <./figures/mpc_vs_rl_nominal.pdf> <./figures/rl_mpc_impl_1.pdf>]
-<figures/rl_mpc_impl_2.pdf, id=2176, 722.7pt x 289.08pt>
+ [51 <./figures/mpc_vs_rl_nominal.pdf>]
+<figures/rl_mpc_impl_2.pdf, id=2108, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 165.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 170--173
-
- []
-
-[52 <./figures/rl_mpc_impl_2.pdf>]
-<figures/rl_mpc_impl_3.pdf, id=2259, 722.7pt x 289.08pt>
+ [52 <./figures/rl_mpc_impl_1.pdf> <./figures/rl_mpc_impl_2.pdf>]
+<figures/rl_mpc_impl_3.pdf, id=2261, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_3.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 182.
+Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 181.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
 [53 <./figures/rl_mpc_impl_3.pdf>]
-<figures/rl_mpc_impl_4.pdf, id=2340, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4.pdf, id=2342, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 199.
-(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_4_1.pdf, id=2346, 722.7pt x 289.08pt>
-File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
-<use figures/rl_mpc_impl_4_1.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 209.
+Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 198.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [54 <./figures/rl_mpc_impl_4.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+<figures/rl_mpc_impl_4_1.pdf, id=2426, 722.7pt x 289.08pt>
+File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
+<use figures/rl_mpc_impl_4_1.pdf>
+Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 208.
+(pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
 [55 <./figures/rl_mpc_impl_4_1.pdf>]
-<figures/rl_mpc_impl_5_6.pdf, id=2510, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_5_6.pdf, id=2511, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 242.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_final.pdf, id=2513, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_final.pdf, id=2514, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 253.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [56 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]) (./mai
-nmatter/chapter-6.tex [57]
+ [56 <./figures/rl_mpc_impl_5_6.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
+
+ []
+
+[57 <./figures/rl_mpc_impl_final.pdf>]) (./mainmatter/chapter-6.tex [58]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2670, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2674, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 2.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
-[58
+[59
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2679, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2683, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
 line 29.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
- [59 <./figures/stochastic_rl_vs_mpc.pdf>] [60 <./figures/stochastic_rl_vs_mpc_
+ [60 <./figures/stochastic_rl_vs_mpc.pdf>] [61 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=2835, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2839, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 43.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [61 <./figures/stochastic_realife.pdf>])
-(./mainmatter/chapter-7.tex [62]
+ [62 <./figures/stochastic_realife.pdf>])
+(./mainmatter/chapter-7.tex [63]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2909, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2913, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 12.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[63
+[64
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2915, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2919, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
 line 22.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
- [64 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
+ [65 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
 Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
-<figures/taylor_speed_up.pdf, id=2989, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=2993, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
 Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 38.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[65 <./figures/taylor_speed_up.pdf>]
-<figures/final_speed_up.pdf, id=3052, 722.7pt x 289.08pt>
+[66 <./figures/taylor_speed_up.pdf>]
+<figures/final_speed_up.pdf, id=3057, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
 Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 52.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [66 <./figures/final_speed_up.pdf>])
-(./mainmatter/conclusion.tex [67]
+ [67 <./figures/final_speed_up.pdf>])
+(./mainmatter/conclusion.tex [68]
 Chapter 8.
-[68
+[69
 
-] [69]) [70]
+] [70]) [71]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 76.
 Package microtype Info: Character `029' is missing
@@ -2168,16 +2176,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[71
+[72
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-[72] [73] (./appendix/appendix-a.tex [74]
+[73] [74] (./appendix/appendix-a.tex [75]
 Appendix A.
 
-LaTeX Warning: Reference `rl_fundamentals' on page 75 undefined on input line 4
+LaTeX Warning: Reference `rl_fundamentals' on page 76 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3247, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3251, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2186,14 +2194,14 @@ Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `greenhouse_model' on page 75 undefined on input line 
+LaTeX Warning: Reference `greenhouse_model' on page 76 undefined on input line 
 21.
 
-[75
+[76
 
-] [76 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [77]
+] [77 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [78]
 Appendix B.
-) [78
+) [79
 
 ] (./report.aux)
  ***********
@@ -2204,8 +2212,11 @@ L3 programming layer <2023-06-05>
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 391E082692D4F7A1021569F250E33F6D;11183.
+(rerunfilecheck)             Checksum: ED554D5A33385266ED9A1204C5A5D6F2;11183.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2216,11 +2227,11 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46770 strings out of 475735
- 928317 string characters out of 5784786
+ 46849 strings out of 475735
+ 929991 string characters out of 5784786
  1892759 words of memory out of 5000000
- 66062 multiletter control sequences out of 15000+600000
- 694419 words of font info for 351 fonts, out of 8000000 for 9000
+ 66135 multiletter control sequences out of 15000+600000
+ 694505 words of font info for 352 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,2407b,2153s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
@@ -2239,10 +2250,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (85 pages, 7322112 bytes).
+Output written on report.pdf (86 pages, 7324661 bytes).
 PDF statistics:
- 3457 PDF objects out of 3580 (max. 8388607)
- 1789 compressed objects within 18 object streams
- 380 named destinations out of 1000 (max. 500000)
+ 3461 PDF objects out of 3580 (max. 8388607)
+ 1793 compressed objects within 18 object streams
+ 384 named destinations out of 1000 (max. 500000)
  57626 words of extra memory for PDF output out of 61914 (max. 10000000)
 

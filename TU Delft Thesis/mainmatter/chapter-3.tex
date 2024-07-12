@@ -488,6 +488,8 @@ Performance metrics include the squared error between the predicted and the actu
 
 The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the highest expected return is observed at the beginning of the growing period, which can be attributed to its longer growing duration.  Moreover, at a given time, having a higher dry mass leads to greater expected return. This behaviour is seen across all four models within the training bounds. It is important to note that the greenhouse model limits the dry mass to a maximum of $400 g \cdot m^{-2}$. Consequently, there will be minimal expected return for dry masses near this value. Although the nominal agent will make efforts to cultivate the plant by supplying carbon dioxide and heat, it will not result in any growth hence the lower returns in \autoref{fig:vf_heatmaps}. It is noted that the reward function is determined by the difference in growth. Consequently, the return is calculated based on the difference in growth starting from the initial state. It is also noted that \autoref{fig:vf_heatmaps} suggests that the value function is smooth concerning the dry mass and time.
 
+\todo{Explain these graphs better}
+
 
 \begin{figure}[H]
 	\centering
@@ -525,6 +527,10 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 	\caption{Drymass vs Time vs Value - Stochastic}
 	\label{fig:vf_heatmap_stochastic}
 \end{figure}
+\todo{Explain the 20\% graph and why there seems like there is noise}
+
+
+
 Finally, a value function was trained with its corresponding agent for each level of uncertainty in the environment. \autoref{fig:vf_heatmap_stochastic} displays the same heatmap as \autoref{fig:vf_heatmaps}, yielding similar behaviour compared to the nominal conditions. However, it appears to be more coarse, particularly beyond the range of the training data. Specifically, it seems that, for high uncertainties i.e. $20\%$), the trained value function exhibits a higher degree of non-linearity than the others trained on lower levels of uncertainty. This may indicate that more sample trajectories are required for further training; however, it still seems to generalise well in the region of the nominal trajectory.
 
 
