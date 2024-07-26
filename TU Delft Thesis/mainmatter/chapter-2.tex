@@ -322,7 +322,7 @@ Maximising the economic profit of the greenhouse is highly desirable. This conce
 	EPI = \sum_{k = ts}^{tf} (c_{p_1} \cdot u_1(k) + c_{p_2} \cdot u_3(k))\cdot \Delta t - c_{p_3} \cdot y_1(tf)
 \end{equation}
 
-where $t_s$ denotes the starting time, $t_f$ the end time, $\Delta t$ the time interval,$c_{p1},c_{p2}$ the pricing coefficients of injecting $C0_2$, and heating, respectively and $c_{p3}$ as the price of lettuce. These pricing factors are shown in \autoref{tab:pricing factors}. It is important to highlight that ventilation, such as opening windows, does not incur any costs and, therefore, does not have a pricing factor. Although it is also possible to optimise $tf$, i.e. when is the best time to sell the lettuce, it is decided to keep the growing period fixed. The growing period for lettuce typically falls within 30 to 50 days. Therefore, a fixed growing period of 40 days was selected. As a result, over 40 days (1 episode or 1 complete simulation), there is a total of:
+where $t_s$ denotes the starting time, $t_f$ the end time, $\Delta t$ the time interval,$c_{p1},c_{p2}$ the pricing coefficients of injecting $C0_2$, and heating, respectively and $c_{p3}$ as the price of lettuce. These pricing factors are shown in \autoref{tab:pricing_factors}. It is important to highlight that ventilation, such as opening windows, does not incur any costs and, therefore, does not have a pricing factor. Although it is also possible to optimise $tf$, i.e. when is the best time to sell the lettuce, it is decided to keep the growing period fixed. The growing period for lettuce typically falls within 30 to 50 days. Therefore, a fixed growing period of 40 days was selected. As a result, over 40 days (1 episode or 1 complete simulation), there is a total of:
 $$
 k_{total} = \frac{40 \frac{days}{growing \, period} \cdot 24 \frac{hrs}{day} \cdot 60 \frac{min}{hr}}{30 \frac{min}{timestep}} = 1920 \frac{time \, steps}{growing \, period}
 $$
@@ -363,7 +363,7 @@ The values in question were obtained from typical horticultural practices. In ma
 		\hline
 		\textbf{Symbol} & \textbf{Value} & \textbf{Units} \\
 		\hline
-		$c_{p_1}$ & $1.906\cdot 10^{-7} \times 10^{-4}$ & $s \text{\euro} \cdot mg^{-1}$ \\
+		$c_{p_1}$ & $1.906\cdot 10^{-7} \times 10^{-4}$ & $ \cdot \text{\euro} \cdot mg^{-1}$ \\
 		$c_{p_2}$ & $3.558 \times 10^{-8}$ & $ \text{\euro} \cdot J^{-1}$ \\
 		$c_{p_3}$ & $22.285$ & $\text{\euro} \cdot kg^{-1}$ \\ 
 		\hline
@@ -377,9 +377,9 @@ The pricing factors accounts for the required conversions from $mg$ to $kg$ and 
 
 \begin{equation}\label{eq:pricing factors}
 	\begin{aligned}
-		& c_{p1} = C0_{2_{price}}  =  \frac{0.1906}{10^{6}}\\
-		& c_{p2} = \text{Heating}_{price} = \frac{0.1281}{3.6\cdot 10^{6}}\\
-		& c_{p3} = (1-c_{\tau})  \cdot c_{fw} \cdot Let_{price}= (1-0.07) \cdot 22.5 \cdot 1.065 \\
+		& c_{p1} = C0_{2_{price}}  =  \frac{0.1906 \frac{\text{\euro}}{kg}}{10^{6} \frac{mg}{kg}}\\
+		& c_{p2} = \text{Heating}_{price} = \frac{0.1281 \frac{\text{\euro}}{kWh}}{3.6\cdot 10^{6} \frac{J}{kWh}}\\
+		& c_{p3} = (1-c_{\tau})  \cdot c_{fw} \cdot Let_{price}= (1-0.07) \cdot 22.5 \frac{kg_{fw}}{kg_{dw}} \cdot 1.065 \frac{\text{\euro}}{kg} \\
 	\end{aligned}
 \end{equation}
 
@@ -410,28 +410,28 @@ This interaction between agent and environment in Reinforcement Learning is mode
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\linewidth]{figures/agent-environment.png}
-	\caption{Agent-Environment Interface \cite{suttonReinforcementLearningIntroduction2014}}
+	\caption{Agent-Environment interaction \cite{suttonReinforcementLearningIntroduction2014}}
 	\label{fig:agent_environment}
 \end{figure}
 
-Furthermore the MDP problem can be characterized as a tuple of states, actions, rewards and a state transition function. Such that:
+The MDP problem can be characterized as a tuple of states, actions, rewards and a state transition function. Such that:
 
 \begin{itemize}
-	\item states: ($s\in S$) where $S$ is the finite state space.
-	\item Actions ($a \in A$) where $A$ is the finite action space
-	\item Transition probability:$P(s_{t+1},r | s_t, a_t)$   where $f:X\times U \rightarrow X$ is the state transition function
-	\item Rewards: $r:S\times A \rightarrow \mathbb{R}$ where $r(s,a) = \mathbb{E}[R_t | S_{t-1} =s, A_{t-1} = a]$  is the reward function.
+	\item states: ($S_t\in \mathcal{S}$) where $\mathcal{S}$ is the finite state space.
+	\item Actions: ($A_t \in \mathcal{A}$) where $\mathcal{A}$ is the finite action space.
+	\item Transition probability: $P(S_{t} = s',R_{t} = r | S_{t-1} = s, A_{t-1} = a)$ where $P(\cdot)$ represents the probability of transitioning to state $s'$ and receiving reward $r$ given the previous state and action. This defines the dynamics of the MDP.
+	\item Rewards: $r:\mathcal{S}\times \mathcal{A} \rightarrow \mathbb{R}$ where $r(s,a) = \mathbb{E}[R_{t}| S_{t-1} =s, A_{t-1} = a]$  is the reward function.
 \end{itemize}
 
 
-Furthermore, the agent follows a deterministic policy $\pi$ that establishes a mapping from states to actions, $\pi: S \rightarrow A$. The optimal policy seeks to maximize the total expected return (cumulative reward) of the agent where the return, $G_t$, is defined as some specific function of the reward sequence \cite{suttonReinforcementLearningIntroduction2014} as shown in \autoref{return_function}. 
+Furthermore, the agent follows a policy $\pi$ that establishes a mapping from states to actions, $\pi: S_t \rightarrow A_t$. The optimal policy seeks to maximize the total expected return (cumulative reward) of the agent where the return, $G_t$, is defined as some specific function of the reward sequence \cite{suttonReinforcementLearningIntroduction2014} as shown in \autoref{return_function}. 
 \begin{equation}
 	\begin{aligned}
 		G_t  = R_{t+1} + R_{t+2} + R_{t+3} + \dots + R_{T} = \sum_{k=0}^TR_{t+k+1}
 	\end{aligned}
 	\label{return_function}
 \end{equation}
-However this is only relevant for scenarios where there is a time horizon and/or an idea of a final time step $T$ such as a task with some defined end point or events that are episodic in nature. This does not however extend to the greenhouse control problem as it does not necessarily follow naturally identifiable episodes, and therefore the notion of an infinite time horizon with discounted returns is introduced. Where the return function now becomes:
+However this is only relevant for scenarios where there is a time horizon and/or an idea of a final time step $T$ such as a task with some defined end point or events that are episodic in nature. This does not however extend to problem that does not necessarily follow naturally identifiable episodes, and therefore the notion of an infinite time horizon with discounted returns is introduced. Where the return function now becomes:
 
 \begin{equation} \label{eq:total-return}
 	\begin{aligned}
@@ -439,30 +439,30 @@ However this is only relevant for scenarios where there is a time horizon and/or
 	\end{aligned}
 \end{equation}
 
-and the discount factor $\gamma \in [0,1]$. Although the return (\autoref{infinity_return}) is a sum of an infinite number of terms, it is still finite if the reward is nonzero and constant if $\gamma < 1$ \cite{suttonReinforcementLearningIntroduction2014}. As the discount factor, $\gamma$, approaches one, the more future rewards are considered.  In contrast, values approaching zero render the agent "myopic", focusing solely on maximizing immediate rewards. The discount factor, $\gamma$, commonly fall within the range of 0.9 to 0.995 \cite{vandenbemdRobustDeepReinforcement}. This is an important concept since it can be shown that if the rewards are bounded (i.e. $\in R$) and a discount value of $\gamma <1$ is used, then a stable optimal policy can be found \cite{bertsekasNewtonMethodReinforcement2022}. There follows that a value function exists, under a specific policy $\pi$ of a state $s$, denoted as $v_{\pi}$ and defined as the expected return starting in state $s$ and following the policy $\pi$ thereafter. This value function is depicted below in \autoref{value_function}.
+and the discount factor $\gamma \in [0,1]$. Although the return (\autoref{eq:total-return}) is a sum of an infinite number of terms, it is still finite if $\gamma < 1$ \cite{suttonReinforcementLearningIntroduction2014}. As the discount factor, $\gamma$, approaches one, the more future rewards are considered.  In contrast, values approaching zero render the agent "myopic", focusing solely on maximizing immediate rewards. The discount factor, $\gamma$, commonly fall within the range of 0.9 to 0.995 \cite{vandenbemdRobustDeepReinforcement}. This is an important concept since it can be shown that if the rewards are bounded (i.e. $\in \mathbb{R}$) and a discount value of $\gamma <1$ is used, then a stable optimal policy can be found \cite{bertsekasNewtonMethodReinforcement2022}. There follows that a value function exists, under a specific policy $\pi$ of a state $s$, denoted as $v_{\pi}$ and defined as the expected return starting in state $s$ and following the policy $\pi$ thereafter. This value function is depicted below in \autoref{value_function}.
 
 \begin{equation}
 	\begin{aligned}
 		V_{\pi}(s) =  \mathbb{E}_{\pi}\left[{G_t | S_t = s}\right] =  \mathbb{E}_{\pi} 
-		\left [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} | S_t = s \right], \forall s \in S 
+		\left [\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} | S_t = s \right], \forall s \in \mathcal{S} 
 	\end{aligned}
-	\label{value_function}
+	\label{eq:value_function}
 \end{equation}
 
-Given the absence of transition dynamics in a standard reinforcement learning (RL) problem, this can be extended for a state-action pair value function as in \autoref{eq:state-value_function} whereby $Q_{\pi}$ denotes the expected return starting from state $s$ and taking action $a$, under the policy $\pi$ \cite{ajagekarDeepReinforcementLearning2022}.
+Given the absence of transition dynamics in a standard RL problem, this can be extended for a state-action pair value function as in \autoref{eq:state-value_function} whereby $Q_{\pi}$ denotes the expected return starting from state $s$ and taking action $a$, under the policy $\pi$ \cite{ajagekarDeepReinforcementLearning2022}.
 \begin{equation}
 	\begin{aligned}
-		Q_{\pi}(s,a) =  \mathbb{E}_{\pi}\left[{G_t | S_t = s, At = a}\right] =  \mathbb{E}_{\pi}\left[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} | S_t = s, At = a\right]
+		Q_{\pi}(s,a) =  \mathbb{E}_{\pi}\left[{G_t | S_t = s, A_t = a}\right] =  \mathbb{E}_{\pi}\left[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} | S_t = s, At = a\right]
 	\end{aligned}
 	\label{eq:state-value_function}
 \end{equation}
 
-Important to note, that from \autoref{infinity_return} and \autoref{value_function}, a value function under a generic stationary policy $\pi$ satisfies the Bellman equation as shown in \autoref{eq:bellman equation for value iteration} \cite{bertsekasNewtonMethodReinforcement2022,bellmanDynamicProgramming1966}.
+Important to note, that from \autoref{eq:total-return} and \autoref{eq:value_function}, a value function under a generic stationary (does not change over time) policy $\pi$ satisfies the Bellman equation as shown in \autoref{eq:bellman equation for value iteration} \cite{bertsekasNewtonMethodReinforcement2022,bellmanDynamicProgramming1966}.
 
 
 \begin{equation}
 	\begin{aligned}
-		V_{\pi}(s) = \mathbb{E} \left[r(s,a) + \gamma V_{\pi}(s') \right] = \mathbb{E} \left[r(s,\pi(s)) + \gamma V_{\pi}(f(x,\pi(s))) \right]
+		V_{\pi}(s) = \mathbb{E} \left[r(s,a) + \gamma V_{\pi}(s') \right] = \mathbb{E} \left[r(s,\pi(s)) + \gamma V_{\pi}(s') \right]
 	\end{aligned}
 	\label{eq:bellman equation for value iteration}
 \end{equation}
@@ -498,7 +498,7 @@ Moreover, the value function under the optimal policy, $\pi^*$ can be represente
 \end{equation}
 
 Finally, if the optimal state-action value function  (also known as Q-value) is known, then the optimal policy, $\pi^*$ can be found by \autoref{optimal policy} \cite{raoOPTIMALPOLICYOPTIMAL}, whereby the optimal policy greedily selects an action that maximizes the Q-value function.
-Various methods exist to approximate this Q-value function, and it is this goal that reinforcement seeks to achieve. However it also possible to directly optimize the policy, $\pi$ to find the optimal policy $\pi^*$.
+Various methods exist to approximate this Q-value function; however, it also possible to directly optimize the policy, $\pi$ to find the optimal policy $\pi^*$.
 
 \begin{equation}
 	\begin{aligned}
@@ -508,7 +508,7 @@ Various methods exist to approximate this Q-value function, and it is this goal 
 \end{equation}
 
 \subsection{Q learning}
-These family of algorithms learn an approximating to the Q value function (\autoref{Optimal state-action bellman equation}). Moreover, these algorithms are ``off-policy'' algorithms whereby each update can use data collected at any point during training. Q learning offers a deterministic policy, whereby in each state, the action is selected based on \autoref{optimal policy}. In order to find the optimal Q value function, the update rule in \autoref{eq:q-learning update} is used in combination with a Q-table (a table that holds all possible combinations of states and actions). This iterative update rule aims to approximate the bellman equation in \autoref{Optimal state-action bellman equation}. Once the Q-function converges to the optimal Q-function, the optimal policy can be determined \cite{daveUnderstandingBellmanOptimality2021}.
+These family of algorithms learn an approximating to the Q value function (\autoref{Optimal state-action bellman equation}). Moreover, these algorithms are ``off-policy'' algorithms whereby each update can use data collected at any point during training. Q learning offers a deterministic policy, whereby in each state, the action is selected based on \autoref{optimal policy}. In order to find the optimal Q value function, the update rule in \autoref{eq:q-learning update} is used in combination with a Q-table (a table that holds all possible combinations of discrete states and actions). This iterative update rule aims to approximate the bellman equation in \autoref{Optimal state-action bellman equation}. Once the Q-function converges to the optimal Q-function, the optimal policy can be determined \cite{daveUnderstandingBellmanOptimality2021}.
 
 \begin{equation}
 	\begin{aligned}
@@ -517,7 +517,7 @@ These family of algorithms learn an approximating to the Q value function (\auto
 	\label{eq:q-learning update}
 \end{equation}
 
-where the temporal difference error is
+where the temporal difference error is defined as
 
 \begin{equation}
 	\begin{aligned}
@@ -526,10 +526,10 @@ where the temporal difference error is
 	\label{eq:temporal difference}
 \end{equation}
 
-Where TD error equals zero when optimality has been achieved (\autoref{Optimal state-action bellman equation}). However, this is only feasible for small problems, where the state and action space are small and discrete. In order to accommodate a continuous state space, the Deep-Q Network (DQN) was developed. In this approach, a neural network is utilized to estimate the Q-function, enabling the learning of a deterministic policy from data with high-dimensional features \cite{mnihPlayingAtariDeep2013}. However, DQN still outputs a discrete policy and therefore does not accommodate a continuous action space \cite{mnihPlayingAtariDeep2013}. Nevertheless, recent advancements have extended DQN's applicability to continuous action spaces.
+where $TD_{error}$ represents the difference between the current Q-value and the target Q-value. When optimality is reached, the TD error is equal to zero, as stated (\autoref{Optimal state-action bellman equation}). However, this is only feasible for finite problems, where the state and action space are small and discrete. In order to accommodate a continuous state space, the Deep-Q Network (DQN) was developed. In this approach, a neural network is utilized to estimate the Q-function, enabling the learning of a deterministic policy from data with high-dimensional features \cite{mnihPlayingAtariDeep2013}. However, DQN still outputs a discrete policy and therefore does not accommodate a continuous action space \cite{mnihPlayingAtariDeep2013}. Nevertheless, recent advancements have extended DQN's applicability to continuous action spaces through the use of actor-critic methods as discussed in \autoref{ssection:actor-critic}.
 
 \subsection{Policy Optimization}
-Policy optimization offers a more direct approach in learning the optimal policy as apposed to Q-learning. Such algorithms represent a policy as $\pi_{\theta}(a|s)$, whereby $\pi_{\theta}(a|s)$ is a stochastic policy that gives the probabilities of choosing action $a$ given state $s$. The vector $\theta$ parameterize the policy, and it is these parameters that are optimized, by gradient ascent on the performance objective $J(\pi_{\theta})$ such as an \autoref{eq:policy_update}.
+Policy optimization offers a more direct approach in learning the optimal policy as apposed to Q-learning. Such algorithms represent a policy as $\pi_{\theta}(a|s)$, whereby $\pi_{\theta}(a|s)$ is a stochastic policy that gives the probabilities of choosing action $a$ given state $s$. The vector $\theta$ parameterize the policy, and it is these parameters that are optimized, by gradient ascent on the performance objective $J(\theta) = V_{\pi_{\theta}}(s_0)$ such as an \autoref{eq:policy_update}.
 
 
 \begin{equation}
@@ -543,10 +543,10 @@ Here, $\hat{\nabla J(\theta_t)}$ represents a stochastic estimate, where its exp
 All RL algorithms that follow this update rule on the policy are considered policy gradient/optimization methods, whether or not they also learn an approximation to a value function. However, such algorithms are often called actor-critic methods \cite{suttonReinforcementLearningIntroduction2014}.  Policy Optimization algorithms are also naturally able to handle continuous state and action spaces.
 
 
-\subsection{Actor-Critic}
-Perhaps a more interesting class of RL algorithms combines both q-learning and policy optimization. Policy optimization methods directly optimize the policy, therefore they tend to be more stable and reliable in contrast to Q-learning and are better for continuous and stochastic environments \cite{suttonReinforcementLearningIntroduction2014}. However, because Q-learning learns ``off-policy'', it has a substantially higher sample efficiency than that of policy optimizations methods \cite{suttonReinforcementLearningIntroduction2014}.
+\subsection{Actor-Critic}\label{ssection:actor-critic}
+Perhaps a more interesting class of RL algorithms combines both q-learning and policy optimization. Policy optimisation methods directly optimise the policy and demonstrate superior convergence properties when used in conjunction with function approximators, as opposed to Q-learning. Furthermore, these methods are particularly effective in continuous and stochastic environments when compared to Q-learning \cite{suttonReinforcementLearningIntroduction2014}. However, because Q-learning learns ``off-policy'', it has a substantially higher sample efficiency than that of policy optimizations methods \cite{suttonReinforcementLearningIntroduction2014}.
 Actor-critic methods often incorporate the strengths from both policy gradient methods and q-learning, in order to achieve stable and fast learning. The critic learns a value function and the actor learns a policy. The critic provides feedback on how good an action was and uses this to update the policy. In this way, the actor can learn from both its own experience and the critic's feedback 
-Moreover, actor-critic algorithms are also suitable in tackling continuous state and action spaces \cite{suttonReinforcementLearningIntroduction2014}. It is worth mentioning that these algorithms can include both the critic and actor in the MPC's framework to enhance its performance in an economic optimisation setting. A commonly used actor-critic algorithm  is Soft-Actor-Critic which will be the selected Rl algorithm in this thesis. Numerous actor-critic algorithms exist and for a more in depth explanation on the various algorithms and the decision on why SAC was selected  for this thesis see \autoref{section:RL aglorithms overview} and \autoref{section:selection of RL algorithm} respectively.
+Moreover, actor-critic algorithms are also suitable in tackling continuous state and action spaces \cite{suttonReinforcementLearningIntroduction2014}. A commonly used actor-critic algorithm  is Soft-Actor-Critic which will be the selected Rl algorithm in this thesis. Numerous actor-critic algorithms exist and for a more in depth explanation on the various algorithms and the decision on why SAC was selected  for this thesis see \autoref{section:RL aglorithms overview} and \autoref{section:selection of RL algorithm} respectively.
 
 \subsection{SAC}
 Soft-Actor-Critic (SAC) is an actor critic method that incorporates an entropy term in its reward function to address the trade-off between exploration and exploitation. This results in the agent learning a stochastic policy,$\pi_{\theta}(\cdot|s)$, parametrized by $\theta$, where the entropy term is a measure of randomness in the policy. Consequently, the agent aims to optimise a balance between the total expected reward and entropy, ultimately seeking to maximise rewards while maintaining a policy that is as random as possible. The optimal policy is rewritten as:
@@ -627,23 +627,23 @@ The policy aims to maximize the expected return and thus the policy loss functio
 
 
 \section{MPC}\label{section:MPC}
-MPC demonstrates exceptional proficiency in managing constrained Multiple Input, Multiple Output (MIMO) systems, making it highly effective in applications like greenhouse control. Moreover, MPC's ability to handle non-linear dynamics and its optimality has contributed to its widespread adoption and has become the standard approach for implementing constrained multivariable control in the process industry \cite{daiDiscreteTimeModelPredictive2012}. Nearly every application introduces constraints, whether it be on the state of the system or the control inputs. Actuators, constrained by physical and safety limits such as temperature or pressure control, makes it necessary for controllers to handle such constraints. While the online computational time for such controllers may be expensive, for slow dynamics such as a greenhouse, sufficient computational time is available to accommodate this. Furthermore, the ongoing trend of faster computation mitigates this concern, making it less of a problem.
+MPC demonstrates exceptional proficiency in managing constrained Multiple Input, Multiple Output (MIMO) systems, making it highly effective in applications like greenhouse control. Moreover, MPC's ability to handle non-linear dynamics and its attempt in achieving optimal control has contributed to its widespread adoption and has become the standard approach for implementing constrained multivariable control in the process industry \cite{daiDiscreteTimeModelPredictive2012}. Nearly every application introduces constraints, whether it be on the state of the system or the control inputs. Actuators, constrained by physical and safety limits such as temperature or pressure control, makes it necessary for controllers to handle such constraints. While the online computational time for such controllers may be expensive, for slow dynamics such as a greenhouse, sufficient computational time may be available to compensate for the extended computational time. Furthermore, the ongoing trend of faster computation mitigates this concern, making it less of a problem.
 
-Although many control schemes exist in controlling greenhouses, it has been shown that an MPC controller outperforms an adaptive PID controller for greenhouse air control in \cite{ghoumariNonlinearConstrainedMPC2005}. Even though the control of a greenhouse is inherently non-linear, non-linear Model Predictive Control schemes have demonstrated effectiveness in handling this complexity, as evidenced in \cite{gruberNonlinearMPCBased2011, montoyaHybridcontrolledApproachMaintaining2016} specifically for temperature control in a greenhouse. Furthermore, \cite{bersaniModelPredictiveControl2020} shows insight of the performance of MPC when optimized for energy savings of a greenhouse, displaying impressive results over set-point tracking controllers. Further, \cite{boersmaRobustSamplebasedModel2022} successfully implements a robust MPC to control the economic benefit of a greenhouse with parametric uncertainty, displaying its potential in greenhouse control. Moreover, as confirmed by \cite{bersaniModelPredictiveControl2020}, MPC stands out as the most effective control approach in smart greenhouses for energy savings. The study concludes that MPC is particularly advantageous when the system's dynamics can be reasonable approximated by a model and are sufficiently slow relative to the required time needed to perform the optimization.
+Although many control schemes exist in controlling greenhouses, it has been shown that an MPC controller outperforms an adaptive PID controller for greenhouse air control in \cite{ghoumariNonlinearConstrainedMPC2005}. Even though the control of a greenhouse is non-linear, using an MPC for control has demonstrated effectiveness in handling this complexity, as evidenced in \cite{gruberNonlinearMPCBased2011, montoyaHybridcontrolledApproachMaintaining2016} specifically for temperature control in a greenhouse. Furthermore, \cite{bersaniModelPredictiveControl2020} shows insight of the performance of MPC when optimized for energy savings of a greenhouse, displaying impressive results over set-point tracking controllers. Further, \cite{boersmaRobustSamplebasedModel2022} successfully implements a robust MPC to control the economic benefit of a greenhouse with parametric uncertainty, displaying its potential in greenhouse control. Moreover, as confirmed by \cite{bersaniModelPredictiveControl2020}, MPC stands out as the most effective control approach in smart greenhouses for energy savings. The study concludes that MPC is particularly advantageous when the system's dynamics can be reasonable approximated by a model and are sufficiently slow relative to the required time needed to perform the optimization.
 
-Additionally, MPC has been shown to have a strong theoretical foundation. Researches have developed rigorous methods in analysing performance and stability on a MPC under certain conditions, including the optimality and robustness of the implemented controller. Indeed, if the system dynamics are known, it is possible to design an MPC to fulfill specific design requirements \cite{rawlingsModelPredictiveControl2017}. Nevertheless, while a solid mathematical framework exists for set-point tracking MPC, the same level of assurance cannot be provided for economic MPCs (EMPC), which aim to optimise for economic benefits.
+Additionally, MPC has been shown to have a strong theoretical foundation. Researches have developed rigorous methods in analysing performance and stability on a MPC under certain conditions, including the optimality and robustness of the implemented controller. Indeed, if the system dynamics are known, it is possible to design an MPC to fulfill specific design requirements \cite{rawlingsModelPredictiveControl2017}. While research in EMPC has been active and significant progress has been made, providing comprehensive theoretical guarantees comparable to those in set-point tracking MPC remains a challenging area.
 
 \subsection {The General MPC problem}\label{ssection:general-mpc}
-MPC is an advanced method of control that uses a model of the system to predict the behaviour of the system over a finite horizon, known as the prediction horizon. The MPC controller  aims to solve the infinite-horizon optimal control problem (OCP) as a series of finite-horizon problems in order to make the problem computationally tractable \cite{beckenbachAddressingInfinitehorizonOptimization2018}. At each discrete time interval, the MPC solves the optimisation problem over this prediction horizon to compute the optimal inputs that minimize a given cost function, subject to constraints such as the system dynamics, initial state and state and control constraints. Each optimisation yields a sequence on control actions to take over this prediction horizon . The first control input is applied to the system, and at the subsequent time step, the system is sampled again and the entire process is recalculated providing an updated control sequence. While this approach is not optimal, it is an approximation of the infinite time horizon problem and has been shown to yield excellent results in practice as discussed above. The choice of prediction horizon length is often a trade-off between computational efficiency and the desired control performance. 
+MPC is an advanced method of control that uses a model of the system to predict the behaviour of the system over a finite horizon, known as the prediction horizon. MPC aims to solve the infinite-horizon optimal control problem (OCP) as a series of finite-horizon problems in order to make the problem computationally tractable \cite{beckenbachAddressingInfinitehorizonOptimization2018}. At each discrete time interval, MPC solves the optimisation problem over this prediction horizon to compute the control inputs that minimize a given cost function, subject to constraints such as the system dynamics, initial state and state and control constraints. Each optimisation yields a sequence on control actions to take over this prediction horizon . The first control input is applied to the system, and at the subsequent time step, the system is sampled again and the entire process is recalculated providing an updated control sequence. While this approach may not be optimal for solving the infinite horizon problem, it is an approximation of the infinite time horizon problem and has been shown to yield excellent results in practice as discussed above. The choice of prediction horizon length is often a trade-off between computational efficiency and the desired control performance. 
 
 While MPC can be used for both continuous and discrete time system dynamics,  continuous time system must be discretized to render the optimal control problem (OCP) tractable. This is necessary since a continuous time system gives rise to an infinite-dimensional problem. Therefore the discrete case will be considered as illustrated in \autoref{eq:greenhouse_model_discrete}.
-It is possible that the state may be unknown (as in \autoref{eq:greenhouse_model_discrete_uncertain}), and therefore a state estimation is required, however we will further assume that the state is fully measurable or perfectly estimated, i.e. $\hat x(k) = x(k)$ and therefore $\hat{p} = p$. When considering a finite-time horizon, $N_p$, the OCP problem can be formulated as in \autoref{eq:mcp ocp}.
+It is possible that the state may be unknown (as in \autoref{eq:greenhouse_model_discrete_uncertain}), and therefore a state estimation is required, however we will further assume that the state is fully measurable or perfectly estimated, i.e. $\hat x(k) = x(k)$ or in this thesis: $\hat{p} = p$. When considering a finite-time horizon, $N_p$, the OCP problem can be formulated as in \autoref{eq:mcp ocp}.
 
 \begin{equation}
 	\begin{aligned}
-		& \min_{x(k_0:N_p+1),u(k_0:N_p)} J(x(k),u(k)) = \\ 
-		& \min_{x(k_0:N_p+1),u(k_0:N_p)} \sum_{k=k_0}^{N_p-1} l(x(k),u(k)) + V_f(x(N_p))  \\
-		\text{s.t.} \quad  & x(k_0) = x_{k_0}                              & \forall k = k_0,\hdots, N_p,\\
+		& \min_{\mathbf{x},\mathbf{u}} J(y(k),u(k)) = \\ 
+		& \min_{\mathbf{x},\mathbf{u}} \sum_{k=k_0}^{N_p-1} l(y(k),u(k)) + V_f(y(N_p))  \\
+		\text{s.t.} \quad  & x(k_0) = x_{k_0}                             &\\
 		& x(k+1) = f(x(k),u(k),d, p)       & \forall k = k_0,\hdots, N_p,\\
 		& y(k) = g(x(k),u(k),d,p)                 & \forall k = k_0,\hdots, N_p,\\
 		& x_{min} \leq x(k) \leq x_{max}                  & \forall k = k_0,\hdots, N_p,\\
@@ -652,13 +652,14 @@ It is possible that the state may be unknown (as in \autoref{eq:greenhouse_model
 	\label{eq:mcp ocp}
 \end{equation}
 
-where $x(k_0:N_P+1)$ denotes a sequence of states, i.e. $[x(k_0), x(k_0+1), \hdots, x(N_P+1)]^T$ and may be denoted as $\bold{x}$ and similarly for the control actions $\bold{u}$ and known disturbances $\bold{d}$. The cost function $J(\cdot)$ may be explained by a stage cost $l(\cdot)$, where $l: \mathbb X \times \mathbb U \rightarrow \mathbb R$, which is the cost incurred at every time step $k$ based on the current state and input applied and a terminal cost, $V_f(\cdot)$, which accounts for the cost associated with the state at the end of the prediction horizon. \cite{daiDiscreteTimeModelPredictive2012,boersmaRobustSamplebasedModel2022}. The state and control constraints as shown. In the case of a setpoint tracking MPC, the stage cost and terminal cost function would commonly be represented as a quadratic term that penalizes the deviation between the state and the desired setpoint. Additionally, a setpoint tracking MPC would include a terminal constraint to guarantee performance and stability. This terminal constraint is typically set to the desired setpoint. However in economic optimisation, selecting an appropriate terminal constraint and/or cost function is difficult.\\
-It is noted that the more accurate the model, the better the prediction and thus the better the actions. In the case of greenhouse control, if the model accurately captured all crop and greenhouse phenomena, state constraints would not be needed, since these constraints would be naturally incorporated into the dynamics. However, in practice, such dynamics are often still captured by explicit constraints. Moreover, an increasing complexity in the prediction model often leads to an increase in computational time and power which may exceed the time-scale of the system. This can make control actions impractical or infeasible within the required time frame \cite{rawlingsModelPredictiveControl2017}. Greenhouse environments are known to be complex and highly non-linear in nature. Hence, for control purposes,  it is necessary to have simplified models that accurately predict system dynamics such as the model presented by van Henten \cite{hentenGreenhouseClimateManagement1994} and as discussed in \autoref{section:greenhouse-model} for greenhouse control. 
+where $\mathbf{x}$ denotes a sequence of states, i.e. $[x(k_0), x(k_0+1), \hdots, x(N_P+1)]^T$  and similarly for the control actions $\bold{u}$ and known disturbances $\bold{d}$. The cost function $J(\cdot)$ may be explained by a stage cost $l(\cdot)$, where $l: \mathbb X \times \mathbb U \rightarrow \mathbb R$, which is the cost incurred at every time step $k$ based on the current state and input applied and a terminal cost function, $V_f(\cdot)$, which accounts for the cost associated with the state at the end of the prediction horizon \cite{daiDiscreteTimeModelPredictive2012,boersmaRobustSamplebasedModel2022}.In the case of a setpoint tracking MPC, the stage cost and terminal cost function would commonly be represented as a quadratic term that penalizes the deviation between the state and the desired setpoint. Additionally, a setpoint tracking MPC would include a terminal constraint to guarantee performance and stability. This terminal constraint is typically related set to the desired setpoint. However in economic optimisation, selecting an appropriate terminal constraint and/or cost function is difficult.
 
-Moreover, uncertainties in the model may greatly impact the performance of the MPC and the relation between a deterministic model and an uncertain model is explored in \cite{boersmaRobustSamplebasedModel2022} and shown that even when a robust MPC strategy is used a $20\%$ in relative parametric uncertainty decreased the crop yield by $11\%$.
+It is noted that if the greenhouse model was perfect, i.e. captured the dynamics exactly then state constraints would not be needed, since these constraints would be naturally incorporated into the dynamics. However, in practice, such dynamics are often still captured by explicit constraints. Moreover, an increasing complexity in the prediction model often leads to an increase in computational time and power which may exceed the time-scale of the system. This can make control actions impractical or infeasible within the required time frame \cite{rawlingsModelPredictiveControl2017}. Greenhouse environments are known to be complex and highly non-linear in nature. Hence, for control purposes,  it is necessary to have simplified models that accurately predict system dynamics such as the model presented by \citet{hentenGreenhouseClimateManagement1994} and as discussed in \autoref{section:greenhouse-model}. 
+
+Moreover, uncertainties in the model may greatly impact the performance of the MPC and the relation between a deterministic model and an uncertain model is explored in \citet{boersmaRobustSamplebasedModel2022} and shown that even when a robust MPC strategy is used, there was a significant decrease in crop yield.
 
 \subsection{Economic Model Predictive Control (EMPC)}
-The primary objective of an EMPC is to maximise economic benefit, whereby the economic benefit could refer to the profitability, efficiency and/or sustainability of the controlled process \cite{ellisTutorialReviewEconomic2014}. Typical processes that maximise for economic benefit would be in chemical and greenhouses processes with the objective of optimising profitability. In both processes it is difficult to define a steady state to which the MPC must control the system to. In the case of a greenhouse the notion of a steady state is nonsensical, since it is desirable for the crop to grow with as little energy consimption. In the case of chemical processes it has become common practice to rely on a separate layer of control called real-time optimisation (RTO) to determine the steady state. This layer ensures that the current steady-state brings the greatest economic benefit. Subsequently, MPC is employed to steer the process towards this optimized steady state. However, this separation in control information is not necessarily desirable and/or optimal in regards to maximizing economic benefit. Thus, EMPC is introduced, wherein the economic objective is directly incorporated as the objective function of the optimal control problem that the MPC aims to minimize \cite{rawlingsFundamentalsEconomicModel2012}. Here, the stage cost $l(x,u)$ encapsulates an economic model of the process, and in this thesis the MPC aims to optimise \autoref{eq:epi}.
+The primary objective of an EMPC is to maximise economic benefit, whereby the economic benefit could refer to the profitability, efficiency and/or sustainability of the controlled process \cite{ellisTutorialReviewEconomic2014}. Typical processes that maximise for economic benefit would be in chemical and greenhouses processes with the objective of optimising profitability. In both processes it may be difficult to define a steady state to which the MPC must control the system to. In the case of a greenhouse the notion of a steady state is nonsensical, since it is desirable for the crop to grow as big as possible with as little energy consumption. In the case of chemical processes it has become common practice to rely on a separate layer of control called real-time optimisation (RTO) to determine the steady state. This layer ensures that the current steady-state brings the greatest economic benefit. Subsequently, MPC is employed to steer the process towards this optimized steady state. However, this separation in control information is not necessarily desirable and/or optimal in regards to maximizing economic benefit. Thus, EMPC is introduced, wherein the economic objective is directly incorporated as the objective function of the optimal control problem that the MPC aims to minimize \cite{rawlingsFundamentalsEconomicModel2012}. Here, the stage cost $l(\cdot)$ encapsulates an economic model of the process, and in this thesis the MPC aims to optimise \autoref{eq:stage-cost-epi} which is reiterated below for clarity: $$\min_{u_1,u_3} \sum_{k = ts}^{tf} {(c_{p_1} \cdot u_1(k) + c_{p_2} \cdot u_3(k))\cdot \Delta t - c_{p_3} \cdot (y_1(k) - y_1(k-1))}$$.
 
 By adopting EMPC, it becomes feasible that dynamic, transient or time varying operation of the process could lead to higher economic benefit as compared to controlling the process to an optimal (time-varying) steady-state. As stated in \cite{rawlingsFundamentalsEconomicModel2012}, incorporating the economic model directly into the cost function does not assume the same structure of the stage costs of a traditional set-point tracking MPC and has therefore no stability guarantees. Furthermore, since the EMPC optimizes the process economics  over a finite time horizon,it does not guarantee optimal closed-loop performance over an extended period. In general no closed-loop performance guarantees under EMPC exist\cite{ellisTutorialReviewEconomic2014}.
 
