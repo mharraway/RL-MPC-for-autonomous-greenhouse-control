@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: article.aux
+The style file: layout/tudelft-aiaa.bst
+Database file #1: Thesis.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--empty journal in lubbersAutonomousGreenhouseClimate2023
+Warning--missing school in jansenOptimalControlLettuce2023
+Warning--missing publisher in hentenGreenhouseClimateManagement1994
+Warning--empty year in SoftActorCriticSpinning; set to ????
+You've used 17 entries,
+            3312 wiz_defined-function locations,
+            796 strings with 9848 characters,
+and the built_in function-call counts, 9481 in all, are:
+= -- 690
+> -- 341
+< -- 30
++ -- 141
+- -- 105
+* -- 781
+:= -- 1331
+add.period$ -- 42
+call.type$ -- 17
+change.case$ -- 68
+chr.to.int$ -- 18
+cite$ -- 23
+duplicate$ -- 816
+empty$ -- 743
+format.name$ -- 144
+if$ -- 1895
+int.to.chr$ -- 2
+int.to.str$ -- 18
+missing$ -- 150
+newline$ -- 70
+num.names$ -- 48
+pop$ -- 314
+preamble$ -- 1
+purify$ -- 68
+quote$ -- 0
+skip$ -- 293
+stack$ -- 0
+substring$ -- 459
+swap$ -- 489
+text.length$ -- 24
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 4
+while$ -- 58
+width$ -- 0
+write$ -- 198
+(There were 4 warnings)

@@ -87,7 +87,7 @@ c_{p_{H}} \cdot (y_4^{\text{min}} - y_4(k)) & \text{if } y_4(k) < y_4^{\text{min
 \end{aligned}
 \end{equation}
 
-The penalty constants $c_{p_{CO_2}}, c_{p_{T_{ub}}},c_{p_{T_{lb}}},c_{p_{H}}$ were found empirically in \citet{jansenOptimalControlLettuce2023} to effectively account for deviations from desired states and their impact on the economic benefit. It should be noted that the upper bound of the temperature imposes stricter penalties for violations compared to the lower bounds due to the absence of active cooling in the system. Thus, during periods of increased temperature throughout the day, the agent needs to make appropriate decisions. The penalty constants and their respective units are displayed in \autoref{tab:pen-constants}. The selection of minimum and maximum temperatures was based on the typical operating ranges for lettuce crops and  safe levels of $CO_2$ for brief human operation. Note that $c_{p_{CO_2}}$ is multiplied by $10^{-3}$ since the units used for $C0_2$ density in \citet{jansenOptimalControlLettuce2023} is reported in $10^3 \cdot ppm$.
+The penalty constants $c_{p_{CO_2}}, c_{p_{T_{ub}}},c_{p_{T_{lb}}},c_{p_{H}}$ were found empirically in \citet{jansenOptimalControlLettuce2023} to effectively account for deviations from desired states and their impact on the economic benefit. It should be noted that the upper bound of the temperature imposes stricter penalties for violations compared to the lower bounds due to the absence of active cooling in the system. Thus, the control action is more aggressive when anticipating periods of increased temperature throughout the day. The penalty constants and their respective units are displayed in \autoref{tab:pen-constants}. The selection of minimum and maximum temperatures was based on the typical operating ranges for lettuce crops and  safe levels of $CO_2$ for brief human operation. Note that $c_{p_{CO_2}}$ is multiplied by $10^{-3}$ since the units used for $C0_2$ density in \citet{jansenOptimalControlLettuce2023} is reported in $10^3 \cdot ppm$.
 
 \begin{table}[h]
     \centering
@@ -486,10 +486,7 @@ Performance metrics include the squared error between the predicted and the actu
 
 \autoref{fig:vf_heatmaps} gives a visual representation of the value of a state given the dry mass and time. It is noted that although $V_{\phi_1},V_{\phi_2}$ and $V_{\phi_3}$ require an observation space as given in \autoref{eq:obs-tuple-1} to determine its value; since the value is mostly dependent on the dry mass state and time, the other states in the observation space were fixed and only the time and drymass was varied to produce the heatmaps as shown in \autoref{fig:vf_heatmaps}. The lower and upper limits in  \autoref{fig:vf_heatmaps} indicate the range within which the value function approximator can be deemed reliable. This range corresponds to the portion of the sample space from which the dry mass was sampled for training, i.e. this corresponds to the maximum and minimum dry mass trajectory as seen in \autoref{fig:sampled-states-TR}.
 
-The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the highest expected return is observed at the beginning of the growing period, which can be attributed to its longer growing duration.  Moreover, at a given time, having a higher dry mass leads to greater expected return. This behaviour is seen across all four models within the training bounds. It is important to note that the greenhouse model limits the dry mass to a maximum of $400 g \cdot m^{-2}$. Consequently, there will be minimal expected return for dry masses near this value. Although the nominal agent will make efforts to cultivate the plant by supplying carbon dioxide and heat, it will not result in any growth hence the lower returns in \autoref{fig:vf_heatmaps}. It is noted that the reward function is determined by the difference in growth. Consequently, the return is calculated based on the difference in growth starting from the initial state. It is also noted that \autoref{fig:vf_heatmaps} suggests that the value function is smooth concerning the dry mass and time.
-
-\todo{Explain these graphs better}
-
+The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the highest expected return is observed at the beginning of the growing period, which can be attributed to its longer growing duration. It is noted that the reward function is determined by the difference in growth. Consequently, the return is calculated based on the difference in growth between an initial and end state and the energy costs incurred to achieve this growth difference. Moreover, at a given time, having a higher dry mass leads to greater expected return. This behaviour is seen across all four models within the training bounds. It is important to note that the greenhouse model limits the dry mass to a maximum of $400 g \cdot m^{-2}$. Consequently, there will be minimal expected return for dry masses near this value. Although the nominal agent will make efforts to grow the plant by supplying carbon dioxide and heat, it will not result in any growth hence the lower returns in \autoref{fig:vf_heatmaps}.  It is also noted that \autoref{fig:vf_heatmaps} suggests that the value function is smooth concerning the dry mass and time.
 
 \begin{figure}[H]
 	\centering
@@ -523,15 +520,17 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{figures/vf_heatmap_stochastic.png}
+	\includegraphics[width = \textwidth]{figures/vf_heatmap_stochastic_test.png}
 	\caption{Drymass vs Time vs Value - Stochastic}
 	\label{fig:vf_heatmap_stochastic}
 \end{figure}
-\todo{Explain the 20\% graph and why there seems like there is noise}
-
 
 
 Finally, a value function was trained with its corresponding agent for each level of uncertainty in the environment. \autoref{fig:vf_heatmap_stochastic} displays the same heatmap as \autoref{fig:vf_heatmaps}, yielding similar behaviour compared to the nominal conditions. However, it appears to be more coarse, particularly beyond the range of the training data. Specifically, it seems that, for high uncertainties i.e. $20\%$), the trained value function exhibits a higher degree of non-linearity than the others trained on lower levels of uncertainty. This may indicate that more sample trajectories are required for further training; however, it still seems to generalise well in the region of the nominal trajectory.
+
+The `folds' in exhibited in \autoref{fig:vf_heatmap_stochastic}, especially prevalent for $\delta_p = 5\%, \delta_p = 20\%$, is seen to appear in the middle of the growing period. This if further seen in \autoref{fig:tr_predictions_long} for $V_{\phi_4}$ where the same `folds' in the expected return can be seen in the time series. This suggests that for this brief time period, the expected return can be very accurately predicted by only the time and current dry mass. However, this could also be attributed to the poor generalisation of the value function in that specific area, which is caused by the limited availability of data for that particular region.
+
+Moreover, for $\delta_p = 20\%$ in \autoref{fig:vf_heatmap_stochastic}, it seems that towards the end of the growing period and for lower dry masses, the expected return suddenly drops. This suggests a lack of training data for that region. Sampling the necessary trajectories for highly stochastic environments can be difficult, necessitating a larger number of trajectories to be sampled in order to achieve the desired data spread. However, the value function still generalises well around the nominal trajectory and was therefore deemed satisfactory.
 
 
 \section{Conclusion}

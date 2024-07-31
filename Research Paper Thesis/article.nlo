@@ -1,0 +1,11 @@
+\nomenclatureentry{a$A$@[{$A$}]\begingroup amplitude of oscillation\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_p$@[{$C_p$}]\begingroup pressure coefficient\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_x$@[{$C_x$}]\begingroup force coefficient in the x direction\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$C_y$@[{$C_y$}]\begingroup force coefficient in the y direction\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$c$@[{$c$}]\begingroup chord\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$dt$@[{$dt$}]\begingroup time step\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$F_x$@[{$F_x$}]\begingroup X component of the resultant pressure force acting on the vehicle\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$F_y$@[{$F_y$}]\begingroup Y component of the resultant pressure force acting on the vehicle\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$f, g$@[{$f, g$}]\begingroup generic functions\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$h$@[{$h$}]\begingroup height\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{a$i$@[{$i$}]\begingroup time index during navigation\nomeqref {0}|nompageref}{1}

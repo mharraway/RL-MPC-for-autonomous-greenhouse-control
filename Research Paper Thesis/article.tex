@@ -1,0 +1,79 @@
+\documentclass[twocolumn]{layout/tudelft-aiaa}
+
+%% Additional packages and commands
+\renewcommand{\deg}{\si{\degree}\xspace}
+\usepackage{parskip}
+\usepackage{cleveref}
+\usepackage{eurosym}
+\usepackage{amsmath}
+\usepackage{graphicx} 
+\usepackage{hyperref}
+%\usepackage{natbib}
+
+
+
+%% Defining title, author and affiliation
+\title{RL-MPC for Autonomous Greenhouse Control}
+\author{Murray Harraway}
+\affil{Delft Center for Systems and Control}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Begin of document %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\AlwaysPagewidth{
+
+\maketitle
+
+%% Abstract
+
+\begin{abstract}
+      The efficient operation of smart greenhouses is essential for enhancing crop yield while minimizing energy costs. This paper investigates a hybrid control strategy that integrates Reinforcement Learning (RL) and Model Predictive Control (MPC) to optimize economic benefits in autonomous greenhouses. While previous research has explored the use of RL and MPC individually, this study examines the effect of modifying MPC’s objective function with terminal constraints and a cost function informed by an independently trained RL agent. This approach leverages RL's ability to handle uncertainties and MPC’s online optimisation to improve overall control performance in both a deterministic and stochastic environment. Simulation results demonstrate that in a deterministic environment, RL-MPC outperforms both MPC and RL, particularly showing greater performance gains at lower prediction horizons. Additionally, the results indicate that RL trained in an uncertain environment can transfer its understanding of uncertainty into the RL-MPC framework. This integration allows RL-MPC to maintain superior performance in low uncertainty conditions while exhibiting greater robustness compared to MPC under higher uncertainties.
+\end{abstract}
+
+}
+
+%% Nomenclature
+
+\renewcommand{\nompreamble}{\emph{Use this section to provide a list of all symbols used in the report. Provide a concise description. For example:}} %
+
+\printnomenclature[\nomequalsign]
+
+\nomenclature{$A$}{amplitude of oscillation}
+\nomenclature{$C_p$}{pressure coefficient}
+\nomenclature{$C_x$}{force coefficient in the x direction}
+\nomenclature{$C_y$}{force coefficient in the y direction}
+\nomenclature{$c$}{chord}
+\nomenclature{$dt$}{time step}
+\nomenclature{$F_x$}{X component of the resultant pressure force acting on the vehicle}
+\nomenclature{$F_y$}{Y component of the resultant pressure force acting on the vehicle}
+\nomenclature{$f, g$}{generic functions}
+\nomenclature{$h$}{height}
+\nomenclature{$i$}{time index during navigation}
+
+%% Main body
+
+\input{introduction}
+
+\input{greenhouse_model}
+
+\input{problem_formulation}
+
+\input{results}
+
+\input{conclusion}
+
+%\section*{Acknowledgments}
+
+%% Bibliography
+
+
+\bibliography{Thesis}
+
+%% Appendix
+
+%\section*{Appendix}
+
+\end{document}

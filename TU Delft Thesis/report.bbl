@@ -684,6 +684,220 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{lubbersAutonomousGreenhouseClimate2023}{article}{}
+    \name{author}{1}{}{%
+      {{hash=LS}{%
+         family={Lubbers},
+         familyi={L\bibinitperiod},
+         given={Seymour},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LS1}
+    \strng{fullhash}{LS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Greenhouses allow production of crops that would otherwise be impossible.
+  Permitting more local, fresher and nutrient richer crop production. Eorts are
+  taken to minimize societal harm due to energy and resource consumption by
+  greenhouse production systems. One way to control such systems is by using
+  model predictive control. Optimal crop yield and resource eciency can, in
+  theory, be achieved by model predictive control. Unfortunately, one major
+  drawback of model predictive control is that it is not well equipped to deal
+  with parametric uncertainty. Significant prediction errors can occur when a
+  mismatch between the model and the real system exists, resulting in
+  deteriorated performance of the system. Strategies exist, such as robust MPC,
+  that are designed to handle uncertainty, but those often result in
+  conservative control policies. This thesis proposes to use model predictive
+  control as a function approximator for RL in order to learn values for model
+  and MPC parameters that can deliver optimal performance in the case of model
+  mismatch.\&lt;br/\&gt;In this thesis, data-driven economic nonlinear model
+  predictive control using Q-learning is proposed as a method to alter the
+  model parameters. The performance of the system af- ter learning is compared
+  to approaches using robust and nominal model predictive control. Three
+  dierent goals are determined: maximizing economic profit, minimizing the
+  constraint violations and maximizing the economic performance while
+  minimizing constraint violations.\&lt;br/\&gt;In this work, an ENMPC scheme
+  is used as a function approximator in a Q-learning envi- ronment. The
+  optimization solution from the ENMPC scheme is used as the input to the
+  system, while the Q-learning agent optimizes the parameter values of the
+  ENMPC scheme and model for the environment. The performance of the system
+  after learning is compared to approaches using robust and nominal model
+  predictive control. The simulation results show that the data-driven ENMPC
+  using reinforcement learning is able to decrease constraint vi- olations by
+  up to 94\%, but unable to increase economic performance compared to nominal
+  MPC, compared to robust MPC the EPI is increased by almost 10\% while keeping
+  constraint violations at a similar level.%
+    }
+    \field{title}{Autonomous Greenhouse Climate Control with {{Q-learning}}
+  Using {{ENMPC}} as a Function Approximator}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LMBMYW4V/Lubbers
+    \verb - 2023 - Autonomous greenhouse climate control with Q-learn.pdf
+    \endverb
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:22.020Z%
+    }
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{arroyoReinforcedModelPredictive2022}{article}{}
+    \name{author}{4}{}{%
+      {{hash=AJ}{%
+         family={Arroyo},
+         familyi={A\bibinitperiod},
+         given={Javier},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=MC}{%
+         family={Manna},
+         familyi={M\bibinitperiod},
+         given={Carlo},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Spiessens},
+         familyi={S\bibinitperiod},
+         given={Fred},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=HL}{%
+         family={Helsen},
+         familyi={H\bibinitperiod},
+         given={Lieve},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{BOPTEST,Building automation,Model predictive control,Reinforced model
+  predictive control,Reinforcement learning}
+    \strng{namehash}{AJMCSF+1}
+    \strng{fullhash}{AJMCSFHL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Buildings need advanced control for the efficient and climate-neutral use
+  of their energy systems. Model predictive control (MPC) and reinforcement
+  learning (RL) arise as two powerful control techniques that have been
+  extensively investigated in the literature for their application to building
+  energy management. These methods show complementary qualities in terms of
+  constraint satisfaction, computational demand, adaptability, and
+  intelligibility, but usually a choice is made between both approaches. This
+  paper compares both control approaches and proposes a novel algorithm called
+  reinforced predictive control (RL-MPC) that merges their relative merits.
+  First, the complementarity between RL and MPC is emphasized on a conceptual
+  level by commenting on the main aspects of each method. Second, the RL-MPC
+  algorithm is described that effectively combines features from each approach,
+  namely state estimation, dynamic optimization, and learning. Finally, MPC,
+  RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized
+  simulation framework for the assessment of advanced control algorithms in
+  buildings. The results indicate that pure RL cannot provide constraint
+  satisfaction when using a control formulation equivalent to MPC and the same
+  controller model for learning. The new RL-MPC algorithm can meet constraints
+  and provide similar performance to MPC while enabling continuous learning and
+  the possibility to deal with uncertain environments.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.apenergy.2021.118346
+    \endverb
+    \field{issn}{0306-2619}
+    \field{pages}{118346}
+    \field{title}{Reinforced Model Predictive Control ({{RL-MPC}}) for Building
+  Energy Management}
+    \field{volume}{309}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/KIPS5MIY/Arroyo e
+    \verb t al. - 2022 - Reinforced model predictive control (RL-MPC) for b.pdf
+    \verb ;/home/murray/snap/zotero-snap/common/Zotero/storage/8CKYYN5K/S030626
+    \verb 1921015932.html
+    \endverb
+    \field{journaltitle}{Applied Energy}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:28.314Z%
+    }
+    \field{month}{03}
+    \field{year}{2022}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
+  \entry{linReinforcementLearningBasedModel2023}{article}{}
+    \name{author}{4}{}{%
+      {{hash=LM}{%
+         family={Lin},
+         familyi={L\bibinitperiod},
+         given={Min},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SZ}{%
+         family={Sun},
+         familyi={S\bibinitperiod},
+         given={Zhongqi},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=XY}{%
+         family={Xia},
+         familyi={X\bibinitperiod},
+         given={Yuanqing},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZJ}{%
+         family={Zhang},
+         familyi={Z\bibinitperiod},
+         given={Jinhui},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{LMSZXY+1}
+    \strng{fullhash}{LMSZXYZJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    This article proposes a novel reinforcement learning-based model predictive
+  control (RLMPC) scheme for discrete-time systems. The scheme integrates model
+  predictive control (MPC) and reinforcement learning (RL) through policy
+  iteration (PI), where MPC is a policy generator and the RL technique is
+  employed to evaluate the policy. Then the obtained value function is taken as
+  the terminal cost of MPC, thus improving the generated policy. The advantage
+  of doing so is that it rules out the need for the offline design paradigm of
+  the terminal cost, the auxiliary controller, and the terminal constraint in
+  traditional MPC. Moreover, RLMPC proposed in this article enables a more
+  flexible choice of prediction horizon due to the elimination of the terminal
+  constraint, which has great potential in reducing the computational burden.
+  We provide a rigorous analysis of the convergence, feasibility, and stability
+  properties of RLMPC. Simulation results show that RLMPC achieves nearly the
+  same performance as traditional MPC in the control of linear systems and
+  exhibits superiority over traditional MPC for nonlinear ones.%
+    }
+    \verb{doi}
+    \verb 10.1109/TNNLS.2023.3273590
+    \endverb
+    \field{issn}{2162-2388}
+    \field{pages}{1\bibrangedash 13}
+    \field{title}{Reinforcement {{Learning-Based Model Predictive Control}} for
+  {{Discrete-Time Systems}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/6XQI22BM/Lin et a
+    \verb l. - 2023 - Reinforcement Learning-Based Model Predictive Cont.pdf;/h
+    \verb ome/murray/snap/zotero-snap/common/Zotero/storage/QP6JXDQS/10129251.h
+    \verb tml
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Neural Networks and Learning
+  Systems}
+    \field{annotation}{%
+    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:22:07.338Z%
+    }
+    \field{year}{2023}
+    \field{urlday}{01}
+    \field{urlmonth}{12}
+    \field{urlyear}{2023}
+  \endentry
+
   \entry{bertsekasNewtonMethodReinforcement2022}{article}{}
     \name{author}{1}{}{%
       {{hash=BD}{%
@@ -777,86 +991,6 @@
     \endverb
     \field{journaltitle}{Results in Control and Optimization}
     \field{month}{06}
-    \field{year}{2022}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
-  \entry{arroyoReinforcedModelPredictive2022}{article}{}
-    \name{author}{4}{}{%
-      {{hash=AJ}{%
-         family={Arroyo},
-         familyi={A\bibinitperiod},
-         given={Javier},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=MC}{%
-         family={Manna},
-         familyi={M\bibinitperiod},
-         given={Carlo},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=SF}{%
-         family={Spiessens},
-         familyi={S\bibinitperiod},
-         given={Fred},
-         giveni={F\bibinitperiod},
-      }}%
-      {{hash=HL}{%
-         family={Helsen},
-         familyi={H\bibinitperiod},
-         given={Lieve},
-         giveni={L\bibinitperiod},
-      }}%
-    }
-    \keyw{BOPTEST,Building automation,Model predictive control,Reinforced model
-  predictive control,Reinforcement learning}
-    \strng{namehash}{AJMCSF+1}
-    \strng{fullhash}{AJMCSFHL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    Buildings need advanced control for the efficient and climate-neutral use
-  of their energy systems. Model predictive control (MPC) and reinforcement
-  learning (RL) arise as two powerful control techniques that have been
-  extensively investigated in the literature for their application to building
-  energy management. These methods show complementary qualities in terms of
-  constraint satisfaction, computational demand, adaptability, and
-  intelligibility, but usually a choice is made between both approaches. This
-  paper compares both control approaches and proposes a novel algorithm called
-  reinforced predictive control (RL-MPC) that merges their relative merits.
-  First, the complementarity between RL and MPC is emphasized on a conceptual
-  level by commenting on the main aspects of each method. Second, the RL-MPC
-  algorithm is described that effectively combines features from each approach,
-  namely state estimation, dynamic optimization, and learning. Finally, MPC,
-  RL, and RL-MPC are implemented and evaluated in BOPTEST, a standardized
-  simulation framework for the assessment of advanced control algorithms in
-  buildings. The results indicate that pure RL cannot provide constraint
-  satisfaction when using a control formulation equivalent to MPC and the same
-  controller model for learning. The new RL-MPC algorithm can meet constraints
-  and provide similar performance to MPC while enabling continuous learning and
-  the possibility to deal with uncertain environments.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.apenergy.2021.118346
-    \endverb
-    \field{issn}{0306-2619}
-    \field{pages}{118346}
-    \field{title}{Reinforced Model Predictive Control ({{RL-MPC}}) for Building
-  Energy Management}
-    \field{volume}{309}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/KIPS5MIY/Arroyo e
-    \verb t al. - 2022 - Reinforced model predictive control (RL-MPC) for b.pdf
-    \verb ;/home/murray/snap/zotero-snap/common/Zotero/storage/8CKYYN5K/S030626
-    \verb 1921015932.html
-    \endverb
-    \field{journaltitle}{Applied Energy}
-    \field{annotation}{%
-    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:28.314Z%
-    }
-    \field{month}{03}
     \field{year}{2022}
     \field{urlday}{01}
     \field{urlmonth}{12}
@@ -1020,68 +1154,6 @@
     \field{urlyear}{2023}
   \endentry
 
-  \entry{lubbersAutonomousGreenhouseClimate2023}{article}{}
-    \name{author}{1}{}{%
-      {{hash=LS}{%
-         family={Lubbers},
-         familyi={L\bibinitperiod},
-         given={Seymour},
-         giveni={S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LS1}
-    \strng{fullhash}{LS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    Greenhouses allow production of crops that would otherwise be impossible.
-  Permitting more local, fresher and nutrient richer crop production. Eorts are
-  taken to minimize societal harm due to energy and resource consumption by
-  greenhouse production systems. One way to control such systems is by using
-  model predictive control. Optimal crop yield and resource eciency can, in
-  theory, be achieved by model predictive control. Unfortunately, one major
-  drawback of model predictive control is that it is not well equipped to deal
-  with parametric uncertainty. Significant prediction errors can occur when a
-  mismatch between the model and the real system exists, resulting in
-  deteriorated performance of the system. Strategies exist, such as robust MPC,
-  that are designed to handle uncertainty, but those often result in
-  conservative control policies. This thesis proposes to use model predictive
-  control as a function approximator for RL in order to learn values for model
-  and MPC parameters that can deliver optimal performance in the case of model
-  mismatch.\&lt;br/\&gt;In this thesis, data-driven economic nonlinear model
-  predictive control using Q-learning is proposed as a method to alter the
-  model parameters. The performance of the system af- ter learning is compared
-  to approaches using robust and nominal model predictive control. Three
-  dierent goals are determined: maximizing economic profit, minimizing the
-  constraint violations and maximizing the economic performance while
-  minimizing constraint violations.\&lt;br/\&gt;In this work, an ENMPC scheme
-  is used as a function approximator in a Q-learning envi- ronment. The
-  optimization solution from the ENMPC scheme is used as the input to the
-  system, while the Q-learning agent optimizes the parameter values of the
-  ENMPC scheme and model for the environment. The performance of the system
-  after learning is compared to approaches using robust and nominal model
-  predictive control. The simulation results show that the data-driven ENMPC
-  using reinforcement learning is able to decrease constraint vi- olations by
-  up to 94\%, but unable to increase economic performance compared to nominal
-  MPC, compared to robust MPC the EPI is increased by almost 10\% while keeping
-  constraint violations at a similar level.%
-    }
-    \field{title}{Autonomous Greenhouse Climate Control with {{Q-learning}}
-  Using {{ENMPC}} as a Function Approximator}
-    \field{langid}{english}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/LMBMYW4V/Lubbers
-    \verb - 2023 - Autonomous greenhouse climate control with Q-learn.pdf
-    \endverb
-    \field{annotation}{%
-    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:19:22.020Z%
-    }
-    \field{year}{2023}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
-  \endentry
-
   \entry{sikchiLearningOffPolicyOnline2021}{misc}{}
     \name{author}{3}{}{%
       {{hash=SH}{%
@@ -1174,78 +1246,6 @@
     \verb /home/murray/snap/zotero-snap/common/Zotero/storage/ZER2BVBI/Bertseka
     \verb s - Lessons from AlphaZero for Optimal, Model Predicti.pdf
     \endverb
-  \endentry
-
-  \entry{linReinforcementLearningBasedModel2023}{article}{}
-    \name{author}{4}{}{%
-      {{hash=LM}{%
-         family={Lin},
-         familyi={L\bibinitperiod},
-         given={Min},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=SZ}{%
-         family={Sun},
-         familyi={S\bibinitperiod},
-         given={Zhongqi},
-         giveni={Z\bibinitperiod},
-      }}%
-      {{hash=XY}{%
-         family={Xia},
-         familyi={X\bibinitperiod},
-         given={Yuanqing},
-         giveni={Y\bibinitperiod},
-      }}%
-      {{hash=ZJ}{%
-         family={Zhang},
-         familyi={Z\bibinitperiod},
-         given={Jinhui},
-         giveni={J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{LMSZXY+1}
-    \strng{fullhash}{LMSZXYZJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    This article proposes a novel reinforcement learning-based model predictive
-  control (RLMPC) scheme for discrete-time systems. The scheme integrates model
-  predictive control (MPC) and reinforcement learning (RL) through policy
-  iteration (PI), where MPC is a policy generator and the RL technique is
-  employed to evaluate the policy. Then the obtained value function is taken as
-  the terminal cost of MPC, thus improving the generated policy. The advantage
-  of doing so is that it rules out the need for the offline design paradigm of
-  the terminal cost, the auxiliary controller, and the terminal constraint in
-  traditional MPC. Moreover, RLMPC proposed in this article enables a more
-  flexible choice of prediction horizon due to the elimination of the terminal
-  constraint, which has great potential in reducing the computational burden.
-  We provide a rigorous analysis of the convergence, feasibility, and stability
-  properties of RLMPC. Simulation results show that RLMPC achieves nearly the
-  same performance as traditional MPC in the control of linear systems and
-  exhibits superiority over traditional MPC for nonlinear ones.%
-    }
-    \verb{doi}
-    \verb 10.1109/TNNLS.2023.3273590
-    \endverb
-    \field{issn}{2162-2388}
-    \field{pages}{1\bibrangedash 13}
-    \field{title}{Reinforcement {{Learning-Based Model Predictive Control}} for
-  {{Discrete-Time Systems}}}
-    \verb{file}
-    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/6XQI22BM/Lin et a
-    \verb l. - 2023 - Reinforcement Learning-Based Model Predictive Cont.pdf;/h
-    \verb ome/murray/snap/zotero-snap/common/Zotero/storage/QP6JXDQS/10129251.h
-    \verb tml
-    \endverb
-    \field{journaltitle}{IEEE Transactions on Neural Networks and Learning
-  Systems}
-    \field{annotation}{%
-    Read\_Status: To Read\\ Read\_Status\_Date: 2023-12-05T19:22:07.338Z%
-    }
-    \field{year}{2023}
-    \field{urlday}{01}
-    \field{urlmonth}{12}
-    \field{urlyear}{2023}
   \endentry
 
   \entry{delatorre-geaComputationalFluidDynamics2011}{article}{}

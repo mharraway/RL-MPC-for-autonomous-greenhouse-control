@@ -56,7 +56,7 @@ dT          =       1800                                 #time scale of my syste
 
 
 
-noise_scale = 0
+noise_scale = 0.2
 GlobalSeed = 4
 
 #Time Period and settings

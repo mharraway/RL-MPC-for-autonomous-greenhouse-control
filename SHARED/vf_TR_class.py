@@ -40,7 +40,7 @@ class neural_net (nn.Module):
     def forward(self, x):
         x = self.act_fn(self.fc1(x))
         # if self.h == 2:
-        # x = self.act_fn(self.fc2(x))
+        x = self.act_fn(self.fc2(x))
         x = self.fc3(x)
         return x
     

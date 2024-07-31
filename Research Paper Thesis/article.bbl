@@ -1,0 +1,115 @@
+\begin{thebibliography}{17}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{\discretionary{}{}{}doi: #1}\else
+  \providecommand{\doi}[1]{\discretionary{}{}{}doi: #1}\fi
+
+\bibitem[{Morcego et~al.(2023)Morcego, Yin, Boersma, {van Henten}, Puig, and
+  Sun}]{morcegoReinforcementLearningModel2023}
+Morcego, B., Yin, W., Boersma, S., {van Henten}, E., Puig, V., and Sun, C.,
+  \enquote{Reinforcement {{Learning Versus Model Predictive Control}} on
+  {{Greenhouse Climate Control}},} , Mar. 2023.
+
+\bibitem[{DevOps(2021)}]{devopsGreenhouseClimateControl2021}
+DevOps, \enquote{Greenhouse {{Climate Control}} -- {{How}} to {{Improve Plant
+  Growth}} - {{DryGair}},} , Aug. 2021.
+
+\bibitem[{Rusnak(2018)}]{rusnakWhatCurrentState2018}
+Rusnak, P., \enquote{What {{Is}} the {{Current State}} of {{Labor}} in the
+  {{Greenhouse Industry}}?} , Nov. 2018.
+
+\bibitem[{Boersma et~al.(2022)Boersma, Sun, and {van
+  Mourik}}]{boersmaRobustSamplebasedModel2022}
+Boersma, S., Sun, C., and {van Mourik}, S., \enquote{Robust Sample-Based Model
+  Predictive Control of a Greenhouse System with Parametric Uncertainty,}
+  \emph{IFAC-PapersOnLine}, Vol.~55, No.~32, 2022, pp. 177--182.
+\newblock \doi{10.1016/j.ifacol.2022.11.135}.
+
+\bibitem[{Lubbers(2023)}]{lubbersAutonomousGreenhouseClimate2023}
+Lubbers, S., \enquote{Autonomous Greenhouse Climate Control with {{Q-learning}}
+  Using {{ENMPC}} as a Function Approximator,} 2023.
+
+\bibitem[{Jansen(2023)}]{jansenOptimalControlLettuce2023}
+Jansen, Y., \enquote{Optimal {{Control}} of {{Lettuce Greenhouse Horticulture}}
+  Using {{Model-Free Reinforcement Learning}},} Master's Thesis, 2023.
+
+\bibitem[{Arroyo et~al.(2022)Arroyo, Manna, Spiessens, and
+  Helsen}]{arroyoReinforcedModelPredictive2022}
+Arroyo, J., Manna, C., Spiessens, F., and Helsen, L., \enquote{Reinforced Model
+  Predictive Control ({{RL-MPC}}) for Building Energy Management,}
+  \emph{Applied Energy}, Vol. 309, 2022, p. 118346.
+\newblock \doi{10.1016/j.apenergy.2021.118346}.
+
+\bibitem[{Lin et~al.(2023)Lin, Sun, Xia, and
+  Zhang}]{linReinforcementLearningBasedModel2023}
+Lin, M., Sun, Z., Xia, Y., and Zhang, J., \enquote{Reinforcement
+  {{Learning-Based Model Predictive Control}} for {{Discrete-Time Systems}},}
+  \emph{IEEE Transactions on Neural Networks and Learning Systems}, 2023, pp.
+  1--13.
+\newblock \doi{10.1109/TNNLS.2023.3273590}.
+
+\bibitem[{van Henten(1994)}]{hentenGreenhouseClimateManagement1994}
+van Henten, E.~J., \emph{{Greenhouse climate management: an optical control
+  approach}}, 1994.
+
+\bibitem[{Sof()}]{SoftActorCriticSpinning}
+\enquote{Soft {{Actor-Critic}} --- {{Spinning Up}} Documentation,}
+  https://spinningup.openai.com/en/latest/algorithms/sac.html, ????
+
+\bibitem[{Raffin et~al.(2021)Raffin, Hill, Gleave, Kanervisto, Ernestus, and
+  Dormann}]{raffinStableBaselines3ReliableReinforcement2021}
+Raffin, A., Hill, A., Gleave, A., Kanervisto, A., Ernestus, M., and Dormann,
+  N., \enquote{Stable-{{Baselines3}}: {{Reliable Reinforcement Learning
+  Implementations}},} \emph{Journal of Machine Learning Research}, Vol.~22, No.
+  268, 2021, pp. 1--8.
+
+\bibitem[{Andersson et~al.(2019)Andersson, Gillis, Horn, Rawlings, and
+  Diehl}]{anderssonCasADiSoftwareFramework2019}
+Andersson, J. A.~E., Gillis, J., Horn, G., Rawlings, J.~B., and Diehl, M.,
+  \enquote{{{CasADi}}: A Software Framework for Nonlinear Optimization and
+  Optimal Control,} \emph{Mathematical Programming Computation}, Vol.~11,
+  No.~1, 2019, pp. 1--36.
+\newblock \doi{10.1007/s12532-018-0139-4}.
+
+\bibitem[{W{\"a}chter and
+  Biegler(2006)}]{wachterImplementationInteriorpointFilter2006}
+W{\"a}chter, A., and Biegler, L.~T., \enquote{On the Implementation of an
+  Interior-Point Filter Line-Search Algorithm for Large-Scale Nonlinear
+  Programming,} \emph{Mathematical Programming}, Vol. 106, No.~1, 2006, pp.
+  25--57.
+\newblock \doi{10.1007/s10107-004-0559-y}.
+
+\bibitem[{Ellis et~al.(2014)Ellis, Durand, and
+  Christofides}]{ellisTutorialReviewEconomic2014}
+Ellis, M., Durand, H., and Christofides, P.~D., \enquote{A Tutorial Review of
+  Economic Model Predictive Control Methods,} \emph{Journal of Process
+  Control}, Vol.~24, No.~8, 2014, pp. 1156--1178.
+\newblock \doi{10.1016/j.jprocont.2014.03.010}.
+
+\bibitem[{Amrit et~al.(2011)Amrit, Rawlings, and
+  Angeli}]{amritEconomicOptimizationUsing2011}
+Amrit, R., Rawlings, J.~B., and Angeli, D., \enquote{Economic Optimization
+  Using Model Predictive Control with a Terminal Cost,} \emph{Annual Reviews in
+  Control}, Vol.~2, No.~35, 2011, pp. 178--186.
+\newblock \doi{10.1016/j.arcontrol.2011.10.011}.
+
+\bibitem[{Salzmann et~al.(2023{\natexlab{a}})Salzmann, Arrizabalaga, Andersson,
+  Pavone, and Ryll}]{salzmannLearningCasADiDatadriven2023}
+Salzmann, T., Arrizabalaga, J., Andersson, J., Pavone, M., and Ryll, M.,
+  \enquote{Learning for {{CasADi}}: {{Data-driven Models}} in {{Numerical
+  Optimization}},} , Dec. 2023{\natexlab{a}}.
+\newblock \doi{10.48550/arXiv.2312.05873}.
+
+\bibitem[{Salzmann et~al.(2023{\natexlab{b}})Salzmann, Kaufmann, Arrizabalaga,
+  Pavone, Scaramuzza, and Ryll}]{salzmannRealtimeNeuralMPCDeep2023}
+Salzmann, T., Kaufmann, E., Arrizabalaga, J., Pavone, M., Scaramuzza, D., and
+  Ryll, M., \enquote{Real-Time {{Neural-MPC}}: {{Deep Learning Model Predictive
+  Control}} for {{Quadrotors}} and {{Agile Robotic Platforms}},} \emph{IEEE
+  Robotics and Automation Letters}, Vol.~8, No.~4, 2023{\natexlab{b}}, pp.
+  2397--2404.
+\newblock \doi{10.1109/LRA.2023.3246839}.
+
+\end{thebibliography}

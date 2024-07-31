@@ -1,0 +1,19 @@
+\section{Conclusion}
+
+This study has demonstrated the efficacy of integrating RL and MPC for autonomous greenhouse control in optimsing economic benefit. The hybrid RL-MPC approach leverages the strengths of both methods, combining RL's ability to handle uncertainties and long-term planning with MPC's performance and online optimisation.\\
+The study shows that while MPC alone can provide satisfactory performance in a deterministic environment, the addition of RL-derived terminal constraints and cost functions significantly enhances performance, especially in shorter prediction horizons. This hybrid approach not only boosts economic benefits but also improves computational efficiency at higher prediction horizons making it a viable solution for real-time applications in more complex systems.\\
+Furthermore, the RL-MPC framework proves robust against various levels of environmental uncertainty, maintaining high performance where the traditional EMPC's efficacy diminishes. The integration of RL's knowledge of system uncertainties into the MPC framework enhances the overall control strategy, ensuring more reliable and optimal performance in dynamic and unpredictable environments.\\
+Overall, the RL-MPC approach presents a promising advancement in the field of autonomous greenhouse control, providing a balanced solution that addresses both performance and computational challenges. Future research involves the following:
+
+\begin{itemize}
+	\item Further investigation into the hyperparameters of the RL agent may be necessary to develop an RL policy that outperforms MPC in deterministic environments. Other deep RL techniques, such as TRPO, PPO, and TD3, can be employed to develop a more effective RL policy. It is hypothesized that an increase in the RL policy's performance will result in an increase in the RL-MPC's performance. Additionally, exploring different non-linear function approximators, such as radial basis functions or Gaussian processes, could also improve value function learning while optimizing the computational burden in the RL-MPC framework.
+	\item In the presence of uncertainty, RL outperforms MPC because it has access to information about the uncertainty in the environment, whereas MPC does not. This approach aims to determine whether RL can transfer its knowledge of this uncertainty into the MPC framework through a terminal region constraint and a value function. However, estimation techniques such as Moving Horizon Estimation (MHE) are commonly used in MPC to mitigate noise in the output. Moreover, stochastic MPC controllers, such as those described in \cite{boersmaRobustSamplebasedModel2022}, target parametric uncertainty. When these techniques are employed, one can expect a significant increase in the performance of MPC in stochastic environments. Therefore, a study should be conducted where the RL-MPC framework incorporates these techniques to examine the resulting performance gains.
+	\item Finally, a theoretical foundation should be established to implement this approach in a real greenhouse, ensuring that the combination of RL and MPC will yield performance guarantees. This study served as an initial investigation into the expected performance gains and the resulting benefits of the RL-MPC framework.
+\end{itemize}
+
+
+
+
+
+
+

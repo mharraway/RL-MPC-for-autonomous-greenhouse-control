@@ -14,7 +14,7 @@ The integration of RL into MPC will increasingly involve more complex implementa
 \subsection{RL-MPC problem formulations}
 
 \paragraph{Implementation RL-MPC 1}
-Implementation of RL-MPC 1 is identical to \autoref{eq:mpc_ocp} but includes initial guesses. However, instead of using the previous solution to the state and input trajectories as initial guesses, the RL agent provides these initial guesses. Two sets of initial guesses will be tested and compared with one another. The solution to the OCP in \autoref{eq:mpc_ocp} at time $k$ can be denoted as:
+Implementation of RL-MPC 1 is identical to \autoref{eq:mpc_ocp} but includes initial guesses provided by RL. However, instead of using the previous solution to the state and input trajectories as initial guesses, the RL agent provides these initial guesses. Two sets of initial guesses will be tested and compared with one another. The solution to the OCP in \autoref{eq:mpc_ocp} at time $k$ can be denoted as:
 
 \begin{equation}\label{eq:sol-mpc-ocp}
 	\begin{aligned}

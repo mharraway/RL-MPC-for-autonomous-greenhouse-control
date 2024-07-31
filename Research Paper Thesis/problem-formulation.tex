@@ -1,0 +1,221 @@
+\section{Problem Formulation}
+
+\subsection{RL}
+
+
+\subsubsection{Agent Description}
+The agent's description is influenced by its observation tuple (agent's state), its discount factor and reward function. The model of the environment is the same for all controllers used, i.e. RL, MPC and RL-MPC.
+
+\begin{multline}\label{eq:obs-tuple}
+	s(k) = (y_1(k),y_2(k),y_3(k),y_4(k), \\u_1(k-1), u_2(k-1), u_3(k-1), k, d(k))
+\end{multline}
+
+
+
+The observation space of the agent must be carefully selected to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions as it is difficult to measure without disrupting the crop’s life cycle. However, various methods exist for predicting the state of the crop dry mass, such as a non-linear Kalman observer and other machine learning techniques \cite{gongDeepLearningBased2021}. However, it is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels, are easily measured and form part of the observation space. The current weather conditions are also made available to the agent to make better decisions. As shown in \autoref{section:greenhouse-model}, since the control input depends on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered time-aware, so the current time step is also provided. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days (as discussed in \autoref{ssection:optimization-goal}), the problem has a fixed episodic length, where a growing period can be considered an episode. The agent can leverage the current time to make better decisions by incorporating time awareness. As discussed in \autoref{eq:stage-cost-epi} and shown in \autoref{eq:reward_fn}, the optimisation goal includes maximising the growth difference between time steps, so knowledge of the previous dry mass and the growth experienced in the previous time step may be beneficial to learning an optimal policy. However, the three following environment state tuples $s(k)$ at time $k$ have been separately tested to represent the observation returned to the agent:
+
+
+
+\paragraph{Reward Function}\label{paragraph:reward-function}
+The reward function is modelled after the optimisation goal, as defined in \autoref{ssection:optimization-goal} , and represents the same optimisation goal defined for the MPC OCP. Although the van Henten model sufficiently describes the dynamics of lettuce growth in a climate-controlled environment, it does not do so over the entire state space. Therefore, state constraints are imposed to ensure states operate within reasonable limits to provide realistic conditions. As stated in \autoref{section:RL}, state constraints cannot be directly imposed but can be indirectly incorporated by a penalty function in the reward function. It is common practice to impose a linear penalty function for state violations when learning a policy with RL. Therefore, the resulting reward function becomes:
+\begin{multline}\label{eq:reward_fn}
+		 R(k)  =  - (c_{p_1} \cdot (u_1(k)) + c_{p_2} \cdot (u_3(k))) + \\ c_{p_3} \cdot (y_1(k)- y_1(k-1)) \\
+		 - (P_{c02} \cdot (y_2(k) ) + P_T \cdot (y_3(k)) + P_H \cdot (y_4(k)) )
+\end{multline}
+
+where the penalty terms $P_{c02},P_T,P_H$ are defined in \autoref{eq:penalty-terms}:
+
+\begin{equation}\label{eq:penalty-terms}
+	\begin{aligned}
+		& P_{\text{CO2}} = 
+		\begin{cases} 
+			c_{p_{\text{CO2}}} \cdot (y_2(k) - y_2^{\text{max}}) & \text{if } y_2(k) > y_2^{\text{max}} , \\
+			c_{p_{\text{CO2}}} \cdot (y_2^{\text{min}} - y_2(k)) & \text{if } y_2(k) < y_2^{\text{min}} , \\
+			0 & \text{otherwise}
+		\end{cases}
+		\\
+		& P_{T} = 
+		\begin{cases} 
+			c_{p_{T_{ub}}} \cdot (y_3(k) - y_3^{\text{max}}) & \text{if } y_3(k) > y_3^{\text{max}} , \\
+			c_{p_{T_{lb}}} \cdot (y_3^{\text{min}} - y_3(k)) & \text{if } y_3(k) < y_3^{\text{min}} , \\
+			0 & \text{otherwise}
+		\end{cases}
+		\\
+		& P_{H} = 
+		\begin{cases} 
+			c_{p_{H}} \cdot (y_4(k) - y_4^{\text{max}}) & \text{if } y_4(k) > y_4^{\text{max}} , \\
+			c_{p_{H}} \cdot (y_4^{\text{min}} - y_4(k)) & \text{if } y_4(k) < y_4^{\text{min}} , \\
+			0 & \text{otherwise}
+		\end{cases}
+		\\
+	\end{aligned}
+\end{equation}
+
+The penalty constants $c_{p_{CO_2}}, c_{p_{T_{ub}}},c_{p_{T_{lb}}},c_{p_{H}}$ were found empirically in \citet{jansenOptimalControlLettuce2023} to effectively account for deviations from desired states and their impact on the economic benefit. It should be noted that the upper bound of the temperature imposes stricter penalties for violations compared to the lower bounds due to the absence of active cooling in the system. Thus, during periods of increased temperature throughout the day, the agent needs to make appropriate decisions. The penalty constants and their respective units are displayed in \autoref{tab:pen-constants}. The selection of minimum and maximum temperatures was based on the typical operating ranges for lettuce crops and  safe levels of $CO_2$ for brief human operation. Note that $c_{p_{CO_2}}$ is multiplied by $10^{-3}$ since the units used for $C0_2$ density in \cite \citet{jansenOptimalControlLettuce2023} is reported in $10^3 \cdot ppm$.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		parameter& value & units  \\
+		\hline
+		$c_{p_{\text{CO2}}}$ &$\frac{10^{-3}}{20}$ & \euro$\cdot (ppm \cdot m^2)^{-1}$ \\
+		$c_{p_{T_{ub}}}$ & $\frac{1}{200}$& \euro$\cdot (C^{\circ} \cdot m^2)^{-1}$\\
+		$c_{p_{T_{lb}}}$ & $\frac{1}{300}$& \euro$\cdot (C^{\circ} \cdot m^2)^{-1}$\\
+		$c_{p_{H}}$ & $\frac{1}{50}$ & \euro$\cdot (RH_{\%} \cdot m^2)^{-1}$\\
+		$y_2^{max}$ & $1600$ & $ppm$ \\
+		$y_2^{min}$ & $500$ & $ppm$ \\
+		$y_3^{max}$ & $20$ & $C^{\circ}$ \\
+		$y_3^{min}$ & $10$ & $C^{\circ}$ \\
+		$y_4^{max}$ & $100$ & $RH_{\%}$ \\
+		$y_4^{min}$ & $0$ & $RH_{\%}$ \\       
+		\hline
+	\end{tabular}
+	\caption{Penalty Constants}
+	\label{tab:pen-constants}
+\end{table}
+
+\subsubsection{Policy Learning}
+
+
+\subsubsection{Value Function Learning}
+This method includes obtaining the expected return of each state visited from a simulated trajectory under a fixed policy and using them as targets for that state. Compared to the temporal difference learning method, this approach offers the benefit of considerably more stable training. Unlike the TD method, the targets remain unchanged while the weights of the function approximator are updated. However, this learning method is much less sample efficient, requiring significantly more data to generalise across the state space. Many trajectories are simulated until termination, and the return must be calculated for each state visited. More importantly, only the starting states of the trajectory are sampled, which makes it harder to obtain the same data spread as the TD method.
+
+\paragraph{Obtaining Data}
+A greater number of starting points must be sampled to obtain a spread comparable to the TD method; however, a significantly larger amount of data is needed because the trajectory must be run through to the end of the simulation. However, targets are calculated for the initial state, and each state encountered along the trajectory by using \autoref{eq:total-return}.. Given the inferior sample efficiency of this method, it is important to carefully choose the initial points to ensure that the learned value function can effectively generalise across the state space that the agent is likely to encounter during its simulation. A similar approach to \autoref{ssection:td-learning} was used. However, all states and inputs were uniformly sampled around a region of the nominal trajectory at time $k$ and not only the dry mass, $y_1$. Therefore, initial states and inputs were sampled from $\hat{\mathbb{X}^4}$ and $\hat{\mathbb{U}^3}$ and the initial time step $k$ is uniformly sampled across the entire time horizon as shown in \autoref{eq:TR-sample-space}.
+
+\begin{equation}\label{eq:TR-sample-space}
+	\begin{split}
+		\hat{\mathbb{X}}^4 &= \{ (\hat{x}_1, \hat{x}_2, \hat{x}_3, \hat{x}_4) \mid\ \hat{x}_1 \in [\hat{x}_{1\min}(x_{1_k}), \hat{x}_{1\max}(x_{1_k})], \\
+		&\quad \hat{x}_2 \in [\hat{x}_{2\min}(x_{2_k}), \hat{x}_{2\max}(x_{2_k})], \\
+		&\quad \hat{x}_3 \in [\hat{x}_{3\min}(x_{3_k}), \hat{x}_{3\max}(x_{3_k})], \\
+		&\quad \hat{x}_4 \in [\hat{x}_{4\min}(x_{4_k}), \hat{x}_{4\max}(x_{4_k})] \} \\
+		\hat{\mathbb{U}}^3 &= \{ (\hat{u}_1, \hat{u}_2, \hat{u}_3) \mid\ \hat{u}_1 \in [\hat{u}_{1\min}(u_{1_k}), \hat{u}_{1\max}(u_{1_k})], \\
+		&\quad \hat{u}_2 \in [\hat{u}_{2\min}(u_{2_k}), \hat{u}_{2\max}(u_{2_k})], \\
+		&\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3_k}), \hat{u}_{3\max}(u_{3_k})] \} \\
+		& k \sim U(0,1919)  \\
+	\end{split}
+\end{equation}
+
+where the minimum and maximum limits are calculated as per \autoref{eq:min-max-tr-sample-space}
+
+\begin{equation}\label{eq:min-max-tr-sample-space}
+	\begin{aligned}
+		&\hat{z}_{min} = z_k \cdot (1-\sigma)\\
+		&\hat{z}_{max} = z_k \cdot (1+\sigma)
+	\end{aligned}
+\end{equation}
+
+which represent the minimum and maximum range of the sample state space for a specific state and input where ${z}_{k}$ represents the nominal trajectory, $\sigma$ denotes the desired spread of sampled initial states, which is expressed as a percentage. In doing this, initial states maybe uniformly sampled around/near the nominal trajectory. As can be seen from \autoref{fig:selected-policies-inputs} and \autoref{fig:selected-policies-outputs}, it can be observed that the performance of policies can vary significantly with minimal changes in the state and input trajectories. Thus, sampling the trajectories in this manner can be expected to cover enough of the state space to capture all feasible trajectories. As was done for the temporal difference learning, the fixed policy was generated from the nominal agent. Given that the computation of a control action requires a time of $0.2 ms$, it is possible to sample a large number of trajectories to achieve appropriate coverage of state and input spaces. In the case of stochastic conditions, the same state may yield a different return; therefore, if a state has been visited more than once, then the mean of the return is used as training data.
+
+Once trajectories are sampled, for each state observed/visited, the total return is calculated, and the tuple $(s_k,TR)$ is stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation. A neural network as a function approximator is now trained with inputs as the state, $s_k$, and labels as the total return,$TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimised with the Adam optimiser:
+
+\begin{equation}\label{eq:vf_tr_loss}
+	L(\phi, \mathcal{D}) =   V_{\phi}(s_k) - \mathbb{E}(G_t(s_k))
+\end{equation}
+
+where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s_k$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.\\
+
+
+\subsection{MPC}
+It is important that the optimisation goal is equivalent to compare the performance of the MPC to RL and the RL-MPC controller directly. As discussed in \autoref{ssection:optimization-goal}, it is desired to optimise the economic benefit of the greenhouse environment. Similarly to \autoref{section:env-description}, the optimisation goal of the MPC is done to ensure that the sum of stage costs is equal to the actual economic benefit of the system. Therefore, the following optimisation goal is solved at every time step:
+
+\begin{subequations} \label{eq:mpc_ocp}
+	\begin{align}
+		\min_{u(k),x(k)} & \sum_{k = k_0}^{k_0 + N_p-1} {l(u(k), y(k))} \\
+		\text{s.t.} \quad & x(k+1) = f(x(k), u(k), d(k), p),  \label{eq:constraint-1} \\
+		& y(k) = g(x(k+1), p), \label{eq:constraint-dynamics} \\
+		& -\delta u_{max} \leq u(k) - u(k-1) \leq \delta u_{max}, \label{eq:constraint-delta-u} \\
+		& u_{\min} \leq u(k) \leq u_{\max}, \label{eq:constraint-u-limits}\\
+		& x(k_0) = x_{k_0}. \label{eq:constraint-initial}\\
+		& x(k_0) = x_{k_0}. \label{eq:constraint-initial}
+	\end{align}
+\end{subequations}
+
+This MPC OCP is similar to that discussed in \autoref{ssection:general-mpc}, but it does not include a terminal cost or constraint/region. Furthermore, the constraints are aligned with that of the greenhouse environment. To ensure that the optimisation goal is exactly the same as the RR reward function (\autoref{section:env-description}), the cost function $V(u(k),y(k))$ becomes:
+
+\begin{equation} \label{eq:mpc_stage_cost}
+	\begin{aligned}
+		l(u(k),y(k)) & = - c_{p_3} (y(k) - y(k-1)) + c_{p_1} u_{1} + c_{p_2} u_{3} + \sum_{i = 1}^6 s_i(k) \\
+		\text{where} & \quad s_i(k) \geq 0, \\
+		& s_1(k) \geq c_{p_{C02}} \cdot (y_2^{min} - y_2(k)), \\ 
+		& s_2(k) \geq c_{p_{C02}} \cdot (y_2(k) + y_2^{max}), \\ 
+		& s_3(k) \geq c_{p_{T_{lb}}} \cdot (y_3^{min} - y_3(k)), \\ 
+		& s_4(k) \geq c_{p_{T_{ub}}} \cdot (y_3(k) + y_3^{max}), \\ 
+		& s_5(k) \geq c_{p_{H}} \cdot (y_4^{min} - y_4(k)), \\ 
+		& s_6(k) \geq c_{p_{H}} \cdot (y_4(k) + y_4^{max}), \\
+	\end{aligned}	
+\end{equation}
+
+The slack variables are introduced to accommodate the linear penalties on the outputs as in equation \autoref{eq:mpc_ocp}, resulting in an optimisation problem equivalent to that of RL. The penalty constants $c_{p_{C02}},c_{p_{T_{lb}}},c_{p_{T_{ub}}},c_{p_{H}}$ are the same as those used in the RL problem formulation and given in \autoref{section:env-description}. While MPC can impose hard constraints on the states of the system, which is one of its advantages over RL, it was decided that the same penalty on state violations must be given for a direct comparison between algorithms. Lastly, the policy generated by the MPC is denoted $\kappa(x,u,d,p)$ where the optimal control action to take at time $k$ is
+
+\begin{equation}\label{eq:mpc_policy_notation}
+	u_k^* = \kappa(x_k,u_{k-1}^*, d_k, p)
+\end{equation}
+
+
+\subsection{RL-MPC}
+Although there are numerous implementations of RL-MPC, limited research focuses on maximising economic benefit specifically for continuous state and action spaces while training RL separately from MPC. As stated in \citet{ellisTutorialReviewEconomic2014} and \citet{amritEconomicOptimizationUsing2011}, an EMPC without a terminal constraint and terminal cost function does not provide performance and stability guarantees. Specifically, \citet{ellisTutorialReviewEconomic2014} states that a terminal constraint is required to ensure closed-loop performance, while \citet{amritEconomicOptimizationUsing2011} extends this concept by proving that applying a terminal region constraint with an appropriate terminal cost function is required to guarantee closed-loop performance.\citet{amritEconomicOptimizationUsing2011} further claims that the terminal cost function with a terminal region is superior to the terminal constraint because it increases the size of the feasible set of initial conditions and may possibly improve the closed-loop performance. However, finding such suitable terminal constraints and cost functions proves to be very difficult. The objective of this thesis is to ascertain whether the RL agent is capable of providing this. \\
+Furthermore, when considering the RL perspective in these implementations, it is important to note that the learned value function is merely an approximation. Consequently, when this value function is used in MPC, it is effectively unrolled, and value iterations are executed. This process can result in an improved policy compared to the original policy that generated the value function.
+
+The integration of RL into MPC will increasingly involve more complex implementations to analyse the impact at each stage. Firstly, initial guesses from the actor will be examined. Subsequently, the RL agent will establish a terminal constraint. Following this, the RL agent will define and determine a terminal constraint region. The various value functions trained by the nominal agent (\autoref{tab:various-vf}) will then be used as the terminal cost function, with and without the terminal region constraint. Lastly, a parallel problem will be presented to explore a slightly alternative application of the value function. The integration of the value function into the MPC’s optimal control is facilitated by L4Casadi \cite{}.
+
+Implementation of RL-MPC 1 is identical to \autoref{eq:mpc_ocp} but includes initial guesses provided by RL. However, instead of using the previous solution to the state and input trajectories as initial guesses, the RL agent provides these initial guesses. Two sets of initial guesses will be tested and compared with one another. The solution to the OCP in \autoref{eq:mpc_ocp} at time $k$ can be denoted as:
+
+\begin{equation}\label{eq:sol-mpc-ocp}
+	\begin{aligned}
+		&\mathbf{x}_{k|k} = [x_{k|k},x_{k_+ 1|k},x_{k + 2|k}, ...,x_{k + N_p|k}]^T \\ 
+		&\mathbf{u}_{k|k} = [u_{k|k},u_{k + 1|k}, ...,u_{k + N_p-1|k}]^T \\
+	\end{aligned}
+\end{equation}
+
+The two sets of initial guesses at the $k$ step is denoted as:
+
+\begin{equation}\label{eq:initial-guess-1}
+	\begin{aligned}
+		&\tilde{\mathbf{x}}_{k|k} = [\tilde{x}_{k|k},\tilde{x}_{k+1|k},...,\tilde{x}_{k + N_p|k}]^T \\ 
+		&\tilde{\mathbf{u}}_{k|k} = [\tilde{u}_{k|k},\tilde{u}_{k + 1|k},...,\tilde{u}_{k + N_p - 1|k}]^T\\ 
+	\end{aligned}
+\end{equation}
+
+\begin{equation}\label{eq:initial-guess-2}
+	\begin{aligned}
+		&\hat{\mathbf{x}}_{k|k} = [\hat{x}_{k|k},\hat{x}_{k+1|k},...,\hat{x}_{k + N_p|k}]^T \\ 
+		&\hat{\mathbf{u}}_{k|k} = [\hat{u}_{k|k},\hat{u}_{k + 1|k},...,\hat{u}_{k + N_p - 1|k}]^T\\ 
+	\end{aligned}
+\end{equation}
+
+such that
+
+\begin{equation}\label{eq:horizon_extension}
+	\begin{aligned}
+		&\tilde{\mathbf{x}}_{k|k} = [\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k},p)]^T\\ 
+		&\tilde{\mathbf{u}}_{k|k} = [\mathbf{u}_{k|k-1},\pi(x_{k-1 + N_p|k-1})]^T\\
+	\end{aligned}
+\end{equation}
+
+\begin{equation}\label{eq:actor_roll_out}
+	\begin{aligned}
+		&\hat{\mathbf{x}}_{k|k} = [x_{k|k},f(x_{k|k},\pi(x_{k|k}),d_{k|k},p),..., f(x_{k+N_p-1|k}, \pi(x_{k + N_p-1|k}), d_{k_1 + Np-1|k},p)]^T \\ 
+		&\hat{\mathbf{u}}_{k|k} = [\pi(x_{k|k},\pi(x_{k+1|k}),...,\pi(x_{k+Np-1|k})]^T \\ 
+	\end{aligned}
+\end{equation}
+
+\autoref{eq:horizon_extension} takes the previous time steps solution, shifts it in time and uses the policy $\pi(\cdot)$, as provided by the actor, to calculate the optimal action and resulting state to take at the last time step. This method can be interpreted as extending the horizon. So, for every time step, the initial guesses of the sequence of actions and states are extended by one time step. \autoref{eq:actor_roll_out} unrolls the RL policy $\pi(\cdot)$ from the current state until the end of the prediction horizon. Consequently, the solutions obtained from the previous time, $\mathbf{x}_{k|k}$ and $\mathbf{u}_{k|k}$, step are disregarded, thus generating a new sequence without relying on the previous time step’s solutions. It must be noted that, for the first time step, $k=0$, initial guesses given by \autoref{eq:initial-guess-2} are used for both cases, therefore $\tilde{x}_{k|k} \leftarrow \hat{x}_{k|k}$ and $\tilde{u}_{k|k} \leftarrow \hat{u}_{k|k}$.
+
+Based on prior analyses, generating these initial guesses is extremely fast. Furthermore, since it comes from a policy comparable to the MPC’s, these initial guesses can be used for more than just initial guesses, but also to generate terminal constraints. The subsequent implementations explore the significance of these initial guesses, particularly the initial guesses mentioned in \autoref{eq:initial-guess-1}.
+
+
+Implementation 3 builds upon implementation 2, in that instead of providing a terminal constraint, a terminal region as provided by the \autoref{eq:initial-guess-1} and \autoref{eq:initial-guess-2} is used. The terminal region is defined as:
+
+\begin{equation}\label{eq:terminal-region}
+	\begin{aligned}
+		& (1-\delta_T)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\delta_T)\tilde{x}_{k+Np|k}\\
+		&(1-\delta_T)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\delta_T) \tilde{u}_{k+Np-1|k}\\
+	\end{aligned}
+\end{equation}
+
+\cite{amritEconomicOptimizationUsing2011} suggests that this has the same performance guarantees as Implementation 2 under the same assumptions. However introducing a terminal region for the terminal state makes it difficult to meet assumption 3 as shown in \autoref{eq:assumption_3}. However, \cite{amritEconomicOptimizationUsing2011} suggest that providing a terminal region may be more beneficial than a terminal constraint since more freedom is given to the EMPC. Finally, a terminal constraint and initial guesses will also be provided by \autoref{eq:initial-guess-2} to investigate performance. However, since unrolling from the current state does not result in following a fixed trajectory, no meaningful performance comparisons can be made to the RL agent (i.e. the reference trajectory).
+
+
+
