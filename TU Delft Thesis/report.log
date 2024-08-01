@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  1 AUG 2024 18:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  1 AUG 2024 23:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2088,22 +2088,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--214
 <figures/rl_mpc_impl_5_6.pdf, id=2550, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 240.
+Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 238.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
 <figures/rl_mpc_impl_final.pdf, id=2553, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
-Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 251.
+Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 249.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [59 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 ) (./mainmatter/chapter-6.tex [60]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2709, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2710, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
@@ -2112,7 +2112,7 @@ Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 [61
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2718, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2719, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
@@ -2120,7 +2120,7 @@ line 24.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
  [62 <./figures/stochastic_rl_vs_mpc.pdf>] [63 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=2873, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2874, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 36.
@@ -2129,7 +2129,7 @@ Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 36.
  [64 <./figures/stochastic_realife.pdf>])
 (./mainmatter/chapter-7.tex [65]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2947, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2948, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 11.
@@ -2137,7 +2137,7 @@ Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 11.
 [66
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2954, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2955, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
@@ -2145,12 +2145,12 @@ line 20.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
  [67 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
-<figures/taylor_speed_up.pdf, id=3027, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=3028, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
 Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 36.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/final_speed_up.pdf, id=3029, 722.7pt x 289.08pt>
+<figures/final_speed_up.pdf, id=3030, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
 Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 50.
@@ -2187,7 +2187,7 @@ Appendix A.
 LaTeX Warning: Reference `rl_fundamentals' on page 79 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3299, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3300, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2229,11 +2229,11 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46833 strings out of 475735
- 930456 string characters out of 5784786
+ 46835 strings out of 475735
+ 930486 string characters out of 5784786
  1882759 words of memory out of 5000000
  66087 multiletter control sequences out of 15000+600000
- 695465 words of font info for 362 fonts, out of 8000000 for 9000
+ 695511 words of font info for 363 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,2502b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
@@ -2252,10 +2252,10 @@ exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
 plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (89 pages, 7414503 bytes).
+Output written on report.pdf (89 pages, 7414911 bytes).
 PDF statistics:
- 3511 PDF objects out of 3580 (max. 8388607)
- 1834 compressed objects within 19 object streams
+ 3512 PDF objects out of 3580 (max. 8388607)
+ 1835 compressed objects within 19 object streams
  396 named destinations out of 1000 (max. 500000)
  57626 words of extra memory for PDF output out of 61914 (max. 10000000)
 
