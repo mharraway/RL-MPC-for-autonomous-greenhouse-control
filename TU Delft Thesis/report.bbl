@@ -3635,6 +3635,155 @@
     \field{urlyear}{2023}
   \endentry
 
+  \entry{raffinStableBaselines3ReliableReinforcement2021}{article}{}
+    \name{author}{6}{}{%
+      {{hash=RA}{%
+         family={Raffin},
+         familyi={R\bibinitperiod},
+         given={Antonin},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=HA}{%
+         family={Hill},
+         familyi={H\bibinitperiod},
+         given={Ashley},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gleave},
+         familyi={G\bibinitperiod},
+         given={Adam},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=KA}{%
+         family={Kanervisto},
+         familyi={K\bibinitperiod},
+         given={Anssi},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=EM}{%
+         family={Ernestus},
+         familyi={E\bibinitperiod},
+         given={Maximilian},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=DN}{%
+         family={Dormann},
+         familyi={D\bibinitperiod},
+         given={Noah},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RAHAGA+1}
+    \strng{fullhash}{RAHAGAKAEMDN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Stable-Baselines3 provides open-source implementations of deep
+  reinforcement learning (RL) algorithms in Python. The implementations have
+  been benchmarked against reference codebases, and automated unit tests cover
+  95\% of the code. The algorithms follow a consistent interface and are
+  accompanied by extensive documentation, making it simple to train and compare
+  different RL algorithms. Our documentation, examples, and source-code are
+  available at https://github.com/DLR-RM/stable-baselines3.%
+    }
+    \field{issn}{1533-7928}
+    \field{number}{268}
+    \field{pages}{1\bibrangedash 8}
+    \field{shorttitle}{Stable-{{Baselines3}}}
+    \field{title}{Stable-{{Baselines3}}: {{Reliable Reinforcement Learning
+  Implementations}}}
+    \field{volume}{22}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/852Y5LFE/Raffin e
+    \verb t al. - 2021 - Stable-Baselines3 Reliable Reinforcement Learning.pdf;
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/UDDBVF7W/stable-b
+    \verb aselines3.html
+    \endverb
+    \field{journaltitle}{Journal of Machine Learning Research}
+    \field{year}{2021}
+    \field{urlday}{31}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{anderssonCasADiSoftwareFramework2019}{article}{}
+    \name{author}{5}{}{%
+      {{hash=AJAE}{%
+         family={Andersson},
+         familyi={A\bibinitperiod},
+         given={Joel A.\bibnamedelima E.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  E\bibinitperiod},
+      }}%
+      {{hash=GJ}{%
+         family={Gillis},
+         familyi={G\bibinitperiod},
+         given={Joris},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=HG}{%
+         family={Horn},
+         familyi={H\bibinitperiod},
+         given={Greg},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=RJB}{%
+         family={Rawlings},
+         familyi={R\bibinitperiod},
+         given={James\bibnamedelima B.},
+         giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=DM}{%
+         family={Diehl},
+         familyi={D\bibinitperiod},
+         given={Moritz},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AJAEGJHG+1}
+    \strng{fullhash}{AJAEGJHGRJBDM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    We present CasADi, an open-source software framework for numerical
+  optimization. CasADi is a general-purpose tool that can be used to model and
+  solve optimization problems with a large degree of flexibility, larger than
+  what is associated with popular algebraic modeling languages such as AMPL,
+  GAMS, JuMP or Pyomo. Of special interest are problems constrained by
+  differential equations, i.e. optimal control problems. CasADi is written in
+  self-contained C++, but is most conveniently used via full-featured
+  interfaces to Python, MATLAB or Octave. Since its inception in late 2009, it
+  has been used successfully for academic teaching as well as in applications
+  from multiple fields, including process control, robotics and aerospace. This
+  article gives an up-to-date and accessible introduction to the CasADi
+  framework, which has undergone numerous design improvements over the last 7
+  years.%
+    }
+    \verb{doi}
+    \verb 10.1007/s12532-018-0139-4
+    \endverb
+    \field{issn}{1867-2949, 1867-2957}
+    \field{number}{1}
+    \field{pages}{1\bibrangedash 36}
+    \field{shorttitle}{{{CasADi}}}
+    \field{title}{{{CasADi}}: A Software Framework for Nonlinear Optimization
+  and Optimal Control}
+    \field{volume}{11}
+    \field{langid}{english}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/RCP5IMYV/Andersso
+    \verb n et al. - 2019 - CasADi a software framework for nonlinear optimiz.p
+    \verb df
+    \endverb
+    \field{journaltitle}{Mathematical Programming Computation}
+    \field{month}{03}
+    \field{year}{2019}
+    \field{urlday}{31}
+    \field{urlmonth}{07}
+    \field{urlyear}{2024}
+  \endentry
+
   \entry{wachterImplementationInteriorpointFilter2006}{article}{}
     \name{author}{2}{}{%
       {{hash=WA}{%
@@ -3688,6 +3837,187 @@
     \field{month}{03}
     \field{year}{2006}
     \field{urlday}{26}
+    \field{urlmonth}{06}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{salzmannLearningCasADiDatadriven2023}{misc}{}
+    \name{author}{5}{}{%
+      {{hash=ST}{%
+         family={Salzmann},
+         familyi={S\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Arrizabalaga},
+         familyi={A\bibinitperiod},
+         given={Jon},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Andersson},
+         familyi={A\bibinitperiod},
+         given={Joel},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pavone},
+         familyi={P\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Ryll},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {arXiv}%
+    }
+    \keyw{Computer Science - Artificial Intelligence,Computer Science - Machine
+  Learning,Computer Science - Robotics,Computer Science - Symbolic
+  Computation,Electrical Engineering and Systems Science - Systems and Control}
+    \strng{namehash}{STAJAJ+1}
+    \strng{fullhash}{STAJAJPMRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    While real-world problems are often challenging to analyze analytically,
+  deep learning excels in modeling complex processes from data. Existing
+  optimization frameworks like CasADi facilitate seamless usage of solvers but
+  face challenges when integrating learned process models into numerical
+  optimizations. To address this gap, we present the Learning for CasADi
+  (L4CasADi) framework, enabling the seamless integration of PyTorch-learned
+  models with CasADi for efficient and potentially hardware-accelerated
+  numerical optimization. The applicability of L4CasADi is demonstrated with
+  two tutorial examples: First, we optimize a fish's trajectory in a turbulent
+  river for energy efficiency where the turbulent flow is represented by a
+  PyTorch model. Second, we demonstrate how an implicit Neural Radiance Field
+  environment representation can be easily leveraged for optimal control with
+  L4CasADi. L4CasADi, along with examples and documentation, is available under
+  MIT license at https://github.com/Tim-Salzmann/l4casadi%
+    }
+    \verb{doi}
+    \verb 10.48550/arXiv.2312.05873
+    \endverb
+    \verb{eprint}
+    \verb 2312.05873
+    \endverb
+    \field{number}{arXiv:2312.05873}
+    \field{shorttitle}{Learning for {{CasADi}}}
+    \field{title}{Learning for {{CasADi}}: {{Data-driven Models}} in
+  {{Numerical Optimization}}}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/DCFJ5B2A/Salzmann
+    \verb  et al. - 2023 - Learning for CasADi Data-driven Models in Numeric.pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/RXSSDBH8/2312.h
+    \verb tml
+    \endverb
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, eess}
+    \field{month}{12}
+    \field{year}{2023}
+    \field{urlday}{28}
+    \field{urlmonth}{06}
+    \field{urlyear}{2024}
+  \endentry
+
+  \entry{salzmannRealtimeNeuralMPCDeep2023}{article}{}
+    \name{author}{6}{}{%
+      {{hash=ST}{%
+         family={Salzmann},
+         familyi={S\bibinitperiod},
+         given={Tim},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=KE}{%
+         family={Kaufmann},
+         familyi={K\bibinitperiod},
+         given={Elia},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=AJ}{%
+         family={Arrizabalaga},
+         familyi={A\bibinitperiod},
+         given={Jon},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Pavone},
+         familyi={P\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SD}{%
+         family={Scaramuzza},
+         familyi={S\bibinitperiod},
+         given={Davide},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RM}{%
+         family={Ryll},
+         familyi={R\bibinitperiod},
+         given={Markus},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \keyw{Computer Science - Machine Learning,Computer Science -
+  Robotics,Electrical Engineering and Systems Science - Systems and Control}
+    \strng{namehash}{STKEAJ+1}
+    \strng{fullhash}{STKEAJPMSDRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{abstract}{%
+    Model Predictive Control (MPC) has become a popular framework in embedded
+  control for high-performance autonomous systems. However, to achieve good
+  control performance using MPC, an accurate dynamics model is key. To maintain
+  real-time operation, the dynamics models used on embedded systems have been
+  limited to simple first-principle models, which substantially limits their
+  representative power. In contrast to such simple models, machine learning
+  approaches, specifically neural networks, have been shown to accurately model
+  even complex dynamic effects, but their large computational complexity
+  hindered combination with fast real-time iteration loops. With this work, we
+  present Real-time Neural MPC, a framework to efficiently integrate large,
+  complex neural network architectures as dynamics models within a
+  model-predictive control pipeline. Our experiments, performed in simulation
+  and the real world onboard a highly agile quadrotor platform, demonstrate the
+  capabilities of the described system to run learned models with, previously
+  infeasible, large modeling capacity using gradient-based online optimization
+  MPC. Compared to prior implementations of neural networks in online
+  optimization MPC we can leverage models of over 4000 times larger parametric
+  capacity in a 50Hz real-time window on an embedded platform. Further, we show
+  the feasibility of our framework on real-world problems by reducing the
+  positional tracking error by up to 82\% when compared to state-of-the-art MPC
+  approaches without neural network dynamics.%
+    }
+    \verb{doi}
+    \verb 10.1109/LRA.2023.3246839
+    \endverb
+    \verb{eprint}
+    \verb 2203.07747
+    \endverb
+    \field{issn}{2377-3766, 2377-3774}
+    \field{number}{4}
+    \field{pages}{2397\bibrangedash 2404}
+    \field{shorttitle}{Real-Time {{Neural-MPC}}}
+    \field{title}{Real-Time {{Neural-MPC}}: {{Deep Learning Model Predictive
+  Control}} for {{Quadrotors}} and {{Agile Robotic Platforms}}}
+    \field{volume}{8}
+    \verb{file}
+    \verb /home/murray/snap/zotero-snap/common/Zotero/storage/EH4X5IIA/Salzmann
+    \verb  et al. - 2023 - Real-time Neural-MPC Deep Learning Model Predicti.pd
+    \verb f;/home/murray/snap/zotero-snap/common/Zotero/storage/SHNLHAJ5/2203.h
+    \verb tml
+    \endverb
+    \field{journaltitle}{IEEE Robotics and Automation Letters}
+    \field{eprinttype}{arXiv}
+    \field{eprintclass}{cs, eess}
+    \field{month}{04}
+    \field{year}{2023}
+    \field{urlday}{28}
     \field{urlmonth}{06}
     \field{urlyear}{2024}
   \endentry

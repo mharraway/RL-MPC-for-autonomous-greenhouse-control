@@ -144,10 +144,10 @@ The output measurements for the indoor humidity and $C0_2$ levels are reported i
 	\end{aligned}
 \end{equation}
 
-\begin{equation}
+\begin{equation}\label{eq:output_equations_c02}
 	g_{C0_2}(z_T(t),z_{C0_2}(t)) = 10^3 \cdot \frac{R(z_T(t) + c_T)}{PM_{C0_2}} \cdot z_{C0_2}(t)
 \end{equation}
-\begin{equation}
+\begin{equation}\label{eq:output_equations_h}
 	g_h (z_T(t),z_h(t)) = \frac{R(z_T(t) + c_T)}{c_{H_20,4}^{sat}\cdot \text{exp}(\frac{c_{H_20,5}^{sat}z_T(t)}{z_T(t) + c_{H_20,6}^{sat}})} \cdot z_{h}(t)
 \end{equation}
 where $R,c_T,P,M_{C0_2},c_{H_20,4},c_{H_20,5},c_{H_20,6}$ are constants and their descriptions and units given in \autoref{tab:model_constants_and_descriptions}. The greenhouse model was discretized in time to facilitate the use of MPC and RL. The fourth-order Runge Kutta method was used resulting in the discrete model below:
