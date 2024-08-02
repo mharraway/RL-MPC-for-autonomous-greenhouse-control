@@ -1,0 +1,49 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Graphical representation of greenhouse crop production \blx@tocontentsinit {0}\cite {hentenGreenhouseClimateManagement1994}\relax }}{6}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Agent-Environment interaction \blx@tocontentsinit {0}\cite {suttonReinforcementLearningIntroduction2014}\relax }}{13}{figure.caption.10}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Weather Data\relax }}{24}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Cumulative reward vs discount factor ($\gamma $)\relax }}{26}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Predicted value vs actual value vs discount factor\relax }}{27}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Time series of system outputs\relax }}{29}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Time series of system outputs\relax }}{29}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Stochastic RL policy performances\relax }}{30}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Sampled States for Temporal Difference\relax }}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Sampled Inputs for Temporal Difference\relax }}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Sampled states\relax }}{36}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Sampled inputs from nominal conditions\relax }}{36}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Performance Curves, trained on the nominal Agent\relax }}{37}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Value vs Drymass vs time\relax }}{38}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Value predictions - Entire Time Horizon\relax }}{39}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Value predictions - 2 Days\relax }}{40}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Drymass vs Time vs Value - Stochastic\relax }}{41}{figure.caption.32}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The final cumulative reward achieved using nominal MPC and the average computation time for each prediction horizon\relax }}{45}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces MPC 1hr and 5hr Time series of greenhouse outputs\relax }}{45}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces MPC 1hr and 5hr time series of controller inputs\relax }}{46}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Time evolution of cumulative rewards. Displays the evolution of the cumulative reward over the growing period for each stochastic and prediction horizon level. Solid lines represent the mean cumulative reward trajectory with a range indicating the minimum and maximum trajectory recorded in the 30 runs.\relax }}{47}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces MPC performance in stochastic conditions \relax }}{47}{figure.caption.37}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces MPC vs RL in nominal conditions\relax }}{53}{figure.caption.38}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces MPC vs MPC with initial guesses\relax }}{54}{figure.caption.39}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces MPC with terminal constraints from agent\relax }}{54}{figure.caption.40}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces MPC with terminal region\relax }}{55}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces MPC with terminal cost function that optimises over all terminal states\relax }}{56}{figure.caption.42}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces MPC with terminal cost function that optimises over time and terminal dry mass\relax }}{57}{figure.caption.43}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces MPC vs RL-MPC with terminal region and cost function vs RL-MPC solving two separate problems and evaluating best policy with value function\relax }}{58}{figure.caption.45}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces MPC final \relax }}{58}{figure.caption.46}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces RL vs MPC in stochastic conditions\relax }}{61}{figure.caption.48}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces MPC vs stochastic RL vs stochastic RL-MPC 3 and RL-MPC 5\relax }}{62}{figure.caption.49}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces MPC vs RL vs RL-MPC 5 using an RL agent trained on $\delta = 10\%$ uncertainty and prediction horizon of 3 hours for MPC and RL-MPC\relax }}{63}{figure.caption.50}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces The effect of reducing neural network size on performance and computational time\relax }}{66}{figure.caption.51}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces RL-MPC with reduced neural network complexity for its terminal cost function, where D-128 would stand for ''Deep neural network of 128 Neurons per hidden layer''.\relax }}{66}{figure.caption.52}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Fast RL-MPC with Taylor approximation\relax }}{67}{figure.caption.53}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Fast RL-MPC\relax }}{68}{figure.caption.54}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Taxonomy of algorithms in modern RL\relax }}{79}{figure.caption.56}%
+\addvspace {10\p@ }
+\contentsfinish 

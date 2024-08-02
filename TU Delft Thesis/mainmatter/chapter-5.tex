@@ -75,8 +75,8 @@ Assumptions 1, 2, and 3 hold since all states and inputs are bounded and the sta
 
 \begin{equation}\label{eq:terminal-constraint-ocp}
 \begin{aligned}
-	&x_{k+Np|k} = \tilde{x}_{k+Np|k}\\ 
-	&u_{k+Np-1|k} = \tilde{u}_{k+Np-1|k}\\
+	&x_{k+N_p|k} = \tilde{x}_{k+N_p|k}\\ 
+	&u_{k+N_p-1|k} = \tilde{u}_{k+N_p-1|k}\\
 \end{aligned}
 \end{equation}
 
@@ -87,8 +87,8 @@ RL-MPC 3 builds upon RL-MPC 2, in that instead of providing a terminal point con
 
 \begin{equation}\label{eq:terminal-region}
 	\begin{aligned}
-		& (1-\epsilon)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\epsilon)\tilde{x}_{k+Np|k}\\
-		&(1-\epsilon)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\epsilon) \tilde{u}_{k+Np-1|k}\\
+		& (1-\epsilon)\tilde{x}_{k+N_p|k} \leq x_{k+N_p|k} \leq (1+\epsilon)\tilde{x}_{k+N_p|k}\\
+		&(1-\epsilon)\tilde{u}_{k+N_p-1|k} \leq u_{k+N_p-1|k} \leq (1+\epsilon) \tilde{u}_{k+N_p-1|k}\\
 	\end{aligned}
 \end{equation}
 
@@ -114,10 +114,10 @@ The implementation of RL-MPC 5 essentially combines RL-MPC 3 and RL-MPC 4. \cite
 		& -\delta u \leq u(k) - u(k-1) \leq \delta u, \label{eq:rl-mpc-delta-u} \\
 		& u_{\min} \leq u(k) \leq u_{\max}, \label{eq:rl-mpc-u-limits}\\
 		& x(k_0) = x_{k_0}. \label{eq:rl-pmc-initial} \\
- 		&\tilde{\mathbf{x}}_{k|k} = [\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k},p)]^T\\ 
+ 		&\tilde{\mathbf{x}}_{k|k} = [\mathbf{x}_{k|k-1},f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+N_p|k},p)]^T\\ 
 		&\tilde{\mathbf{u}}_{k|k} = [\mathbf{u}_{k|k-1},\pi(x_{k-1 + N_p|k-1})]^T\\
-		& (1-\delta_T)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\delta_T)\tilde{x}_{k+Np|k}\\
-		&(1-\delta_T)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\delta_T) \tilde{u}_{k+Np-1|k}\\
+		& (1-\delta_T)\tilde{x}_{k+N_p|k} \leq x_{k+N_p|k} \leq (1+\delta_T)\tilde{x}_{k+N_p|k}\\
+		&(1-\delta_T)\tilde{u}_{k+N_p-1|k} \leq u_{k+N_p-1|k} \leq (1+\delta_T) \tilde{u}_{k+Np-1|k}\\
 	\end{align}
 \end{subequations}
 
@@ -258,7 +258,7 @@ The final results of the mentioned implementations are shown in \autoref{fig:rlm
 	\centering
 	\renewcommand{\arraystretch}{1.3}
 	\setlength{\tabcolsep}{8pt}
-	\caption{Performance Comparison: RL-MPC 3 and 5 vs. MPC and RL}
+	\caption{Performance Comparison: RL-MPC 3 and 5 vs. MPC}
 	\label{tab:rlmpc-3-5-vs-MPC-and-RL}
 	\resizebox{\columnwidth}{!}{%
 		\begin{tabular}{ccccccccccc}
@@ -274,7 +274,7 @@ The final results of the mentioned implementations are shown in \autoref{fig:rlm
 	}
 \end{table}
 
-\autoref{tab:rlmpc-3-5-vs-MPC-and-RL} displays the performance increase of RL-MPC 3 and RL-MPC 5 against the nominal MPC and a comparison with RL at a 1-hour prediction horizon. Incorporating a terminal region and value function offers minimal advantages compared to only using a terminal region, as the marginal improvement in performance results in a significantly larger increase in computational time. This reiterates the importance of reducing the computational cost of the neural network in the optimisation problem. As seen in \autoref{fig:rlmpc-final}, RL-MPC 6 offers promising results as an alternative method to using the value function and could yield even more benefits when more than two initial trajectories and terminal regions are provided by various agents and methods. The computational time of RL-MPC 6 can theoretically be halved by solving the problems in parallel, resulting in a compute cost similar to RL-MPC 3 and a similar performance to RL-MPC 5. Further research should be conducted on this implementation in the future.\\
+\autoref{tab:rlmpc-3-5-vs-MPC-and-RL} shows the performance increase of RL-MPC 3 and RL-MPC 5 compared to nominal MPC and RL at a 1-hour prediction horizon. Despite MPC not being myopic, the additional information provided by RL can further enhance performance. It is possible to achieve a $20\%$ increase in performance over MPC and a $5.5$ increase over RL at only a 1-hour prediction horizon, with a $24\%$ increase in computational time over MPC. This is significant as RL-MPC can achieve similar performance to a 3-hour MPC with faster computational speeds. However, incorporating a terminal region constraint and value function offers minimal advantages compared to using only a terminal region, as the marginal performance improvement results in a significantly larger increase in computational time. This highlights the computational burden of adding a neural network to the optimization problem. As seen in \autoref{fig:rlmpc-final}, RL-MPC 6 offers promising results as an alternative method to using the value function and could yield even more benefits when more than two initial trajectories and terminal regions are provided by various agents and policies. The computational time of RL-MPC 6 can theoretically be halved by solving the problems in parallel, resulting in a compute cost similar to RL-MPC 3 and a similar performance to RL-MPC 5. Further research should be conducted on this implementation in the future.\\
 
-While the combination of RL and MPC shows promising results, it is important to note that the simulations remain deterministic. These results primarily indicate which implementations are worth testing further in a stochastic environment to create a more accurate depiction of reality. Moreover, it may be tempting to use RL-MPC 2 (with terminal constraint) to guarantee performance as good as RL. However, this may not be practically achievable in a stochastic environment. Due to the randomness in the state evolution of a stochastic environment, it is impractical to ensure that the system can always meet the terminal point constraint exactly as defined by the reference trajectory. Consequently, allowing a terminal region constrain relaxes this constraint and makes the problem feasible. Finally, a value function derived from a policy that inherently considers uncertainty can provide the MPC with valuable insights regarding the impact of uncertainty on its calculated control actions. Therefore, RL-MPC 3 and RL-MPC 5 are suitable choices for testing in a stochastic environment. RL-MPC 6 was not tested on a stochastic environment for computational reasons; however, further research should be conducted to investigate its efficacy.
+While the combination of RL and MPC shows promising results, it is important to note that the simulations remain deterministic. These results primarily indicate which implementations are worth testing further in a stochastic environment to create a more accurate depiction of reality. Moreover, it may be tempting to use RL-MPC 2 (with a terminal point constraint) to guarantee performance as good as RL. However, this may not be practically achievable in a stochastic environment. Due to the randomness in the state evolution of a stochastic environment, it is impractical to ensure that the system can always meet the terminal point constraint exactly as defined by the reference trajectory. Consequently, allowing a terminal region constrain relaxes this and makes the problem feasible. Finally, a value function derived from a policy that inherently considers uncertainty can provide the MPC with valuable insights regarding the impact of uncertainty on its control actions. Therefore, RL-MPC 3 and RL-MPC 5 are suitable choices for testing in a stochastic environment. RL-MPC 6 was not tested on a stochastic environment for computational reasons; however, further research should be conducted to investigate its efficacy.
 

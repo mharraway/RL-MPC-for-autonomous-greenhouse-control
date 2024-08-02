@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  1 AUG 2024 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  2 AUG 2024 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1648,7 +1648,7 @@ Package biblatex Info: ... file 'report.bbl' found.
 (./report.bbl)
 Package biblatex Info: Reference section=0 on input line 26.
 Package biblatex Info: Reference segment=0 on input line 26.
-<figures/cover.jpg, id=296, 685.56125pt x 1027.84pt>
+<figures/cover.jpg, id=284, 685.56125pt x 1027.84pt>
 File: figures/cover.jpg Graphic file (type jpg)
 <use figures/cover.jpg>
 Package pdftex.def Info: figures/cover.jpg  used on input line 40.
@@ -1664,7 +1664,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `RobotoSlab-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/logo-white.pdf, id=297, 114.08723pt x 45.99081pt>
+<figures/logo-white.pdf, id=285, 114.08723pt x 45.99081pt>
 File: figures/logo-white.pdf Graphic file (type pdf)
 <use figures/logo-white.pdf>
 Package pdftex.def Info: figures/logo-white.pdf  used on input line 40.
@@ -1727,7 +1727,7 @@ File: unpxsyc.fd 2013/03/24 Fontinst v1.933 font definitions for U/npxsyc.
 st/fonts/enc/dvips/roboto/rbto_j2bk2t.enc} <./figures/cover.jpg> <./figures/log
 o-white.pdf>]
 (./frontmatter/title-report.tex
-<figures/logo-black.pdf, id=310, 114.08723pt x 45.99081pt>
+<figures/logo-black.pdf, id=298, 114.08723pt x 45.99081pt>
 File: figures/logo-black.pdf Graphic file (type pdf)
 <use figures/logo-black.pdf>
 Package pdftex.def Info: figures/logo-black.pdf  used on input line 62.
@@ -1741,43 +1741,33 @@ l.66 \end{titlepage}
                      [1
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./figures
-/logo-black.pdf>]) (./frontmatter/preface.tex
+/logo-black.pdf>]) (./frontmatter/abstract.tex
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 1.
-LaTeX Font Info:    Font shape `T1/zplTLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 4.
 )
-(./frontmatter/abstract.tex
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            *{Abstract} [1
+l.47 \tableofcontents
+                      [1
 
-]) [2
-
-] (./report.toc
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] (./repor
+t.toc
 LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 1.
- [3
+ [2
 
 ])
 \tf@toc=\write6
 \openout6 = `report.toc'.
 
-
-(./frontmatter/nomenclature.tex [4]
+ [3]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 6.
+(Font)              scaled to size 14.4pt on input line 53.
 LaTeX Font Info:    Font shape `T1/RobotoSlab-TLF/b/n' aliased to
-(Font)              `T1/RobotoSlab-TLF/bold/n' on input line 6.
-) [5
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] (./mainm
-atter/introduction.tex [1
-
-]
+(Font)              `T1/RobotoSlab-TLF/bold/n' on input line 53.
+ [4] (./mainmatter/introduction.tex
 Chapter 1.
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
 (Font)              scaled to size 96.0pt on input line 1.
@@ -1791,84 +1781,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
-[2
+[1
 
-] [3]
+
+] [2]
 LaTeX Font Info:    Trying to load font information for TS1+zplTLF on input lin
-e 24.
+e 25.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/ts1zpltlf.fd
 File: ts1zpltlf.fd 2021/11/24 v1.0 fd file for TS1/zplTLF
 )
 LaTeX Font Info:    Font shape `TS1/zplTLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 24.
+(Font)              scaled to size 10.0pt on input line 25.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplTLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [4{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}])
-(./mainmatter/chapter-2.tex [5]
+LaTeX Font Info:    Font shape `T1/zplTLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 25.
+ [3{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/zpl_TOsF.enc}])
+(./mainmatter/chapter-2.tex [4]
 Chapter 2.
-[6
+[5
 
 ]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 20.
+(Font)              scaled to size 12.0pt on input line 21.
 LaTeX Font Info:    Font shape `T1/RobotoSlab-TLF/b/n' aliased to
-(Font)              `T1/RobotoSlab-TLF/bold/n' on input line 20.
-<figures/van_henten_model.png, id=553, 1388.18625pt x 723.70375pt>
+(Font)              `T1/RobotoSlab-TLF/bold/n' on input line 21.
+<figures/van_henten_model.png, id=526, 1388.18625pt x 723.70375pt>
 File: figures/van_henten_model.png Graphic file (type png)
 <use figures/van_henten_model.png>
-Package pdftex.def Info: figures/van_henten_model.png  used on input line 23.
+Package pdftex.def Info: figures/van_henten_model.png  used on input line 24.
 (pdftex.def)             Requested size: 336.09818pt x 175.21635pt.
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 24.
+(Font)              scaled to size 8.0pt on input line 25.
 LaTeX Font Info:    Font shape `T1/zplTLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 24.
- [7 <./figures/van_henten_model.png>] [8]
+(Font)              scaled to size 8.0pt on input line 25.
+ [6 <./figures/van_henten_model.png>] [7]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 151.
+(Font)              scaled to size 7.3pt on input line 152.
 LaTeX Font Info:    Font shape `T1/zplTLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 151.
- [9] [10] [11] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+(Font)              scaled to size 5.5pt on input line 152.
+ [8] [9] [10] [11]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 352--353
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
-<figures/agent-environment.png, id=681, 500.46976pt x 178.86826pt>
+<figures/agent-environment.png, id=654, 500.46976pt x 178.86826pt>
 File: figures/agent-environment.png Graphic file (type png)
 <use figures/agent-environment.png>
-Package pdftex.def Info: figures/agent-environment.png  used on input line 361.
+Package pdftex.def Info: figures/agent-environment.png  used on input line 362.
 
 (pdftex.def)             Requested size: 336.09818pt x 120.12767pt.
-[14 <./figures/agent-environment.png>] [15] [16] [17] [18]
+[13 <./figures/agent-environment.png>] [14] [15] [16] [17]
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 592.
+(Font)              scaled to size 10.0pt on input line 593.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 7.3pt on input line 592.
+(Font)              scaled to size 7.3pt on input line 593.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
-(Font)              scaled to size 5.5pt on input line 592.
+(Font)              scaled to size 5.5pt on input line 593.
 
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 603.
+d on input line 604.
 
-[19] [20]) (./mainmatter/chapter-3.tex [21]
+[18] [19]) (./mainmatter/chapter-3.tex [20]
 Chapter 3.
-[22
+[21
 
-] [23]
-<figures/weather_data.pdf, id=871, 1084.05pt x 361.35pt>
+] [22]
+<figures/weather_data.pdf, id=844, 1084.05pt x 361.35pt>
 File: figures/weather_data.pdf Graphic file (type pdf)
 <use figures/weather_data.pdf>
 Package pdftex.def Info: figures/weather_data.pdf  used on input line 129.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
- [24] [25 <./figures/weather_data.pdf>] [26]
-<figures/gamma_reward.pdf, id=945, 722.7pt x 289.08pt>
+ [23] [24 <./figures/weather_data.pdf>] [25]
+<figures/gamma_reward.pdf, id=919, 722.7pt x 289.08pt>
 File: figures/gamma_reward.pdf Graphic file (type pdf)
 <use figures/gamma_reward.pdf>
 Package pdftex.def Info: figures/gamma_reward.pdf  used on input line 181.
@@ -1881,38 +1874,38 @@ LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
 (Font)              scaled to size 8.0pt on input line 182.
 LaTeX Font Info:    Font shape `OT1/zplTLF/b/n' will be
 (Font)              scaled to size 6.2pt on input line 182.
- [27 <./figures/gamma_reward.pdf>]
-<figures/vf_vs_gamma.pdf, id=1007, 722.7pt x 578.16pt>
+ [26 <./figures/gamma_reward.pdf>]
+<figures/vf_vs_gamma.pdf, id=981, 722.7pt x 578.16pt>
 File: figures/vf_vs_gamma.pdf Graphic file (type pdf)
 <use figures/vf_vs_gamma.pdf>
 Package pdftex.def Info: figures/vf_vs_gamma.pdf  used on input line 207.
 (pdftex.def)             Requested size: 448.1309pt x 358.50842pt.
- [28 <./figures/vf_vs_gamma.pdf>]
+ [27 <./figures/vf_vs_gamma.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures/selected_policies_outputs.pdf, id=1073, 1084.05pt x 361.35pt>
+<figures/selected_policies_outputs.pdf, id=1047, 1084.05pt x 361.35pt>
 File: figures/selected_policies_outputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_outputs.pdf>
 Package pdftex.def Info: figures/selected_policies_outputs.pdf  used on input l
 ine 261.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-[29]
-<figures/selected_policies_inputs.pdf, id=1079, 722.7pt x 361.35pt>
+[28]
+<figures/selected_policies_inputs.pdf, id=1053, 722.7pt x 361.35pt>
 File: figures/selected_policies_inputs.pdf Graphic file (type pdf)
 <use figures/selected_policies_inputs.pdf>
 Package pdftex.def Info: figures/selected_policies_inputs.pdf  used on input li
 ne 268.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [30 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
+ [29 <./figures/selected_policies_outputs.pdf> <./figures/selected_policies_inp
 uts.pdf>]
-<figures/stochastic_rl_policies.pdf, id=1200, 722.7pt x 216.81pt>
+<figures/stochastic_rl_policies.pdf, id=1173, 722.7pt x 216.81pt>
 File: figures/stochastic_rl_policies.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_policies.pdf>
 Package pdftex.def Info: figures/stochastic_rl_policies.pdf  used on input line
  304.
 (pdftex.def)             Requested size: 448.1309pt x 134.44064pt.
- [31 <./figures/stochastic_rl_policies.pdf>]
+ [30 <./figures/stochastic_rl_policies.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+zplsups on input lin
 e 317.
 
@@ -1927,138 +1920,138 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
 (Font)              scaled to size 8.0pt on input line 317.
- [32{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
-<figures/sampled_y_td.png, id=1298, 722.7pt x 361.35pt>
+ [31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
+<figures/sampled_y_td.png, id=1272, 722.7pt x 361.35pt>
 File: figures/sampled_y_td.png Graphic file (type png)
 <use figures/sampled_y_td.png>
 Package pdftex.def Info: figures/sampled_y_td.png  used on input line 366.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-<figures/sampled_u_td.png, id=1299, 722.7pt x 361.35pt>
+<figures/sampled_u_td.png, id=1273, 722.7pt x 361.35pt>
 File: figures/sampled_u_td.png Graphic file (type png)
 <use figures/sampled_u_td.png>
 Package pdftex.def Info: figures/sampled_u_td.png  used on input line 372.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [33] [34 <./figures/sampled_y_td.png> <./figures/sampled_u_td.png>] [35]
+ [32] [33 <./figures/sampled_y_td.png> <./figures/sampled_u_td.png>] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
-<figures/sampled_states_TR-eps-converted-to.png, id=1450, 1084.05pt x 361.35pt>
+<figures/sampled_states_TR-eps-converted-to.png, id=1424, 1084.05pt x 361.35pt>
 
 File: figures/sampled_states_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_states_TR-eps-converted-to.png>
 Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.png  used o
 n input line 465.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-[36]
-<figures/sampled_inputs_TR-eps-converted-to.png, id=1458, 1084.05pt x 361.35pt>
+[35]
+<figures/sampled_inputs_TR-eps-converted-to.png, id=1431, 1084.05pt x 361.35pt>
 
 File: figures/sampled_inputs_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_inputs_TR-eps-converted-to.png>
 Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.png  used o
 n input line 473.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/tr_training_graphs.pdf, id=1463, 722.7pt x 361.35pt>
+<figures/tr_training_graphs.pdf, id=1436, 722.7pt x 361.35pt>
 File: figures/tr_training_graphs.pdf Graphic file (type pdf)
 <use figures/tr_training_graphs.pdf>
 Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 484
 .
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [37 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
+ [36 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
 ts_TR-eps-converted-to.png>]
-<figures/vf_heatmap_deterministic.png, id=1473, 867.24pt x 722.7pt>
+<figures/vf_heatmap_deterministic.png, id=1446, 867.24pt x 722.7pt>
 File: figures/vf_heatmap_deterministic.png Graphic file (type png)
 <use figures/vf_heatmap_deterministic.png>
 Package pdftex.def Info: figures/vf_heatmap_deterministic.png  used on input li
 ne 495.
 (pdftex.def)             Requested size: 358.50609pt x 298.75702pt.
- [38 <./figures/tr_training_graphs.pdf>]
-<figures/vf_time_predictions_long.pdf, id=1521, 722.7pt x 361.35pt>
+ [37 <./figures/tr_training_graphs.pdf>]
+<figures/vf_time_predictions_long.pdf, id=1495, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_long.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_long.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_long.pdf  used on input li
 ne 506.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
 
-[39 <./figures/vf_heatmap_deterministic.png>]
-<figures/vf_time_predictions_short.pdf, id=1536, 722.7pt x 361.35pt>
+[38 <./figures/vf_heatmap_deterministic.png>]
+<figures/vf_time_predictions_short.pdf, id=1510, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_short.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_short.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_short.pdf  used on input l
 ine 517.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [40 <./figures/vf_time_predictions_long.pdf>]
-<figures/vf_heatmap_stochastic_test.png, id=1591, 867.24pt x 722.7pt>
+ [39 <./figures/vf_time_predictions_long.pdf>]
+<figures/vf_heatmap_stochastic_test.png, id=1565, 867.24pt x 722.7pt>
 File: figures/vf_heatmap_stochastic_test.png Graphic file (type png)
 <use figures/vf_heatmap_stochastic_test.png>
 Package pdftex.def Info: figures/vf_heatmap_stochastic_test.png  used on input 
 line 536.
 (pdftex.def)             Requested size: 448.1309pt x 373.44627pt.
- [41 <./figures/vf_time_predictions_short.pdf>] [42 <./figures/vf_heatmap_stoch
-astic_test.png>]) (./mainmatter/chapter-4.tex [43]
+ [40 <./figures/vf_time_predictions_short.pdf>] [41 <./figures/vf_heatmap_stoch
+astic_test.png>]) (./mainmatter/chapter-4.tex [42]
 Chapter 4.
-[44
+[43
 
 ]
-<figures/mpc_nominal.pdf, id=1692, 722.7pt x 289.08pt>
+<figures/mpc_nominal.pdf, id=1666, 722.7pt x 289.08pt>
 File: figures/mpc_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_nominal.pdf>
 Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 54.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [45]
-<figures/mpc_outputs_time_series.pdf, id=1707, 1084.05pt x 361.35pt>
+ [44]
+<figures/mpc_outputs_time_series.pdf, id=1681, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 63.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1708, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1682, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 70.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
- [46 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1820, 722.7pt x 578.16pt>
+ [45 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
+<figures/stochastic_mpc_rewards_time.pdf, id=1794, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
  line 83.
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
- [47 <./figures/mpc_inputs_times_series.pdf>]
-<figures/stochastic_mpc_perf.pdf, id=1876, 722.7pt x 289.08pt>
+ [46 <./figures/mpc_inputs_times_series.pdf>]
+<figures/stochastic_mpc_perf.pdf, id=1849, 722.7pt x 289.08pt>
 File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 92
 .
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [48 <./figures/stochastic_mpc_rewards_time.pdf> <./figures/stochastic_mpc_perf
+ [47 <./figures/stochastic_mpc_rewards_time.pdf> <./figures/stochastic_mpc_perf
 .pdf>])
-(./mainmatter/chapter-5.tex [49]
+(./mainmatter/chapter-5.tex [48]
 Chapter 5.
-[50
+[49
 
-] [51] [52]
-<figures/mpc_vs_rl_nominal.pdf, id=2060, 722.7pt x 289.08pt>
+] [50] [51]
+<figures/mpc_vs_rl_nominal.pdf, id=2034, 722.7pt x 289.08pt>
 File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_nominal.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 138.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [53]
-<figures/rl_mpc_impl_1.pdf, id=2083, 722.7pt x 289.08pt>
+ [52]
+<figures/rl_mpc_impl_1.pdf, id=2056, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 152.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [54 <./figures/mpc_vs_rl_nominal.pdf>]
-<figures/rl_mpc_impl_2.pdf, id=2148, 722.7pt x 289.08pt>
+ [53 <./figures/mpc_vs_rl_nominal.pdf>]
+<figures/rl_mpc_impl_2.pdf, id=2121, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 163.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [55 <./figures/rl_mpc_impl_1.pdf> <./figures/rl_mpc_impl_2.pdf>]
-<figures/rl_mpc_impl_3.pdf, id=2300, 722.7pt x 289.08pt>
+ [54 <./figures/rl_mpc_impl_1.pdf> <./figures/rl_mpc_impl_2.pdf>]
+<figures/rl_mpc_impl_3.pdf, id=2273, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_3.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 179.
@@ -2068,126 +2061,126 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-[56 <./figures/rl_mpc_impl_3.pdf>]
-<figures/rl_mpc_impl_4.pdf, id=2381, 722.7pt x 289.08pt>
+[55 <./figures/rl_mpc_impl_3.pdf>]
+<figures/rl_mpc_impl_4.pdf, id=2355, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 196.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_4_1.pdf, id=2387, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4_1.pdf, id=2361, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 206.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [57 <./figures/rl_mpc_impl_4.pdf>]
+ [56 <./figures/rl_mpc_impl_4.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-[58 <./figures/rl_mpc_impl_4_1.pdf>]
-<figures/rl_mpc_impl_5_6.pdf, id=2550, 722.7pt x 289.08pt>
+[57 <./figures/rl_mpc_impl_4_1.pdf>]
+<figures/rl_mpc_impl_5_6.pdf, id=2523, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 238.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_final.pdf, id=2553, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_final.pdf, id=2526, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 249.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [59 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]
+ [58 <./figures/rl_mpc_impl_5_6.pdf> <./figures/rl_mpc_impl_final.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
-) (./mainmatter/chapter-6.tex [60]
+) (./mainmatter/chapter-6.tex [59]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2710, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2683, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 1.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
-[61
+[60
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2719, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2692, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
 line 24.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
- [62 <./figures/stochastic_rl_vs_mpc.pdf>] [63 <./figures/stochastic_rl_vs_mpc_
+ [61 <./figures/stochastic_rl_vs_mpc.pdf>] [62 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=2874, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2848, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 36.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [64 <./figures/stochastic_realife.pdf>])
-(./mainmatter/chapter-7.tex [65]
+ [63 <./figures/stochastic_realife.pdf>])
+(./mainmatter/chapter-7.tex [64]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2948, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=2921, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 11.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[66
+[65
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2955, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=2928, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
 line 20.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
- [67 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
+ [66 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
-<figures/taylor_speed_up.pdf, id=3028, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=3001, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
-Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 36.
+Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 35.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/final_speed_up.pdf, id=3030, 722.7pt x 289.08pt>
+<figures/final_speed_up.pdf, id=3003, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
-Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 50.
+Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 49.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [68 <./figures/taylor_speed_up.pdf>] [69 <./figures/final_speed_up.pdf>]) (./m
-ainmatter/conclusion.tex [70]
+ [67 <./figures/taylor_speed_up.pdf>] [68 <./figures/final_speed_up.pdf>]) (./m
+ainmatter/conclusion.tex [69]
 Chapter 8.
-[71
+[70
 
-] [72]) [73]
+] [71]) [72]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 76.
+(Font)              scaled to size 10.0pt on input line 91.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/zplTLF/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-76.
+91.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 76.
+(Font)              scaled to size 10.0pt on input line 91.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `npxtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[74
+[73
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-[75] [76] [77] (./appendix/appendix-a.tex [78]
+[74] [75] [76] (./appendix/appendix-a.tex [77]
 Appendix A.
 
-LaTeX Warning: Reference `rl_fundamentals' on page 79 undefined on input line 4
+LaTeX Warning: Reference `rl_fundamentals' on page 78 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3300, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3274, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2196,16 +2189,228 @@ Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `greenhouse_model' on page 79 undefined on input line 
+LaTeX Warning: Reference `greenhouse_model' on page 78 undefined on input line 
 21.
 
-[79
+[78
 
-] [80 <./figures/rl_taxonomy.png>]) (./appendix/appendix-b.tex [81]
+]) (./appendix/appendix-b.tex [79 <./figures/rl_taxonomy.png>] [80]
 Appendix B.
-) [82
+<../Research Paper Thesis/article.pdf, id=3306, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf  used on input li
+ne 4.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf  used on input li
+ne 4.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<../Research Paper Thesis/article.pdf, id=3309, page=1, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 1>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
+nput line 4.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 1>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+[81
 
-] (./report.aux)
+]
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 1>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 1>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 1>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [82 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3337, page=2, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [83 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3435, page=3, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [84 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3446, page=4, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [85 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3458, page=5, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [86 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3463, page=6, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [87 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3468, page=7, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [88 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3477, page=8, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 8>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page8 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 8>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page8 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 8>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page8 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+
+[89 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3547, page=9, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 9>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page9 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 9>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page9 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 9>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page9 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [90 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3730, page=10, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [91 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3742, page=11, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 11>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page11 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 11>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page11 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 11>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page11 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [92 <../Research Paper Thesis/article.pdf>]) (./frontmatter/nomenclature.tex [
+93
+
+]) [94] (./report.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
@@ -2217,8 +2422,14 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: AE4419F4E0046AC20458CF0B6F23B4E5;11190.
+
+Package rerunfilecheck Warning: File `report.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `report.out':
+(rerunfilecheck)             Before: DCA0BD62B9995D4E4A2C4A830AE3F633;10882
+(rerunfilecheck)             After:  076650C25BE89141B407CE33E9A43C82;10850.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2229,33 +2440,41 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46835 strings out of 475735
- 930486 string characters out of 5784786
- 1882759 words of memory out of 5000000
- 66087 multiletter control sequences out of 15000+600000
- 695511 words of font info for 363 fonts, out of 8000000 for 9000
+ 46870 strings out of 475735
+ 932355 string characters out of 5784786
+ 1884759 words of memory out of 5000000
+ 66121 multiletter control sequences out of 15000+600000
+ 695287 words of font info for 361 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,2502b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI_gnu.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/google/roboto/RobotoSlab-Bold.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/google/roboto/RobotoSlab-Light.pfb></usr/share/texlive/texmf
--dist/fonts/type1/google/roboto/RobotoSlab-Thin.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/eurosym/feymr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/newpx/npxsups-Regular.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/newpx/pxmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
-ewpx/pxsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexas.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/z
-plr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on report.pdf (89 pages, 7414911 bytes).
+xmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/newtx/NewTXMI5.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/google/rob
+oto/RobotoSlab-Bold.pfb></usr/share/texlive/texmf-dist/fonts/type1/google/robot
+o/RobotoSlab-Light.pfb></usr/share/texlive/texmf-dist/fonts/type1/google/roboto
+/RobotoSlab-Thin.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/
+feymr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/npxsups-Reg
+ular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/pxmiaX.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/newpx/pxsys.pfb></usr/share/texm
+f/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/n
+ewtx/txexas.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zp
+lr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/newtx/ztmri.pfb>
+Output written on report.pdf (100 pages, 7846210 bytes).
 PDF statistics:
- 3512 PDF objects out of 3580 (max. 8388607)
- 1835 compressed objects within 19 object streams
- 396 named destinations out of 1000 (max. 500000)
- 57626 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 3943 PDF objects out of 4296 (max. 8388607)
+ 1969 compressed objects within 20 object streams
+ 404 named destinations out of 1000 (max. 500000)
+ 57672 words of extra memory for PDF output out of 61914 (max. 10000000)
 

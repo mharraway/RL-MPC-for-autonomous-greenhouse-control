@@ -1,29 +1,86 @@
 \chapter*{Nomenclature}
 \addcontentsline{toc}{chapter}{Nomenclature}
-
-\emph{If a nomenclature is required, a simple template can be found below for convenience. Feel free to use, adapt or completely remove.}
-
 \section*{Abbreviations}
 
 \begin{longtable}{p{2.5cm}p{8cm}}
     \toprule
     Abbreviation & Definition \\
     \midrule\endhead % Add abbreviations alphabetically here:
-    ISA & International Standard Atmosphere \\
-    ... \\
+    DDPG& Deep Deterministic Policy Gradient\\
+    MDP& Markov Decision Process\\
+    MPC& Model Predictive Control\\
+    EMPC& Economic Model Predictive Control\\
+    OCP& Optimal Control Problem\\
+    RL& Reinforcement Learning\\
+    SAC& Soft Actor-Critic\\
+    SB3& Stable Baselines 3\\
+    TD& Temporal Difference\\
+    TD3& Twin Delayed Deep Deterministic Policy Gradient\\
+    TR& Total Return\\
+    VF& Value Function\\
     \bottomrule
 \end{longtable}
+
+
+
 
 \section*{Symbols}
 
-\begin{longtable}{p{2.5cm}p{8cm}p{2.5cm}}
-    \toprule
-    Symbol & Definition & Unit \\
-    \midrule\endhead % Add Latin symbols alphabetically here:
-    $V$ & Velocity & [m/s] \\
-    ... \\
-    \midrule % Add Greek symbols alphabetically here:
-    $\rho$ & Density & [kg/m$^3$] \\
-    ... \\
-    \bottomrule
+\begin{longtable}{p{2.5cm}p{8cm}}
+	\toprule
+	Symbol & Definition \\
+	\midrule\endhead % Add Latin symbols alphabetically here:
+	$d_1$ & Irradiance \\
+	$d_2$ & Outdoor $CO_2$ \\
+	$d_3$ & Outdoor Temperature \\
+	$d_4$ & Outdoor Humidity \\
+	$delta$& Uncertainty in model parameters \\
+	$\epsilon$& Terminal region range \\
+	$H$ & Entropy \\
+	$k$ & System time step \\
+	$\gamma$ & Discount factor in RL algorithms \\
+	$\mu_p$& Mean model parameters \\
+	$N_p$ & MPC and RL-MPC prediction Horizon \\
+	$Q$ & State-action value function (Q-value) \\
+	$r$ & Reward \\
+	$s$ & Agent State \\
+	$\sigma$& Sampled state and input range \\
+	$t_f$ & Growing period finish time \\
+	$t_s$ & Growing period start time \\
+	$u_1$ & $CO_2$ injection rate \\
+	$u_2$ & Ventilation rate \\
+	$u_3$ & Heating rate \\
+	$u_max$ & Upper bound on inputs \\
+	$u_min$ & Lower bound on inputs \\
+	$V_{\pi}$ & Value function of policy $\pi$ \\
+	$V_{\theta}$ & Value function parametrised on $\theta$ \\
+	$x_1$ & Crop dry mass \\
+	$x_2$ & Indoor $CO_2$ \\
+	$x_3$ & Indoor Temperature \\
+	$x_4$ & Indoor Humidity \\
+	$y_1$ & Crop dry mass \\
+	$y_2$ & Indoor $CO_2$ measurement \\
+	$y_3$ & Indoor Temperature measurement \\
+	$y_4$ & Indoor Humidity measurement \\
+	$y_{max}$ & Upper bound on outputs \\
+	$y_{min}$ & Lower bound on outputs \\
+	$\hat{d_1}$ & Sampled Irradiance \\
+	$\hat{d_2}$ & Sampled Outdoor $CO_2$ \\
+	$\hat{d_3}$ & Sampled Outdoor Temperature \\
+	$\hat{d_4}$ & Sampled Outdoor Humidity \\
+	$\hat{u_1}$ & Sampled $CO_2$ injection rate \\
+	$\hat{u_2}$ & Sampled Ventilation rate \\
+	$\hat{u_3}$ & Sampled Heating rate \\
+	$\hat{x_1}$ & Sampled Crop dry mass \\
+	$\hat{x_2}$ & Sampled Indoor $CO_2$ \\
+	$\hat{x_3}$ & Sampled Indoor Temperature \\
+	$\hat{x_4}$ & Sampled Indoor Humidity \\
+	$\hat{y_1}$ & Sampled Crop dry mass \\
+	$\hat{y_2}$ & Sampled Indoor $CO_2$ measurement \\
+	$\hat{y_3}$ & Sampled Indoor Temperature measurement \\
+	$\hat{y_4}$ & Sampled Indoor Humidity measurement \\
+	$\pi$ & RL's policy \\
+	\bottomrule
 \end{longtable}
+
+

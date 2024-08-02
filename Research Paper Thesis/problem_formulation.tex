@@ -118,36 +118,36 @@ In order to train a value function, multiple trajectories are sampled and for ea
 	\label{eq:return_function}
 \end{equation}
 
-All initial states and inputs were uniformly sampled around a region of the nominal trajectory at time $k$. Initial states and inputs were sampled from $\hat{\mathbb{X}^4}$ and $\hat{\mathbb{U}^3}$ and the initial time step $k$ is uniformly sampled across the entire time horizon as shown in \autoref{eq:TR-sample-space}.
+All initial states and inputs were uniformly sampled around a region of the nominal trajectory at time $k$. Initial states and inputs were sampled from $\hat{\mathbb{X}}^4$ and $\hat{\mathbb{U}}^3$ and the initial time step $k$ is uniformly sampled across the entire time horizon as shown in \autoref{eq:TR-sample-space}.
 
 
 \begin{equation}\label{eq:TR-sample-space}
 	\begin{split}
+		& k \sim U(t_s,t_f)  \\
 		\hat{\mathbb{X}}^4 &= \{ (\hat{x}_1, \hat{x}_2, \hat{x}_3, \hat{x}_4) \mid\ \hat{x}_1 \in [\hat{x}_{1\min}(x_{1_k}), \hat{x}_{1\max}(x_{1_k})], \\
 		&\quad \hat{x}_2 \in [\hat{x}_{2\min}(x_{2_k}), \hat{x}_{2\max}(x_{2_k})], \\
 		&\quad \hat{x}_3 \in [\hat{x}_{3\min}(x_{3_k}), \hat{x}_{3\max}(x_{3_k})], \\
 		&\quad \hat{x}_4 \in [\hat{x}_{4\min}(x_{4_k}), \hat{x}_{4\max}(x_{4_k})] \} \\
 		\hat{\mathbb{U}}^3 &= \{ (\hat{u}_1, \hat{u}_2, \hat{u}_3) \mid\ \hat{u}_1 \in [\hat{u}_{1\min}(u_{1_k}), \hat{u}_{1\max}(u_{1_k})], \\
 		&\quad \hat{u}_2 \in [\hat{u}_{2\min}(u_{2_k}), \hat{u}_{2\max}(u_{2_k})], \\
-		&\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3_k}), \hat{u}_{3\max}(u_{3_k})] \} \\
-		& k \sim U(0,1919)  \\
+		&\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3_k}), \hat{u}_{3\max}(u_{3_k})] \} \\    
 	\end{split}
 \end{equation}
 
-where the minimum and maximum limits are calculated as per \autoref{eq:min-max-tr-sample-space}
+where the minimum and maximum of the sampled state space for a specific state and input are calculated as per \autoref{eq:min-max-tr-sample-space}
 
 \begin{equation}\label{eq:min-max-tr-sample-space}
 	\begin{aligned}
-		&\hat{z}_{min} = z_k \cdot (1-\sigma)\\
-		&\hat{z}_{max} = z_k \cdot (1+\sigma)
+		&\hat{x}_{i\min} = x_{i_k} \cdot (1-\sigma),\hat{u}_{i\min} = u_{i_k} \cdot (1-\sigma)\\
+		&\hat{x}_{i\max} = x_{i_k} \cdot (1+\sigma),\hat{u}_{i\max} = u_{i_k} \cdot (1+\sigma)
 	\end{aligned}
 \end{equation}
 
-which represent the minimum and maximum range of the sample state space for a specific state and input where ${z}_{k}$ represents the nominal trajectory, $\sigma$ denotes the desired spread of sampled initial states, which is expressed as a percentage. Given that the actor was found to compute a control action in $0.2 ms$, 1000 trajectories were sampled to achieve appropriate coverage of state and input spaces.
-A neural network  was trained with inputs as the state, $s_k$, and labels as the total return,$G_t$ and the loss function in \autoref{eq:vf_tr_loss} is minimised with the Adam optimiser:
+where ${x}_{i_k}$ and ${u}_{i_k}$ represents the nominal trajectories of the states and inputs respectively. $\sigma$ denotes the desired spread of sampled initial states around the nominal trajectory, which is expressed as a percentage. Given that the actor was found to compute a control action in $0.2 ms$, 1000 trajectories were sampled to achieve appropriate coverage of state and input spaces.
+A neural network  was trained with inputs as the state, $s_k$, and labels as the total return,$TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimised with the Adam optimiser:
 \begin{equation}
 	\label{eq:vf_tr_loss}
-	L(\phi, \mathcal{D}) =   V_{\phi}(s_k) - \mathbb{E}(G_t(s_k))
+	L(\phi, \mathcal{D}) =   V_{\phi}(s_k) - \mathbb{E}(TR)
 \end{equation}
 where $V_{\phi}$ is the function approximator with weights $\phi$ and $G_t(s_k)$ is the total return of state $s_k$. Parameters include a 2 hidden layer network with 128 neurons per layer, a $1\cdot 10^{-3}$ learning rate and a batch size of 1024 trained on 200 epochs. Initially,  input, $s(k)$, for the value function was the same as that used by the RL agent (\autoref{eq:obs-tuple}). However, it was discovered that the expected return of a state could be reasonably estimated using only the current dry mass and time. This simplification also reduced the non-linearity of the neural network, making it suitable for use in the MPC formulation. While training on the full state of the agent allowed for more accurate predictions of the expected return, the increased non-linearity of the neural network adversely affected the MPC optimizer when integrated as a cost function.
 
@@ -212,8 +212,8 @@ such that
 
 \begin{equation}\label{eq:terminal-region}
 	\begin{aligned}
-		& (1-\delta_T)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\delta_T)\tilde{x}_{k+Np|k}\\
-		&(1-\delta_T)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\delta_T) \tilde{u}_{k+Np-1|k}\\
+		& (1-\epsilon)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\epsilon)\tilde{x}_{k+Np|k}\\
+		&(1-\epsilon)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\epsilon) \tilde{u}_{k+Np-1|k}\\
 	\end{aligned}
 \end{equation}
 
@@ -229,8 +229,8 @@ The terminal cost function takes the form of the value function learned $V_\phi$
 		& x(k_0) = x_{k_0}, \\
 		& \tilde{\mathbf{x}}_{k|k} = [\mathbf{x}_{k|k-1}, f(x_{k-1 + N_p|k-1}, \pi(x_{k-1 + N_p|k-1}), d_{k+Np|k}, p)]^T, \\
 		& \tilde{\mathbf{u}}_{k|k} = [\mathbf{u}_{k|k-1}, \pi(x_{k-1 + N_p|k-1})]^T, \\
-		& (1-\delta_T)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\delta_T)\tilde{x}_{k+Np|k}, \\
-		& (1-\delta_T)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\delta_T)\tilde{u}_{k+Np-1|k}.
+		& (1-\epsilon)\tilde{x}_{k+Np|k} \leq x_{k+Np|k} \leq (1+\epsilon)\tilde{x}_{k+Np|k}, \\
+		& (1-\epsilon)\tilde{u}_{k+Np-1|k} \leq u_{k+Np-1|k} \leq (1+\epsilon)\tilde{u}_{k+Np-1|k}.
 	\end{aligned}
 \end{equation}
 
