@@ -231,25 +231,35 @@ def print_metrics(Y_log= np.empty((0,)), U_log= np.empty((0,)), D_log= np.empty(
     total_c02 = sum(U_log[:, 0])
     total_q = sum(U_log[:, 2])
     epi= (delta_drymass)*(r_let) - total_c02*r_c02  - total_q*r_q
+
+    
     
     avg_comp_time = None if time_log.size == 0 else np.mean(time_log)
     Final_Reward = rewards[-1] if np.any(rewards != None) else 0
     
+    violations_temp = 0
+    violations_c02 = 0
     #Constraint violations
     temp_violations = 0
     for temp in Y_log[:,2]:
         if temp > TEMP_MAX_CONSTRAIN_MPC:
             temp_violations += temp - TEMP_MAX_CONSTRAIN_MPC
+            violations_temp += (temp - TEMP_MAX_CONSTRAIN_MPC)*pen_temp_ub
         elif temp < TEMP_MIN_CONSTRAIN_MPC:
             temp_violations += TEMP_MIN_CONSTRAIN_MPC - temp
+            violations_temp += (TEMP_MIN_CONSTRAIN_MPC - temp)*pen_temp_lb
             
     c02_violations = 0
     for c02 in Y_log[:,1]:
         if c02 > C02_MAX_CONSTRAIN_DAY:
             c02_violations += c02 - C02_MAX_CONSTRAIN_DAY
+            violations_c02 += (c02 - C02_MAX_CONSTRAIN_DAY)*pen_c02
         elif c02 < C02_MIN_CONSTRAIN_DAY:
             c02_violations += C02_MIN_CONSTRAIN_DAY - c02
-            
+            violations_c02 += (C02_MIN_CONSTRAIN_DAY - c02)*pen_c02
+    
+
+    calc_reward =epi- violations_c02 - violations_temp
     
     metrics = {
         "EPI                (EURO/m2)":epi,
@@ -259,10 +269,14 @@ def print_metrics(Y_log= np.empty((0,)), U_log= np.empty((0,)), D_log= np.empty(
         "Computational Time (s)":avg_comp_time,
         "Temp violations    (deg)":temp_violations,
         "C02 violations     (ppm)":c02_violations,
-        "FINAL PERFORMANCE     ":Final_Reward         
+        "FINAL PERFORMANCE     ":Final_Reward  ,
+        "Calculated Performance":calc_reward,    
+        "Temp violations (ERO/m2)":violations_temp,
+        "C02 violations (ERO/m2)": violations_c02
     }
     
-    print(tabulate(metrics.items()))
+    # print(tabulate(metrics.items()))
+    return metrics
     
 
 def compare_metrics(Y_logs = {}, U_logs = {}, D_logs = {}, reward_logs = {}, comp_time_logs = {}):

@@ -77,19 +77,19 @@
 \contentsline {chapter}{\numberline {6}Stochastic RL-MPC}{60}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Initial RL and MPC Performance}{60}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Results - VF and Terminal Region}{62}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusion}{63}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Computational Speed up of RL-MPC}{65}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{65}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Taylor Approximation}{67}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Combined}{68}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{68}{section.7.4}%
-\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{70}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Conclusion}{70}{section.8.1}%
-\contentsline {section}{\numberline {8.2}Recommendations and Future Work}{71}{section.8.2}%
-\contentsline {chapter}{References}{73}{chapter*.52}%
-\contentsline {chapter}{\numberline {A}RL Algorithms}{78}{appendix.A}%
-\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{78}{section.A.1}%
-\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{78}{section.A.2}%
-\contentsline {chapter}{\numberline {B}Research Paper Draft}{81}{appendix.B}%
-\contentsline {chapter}{Nomenclature}{93}{appendix*.54}%
+\contentsline {section}{\numberline {6.3}Conclusion}{64}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Computational Speed up of RL-MPC}{66}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Reducing Neurons and Hidden Layers}{66}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Taylor Approximation}{68}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Combined}{69}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Discussion and Conclusion}{69}{section.7.4}%
+\contentsline {chapter}{\numberline {8}Discussion and Conclusion}{71}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Conclusion}{71}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Recommendations and Future Work}{72}{section.8.2}%
+\contentsline {chapter}{References}{74}{chapter*.53}%
+\contentsline {chapter}{\numberline {A}RL Algorithms}{79}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Overview of RL Algorithms}{79}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Selection of RL Algorithm}{79}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Research Paper Draft}{82}{appendix.B}%
+\contentsline {chapter}{Nomenclature}{94}{appendix*.55}%
 \contentsfinish 

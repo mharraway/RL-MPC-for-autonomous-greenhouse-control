@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  2 AUG 2024 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.26)  14 AUG 2024 17:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1921,12 +1921,12 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `T1/zplsups/m/n' will be
 (Font)              scaled to size 8.0pt on input line 317.
  [31{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/npxsups_T1.enc}]
-<figures/sampled_y_td.png, id=1272, 722.7pt x 361.35pt>
+<figures/sampled_y_td.png, id=1271, 722.7pt x 361.35pt>
 File: figures/sampled_y_td.png Graphic file (type png)
 <use figures/sampled_y_td.png>
 Package pdftex.def Info: figures/sampled_y_td.png  used on input line 366.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
-<figures/sampled_u_td.png, id=1273, 722.7pt x 361.35pt>
+<figures/sampled_u_td.png, id=1272, 722.7pt x 361.35pt>
 File: figures/sampled_u_td.png Graphic file (type png)
 <use figures/sampled_u_td.png>
 Package pdftex.def Info: figures/sampled_u_td.png  used on input line 372.
@@ -1936,7 +1936,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
-<figures/sampled_states_TR-eps-converted-to.png, id=1424, 1084.05pt x 361.35pt>
+<figures/sampled_states_TR-eps-converted-to.png, id=1423, 1084.05pt x 361.35pt>
 
 File: figures/sampled_states_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_states_TR-eps-converted-to.png>
@@ -1944,14 +1944,14 @@ Package pdftex.def Info: figures/sampled_states_TR-eps-converted-to.png  used o
 n input line 465.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
 [35]
-<figures/sampled_inputs_TR-eps-converted-to.png, id=1431, 1084.05pt x 361.35pt>
+<figures/sampled_inputs_TR-eps-converted-to.png, id=1430, 1084.05pt x 361.35pt>
 
 File: figures/sampled_inputs_TR-eps-converted-to.png Graphic file (type png)
 <use figures/sampled_inputs_TR-eps-converted-to.png>
 Package pdftex.def Info: figures/sampled_inputs_TR-eps-converted-to.png  used o
 n input line 473.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/tr_training_graphs.pdf, id=1436, 722.7pt x 361.35pt>
+<figures/tr_training_graphs.pdf, id=1435, 722.7pt x 361.35pt>
 File: figures/tr_training_graphs.pdf Graphic file (type pdf)
 <use figures/tr_training_graphs.pdf>
 Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 484
@@ -1959,14 +1959,14 @@ Package pdftex.def Info: figures/tr_training_graphs.pdf  used on input line 484
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [36 <./figures/sampled_states_TR-eps-converted-to.png> <./figures/sampled_inpu
 ts_TR-eps-converted-to.png>]
-<figures/vf_heatmap_deterministic.png, id=1446, 867.24pt x 722.7pt>
+<figures/vf_heatmap_deterministic.png, id=1445, 867.24pt x 722.7pt>
 File: figures/vf_heatmap_deterministic.png Graphic file (type png)
 <use figures/vf_heatmap_deterministic.png>
 Package pdftex.def Info: figures/vf_heatmap_deterministic.png  used on input li
 ne 495.
 (pdftex.def)             Requested size: 358.50609pt x 298.75702pt.
  [37 <./figures/tr_training_graphs.pdf>]
-<figures/vf_time_predictions_long.pdf, id=1495, 722.7pt x 361.35pt>
+<figures/vf_time_predictions_long.pdf, id=1494, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_long.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_long.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_long.pdf  used on input li
@@ -1974,14 +1974,14 @@ ne 506.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
 
 [38 <./figures/vf_heatmap_deterministic.png>]
-<figures/vf_time_predictions_short.pdf, id=1510, 722.7pt x 361.35pt>
+<figures/vf_time_predictions_short.pdf, id=1509, 722.7pt x 361.35pt>
 File: figures/vf_time_predictions_short.pdf Graphic file (type pdf)
 <use figures/vf_time_predictions_short.pdf>
 Package pdftex.def Info: figures/vf_time_predictions_short.pdf  used on input l
 ine 517.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [39 <./figures/vf_time_predictions_long.pdf>]
-<figures/vf_heatmap_stochastic_test.png, id=1565, 867.24pt x 722.7pt>
+<figures/vf_heatmap_stochastic_test.png, id=1564, 867.24pt x 722.7pt>
 File: figures/vf_heatmap_stochastic_test.png Graphic file (type png)
 <use figures/vf_heatmap_stochastic_test.png>
 Package pdftex.def Info: figures/vf_heatmap_stochastic_test.png  used on input 
@@ -1993,33 +1993,33 @@ Chapter 4.
 [43
 
 ]
-<figures/mpc_nominal.pdf, id=1666, 722.7pt x 289.08pt>
+<figures/mpc_nominal.pdf, id=1665, 722.7pt x 289.08pt>
 File: figures/mpc_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_nominal.pdf>
 Package pdftex.def Info: figures/mpc_nominal.pdf  used on input line 54.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [44]
-<figures/mpc_outputs_time_series.pdf, id=1681, 1084.05pt x 361.35pt>
+<figures/mpc_outputs_time_series.pdf, id=1680, 1084.05pt x 361.35pt>
 File: figures/mpc_outputs_time_series.pdf Graphic file (type pdf)
 <use figures/mpc_outputs_time_series.pdf>
 Package pdftex.def Info: figures/mpc_outputs_time_series.pdf  used on input lin
 e 63.
 (pdftex.def)             Requested size: 448.1309pt x 149.37851pt.
-<figures/mpc_inputs_times_series.pdf, id=1682, 722.7pt x 361.35pt>
+<figures/mpc_inputs_times_series.pdf, id=1681, 722.7pt x 361.35pt>
 File: figures/mpc_inputs_times_series.pdf Graphic file (type pdf)
 <use figures/mpc_inputs_times_series.pdf>
 Package pdftex.def Info: figures/mpc_inputs_times_series.pdf  used on input lin
 e 70.
 (pdftex.def)             Requested size: 448.1309pt x 224.06776pt.
  [45 <./figures/mpc_nominal.pdf> <./figures/mpc_outputs_time_series.pdf>]
-<figures/stochastic_mpc_rewards_time.pdf, id=1794, 722.7pt x 578.16pt>
+<figures/stochastic_mpc_rewards_time.pdf, id=1793, 722.7pt x 578.16pt>
 File: figures/stochastic_mpc_rewards_time.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_rewards_time.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_rewards_time.pdf  used on input
  line 83.
 (pdftex.def)             Requested size: 358.50609pt x 286.8032pt.
  [46 <./figures/mpc_inputs_times_series.pdf>]
-<figures/stochastic_mpc_perf.pdf, id=1849, 722.7pt x 289.08pt>
+<figures/stochastic_mpc_perf.pdf, id=1848, 722.7pt x 289.08pt>
 File: figures/stochastic_mpc_perf.pdf Graphic file (type pdf)
 <use figures/stochastic_mpc_perf.pdf>
 Package pdftex.def Info: figures/stochastic_mpc_perf.pdf  used on input line 92
@@ -2032,26 +2032,26 @@ Chapter 5.
 [49
 
 ] [50] [51]
-<figures/mpc_vs_rl_nominal.pdf, id=2034, 722.7pt x 289.08pt>
+<figures/mpc_vs_rl_nominal.pdf, id=2033, 722.7pt x 289.08pt>
 File: figures/mpc_vs_rl_nominal.pdf Graphic file (type pdf)
 <use figures/mpc_vs_rl_nominal.pdf>
 Package pdftex.def Info: figures/mpc_vs_rl_nominal.pdf  used on input line 138.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [52]
-<figures/rl_mpc_impl_1.pdf, id=2056, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_1.pdf, id=2055, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_1.pdf  used on input line 152.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [53 <./figures/mpc_vs_rl_nominal.pdf>]
-<figures/rl_mpc_impl_2.pdf, id=2121, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_2.pdf, id=2120, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_2.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_2.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_2.pdf  used on input line 163.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
  [54 <./figures/rl_mpc_impl_1.pdf> <./figures/rl_mpc_impl_2.pdf>]
-<figures/rl_mpc_impl_3.pdf, id=2273, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_3.pdf, id=2272, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_3.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_3.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_3.pdf  used on input line 179.
@@ -2062,12 +2062,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--185
  []
 
 [55 <./figures/rl_mpc_impl_3.pdf>]
-<figures/rl_mpc_impl_4.pdf, id=2355, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4.pdf, id=2354, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4.pdf  used on input line 196.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_4_1.pdf, id=2361, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_4_1.pdf, id=2360, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_4_1.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_4_1.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_4_1.pdf  used on input line 206.
@@ -2078,12 +2078,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 213--214
  []
 
 [57 <./figures/rl_mpc_impl_4_1.pdf>]
-<figures/rl_mpc_impl_5_6.pdf, id=2523, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_5_6.pdf, id=2522, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_5_6.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_5_6.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_5_6.pdf  used on input line 238.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/rl_mpc_impl_final.pdf, id=2526, 722.7pt x 289.08pt>
+<figures/rl_mpc_impl_final.pdf, id=2525, 722.7pt x 289.08pt>
 File: figures/rl_mpc_impl_final.pdf Graphic file (type pdf)
 <use figures/rl_mpc_impl_final.pdf>
 Package pdftex.def Info: figures/rl_mpc_impl_final.pdf  used on input line 249.
@@ -2096,7 +2096,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
 ) (./mainmatter/chapter-6.tex [59]
 Chapter 6.
-<figures/stochastic_rl_vs_mpc.pdf, id=2683, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc.pdf, id=2682, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
@@ -2105,7 +2105,7 @@ Package pdftex.def Info: figures/stochastic_rl_vs_mpc.pdf  used on input line 1
 [60
 
 ]
-<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2692, 722.7pt x 433.62pt>
+<figures/stochastic_rl_vs_mpc_impl3.pdf, id=2691, 722.7pt x 433.62pt>
 File: figures/stochastic_rl_vs_mpc_impl3.pdf Graphic file (type pdf)
 <use figures/stochastic_rl_vs_mpc_impl3.pdf>
 Package pdftex.def Info: figures/stochastic_rl_vs_mpc_impl3.pdf  used on input 
@@ -2113,47 +2113,53 @@ line 24.
 (pdftex.def)             Requested size: 448.1309pt x 268.88132pt.
  [61 <./figures/stochastic_rl_vs_mpc.pdf>] [62 <./figures/stochastic_rl_vs_mpc_
 impl3.pdf>]
-<figures/stochastic_realife.pdf, id=2848, 722.7pt x 289.08pt>
+<figures/stochastic_realife.pdf, id=2847, 722.7pt x 289.08pt>
 File: figures/stochastic_realife.pdf Graphic file (type pdf)
 <use figures/stochastic_realife.pdf>
 Package pdftex.def Info: figures/stochastic_realife.pdf  used on input line 36.
 
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [63 <./figures/stochastic_realife.pdf>])
-(./mainmatter/chapter-7.tex [64]
+<figures/stochastic_realife_constraints.pdf, id=2852, 650.43pt x 578.16pt>
+File: figures/stochastic_realife_constraints.pdf Graphic file (type pdf)
+<use figures/stochastic_realife_constraints.pdf>
+Package pdftex.def Info: figures/stochastic_realife_constraints.pdf  used on in
+put line 46.
+(pdftex.def)             Requested size: 358.50609pt x 318.6771pt.
+ [63 <./figures/stochastic_realife.pdf>] [64 <./figures/stochastic_realife_cons
+traints.pdf>]) (./mainmatter/chapter-7.tex [65]
 Chapter 7.
-<figures/speed_up_neurons.pdf, id=2921, 722.7pt x 289.08pt>
+<figures/speed_up_neurons.pdf, id=3002, 722.7pt x 289.08pt>
 File: figures/speed_up_neurons.pdf Graphic file (type pdf)
 <use figures/speed_up_neurons.pdf>
 Package pdftex.def Info: figures/speed_up_neurons.pdf  used on input line 11.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-[65
+[66
 
 ]
-<figures/speed_up_neurons_bar_graph.png, id=2928, 906.55489pt x 855.6768pt>
+<figures/speed_up_neurons_bar_graph.png, id=3008, 906.55489pt x 855.6768pt>
 File: figures/speed_up_neurons_bar_graph.png Graphic file (type png)
 <use figures/speed_up_neurons_bar_graph.png>
 Package pdftex.def Info: figures/speed_up_neurons_bar_graph.png  used on input 
 line 20.
 (pdftex.def)             Requested size: 906.55269pt x 855.67471pt.
- [66 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
+ [67 <./figures/speed_up_neurons.pdf> <./figures/speed_up_neurons_bar_graph.png
 >]
-<figures/taylor_speed_up.pdf, id=3001, 722.7pt x 289.08pt>
+<figures/taylor_speed_up.pdf, id=3082, 722.7pt x 289.08pt>
 File: figures/taylor_speed_up.pdf Graphic file (type pdf)
 <use figures/taylor_speed_up.pdf>
 Package pdftex.def Info: figures/taylor_speed_up.pdf  used on input line 35.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
-<figures/final_speed_up.pdf, id=3003, 722.7pt x 289.08pt>
+<figures/final_speed_up.pdf, id=3084, 722.7pt x 289.08pt>
 File: figures/final_speed_up.pdf Graphic file (type pdf)
 <use figures/final_speed_up.pdf>
 Package pdftex.def Info: figures/final_speed_up.pdf  used on input line 49.
 (pdftex.def)             Requested size: 448.1309pt x 179.2542pt.
- [67 <./figures/taylor_speed_up.pdf>] [68 <./figures/final_speed_up.pdf>]) (./m
-ainmatter/conclusion.tex [69]
+ [68 <./figures/taylor_speed_up.pdf>] [69 <./figures/final_speed_up.pdf>]) (./m
+ainmatter/conclusion.tex [70]
 Chapter 8.
-[70
+[71
 
-] [71]) [72]
+] [72]) [73]
 LaTeX Font Info:    Font shape `T1/zplTLF/m/sc' will be
 (Font)              scaled to size 10.0pt on input line 91.
 Package microtype Info: Character `029' is missing
@@ -2171,16 +2177,16 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-[73
+[74
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-[74] [75] [76] (./appendix/appendix-a.tex [77]
+[75] [76] [77] (./appendix/appendix-a.tex [78]
 Appendix A.
 
-LaTeX Warning: Reference `rl_fundamentals' on page 78 undefined on input line 4
+LaTeX Warning: Reference `rl_fundamentals' on page 79 undefined on input line 4
 .
 
-<figures/rl_taxonomy.png, id=3274, 429.40425pt x 230.0595pt>
+<figures/rl_taxonomy.png, id=3354, 429.40425pt x 230.0595pt>
 File: figures/rl_taxonomy.png Graphic file (type png)
 <use figures/rl_taxonomy.png>
 Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
@@ -2189,14 +2195,14 @@ Package pdftex.def Info: figures/rl_taxonomy.png  used on input line 12.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `greenhouse_model' on page 78 undefined on input line 
+LaTeX Warning: Reference `greenhouse_model' on page 79 undefined on input line 
 21.
 
-[78
+[79
 
-]) (./appendix/appendix-b.tex [79 <./figures/rl_taxonomy.png>] [80]
+]) (./appendix/appendix-b.tex [80 <./figures/rl_taxonomy.png>] [81]
 Appendix B.
-<../Research Paper Thesis/article.pdf, id=3306, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3386, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf  used on input li
@@ -2207,7 +2213,7 @@ File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf  used on input li
 ne 4.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
-<../Research Paper Thesis/article.pdf, id=3309, page=1, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3389, page=1, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf, page 1>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
@@ -2218,7 +2224,7 @@ File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-[81
+[82
 
 ]
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
@@ -2236,110 +2242,110 @@ File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page1 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [82 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3337, page=2, 614.295pt x 794.97pt>
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 2>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
-nput line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 2>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
-nput line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 2>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
-nput line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [83 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3435, page=3, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3418, page=2, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 3>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 3>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 3>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
+<use ../Research Paper Thesis/article.pdf, page 2>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page2 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [84 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3446, page=4, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3515, page=3, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 4>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 4>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 4>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
+<use ../Research Paper Thesis/article.pdf, page 3>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page3 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [85 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3458, page=5, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3527, page=4, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 5>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 5>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 5>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
+<use ../Research Paper Thesis/article.pdf, page 4>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page4 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [86 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3463, page=6, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3538, page=5, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 6>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 6>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 6>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
+<use ../Research Paper Thesis/article.pdf, page 5>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page5 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [87 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3468, page=7, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3543, page=6, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 7>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 7>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 7>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+<use ../Research Paper Thesis/article.pdf, page 6>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page6 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [88 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3477, page=8, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3548, page=7, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 7>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page7 used on i
+nput line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [89 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3557, page=8, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf, page 8>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page8 used on i
@@ -2356,8 +2362,8 @@ Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page8 used on i
 nput line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 
-[89 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3547, page=9, 614.295pt x 794.97pt>
+[90 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3627, page=9, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf, page 9>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page9 used on i
@@ -2372,26 +2378,26 @@ File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf, page 9>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page9 used on i
 nput line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [90 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3730, page=10, 614.295pt x 794.97pt>
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 10>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
-input line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 10>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
-input line 4.
-(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
-File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
-<use ../Research Paper Thesis/article.pdf, page 10>
-Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
-input line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [91 <../Research Paper Thesis/article.pdf>]
-<../Research Paper Thesis/article.pdf, id=3742, page=11, 614.295pt x 794.97pt>
+<../Research Paper Thesis/article.pdf, id=3812, page=10, 614.295pt x 794.97pt>
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
+<use ../Research Paper Thesis/article.pdf, page 10>
+Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page10 used on 
+input line 4.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [92 <../Research Paper Thesis/article.pdf>]
+<../Research Paper Thesis/article.pdf, id=3823, page=11, 614.295pt x 794.97pt>
 File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 <use ../Research Paper Thesis/article.pdf, page 11>
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page11 used on 
@@ -2407,10 +2413,10 @@ File: ../Research Paper Thesis/article.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../Research Paper Thesis/article.pdf , page11 used on 
 input line 4.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
- [92 <../Research Paper Thesis/article.pdf>]) (./frontmatter/nomenclature.tex [
-93
+ [93 <../Research Paper Thesis/article.pdf>]) (./frontmatter/nomenclature.tex [
+94
 
-]) [94] (./report.aux)
+]) [95] (./report.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
@@ -2422,14 +2428,8 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: DCA0BD62B9995D4E4A2C4A830AE3F633;10882
-(rerunfilecheck)             After:  076650C25BE89141B407CE33E9A43C82;10850.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: C1E9273ACECFD1EB615EBB3570034CFD;10850.
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
 (biblatex)                report
@@ -2440,10 +2440,10 @@ Package logreq Info: Writing requests to 'report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46870 strings out of 475735
- 932355 string characters out of 5784786
+ 46881 strings out of 475735
+ 932824 string characters out of 5784786
  1884759 words of memory out of 5000000
- 66121 multiletter control sequences out of 15000+600000
+ 66130 multiletter control sequences out of 15000+600000
  695287 words of font info for 361 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,17n,101p,2502b,2162s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2471,10 +2471,10 @@ lr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/newtx/ztmri.pfb>
-Output written on report.pdf (100 pages, 7846210 bytes).
+Output written on report.pdf (101 pages, 7866795 bytes).
 PDF statistics:
- 3943 PDF objects out of 4296 (max. 8388607)
- 1969 compressed objects within 20 object streams
- 404 named destinations out of 1000 (max. 500000)
- 57672 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 4023 PDF objects out of 4296 (max. 8388607)
+ 1993 compressed objects within 20 object streams
+ 406 named destinations out of 1000 (max. 500000)
+ 57677 words of extra memory for PDF output out of 61914 (max. 10000000)
 
