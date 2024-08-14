@@ -58,7 +58,7 @@ The state of the system includes crop dry mass, indoor $CO_2$ density, temperatu
 	\end{aligned}
 \end{equation}
 
-with state variable $x(k) \in \mathbb{R}^4$, measurement $y(k) \in \mathbb{R}^4$, control input $u(k) \in \mathbb{R}^3$ and weather disturbance $d(k) \in \mathbb{R}^4$. The parameter $p \in \mathbb{R}^{28}$ represents all parameters used in the model where $p=\mu_p$ and $\mu_p$ is the mean value of all the parameters used in the model and displayed in \autoref{tab:model_constants_and_descriptions}. The next section examines the model's state equations.
+with state variable $x(k) \in \mathbb{R}^4$, measurement $y(k) \in \mathbb{R}^4$, control input $u(k) \in \mathbb{R}^3$ and weather disturbance $d(k) \in \mathbb{R}^4$. The parameter $p \in \mathbb{R}^{28}$ represents all parameters used in the model whereby in the nominal case, $p=\mu_p$ and $\mu_p$ is the mean value of all the parameters used in the model and displayed in \autoref{tab:model_constants_and_descriptions}. The next section examines the model's state equations.
 
 \subsection {Model State Equations}
 
@@ -293,7 +293,7 @@ where
 \begin{equation}\label{eq:stage_cost}
 	l(y(k),u(k)) = (c_{p_1} \cdot u_1(k) + c_{p_2} \cdot u_3(k)) \cdot \Delta t  - c_{p_3} \cdot (y_1(k) - y_1(k-1))
 \end{equation}
-where the constraints are detailed below:
+and the constraints are detailed below:
 \begin{equation}\label{eq:constraints}
 	\begin{aligned}
 		&u_{min} = \begin{pmatrix}
@@ -336,11 +336,11 @@ The pricing factors accounts for the required conversions from $mg$ to $kg$ and 
 	\begin{aligned}
 		& c_{p1} = C0_{2_{price}}  =  \frac{0.1906 \frac{\text{\euro}}{kg}}{10^{6} \frac{mg}{kg}}\\
 		& c_{p2} = \text{Heating}_{price} = \frac{0.1281 \frac{\text{\euro}}{kWh}}{3.6\cdot 10^{6} \frac{J}{kWh}}\\
-		& c_{p3} = (1-c_{\tau})  \cdot c_{fw} \cdot Let_{price}= (1-0.07) \cdot 22.5 \frac{kg_{fw}}{kg_{dw}} \cdot 1.065 \frac{\text{\euro}}{kg} \\
+		& c_{p3} = (1-c_{\tau})  \cdot c_{fw} \cdot Lettuce_{price}= (1-0.07) \cdot 22.5 \frac{kg_{fw}}{kg_{dw}} \cdot 1.065 \frac{\text{\euro}}{kg} \\
 	\end{aligned}
 \end{equation}
 
-The prices for $C0_{2_{price}}$, $\text{Heating}_{price}$, and $Let_{price}$ were sourced from \cite{vandenbemdRobustDeepReinforcement}, while the factors for harvestable fresh weight, $c_{\tau}$ and $c_{fw}$, were obtained from \cite{hentenGreenhouseClimateManagement1994}. While these factors may not accurately reflect the present economic conditions, it is important to keep them constant when comparing the MPC, RL, and RL-MPC algorithms. This ensures a meaningful comparison between algorithms, which aligns with one of the objectives of this thesis. 
+The prices for $C0_{2_{price}}$, $\text{Heating}_{price}$, and $Lettuce_{price}$ were sourced from \cite{vandenbemdRobustDeepReinforcement}, while the factors for harvestable fresh weight, $c_{\tau}$ and $c_{fw}$, were obtained from \cite{hentenGreenhouseClimateManagement1994}. While these factors may not accurately reflect the present economic conditions, it is important to keep them constant when comparing the MPC, RL, and RL-MPC algorithms. This ensures a meaningful comparison between algorithms, which aligns with one of the objectives of this thesis. 
 
 
 \section{Reinforcement Learning}\label{section:RL}

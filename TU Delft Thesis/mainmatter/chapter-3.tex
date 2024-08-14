@@ -9,25 +9,25 @@ This section describes the environment for the RL agent to learn an optimal poli
 The observation space (or state) of the agent must be carefully selected to achieve desirable results. Providing too little information may degrade performance; however, giving the agent too much information about the state of the environment may introduce unwanted noise, making it difficult to infer an optimal policy. Typically, the state of dry weight of the lettuce crop would not be available for an expert grower to make decisions as it is difficult to measure without disrupting the crop’s life cycle. However, various methods exist for predicting the state of the crop dry mass, such as a non-linear Kalman observer and machine learning techniques \cite{gongDeepLearningBased2021}. However, it is assumed the dry mass may be measured and is available to the agent. Other states of the greenhouse, such as the temperature, C02 and humidity levels, are easily measured and form part of the observation space. The current weather conditions are also made available to the agent to make better decisions. As shown in \autoref{section:greenhouse-model}, since the control input depends on the previous control input (i.e., it may only deviate a maximum of 10\% from the previous input), it is important to provide the previous control action to the agent. Lastly, the agent is considered time-aware, so the current time step is also provided. Although not necessary, it enables the agent to learn a non-stationary policy. Considering that the growing period is 40 days (as discussed in \autoref{ssection:optimization-goal}), the problem has a fixed episodic length, where a growing period can be considered an episode. The agent can leverage the current time to make better decisions by understanding its position within the growth cycle. As discussed in \autoref{eq:stage-cost-epi} and shown in \autoref{eq:reward_fn}, the optimisation goal includes maximising the growth difference between time steps, so knowledge of the previous dry mass and the growth experienced in the previous time step may be beneficial to learning an optimal policy. However, the three following environment state tuples $s(k)$ at time $k$ have been separately tested to represent the observation returned to the agent:
 
 \begin{equation}\label{eq:obs-tuple-1}
-    s(k) = (y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
+    s_1(k) = (y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
 \end{equation}
 
 \begin{equation}\label{eq:obs-tuple-2}
 \begin{aligned}
-    & s(k) = (\Delta y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k)) \\
+    & s_2(k) = (\Delta y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k)) \\
     & \Delta y_1(k) = y_1(k) - y_1(k-1)
 \end{aligned}
 \end{equation}
 
 
 \begin{equation}\label{eq:obs-tuple-3}
-    s(k) = (y_1(k-1),y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
+    s_3(k) = (y_1(k-1),y_1(k),y_2(k),y_3(k),y_4(k), u(k-1), k, d(k))
 \end{equation}
 
 It is noted that \autoref{eq:obs-tuple-3} is expected to perform better than \autoref{eq:obs-tuple-1} and \autoref{eq:obs-tuple-2} since more information is provided regarding the Markov decision processes of the model and the reward received, thereby allowing the agent to potentially infer the system dynamics more accurately. It was found that no substantial benefit was gained in providing the knowledge of the previous drymass state of the crop; hence, for simplicity, \autoref{eq:obs-tuple-1} was used in this thesis
 
 \paragraph{Action Space}
-The continuous action space, denoted as \( \mathcal{A} \), is defined as \( \mathcal{A} = [-1, 1]^3 \), where \( \mathcal{A} \subseteq \mathbb{R}^3 \). To ensure that the current control input, $u(k)$ satisfies the constraints outlined in \autoref{eq:optimisation-goal}, the agent’s action, denoted as  $a(k) = \pi (s(k))$, where $a \in \mathcal{A}$, is regarded as a modification to the control input. Consequently, the current control input can be determined as follows:
+The continuous action space, denoted as \( \mathcal{A} \), is defined as \( \mathcal{A} = [-1, 1]^3 \), where \( \mathcal{A} \subseteq \mathbb{R}^3 \). To ensure that the current control input, $u(k)$ satisfies the constraints outlined in \autoref{eq:optimisation-goal}, the agent’s action, denoted as  $a(k) = \pi (s_1(k))$, where $a \in \mathcal{A}$, is regarded as a modification to the control input. Consequently, the current control input can be determined as follows:
 $$
 u(k) = \max(u_{\min}, \min(u(k-1) + a(k) \cdot \delta u_{\max}, u_{\max}))
 $$
@@ -118,9 +118,9 @@ The penalty constants $c_{p_{CO_2}}, c_{p_{T_{ub}}},c_{p_{T_{lb}}},c_{p_{H}}$ we
 The observations returned from the environment were normalised by a running mean and variance to facilitate the learning process of RL. The actor and the critic were trained with these normalised observations. The VecNormalizeWrapper in Stable-Baselines3 (SB3) \cite{raffinStableBaselines3ReliableReinforcement2021} is responsible for updating the mean and variance for every observation received from the environment. The observation is normalised as per \autoref{eq:state-normalization} and clipped between $[-10,10]$.
 
 \begin{equation}\label{eq:state-normalization}
-    s(k)' = \frac{(s(k) - \mu_{obs}) }{\sqrt{\sigma^2_{obs} + 1\cdot 10^{-8}}}
+    s_1(k)' = \frac{(s_1(k) - \mu_{obs}) }{\sqrt{\sigma^2_{obs} + 1\cdot 10^{-8}}}
 \end{equation}
-where $s(k)$ is the unnormalised observation as given in \autoref{eq:obs-tuple-1} and $\mu_{obs}$ and $\sigma^2_{obs}$ represent the running mean and variance of the agents observation (\autoref{eq:obs-tuple-1}), respectively.  The value $1\cdot 10^{-8}$ is included to prevent division by zero. Although the VecNormalizeWrapper also facilitates this process, it is necessary to replicate this step when incorporating it into the RL-MPC algorithm. Finally, a seed value of 4 was used to generate random numbers to ensure reproducibility. This seed value was used to initialise neural network weights and select actions for exploration.
+where $s_1(k)$ is the unnormalised observation as given in \autoref{eq:obs-tuple-1} and $\mu_{obs}$ and $\sigma^2_{obs}$ represent the running mean and variance of the agents observation (\autoref{eq:obs-tuple-1}), respectively.  The value $1\cdot 10^{-8}$ is included to prevent division by zero. Although the VecNormalizeWrapper also facilitates this process, it is necessary to replicate this step when incorporating it into the RL-MPC algorithm. Finally, a seed value of 4 was used to generate random numbers to ensure reproducibility. This seed value was used to initialise neural network weights and select actions for exploration.
 
 \paragraph{Weather Data}
 
@@ -191,14 +191,14 @@ The cumulative reward achieved as the policy is trained and the final cumulative
 It is difficult to determine whether the critic has converged. Given that the critic serves as a Q-value function approximator in the SAC algorithm, the actor must identify the optimal action for a given state to compute the value of that state using the critic. Therefore, convergence of the value function is also dependent upon the actor policy. Although the training curves indicate that the critic has converged, it has only converged in alignment with the actor’s policy. It is necessary to visualise and compare the actual (computed by \autoref{eq:total-return} through simulating the policy) and the predicted value (given by the learned value function) of a given visited state during the 40-day simulation to assess whether the critic (and actor) have achieved convergence in predicting the value function. In addition, \autoref{eq:v0} may be used as a visual aid to compare the accuracy of the learned value function ($V_{\pi|\gamma}(\cdot)$) to a non-discounted value function, i.e. $\gamma = 1$ ($V_{\pi|\gamma=1}(\cdot)$).
 \begin{equation}\label{eq:v0}
 	\begin{aligned}
-		V_{\pi|\gamma = 1}(s_k) &= r_k + V_{\pi|\gamma = 1}(s_{k+1}) \\
-		\therefore V_{\pi|\gamma = 1}(s_{k-1}) &= r_{k-1} + V_{\pi|\gamma = 1}(s_{k}) \\
-		\therefore V_{\pi|\gamma = 1}(s_{k-2}) &= r_{k-2} + r_{k-1} + V_{\pi|\gamma = 1}(s_{k}) \\
-		\therefore V_{\pi|\gamma = 1}(s_{0}) &= \sum_{i=0}^{k-1} {r_{i}} + V_{\pi|\gamma = 1}(s_{k})   \\
+		V_{\pi|\gamma = 1}(s_1(k)) &= r(k) + V_{\pi|\gamma = 1}(s_1(k+1)) \\
+		\therefore V_{\pi|\gamma = 1}(s_1(k-1)) &= r(k-1) + V_{\pi|\gamma = 1}(s_1(k)) \\
+		\therefore V_{\pi|\gamma = 1}(s_1 (k-2)) &= r(k-2) + r(k-1) + V_{\pi|\gamma = 1}(s_1(k)) \\
+		\therefore V_{\pi|\gamma = 1}(s_1(0)) &= \sum_{i=0}^{k-1} {r(i)} + V_{\pi|\gamma = 1}(s_1(k))   \\
 	\end{aligned}
 \end{equation}
 
-During each time step and using \autoref{eq:v0}, the state’s non-discounted value is computed by the cumulative rewards received up to that point and the approximation of the current state’s value using the learned value function. If a value function can approximate the non-discounted value of a state accurately, then \autoref{eq:v0} should yield the same result for every time step, resulting in a horizontal line, $y = V_{\pi|\gamma = 1}(s_0)$. It is noted, that only a value function trained on $\gamma = 1$ would be able to achieve this; however, it serves as an important visual aid to show the accuracy of the trained value functions.
+During each time step and using \autoref{eq:v0}, the state’s non-discounted value is computed by the cumulative rewards received up to that point and the approximation of the current state’s value using the learned value function. If a value function can approximate the non-discounted value of a state accurately, then \autoref{eq:v0} should yield the same result for every time step, resulting in a horizontal line, $y = V_{\pi|\gamma = 1}(s_1(0))$. It is noted, that only a value function trained on $\gamma = 1$ would be able to achieve this; however, it serves as an important visual aid to show the accuracy of the trained value functions.
 
 For each discount factor and at each time step for the 40-day growing period the following were plotted and is shown in \autoref{fig:vf-vs-gamma}: the predicted discounted value of each state visited (as predicted by the learned $V_{\phi|\gamma}$), the predicted initial non-discounted value (as predicted by \autoref{eq:v0}), the cumulative rewards obtained (recorded during the simulation) and finally the actual value of a state (calculated from the cumulative rewards and \autoref{eq:total-return}). For the deterministic case, the realisations of state trajectories and rewards received do not differ between simulations. Hence, the exact value of each state may be calculated. 
 
@@ -209,7 +209,7 @@ For each discount factor and at each time step for the 40-day growing period the
     \label{fig:vf-vs-gamma}
 \end{figure}
 
- Naturally, as seen in \autoref{fig:vf-vs-gamma} the cumulative reward differs slightly between discount factors since the policy generated is also dependent on the value function obtained. It is noted that the trajectory of the actual value (for $\gamma = 1$) is a horizontally reflected trajectory of the cumulative rewards trajectory which is aligned with the definition of a value function (\autoref{eq:value_function}) and can be seen in \autoref{fig:vf-vs-gamma}. Naturally, this is not the case for discount factors lower than one since the value only embeds knowledge of future rewards to be received over a shorter horizon. This is further seen by the predicted $V_{\pi}(s_0)$, whereby the value functions do not produce a horizontal $V_{\pi}(s_0)$ curve, indicating their inadequacy in predicting the true non-discounted value function (as expected since they were trained on discounted rewards). One would expect that only $V_{\pi}(s|\gamma = 1)$ should be able to predict a non-discounted value (since it was trained on non-discounted rewards), however; it is evident that not even $V_{\pi}(s|\gamma = 1)$ is able to do this, as shown by the clear non-horizontal predicted $V_{\pi}(s_0)$ curve. This is most likely due to the increased problem complexity, which makes accurate approximations of the value difficult when trained with $\gamma = 1$.
+ Naturally, as seen in \autoref{fig:vf-vs-gamma} the cumulative reward differs slightly between discount factors since the policy generated is also dependent on the value function obtained. It is noted that the trajectory of the actual value (for $\gamma = 1$) is a horizontally reflected trajectory of the cumulative rewards trajectory which is aligned with the definition of a value function (\autoref{eq:value_function}) and can be seen in \autoref{fig:vf-vs-gamma}. Naturally, this is not the case for discount factors lower than one since the value only embeds knowledge of future rewards to be received over a shorter horizon. This is further seen by the predicted $V_{\pi}(s_1(0))$, whereby the value functions do not produce a horizontal $V_{\pi}(s_1(0))$ curve, indicating their inadequacy in predicting the true non-discounted value function (as expected since they were trained on discounted rewards). One would expect that only $V_{\pi}(s|\gamma = 1)$ should be able to predict a non-discounted value (since it was trained on non-discounted rewards), however; it is evident that not even $V_{\pi}(s|\gamma = 1)$ is able to do this, as shown by the clear non-horizontal predicted $V_{\pi}(s_1(0))$ curve. This is most likely due to the increased problem complexity, which makes accurate approximations of the value difficult when trained with $\gamma = 1$.
  
 It is also noted that the lower the discount factor, the more accurate the predicted discounted-value of a state becomes, as seen by the overlapping ‘predicted’ and ‘actual value’ curves. This may be due to decreased problem complexity and more accurate approximations. When $\gamma = 0.9$, the critic is capable of accurately predicting the actual discounted value of a state. However, as mentioned, it falls short of accurately representing the true non-discounted value of a state. The same can be said for all discount factors lower than one. It was important to train an actor and critic with a $\gamma = 1$ because it was believed that despite the worse performing policy, the trained critic would still provide a reasonable estimation of the non-discounted value of a state. When examining \autoref{fig:vf-vs-gamma}, it becomes evident that this assumption is incorrect. During the investigation into suitable hyper-parameters for the learning agent, it was observed that when $\gamma = 1$, the trained critic struggled to estimate the value of a state in all cases accurately. \autoref{fig:vf-vs-gamma} is just one such realisation.
 
@@ -323,14 +323,14 @@ Although training an agent using SAC produces an actor and a critic network, it 
 This method uses a similar technique by which SAC, DDPG and TD3 update their critic. Two neural networks represent the value function, a current and a target network. The mean squared Bellman error is minimised between the target values (from the target network) and the current values (from the current network), as shown in \autoref{eq:vf_td_loss}. Moreover, Polyak averaging is used to update the target networks. This method is very sample-efficient compared to the expected return learning. As a result, it will be easier to cover a wider range of states in the sampled state space. Consequently, the method is effective in learning a value function that can effectively generalise across the entire state space. 
 
 \paragraph{Obtaining Data}
-The nominal agent (Agent 1 from \autoref{tab:selected_agents}) was used to acquire the data. A similar methodology for data acquisition as described in \citet{linReinforcementLearningBasedModel2023} was employed. Along the nominal trajectory, $q$ ($q \in \mathbb{N}_{>0}$) internal states, $x$ and inputs $u$, were uniformly sampled from $\hat{\mathbb{X}}^4$ (\autoref{eq:td_state_space}) and ${\mathbb{U}}^3$ (\autoref{eq:constraints}) at time $k$ respectively. So that at time $k$, a set denoted as $\hat{S}_{k} = \{\hat{s}_{k_1},\hat{s}_{k_2},...,\hat{s}_{k_q}\}$ is created, where $\hat{s}_{k_i}$ is constructed using \autoref{eq:obs-tuple-1} from the sampled states and inputs. Each element in $\hat{S}_k$, denoted $\hat{s}_{k_i}$, is taken separately as an initial state and evolved one step in time with the RL agent, receiving a reward $\hat{r}_{k_i}$ and a Boolean $d$ indicating whether a terminal state has been reached. $\hat{s}_{k_i}$ and $\hat{s}_{{k+1}_i}$ are both normalised as per \autoref{eq:state-normalization} and stored in a transition tuple along with the received reward and $d$, denoted as $(\hat{s}_{k_i},\hat{s}_{{k+1}_i},\hat{s}_{k_i},d)$. The environment is then set back to the actual state $s_k$ and evolved for one time step, and the process repeats itself, until the 40 days are over. The transition tuple of the actual system is also stored. The quality of sampled internal states and inputs is important to ensure that a value function approximator generalises well across the state space. \\
+The nominal agent (Agent 1 from \autoref{tab:selected_agents}) was used to acquire the data. A similar methodology for data acquisition as described in \citet{linReinforcementLearningBasedModel2023} was employed. Along the nominal trajectory, $q$ ($q \in \mathbb{N}_{>0}$) internal states, $x$ and inputs $u$, were uniformly sampled from $\hat{\mathbb{X}}^4$ (\autoref{eq:td_state_space}) and ${\mathbb{U}}^3$ (\autoref{eq:constraints}) at time $k$ respectively. So that at time $k$, a set denoted as $\hat{S}_{k} = \{\hat{s}(k)_1,\hat{s}(k)_2,...,\hat{s}(k)_q \}$ is created, where $\hat{s}(k)_i$ is constructed using \autoref{eq:obs-tuple-1} from the sampled states and inputs. Each element in $\hat{S}_k$, denoted $\hat{s}(k)_i$, is taken separately as an initial state and evolved one step in time with the RL agent, receiving a reward $\hat{r}(k)_i$ and a Boolean $d$ indicating whether a terminal state has been reached. $\hat{s}(k)_i$ and $\hat{s}(k+1)_i$ are both normalised as per \autoref{eq:state-normalization} and stored in a transition tuple along with the received reward and $d$, denoted as $(\hat{s}(k)_i,\hat{s}(k+1)_i,\hat{r}(k)_i,d)$. The environment is then set back to the actual state $s_k$ and evolved for one time step, and the process repeats itself, until the 40 days are over. The transition tuple of the actual system is also stored. The quality of sampled internal states and inputs is important to ensure that a value function approximator generalises well across the state space. \\
 From the time series plots \autoref{fig:selected-policies-outputs} and \autoref{fig:selected-policies-inputs}, it can be seen that not the entire state space needs to be sampled, especially for the dry mass state, $x_1$. The control actions were sampled across the entire control space $\mathbb{U}^3$ as shown in \autoref{eq:constraints}. States $x_2,x_3,x_4$ were sampled with a range slightly larger than their respective minimum and maximum constraints (\autoref{eq:constraints}) range. This decision was made as it was deemed unnecessary to sample states that significantly violate constraints. Finally, $x_1$ was sampled around the nominal $x_1$ trajectory such that the sampled state space $\hat{\mathbb{X}}^4$ is defined as:
 
 
 
 \begin{equation}\label{eq:td_state_space}
 \begin{split}
-\hat{\mathbb{X}}^4 = \{ (\hat{x_1}, \hat{x_2}, \hat{x_3}, \hat{x_4}) \mid\ & \hat{x_1} \in [\hat{x}_{1\min}(x_{1_k}), \hat{x}_{1\max}(x_{1_k})], \\
+\hat{\mathbb{X}}^4 = \{ (\hat{x_1}, \hat{x_2}, \hat{x_3}, \hat{x_4}) \mid\ & \hat{x_1} \in [\hat{x}_{1\min}(x_{1}(k)), \hat{x}_{1\max}(x_{1}(k))], \\
 & \hat{x_2} \in [\hat{x}_{2\min}, \hat{x}_{2\max}], \\
 & \hat{x_3} \in [\hat{x}_{3\min}, \hat{x}_{3\max}], \\
 & \hat{x_4} \in [\hat{x}_{4\min}, \hat{x}_{4\max}] \}
@@ -344,10 +344,10 @@ where the bounds are specified in \autoref{tab:sample_bounds_td} and were found 
 		\hline
 		\textbf{Parameter} & \textbf{Value} & \textbf{Unit} \\
 		\hline
-		$\hat{x}_{1\min}(x_{1_k})$ & $x_{1_k} \cdot (1 - 0.8) - 0.01$ & $kg \cdot m^{-2}$ \\
-		$\hat{x}_{1\max}(x_{1_k})$ & $x_{1_k} \cdot (1 + 0.7) + 0.01$ & $kg \cdot m^{-2}$ \\
-		$\hat{x}_{2\min}$ & $g_{CO_2}^{-1} (\hat{x}_{3_k}, 400)$ & $ppm$ \\
-		$\hat{x}_{2\max}$ & $g_{CO_2}^{-1} (\hat{x}_{3_k}, 1800)$ & $ppm$ \\
+		$\hat{x}_{1\min}(x_{1}(k))$ & $x_{1}(k) \cdot (1 - 0.8) - 0.01$ & $kg \cdot m^{-2}$ \\
+		$\hat{x}_{1\max}(x_{1}(k))$ & $x_{1}(k) \cdot (1 + 0.7) + 0.01$ & $kg \cdot m^{-2}$ \\
+		$\hat{x}_{2\min}$ & $g_{CO_2}^{-1} (\hat{x}_{3}(k), 400)$ & $ppm$ \\
+		$\hat{x}_{2\max}$ & $g_{CO_2}^{-1} (\hat{x}_{3}(k), 1800)$ & $ppm$ \\
 		$\hat{x}_{3\min}$ & $7$ & $^\circ C$ \\
 		$\hat{x}_{3\max}$ & $30$ & $^\circ C$ \\
 		$\hat{x}_{4\min}$ & $g_{h}^{-1} (\hat{x}_{3_k}, 50)$ & $RH_{\%}$ \\
@@ -379,10 +379,10 @@ With only 10 additional samples every time step ($q=10$), the desired state spac
 
 
 \paragraph{Training}
-Once data is generated, it is split into a validation and training dataset with a 20\% and 80\% split respectively to ensure that the neural network does not overfit to the seen data. Transition tuples are sampled from the training set, and the following loss function is minimised:
+Once data is generated, it is split into a validation and training dataset with a 20\% and 80\% split respectively to ensure that the neural network does not overfit to the seen data. Transition tuples are sampled from the training set, and the following loss function is minimised (similar to \autoref{eq:q-learning update}):
 
 \begin{equation}\label{eq:vf_td_loss}
-    L(\phi, \mathcal{D}) =  V_{\phi}(s_k) - (r_k + (1-d) V_{\phi_{targ}} (s_{k+1}))
+    L(\phi, \mathcal{D}) =  V_{\phi}(s(k)) - (r(k) + (1-d) V_{\phi_{targ}} (s(k+1)))
 \end{equation}
 
 where  $\phi$ and $\phi_{targ}$ are the current and target weights of the respective neural networks, and $\mathcal{D}$ is the training data set. The Adam optimiser minimises \autoref{eq:vf_td_loss} over a batch size $\mathcal{B}$. The target weight $\phi_{targ}$ are updated every learning iteration by Polyak averaging $\phi$:
@@ -402,13 +402,13 @@ A greater number of starting points must be sampled to obtain a spread comparabl
 \begin{equation}\label{eq:TR-sample-space}
 \begin{split}
 	& k \sim U(t_s,t_f)  \\
-    \hat{\mathbb{X}}^4 &= \{ (\hat{x}_1, \hat{x}_2, \hat{x}_3, \hat{x}_4) \mid\ \hat{x}_1 \in [\hat{x}_{1\min}(x_{1_k}), \hat{x}_{1\max}(x_{1_k})], \\
-    &\quad \hat{x}_2 \in [\hat{x}_{2\min}(x_{2_k}), \hat{x}_{2\max}(x_{2_k})], \\
-    &\quad \hat{x}_3 \in [\hat{x}_{3\min}(x_{3_k}), \hat{x}_{3\max}(x_{3_k})], \\
-    &\quad \hat{x}_4 \in [\hat{x}_{4\min}(x_{4_k}), \hat{x}_{4\max}(x_{4_k})] \} \\
-    \hat{\mathbb{U}}^3 &= \{ (\hat{u}_1, \hat{u}_2, \hat{u}_3) \mid\ \hat{u}_1 \in [\hat{u}_{1\min}(u_{1_k}), \hat{u}_{1\max}(u_{1_k})], \\
-    &\quad \hat{u}_2 \in [\hat{u}_{2\min}(u_{2_k}), \hat{u}_{2\max}(u_{2_k})], \\
-    &\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3_k}), \hat{u}_{3\max}(u_{3_k})] \} \\    
+    \hat{\mathbb{X}}^4 &= \{ (\hat{x}_1, \hat{x}_2, \hat{x}_3, \hat{x}_4) \mid\ \hat{x}_1 \in [\hat{x}_{1\min}(x_{1}(k)), \hat{x}_{1\max}(x_{1}(k))], \\
+    &\quad \hat{x}_2 \in [\hat{x}_{2\min}(x_{2}(k)), \hat{x}_{2\max}(x_{2}(k))], \\
+    &\quad \hat{x}_3 \in [\hat{x}_{3\min}(x_{3}(k)), \hat{x}_{3\max}(x_{3}(k))], \\
+    &\quad \hat{x}_4 \in [\hat{x}_{4\min}(x_{4}(k)), \hat{x}_{4\max}(x_{4}(k))] \} \\
+    \hat{\mathbb{U}}^3 &= \{ (\hat{u}_1, \hat{u}_2, \hat{u}_3) \mid\ \hat{u}_1 \in [\hat{u}_{1\min}(u_{1}(k)), \hat{u}_{1\max}(u_{1}(k))], \\
+    &\quad \hat{u}_2 \in [\hat{u}_{2\min}(u_{2}(k)), \hat{u}_{2\max}(u_{2}(k))], \\
+    &\quad \hat{u}_3 \in [\hat{u}_{3\min}(u_{3}(k)), \hat{u}_{3\max}(u_{3}(k))] \} \\    
 \end{split}
 \end{equation}
 
@@ -416,21 +416,21 @@ where the minimum and maximum of the sampled state space for a specific state an
 
 \begin{equation}\label{eq:min-max-tr-sample-space}
 \begin{aligned}
-    &\hat{x}_{i\min} = x_{i_k} \cdot (1-\sigma),\hat{u}_{i\min} = u_{i_k} \cdot (1-\sigma)\\
-    &\hat{x}_{i\max} = x_{i_k} \cdot (1+\sigma),\hat{u}_{i\max} = u_{i_k} \cdot (1+\sigma)
+    &\hat{x}_{i\min} (x_i (k)) = x_{i}(k) \cdot (1-\sigma),\quad \hat{u}_{i\min}(u_i (k)) = u_{i}(k) \cdot (1-\sigma)\\
+    &\hat{x}_{i\max} (x_i (k)) = x_{i}(k) \cdot (1+\sigma),\quad \hat{u}_{i\max}(u_i (k))  = u_{i}(k) \cdot (1+\sigma)
 \end{aligned}
 \end{equation}
 
-where ${x}_{i_k}$ and ${u}_{i_k}$ represents the nominal trajectories of the states and inputs respectively at time $k$. $\sigma$ denotes the desired spread of sampled initial states around the nominal trajectory, which is expressed as a percentage. As can be seen from \autoref{fig:selected-policies-inputs} and \autoref{fig:selected-policies-outputs}, it can be observed that the performance of policies (\autoref{tab:selected_agents}) can vary significantly with minimal changes in the state and input trajectories. Thus, sampling the trajectories in this manner can be expected to cover enough of the state space to capture all feasible trajectories. As was done for the temporal difference learning, the fixed policy was generated from the nominal agent. Given that the computation of a control action requires a time of $0.2 ms$, it is possible to sample a large number of trajectories to achieve appropriate coverage of state and input spaces. In the case of stochastic conditions, the same state may yield a different return; therefore, if a state has been visited more than once, then the mean of the return is used as training data.
+where ${x}_{i}(k)$ and ${u}_{i}(k)$ represents the nominal trajectories of the states and inputs respectively at time $k$. $\sigma$ denotes the desired spread of sampled initial states around the nominal trajectory, which is expressed as a percentage. As can be seen from \autoref{fig:selected-policies-inputs} and \autoref{fig:selected-policies-outputs}, it can be observed that the performance of policies (\autoref{tab:selected_agents}) can vary significantly with minimal changes in the state and input trajectories. Thus, sampling the trajectories in this manner can be expected to cover enough of the state space to capture all feasible trajectories. As was done for the temporal difference learning, the fixed policy was generated from the nominal agent. Given that the computation of a control action requires a time of $0.2 ms$, it is possible to sample a large number of trajectories to achieve appropriate coverage of state and input spaces. In the case of stochastic conditions, the same state may yield a different return; therefore, if a state has been visited more than once, then the mean of the return is used as training data.
 
 \paragraph{Training}
-Once trajectories are sampled, for each state visited, the total return is calculated, and the tuple $(s_k,TR)$ is stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation. A neural network was trained with inputs as the state, $s_k$, and labels/targets as the total return,$TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimised with the Adam optimiser:
+Once trajectories are sampled, for each state visited, the total return is calculated, and the tuple $(s(k),TR)$ is stored in a dataset. The dataset is then divided into an 80:20 ratio, with 80\% of the data used for training and 20\% used for validation. A neural network was trained with inputs as the state, $s(k)$, and labels/targets as the total return, $TR$ and the loss function in \autoref{eq:vf_tr_loss} is minimised with the Adam optimiser:
 
 \begin{equation}\label{eq:vf_tr_loss}
-    L(\phi, \mathcal{D}) =   V_{\phi}(s_k) - \mathbb{E}(TR)
+    L(\phi, \mathcal{D}) =   V_{\phi}(s(k)) - \mathbb{E}(TR)
 \end{equation}
 
-where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s_k$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.\\
+where $V_{\phi}$ is the function approximator with weights $\phi$ and $TR$ is the total return of state $s(k)$. Hyper-parameters include the structure of the neural network, learning rate, and batch size.\\
 
 
 
@@ -448,7 +448,7 @@ It was decided to train four value functions based on different architects and i
 		$V_{\phi_1}$ & \autoref{eq:obs-tuple-1} & 2 & 128 \\  
 		$V_{\phi_2}$ & \autoref{eq:obs-tuple-1} & 2 & 32 \\  
 		$V_{\phi_3}$ & \autoref{eq:obs-tuple-1} & 1 & 128 \\  
-		$V_{\phi_4}$ & $(y_1(k), k)$ & 2 & 128 \\  
+		$V_{\phi_4}$ & $s_{reduced}(k)=(y_1(k), k)$ & 2 & 128 \\  
 		\bottomrule
 	\end{tabular}
 	\caption{Value Functions}
@@ -508,7 +508,7 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
 	\label{fig:tr_predictions_long}
 \end{figure}
 
-\autoref{fig:tr_predictions_long} displays a time series plot of the cumulative rewards plotted against the predicted value at each time step over the entire simulation period. This plot is similar to that shown in \autoref{fig:vf-vs-gamma}. Additionally, it includes the calculated $V_\pi (s_0)$ at each time step using \autoref{eq:v0} as a visual indicator of the accuracy of the value function. As demonstrated in \autoref{fig:tr_predictions_long} in conjunction with \autoref{fig:tr_perf_curves}, the predicted values show a high level of accuracy. This is evident from the nearly perfect horizontal line at $V_\pi (s_0)$ that spans across the growing period and substantially outperforms the prediction accuracy of the trained value functions in \autoref{fig:vf-vs-gamma}. However, what is interesting and cannot be seen in \autoref{fig:vf_heatmaps} but in \autoref{fig:tr_predictions_long} are the fluctuations present in each prediction. Naturally, $V_{\phi_4}$ is not able to make a precise prediction of the value since it only gets the time and dry mass as inputs, however its prediction is much smoother than all the others. While $V_{\phi_1}$, $V_{\phi_2}$, and $V_{\phi_3}$ may provide more accurate predictions, they exhibit greater fluctuations. This highlights a higher degree of non-linearity. Moreover, this observation again suggests that the primary factors determining the value of a state are its dry mass and time. Meanwhile, minor fluctuations in rewards and expected returns are influenced by other factors that have minimal impact over the entire growing period.
+\autoref{fig:tr_predictions_long} displays a time series plot of the cumulative rewards plotted against the predicted value at each time step over the entire simulation period. This plot is similar to that shown in \autoref{fig:vf-vs-gamma}. Additionally, it includes the calculated $V_\pi (s(0))$ at each time step using \autoref{eq:v0} as a visual indicator of the accuracy of the value function. As demonstrated in \autoref{fig:tr_predictions_long} in conjunction with \autoref{fig:tr_perf_curves}, the predicted values show a high level of accuracy. This is evident from the nearly perfect horizontal line at $V_\pi (s(0))$ that spans across the growing period and substantially outperforms the prediction accuracy of the trained value functions in \autoref{fig:vf-vs-gamma}. However, what is interesting and cannot be seen in \autoref{fig:vf_heatmaps} but in \autoref{fig:tr_predictions_long} are the fluctuations present in each prediction. Naturally, $V_{\phi_4}$ is not able to make a precise prediction of the value since it only gets the time and dry mass as inputs, however its prediction is much smoother than all the others. While $V_{\phi_1}$, $V_{\phi_2}$, and $V_{\phi_3}$ may provide more accurate predictions, they exhibit greater fluctuations. This highlights a higher degree of non-linearity. Moreover, this observation again suggests that the primary factors determining the value of a state are its dry mass and time. Meanwhile, minor fluctuations in rewards and expected returns are influenced by other factors that have minimal impact over the entire growing period.
 
 
 
@@ -526,7 +526,7 @@ The intuitiveness of \autoref{fig:vf_heatmaps} stems from the fact that the high
  
 
 \begin{remark}\label{rem:vf-smoothness}
-	It is evident that, while $V_{\phi_1}, V_{\phi_2}, V_{\phi_3}$ can produce more precise estimations (as demonstrated by the proximity of their prediction line $V_{\pi}{s_0}$ to the actual value), $V_{\phi_4}$ remains significantly smoother. Moreover, $V_{\phi_3}$  is not as smooth as it may have seemed in \autoref{fig:vf_heatmaps} and displays the highest level of fluctuations across the four models trained. Although this is one realisation of a trajectory, this behaviour was observed in all simulated trajectories. This behaviour should be noted since it is important for integrating it with MPC due to the non-linearity of the value function.
+	It is evident that, while $V_{\phi_1}, V_{\phi_2}, V_{\phi_3}$ can produce more precise estimations (as demonstrated by the proximity of their prediction line $V_{\pi}(s(0))$ to the actual value), $V_{\phi_4}$ remains significantly smoother. Moreover, $V_{\phi_3}$  is not as smooth as it may have seemed in \autoref{fig:vf_heatmaps} and displays the highest level of fluctuations across the four models trained. Although this is one realisation of a trajectory, this behaviour was observed in all simulated trajectories. This behaviour should be noted since it is important for integrating it with MPC due to the non-linearity of the value function.
 \end{remark}
 
 
